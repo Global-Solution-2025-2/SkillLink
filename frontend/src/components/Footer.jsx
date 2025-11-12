@@ -1,10 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#0D1B2A] dark:bg-[#145374] text-[#C8D6E5] dark:text-[#F9F9F9] text-center py-3 mt-auto transition-colors duration-300">
-      <div className="flex items-center justify-center space-x-2 text-sm">
-        <div className="w-4 h-4 bg-[#00B894] rounded-full"></div>
-        <span>© {new Date().getFullYear()} SkillLink</span>
-      </div>
-    </footer>
+   <footer className="mt-20 py-8 text-center bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+          <p>&copy; 2025 SkillLink. Todos os direitos reservados.</p>
+          <div className="mt-2 text-sm space-x-4">
+              <a href="#" className="hover:text-cyan-500">Privacidade</a>
+              <a href="#" className="hover:text-cyan-500">Termos</a>
+              <a href="#" className="hover:text-cyan-500">Contato</a>
+          </div>
+      </footer>
   );
 }

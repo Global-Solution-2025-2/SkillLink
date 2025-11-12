@@ -6,12 +6,15 @@ export default function Header({ darkMode, setDarkMode }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full bg-[#0D1B2A] dark:bg-[#145374] text-[#F9F9F9] dark:text-[#C8D6E5] shadow-md fixed top-0 left-0 z-50 transition-colors duration-300">
+    <header className="w-full bg-gray-100 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300 fixed top-0 left-0 z-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+        
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <div className="w-8 h-8 bg-[#00B894] rounded-full"></div>
-          <h1 className="text-2xl font-bold tracking-wide">SkillLink</h1>
+          <h1 className="text-2xl font-bold tracking-wide text-gray-900 dark:text-gray-100">
+            SkillLink
+          </h1>
         </div>
 
         {/* Navegação desktop */}
@@ -19,23 +22,26 @@ export default function Header({ darkMode, setDarkMode }) {
           <Link to="/" className="hover:text-[#00B894] transition">
             Home
           </Link>
+          <Link to="/carreiras" className="hover:text-[#00B894] transition">
+            Carreiras
+          </Link>
           <Link to="/profissionais" className="hover:text-[#00B894] transition">
             Profissionais
           </Link>
-          <Link to="/sobre" className="hover:text-[#00B894] transition">
-            Sobre
+          <Link to="/cursos" className="hover:text-[#00B894] transition">
+            Cursos
           </Link>
-          <Link to="/contato" className="hover:text-[#00B894] transition">
-            Contato
+          <Link to="/login" className="hover:text-[#00B894] transition">
+            Login
           </Link>
         </nav>
 
         {/* Botões */}
         <div className="flex items-center space-x-4">
-          {/* Dark mode toggle */}
+          {/* Botão dark mode */}
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full hover:bg-[#145374] dark:hover:bg-[#0D1B2A] transition"
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
             aria-label="Alternar modo escuro"
           >
             {darkMode ? <Sun size={22} /> : <Moon size={22} />}
@@ -53,7 +59,7 @@ export default function Header({ darkMode, setDarkMode }) {
 
       {/* Menu mobile */}
       {menuOpen && (
-        <div className="md:hidden bg-[#0D1B2A] dark:bg-[#145374] border-t border-[#145374] transition-colors duration-300">
+        <div className="md:hidden bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
           <nav className="flex flex-col items-center space-y-4 py-4 font-medium">
             <Link
               to="/"
@@ -70,11 +76,11 @@ export default function Header({ darkMode, setDarkMode }) {
               Profissionais
             </Link>
             <Link
-              to="/sobre"
+              to="/cursos"
               className="hover:text-[#00B894]"
               onClick={() => setMenuOpen(false)}
             >
-              Sobre
+              Cursos
             </Link>
             <Link
               to="/contato"
@@ -82,6 +88,13 @@ export default function Header({ darkMode, setDarkMode }) {
               onClick={() => setMenuOpen(false)}
             >
               Contato
+            </Link>
+            <Link
+              to="/login"
+              className="hover:text-[#00B894]"
+              onClick={() => setMenuOpen(false)}
+            >
+              Login
             </Link>
           </nav>
         </div>

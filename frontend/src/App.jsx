@@ -4,8 +4,10 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./routes/Home";
 import Profissionais from "./routes/Profissionais";
-import Contato from "./routes/Contato";
-import Sobre from "./routes/Sobre";
+import Cursos from "./routes/Cursos";
+import Carreiras from "./routes/Carreiras";
+import Login from "./routes/Login";
+import Cadastro from "./routes/Cadastro";
 import Error from "./routes/Error";
 
 function App() {
@@ -41,8 +43,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/profissionais" element={<Profissionais />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="/sobre" element={<Sobre />} />
+            <Route path="/cursos" element={<Cursos />} />
+            <Route path="/carreiras" element={<Carreiras />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<Cadastro />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>

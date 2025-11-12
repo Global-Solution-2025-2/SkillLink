@@ -1,0 +1,23 @@
+[
+  {
+    "id": "a9a1b27b-20f3-48af-98fe-aa39a1fcbc71",
+    "nome": "Giovanna Alves",
+    "foto": "./images/default.jpg",
+    "cargo": "",
+    "resumo": "",
+    "localizacao": "",
+    "area": "",
+    "habilidadesTecnicas": [],
+    "softSkills": [],
+    "experiencias": [],
+    "formacao": [],
+    "projetos": [],
+    "certificacoes": [],
+    "idiomas": [],
+    "areaInteresses": [],
+    "email": "giovanna@email.com",
+    "senha": "gi123",
+    "dataNascimento": "2016-11-17",
+    "criadoEm": "2025-11-12T22:43:51.740Z"
+  }
+]
