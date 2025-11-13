@@ -1,48 +1,26 @@
 import { useState } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function Cadastro() {
-  const [novoPerfil, setNovoPerfil] = useState({
-    nome: "",
-    dataNascimento: "",
-    email: "",
-    senha: "",
-    tipo: "usuário",
-  });
+const API_URL = "http://localhost:5000";
 
+export default function Cadastro() {
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [mensagem, setMensagem] = useState("");
   const navigate = useNavigate();
 
   const handleCadastro = async (e) => {
     e.preventDefault();
-
-    if (
-      !novoPerfil.nome ||
-      !novoPerfil.dataNascimento ||
-      !novoPerfil.email ||
-      !novoPerfil.senha
-    ) {
-      alert("Por favor, preencha todos os campos!");
-      return;
-    }
+    setMensagem("");
 
     try {
-      const response = await fetch("http://localhost:3001/cadastro", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(novoPerfil),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        alert(`Usuário ${data.perfil.nome} cadastrado com sucesso!`);
-        navigate("/login");
-      } else {
-        alert(data.message || "Erro ao cadastrar. Tente novamente.");
-      }
-    } catch (error) {
-      console.error("Erro ao cadastrar:", error);
-      alert("Erro de conexão com o servidor.");
+      const response = await axios.post(`${API_URL}/cadastro`, { nome, email, senha });
+      setMensagem(response.data.message);
+      setTimeout(() => navigate("/login"), 2000);
+    } catch (erro) {
+      setMensagem(erro.response?.data?.message || "Erro ao cadastrar usuário.");
     }
   };
 
@@ -57,46 +35,28 @@ export default function Cadastro() {
           <input
             type="text"
             placeholder="Nome completo"
-            value={novoPerfil.nome}
-            onChange={(e) =>
-              setNovoPerfil({ ...novoPerfil, nome: e.target.value })
-            }
-            required
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
             className="p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#00B894]"
-          />
-
-          <input
-            type="date"
-            value={novoPerfil.dataNascimento}
-            onChange={(e) =>
-              setNovoPerfil({
-                ...novoPerfil,
-                dataNascimento: e.target.value,
-              })
-            }
             required
-            className="p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#00B894]"
           />
 
           <input
             type="email"
             placeholder="E-mail"
-            value={novoPerfil.email}
-            onChange={(e) =>
-              setNovoPerfil({ ...novoPerfil, email: e.target.value })
-            }
-            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#00B894]"
+            required
           />
 
           <input
             type="password"
             placeholder="Senha"
-            value={novoPerfil.senha}
-            onChange={(e) =>
-              setNovoPerfil({ ...novoPerfil, senha: e.target.value })
-            }
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
             required
+            autoComplete="new-password"
             className="p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#00B894]"
           />
 
@@ -107,6 +67,8 @@ export default function Cadastro() {
             Cadastrar
           </button>
         </form>
+
+        {mensagem && <p className="mt-4 text-center text-green-600">{mensagem}</p>}
 
         <p className="text-center text-sm text-gray-700 dark:text-gray-300 mt-6">
           Já tem uma conta?{" "}

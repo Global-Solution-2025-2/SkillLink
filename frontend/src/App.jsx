@@ -8,6 +8,7 @@ import Cursos from "./routes/Cursos";
 import Carreiras from "./routes/Carreiras";
 import Login from "./routes/Login";
 import Cadastro from "./routes/Cadastro";
+import Perfil from "./routes/Perfil";
 import Error from "./routes/Error";
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
             <Route path="/carreiras" element={<Carreiras />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/perfil" element={<Perfil />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>

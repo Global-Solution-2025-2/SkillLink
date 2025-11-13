@@ -1,7 +1,9 @@
 [
   {
-    "id": "a9a1b27b-20f3-48af-98fe-aa39a1fcbc71",
-    "nome": "Giovanna Alves",
+    "id": "a2fcd3e4-0d91-4c3e-a7f6-dcc6f9e5eabb",
+    "nome": "Rayssa",
+    "email": "rayssa@email.com",
+    "senha": "$2b$10$0UhMZVRDBYjM/su/z.R/tu6k8p2sBBq0NqljR6uu4ECOEF1JL3Wqq",
     "foto": "./images/default.jpg",
     "cargo": "",
     "resumo": "",
@@ -15,9 +17,28 @@
     "certificacoes": [],
     "idiomas": [],
     "areaInteresses": [],
+    "dataNascimento": "",
+    "criadoEm": "2025-11-13T02:56:29.386Z"
+  },
+  {
+    "id": "07630a5b-fb97-4e26-b6b6-f18143ef5b82",
+    "nome": "giovanna",
     "email": "giovanna@email.com",
-    "senha": "gi123",
-    "dataNascimento": "2016-11-17",
-    "criadoEm": "2025-11-12T22:43:51.740Z"
+    "senha": "$2b$10$VwTYRjlIrs9ANJ2I7sJ9RuwpHSsKiRsNyUEs.xJs8orIx8/zTTN.O",
+    "foto": "./images/default.jpg",
+    "cargo": "",
+    "resumo": "",
+    "localizacao": "",
+    "area": "",
+    "habilidadesTecnicas": [],
+    "softSkills": [],
+    "experiencias": [],
+    "formacao": [],
+    "projetos": [],
+    "certificacoes": [],
+    "idiomas": [],
+    "areaInteresses": [],
+    "dataNascimento": "",
+    "criadoEm": "2025-11-13T03:02:24.372Z"
   }
 ]

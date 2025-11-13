@@ -1,62 +1,69 @@
 import express from "express";
 import cors from "cors";
-import bodyParser from "body-parser";
 import fs from "fs";
-import path from "path";
-import { v4 as uuid } from "uuid";
+import path, { dirname } from "path";
 import { fileURLToPath } from "url";
+import bcrypt from "bcryptjs";
+import { v4 as uuidv4 } from "uuid";
 
-// Corrigir __dirname no modo ES Modules
+// 🧭 Corrige o __dirname no ES module
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(__filename);
 
 const app = express();
-const PORT = 3001;
+const PORT = 5000;
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
-app.use(bodyParser.json());
+app.use(cors());
+app.use(express.json());
 
-// Caminho do arquivo JSON
-const perfisPath = path.join(__dirname, "data", "perfil.json");
+// Caminho do arquivo perfil.json
+const perfilPath = path.resolve(__dirname, "data", "perfil.json");
 
-// ======= Funções auxiliares =======
+// Garante que a pasta e o arquivo existam
+if (!fs.existsSync(path.dirname(perfilPath))) {
+  fs.mkdirSync(path.dirname(perfilPath), { recursive: true });
+}
+if (!fs.existsSync(perfilPath)) {
+  fs.writeFileSync(perfilPath, "[]", "utf-8");
+}
+
+// Função para ler perfis
 const lerPerfis = () => {
   try {
-    if (!fs.existsSync(perfisPath)) fs.writeFileSync(perfisPath, "[]", "utf-8");
-    return JSON.parse(fs.readFileSync(perfisPath, "utf-8"));
-  } catch (err) {
-    console.error("Erro ao ler perfil.json:", err);
+    const data = fs.readFileSync(perfilPath, "utf-8");
+    return JSON.parse(data);
+  } catch {
     return [];
   }
 };
 
-const salvarPerfis = (data) => {
-  try {
-    fs.writeFileSync(perfisPath, JSON.stringify(data, null, 2), "utf-8");
-    console.log("✅ Perfis salvos em:", perfisPath);
-  } catch (err) {
-    console.error("Erro ao salvar perfil.json:", err);
-  }
+// Função para salvar perfis
+const salvarPerfis = (perfis) => {
+  fs.writeFileSync(perfilPath, JSON.stringify(perfis, null, 2), "utf-8");
 };
 
-// ======= ROTA DE CADASTRO =======
-app.post("/cadastro", (req, res) => {
-  const { nome, email, senha, dataNascimento } = req.body;
+// 🟢 Rota de cadastro
+app.post("/cadastro", async (req, res) => {
+  const { nome, email, senha } = req.body;
 
-  if (!nome || !email || !senha)
-    return res.status(400).json({ message: "Preencha todos os campos obrigatórios." });
-
-  const perfis = lerPerfis();
-
-  // Verifica se o e-mail já existe
-  if (perfis.find((p) => p.email === email)) {
-    return res.status(400).json({ message: "E-mail já cadastrado." });
+  if (!nome || !email || !senha) {
+    return res.status(400).json({ message: "Todos os campos são obrigatórios!" });
   }
 
-  // Cria um novo perfil com a estrutura completa
+  const perfis = lerPerfis();
+  const existeUsuario = perfis.find((p) => p.email === email);
+
+  if (existeUsuario) {
+    return res.status(400).json({ message: "Email já cadastrado!" });
+  }
+
+  const hashSenha = await bcrypt.hash(senha, 10);
+
   const novoPerfil = {
-    id: uuid(),
+    id: uuidv4(),
     nome,
+    email,
+    senha: hashSenha,
     foto: "./images/default.jpg",
     cargo: "",
     resumo: "",
@@ -70,26 +77,52 @@ app.post("/cadastro", (req, res) => {
     certificacoes: [],
     idiomas: [],
     areaInteresses: [],
-    email,
-    senha,
-    dataNascimento,
+    dataNascimento: "",
     criadoEm: new Date().toISOString(),
   };
 
   perfis.push(novoPerfil);
   salvarPerfis(perfis);
 
-  console.log("🟢 Novo perfil cadastrado:", novoPerfil.nome);
-  res.status(201).json({ message: "Cadastro realizado com sucesso!", perfil: novoPerfil });
+  res.status(201).json({ message: "Usuário cadastrado com sucesso!", perfil: novoPerfil });
 });
 
-// ======= ROTA PARA LISTAR PERFIS =======
-app.get("/perfis", (req, res) => {
-  res.json(lerPerfis());
+// 🟢 Rota de login
+app.post("/login", async (req, res) => {
+  const { email, senha } = req.body;
+
+  if (!email || !senha) {
+    return res.status(400).json({ message: "Email e senha são obrigatórios!" });
+  }
+
+  const perfis = lerPerfis();
+  const usuario = perfis.find((p) => p.email === email);
+
+  if (!usuario) {
+    return res.status(401).json({ message: "Email ou senha incorretos!" });
+  }
+
+  const senhaValida = await bcrypt.compare(senha, usuario.senha);
+  if (!senhaValida) {
+    return res.status(401).json({ message: "Email ou senha incorretos!" });
+  }
+
+  const { senha: _, ...perfilSemSenha } = usuario;
+
+  res.json({ message: "Login realizado com sucesso!", perfil: perfilSemSenha });
 });
 
-// ======= INICIAR SERVIDOR =======
-app.listen(PORT, () => {
-  console.log(`📁 Caminho do arquivo de perfis: ${perfisPath}`);
-  console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+// 🟣 NOVO — Rota para listar profissionais
+app.get("/profissionais", (req, res) => {
+  const perfis = lerPerfis();
+  // Remove a senha antes de enviar
+  const semSenhas = perfis.map(({ senha, ...resto }) => resto);
+  res.json(semSenhas);
 });
+
+// 🟣 NOVO — Servir arquivos estáticos da pasta "data"
+app.use("/data", express.static(path.join(__dirname, "data")));
+
+app.listen(PORT, () =>
+  console.log(`✅ Servidor rodando em http://localhost:${PORT}`)
+);

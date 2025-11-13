@@ -1,31 +1,32 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const API_URL = "http://localhost:5000";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [mensagem, setMensagem] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setMensagem("");
 
     try {
-      const response = await fetch("http://localhost:3001/perfil");
-      const usuarios = await response.json();
+      const response = await axios.post(`${API_URL}/login`, { email, senha });
+      const perfil = response.data.perfil;
 
-      const usuario = usuarios.find(
-        (u) => u.email === email && u.senha === senha
-      );
-
-      if (usuario) {
-        localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-        navigate("/"); // redireciona para home ou dashboard, se quiser mudar depois
+      if (perfil) {
+        localStorage.setItem("usuarioLogado", JSON.stringify(perfil));
+        setMensagem(response.data.message);
+        setTimeout(() => navigate("/perfil"), 1200);
       } else {
-        alert("E-mail ou senha inválidos!");
+        setMensagem("Erro ao autenticar usuário.");
       }
-    } catch (error) {
-      console.error("Erro ao fazer login:", error);
-      alert("Erro de conexão com o servidor.");
+    } catch (erro) {
+      setMensagem(erro.response?.data?.message || "Erro ao logar. Verifique suas credenciais.");
     }
   };
 
@@ -42,8 +43,8 @@ export default function Login() {
             placeholder="E-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
             className="p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#00B894]"
+            required
           />
 
           <input
@@ -52,6 +53,7 @@ export default function Login() {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
             required
+            autoComplete="current-password"
             className="p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#00B894]"
           />
 
@@ -63,9 +65,10 @@ export default function Login() {
           </button>
         </form>
 
-        {/* link para cadastro */}
+        {mensagem && <p className="mt-4 text-center text-red-600">{mensagem}</p>}
+
         <p className="text-center text-sm text-gray-700 dark:text-gray-300 mt-6">
-          Ainda não faz parte do SkillLink?{" "}
+          Ainda não tem conta?{" "}
           <span
             onClick={() => navigate("/cadastro")}
             className="text-[#00B894] font-semibold cursor-pointer hover:underline"
