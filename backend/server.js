@@ -112,15 +112,38 @@ app.post("/login", async (req, res) => {
   res.json({ message: "Login realizado com sucesso!", perfil: perfilSemSenha });
 });
 
-// 🟣 NOVO — Rota para listar profissionais
+// 🟣 Listar profissionais (sem senha)
 app.get("/profissionais", (req, res) => {
   const perfis = lerPerfis();
-  // Remove a senha antes de enviar
   const semSenhas = perfis.map(({ senha, ...resto }) => resto);
   res.json(semSenhas);
 });
 
-// 🟣 NOVO — Servir arquivos estáticos da pasta "data"
+// 🟢 NOVO — Atualizar perfil existente
+app.put("/perfil/:id", (req, res) => {
+  const { id } = req.params;
+  const novosDados = req.body;
+
+  const perfis = lerPerfis();
+  const index = perfis.findIndex((p) => p.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({ message: "Usuário não encontrado!" });
+  }
+
+  // Mantém a senha original
+  const senhaAntiga = perfis[index].senha;
+
+  // Atualiza os dados
+  perfis[index] = { ...perfis[index], ...novosDados, senha: senhaAntiga };
+
+  salvarPerfis(perfis);
+
+  const { senha, ...perfilAtualizado } = perfis[index];
+  res.json({ message: "Perfil atualizado com sucesso!", perfil: perfilAtualizado });
+});
+
+// 🟣 Servir arquivos estáticos da pasta "data"
 app.use("/data", express.static(path.join(__dirname, "data")));
 
 app.listen(PORT, () =>

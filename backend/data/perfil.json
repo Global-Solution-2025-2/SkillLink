@@ -2,15 +2,18 @@
   {
     "id": "a2fcd3e4-0d91-4c3e-a7f6-dcc6f9e5eabb",
     "nome": "Rayssa",
-    "email": "rayssa@email.com",
+    "email": "rayssa1@email.com",
     "senha": "$2b$10$0UhMZVRDBYjM/su/z.R/tu6k8p2sBBq0NqljR6uu4ECOEF1JL3Wqq",
     "foto": "./images/default.jpg",
-    "cargo": "",
+    "cargo": "dev",
     "resumo": "",
     "localizacao": "",
     "area": "",
     "habilidadesTecnicas": [],
-    "softSkills": [],
+    "softSkills": [
+      "python",
+      "java"
+    ],
     "experiencias": [],
     "formacao": [],
     "projetos": [],
