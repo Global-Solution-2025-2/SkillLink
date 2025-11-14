@@ -4,10 +4,13 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./routes/Home";
 import Profissionais from "./routes/Profissionais";
+import News from "./routes/News";
+import SmartDesk from "./routes/SmartDesk";
 import Cursos from "./routes/Cursos";
 import Carreiras from "./routes/Carreiras";
 import Login from "./routes/Login";
 import Cadastro from "./routes/Cadastro";
+import Feed from "./routes/Feed";
 import Perfil from "./routes/Perfil";
 import Error from "./routes/Error";
 
@@ -16,7 +19,6 @@ function App() {
     return localStorage.getItem("theme") === "dark";
   });
 
-  // Aplica ou remove a classe "dark" no <html>
   useEffect(() => {
     const html = document.documentElement;
     if (darkMode) {
@@ -30,7 +32,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* ✅ Aplica cor de fundo e texto com fallback confiável */}
       <div
         className={`flex flex-col min-h-screen transition-colors duration-500 ${
           darkMode
@@ -46,8 +47,11 @@ function App() {
             <Route path="/profissionais" element={<Profissionais />} />
             <Route path="/cursos" element={<Cursos />} />
             <Route path="/carreiras" element={<Carreiras />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/smartdesk" element={<SmartDesk />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/feed" element={<Feed />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="*" element={<Error />} />
           </Routes>

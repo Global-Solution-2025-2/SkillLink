@@ -1,14 +1,14 @@
 [
   {
     "id": "a2fcd3e4-0d91-4c3e-a7f6-dcc6f9e5eabb",
-    "nome": "Rayssa",
+    "nome": "Rayssa Aquino",
     "email": "rayssa1@email.com",
     "senha": "$2b$10$0UhMZVRDBYjM/su/z.R/tu6k8p2sBBq0NqljR6uu4ECOEF1JL3Wqq",
     "foto": "./images/default.jpg",
-    "cargo": "dev",
+    "cargo": "Analista de dados",
     "resumo": "",
-    "localizacao": "",
-    "area": "",
+    "localizacao": "São Paulo",
+    "area": "tech",
     "habilidadesTecnicas": [],
     "softSkills": [
       "python",
@@ -20,7 +20,7 @@
     "certificacoes": [],
     "idiomas": [],
     "areaInteresses": [],
-    "dataNascimento": "",
+    "dataNascimento": "2005-09-05",
     "criadoEm": "2025-11-13T02:56:29.386Z"
   },
   {

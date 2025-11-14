@@ -25,8 +25,11 @@ export default function Header({ darkMode, setDarkMode }) {
           <Link to="/carreiras" className="hover:text-[#00B894] transition">
             Carreiras
           </Link>
-          <Link to="/profissionais" className="hover:text-[#00B894] transition">
-            Profissionais
+          <Link to="/smartdesk" className="hover:text-[#00B894] transition">
+            SmartDesk
+          </Link>
+          <Link to="/news" className="hover:text-[#00B894] transition">
+            Notícias
           </Link>
           <Link to="/cursos" className="hover:text-[#00B894] transition">
             Cursos

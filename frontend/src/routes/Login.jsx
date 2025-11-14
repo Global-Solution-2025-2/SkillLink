@@ -21,7 +21,7 @@ export default function Login() {
       if (perfil) {
         localStorage.setItem("usuarioLogado", JSON.stringify(perfil));
         setMensagem(response.data.message);
-        setTimeout(() => navigate("/perfil"), 1200);
+        setTimeout(() => navigate("/feed"), 1200);
       } else {
         setMensagem("Erro ao autenticar usuário.");
       }
