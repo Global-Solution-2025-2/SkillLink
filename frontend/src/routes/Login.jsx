@@ -65,7 +65,7 @@ export default function Login() {
           </button>
         </form>
 
-        {mensagem && <p className="mt-4 text-center text-red-600">{mensagem}</p>}
+        {mensagem && <p className="mt-4 text-center text-white-600">{mensagem}</p>}
 
         <p className="text-center text-sm text-gray-700 dark:text-gray-300 mt-6">
           Ainda não tem conta?{" "}

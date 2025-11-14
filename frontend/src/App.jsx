@@ -12,6 +12,7 @@ import Login from "./routes/Login";
 import Cadastro from "./routes/Cadastro";
 import Feed from "./routes/Feed";
 import Perfil from "./routes/Perfil";
+import AreaDeEstudos from "./routes/AreaDeEstudos";
 import Error from "./routes/Error";
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/feed" element={<Feed />} />
             <Route path="/perfil" element={<Perfil />} />
+            <Route path="/area-de-estudos" element={<AreaDeEstudos />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>

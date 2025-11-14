@@ -5,8 +5,9 @@ import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import bcrypt from "bcryptjs";
 import { v4 as uuidv4 } from "uuid";
+import multer from "multer";
 
-// 🧭 Corrige o __dirname no ES module
+// 🧭 Corrigir __dirname em ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -16,10 +17,32 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
-// Caminho do arquivo perfil.json
+// 📂 Criar pasta uploads se não existir
+const uploadsPath = path.join(__dirname, "uploads");
+if (!fs.existsSync(uploadsPath)) {
+  fs.mkdirSync(uploadsPath, { recursive: true });
+}
+
+// ⚙️ Configurar Multer para salvar fotos dentro de /uploads
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, uploadsPath);
+  },
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    cb(null, `foto_${uuidv4()}${ext}`);
+  }
+});
+
+const upload = multer({ storage });
+
+// 📂 Servir fotos estáticas
+app.use("/uploads", express.static(uploadsPath));
+
+// 🗂️ Caminho do arquivo perfil.json
 const perfilPath = path.resolve(__dirname, "data", "perfil.json");
 
-// Garante que a pasta e o arquivo existam
+// Garantir que o arquivo exista
 if (!fs.existsSync(path.dirname(perfilPath))) {
   fs.mkdirSync(path.dirname(perfilPath), { recursive: true });
 }
@@ -27,22 +50,20 @@ if (!fs.existsSync(perfilPath)) {
   fs.writeFileSync(perfilPath, "[]", "utf-8");
 }
 
-// Função para ler perfis
+// Funções utilitárias
 const lerPerfis = () => {
   try {
-    const data = fs.readFileSync(perfilPath, "utf-8");
-    return JSON.parse(data);
+    return JSON.parse(fs.readFileSync(perfilPath, "utf-8"));
   } catch {
     return [];
   }
 };
 
-// Função para salvar perfis
 const salvarPerfis = (perfis) => {
   fs.writeFileSync(perfilPath, JSON.stringify(perfis, null, 2), "utf-8");
 };
 
-// 🟢 Rota de cadastro
+// 🟢 Cadastro
 app.post("/cadastro", async (req, res) => {
   const { nome, email, senha } = req.body;
 
@@ -51,20 +72,20 @@ app.post("/cadastro", async (req, res) => {
   }
 
   const perfis = lerPerfis();
-  const existeUsuario = perfis.find((p) => p.email === email);
+  const existe = perfis.find((p) => p.email === email);
 
-  if (existeUsuario) {
+  if (existe) {
     return res.status(400).json({ message: "Email já cadastrado!" });
   }
 
-  const hashSenha = await bcrypt.hash(senha, 10);
+  const senhaHash = await bcrypt.hash(senha, 10);
 
   const novoPerfil = {
     id: uuidv4(),
     nome,
     email,
-    senha: hashSenha,
-    foto: "./images/default.jpg",
+    senha: senhaHash,
+    foto: "/uploads/default.jpg",
     cargo: "",
     resumo: "",
     localizacao: "",
@@ -78,21 +99,21 @@ app.post("/cadastro", async (req, res) => {
     idiomas: [],
     areaInteresses: [],
     dataNascimento: "",
-    criadoEm: new Date().toISOString(),
+    criadoEm: new Date().toISOString()
   };
 
   perfis.push(novoPerfil);
   salvarPerfis(perfis);
 
-  res.status(201).json({ message: "Usuário cadastrado com sucesso!", perfil: novoPerfil });
+  res.status(201).json({ message: "Usuário cadastrado!", perfil: novoPerfil });
 });
 
-// 🟢 Rota de login
+// 🟢 Login
 app.post("/login", async (req, res) => {
   const { email, senha } = req.body;
 
   if (!email || !senha) {
-    return res.status(400).json({ message: "Email e senha são obrigatórios!" });
+    return res.status(400).json({ message: "Email e senha obrigatórios!" });
   }
 
   const perfis = lerPerfis();
@@ -102,27 +123,53 @@ app.post("/login", async (req, res) => {
     return res.status(401).json({ message: "Email ou senha incorretos!" });
   }
 
-  const senhaValida = await bcrypt.compare(senha, usuario.senha);
-  if (!senhaValida) {
+  const senhaOk = await bcrypt.compare(senha, usuario.senha);
+  if (!senhaOk) {
     return res.status(401).json({ message: "Email ou senha incorretos!" });
   }
 
-  const { senha: _, ...perfilSemSenha } = usuario;
+  const { senha: _, ...userSemSenha } = usuario;
 
-  res.json({ message: "Login realizado com sucesso!", perfil: perfilSemSenha });
+  res.json({ message: "Login realizado!", perfil: userSemSenha });
 });
 
 // 🟣 Listar profissionais (sem senha)
 app.get("/profissionais", (req, res) => {
   const perfis = lerPerfis();
-  const semSenhas = perfis.map(({ senha, ...resto }) => resto);
-  res.json(semSenhas);
+  const semSenha = perfis.map(({ senha, ...resto }) => resto);
+  res.json(semSenha);
 });
 
-// 🟢 NOVO — Atualizar perfil existente
+// 🟣 Atualizar perfil
 app.put("/perfil/:id", (req, res) => {
   const { id } = req.params;
-  const novosDados = req.body;
+  const novos = req.body;
+
+  const perfis = lerPerfis();
+  const index = perfis.findIndex((p) => p.id === id);
+
+  if (index === -1)
+    return res.status(404).json({ message: "Usuário não encontrado!" });
+
+  // Mantém senha antiga
+  const senhaAntiga = perfis[index].senha;
+
+  perfis[index] = { ...perfis[index], ...novos, senha: senhaAntiga };
+
+  salvarPerfis(perfis);
+
+  const { senha, ...perfilAtualizado } = perfis[index];
+
+  res.json({ message: "Perfil atualizado!", perfil: perfilAtualizado });
+});
+
+// 🟣 UPLOAD DE FOTO — Atualiza perfil automaticamente
+app.post("/upload/:id", upload.single("foto"), (req, res) => {
+  const { id } = req.params;
+
+  if (!req.file) {
+    return res.status(400).json({ message: "Nenhuma foto enviada!" });
+  }
 
   const perfis = lerPerfis();
   const index = perfis.findIndex((p) => p.id === id);
@@ -131,21 +178,21 @@ app.put("/perfil/:id", (req, res) => {
     return res.status(404).json({ message: "Usuário não encontrado!" });
   }
 
-  // Mantém a senha original
-  const senhaAntiga = perfis[index].senha;
+  // Caminho acessível via frontend
+  const caminhoFoto = `/uploads/${req.file.filename}`;
 
-  // Atualiza os dados
-  perfis[index] = { ...perfis[index], ...novosDados, senha: senhaAntiga };
-
+  perfis[index].foto = caminhoFoto;
   salvarPerfis(perfis);
 
-  const { senha, ...perfilAtualizado } = perfis[index];
-  res.json({ message: "Perfil atualizado com sucesso!", perfil: perfilAtualizado });
+  res.json({
+    message: "Foto enviada com sucesso!",
+    foto: caminhoFoto
+  });
 });
 
-// 🟣 Servir arquivos estáticos da pasta "data"
+// Servir arquivos do /data
 app.use("/data", express.static(path.join(__dirname, "data")));
 
 app.listen(PORT, () =>
-  console.log(`✅ Servidor rodando em http://localhost:${PORT}`)
+  console.log(`🚀 Servidor rodando em http://localhost:${PORT}`)
 );
