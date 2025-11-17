@@ -1,184 +1,200 @@
 import React from "react";
-import { 
-  FaRobot, FaLaptopCode, FaGlobe, FaBrain, FaScroll, 
-  FaCalendarAlt, FaGraduationCap, FaLightbulb, FaBriefcase 
-} from 'react-icons/fa';
-import { BsArrowRight } from 'react-icons/bs';
+import { Link } from "react-router-dom";
+import { ArrowRight, Rocket, BookOpen, Users, MessageCircle } from "lucide-react";
 
-const Home = () => {
-
-  // 🔵 Se essas variáveis estão no seu arquivo de estilos, deixe como estão:
-  const primaryAccent = "text-cyan-600 dark:text-cyan-400";
-  const buttonStyleTransparent = "border border-cyan-500 text-cyan-600 dark:text-cyan-300 dark:border-cyan-400";
-
-  const profissoes = [
-    { nome: "Curador de Inteligência Artificial", skills: ["Machine Learning", "Big Data"], icon: FaRobot, color: "text-red-500" },
-    { nome: "Designer de Experiências Imersivas (VR/AR)", skills: ["Realidade Virtual", "UX/UI"], icon: FaLaptopCode, color: "text-yellow-500" },
-    { nome: "Engenheiro de Sustentabilidade Digital", skills: ["IoT", "Soluções Sustentáveis"], icon: FaGlobe, color: "text-green-500" },
-  ];
-
-  const cursos = [
-    { nome: "Introdução à Inteligência Artificial", duracao: "4 semanas", icon: FaRobot },
-    { nome: "Design de Experiências Imersivas", duracao: "6 semanas", icon: FaLaptopCode },
-    { nome: "Sustentabilidade Digital Aplicada", duracao: "5 semanas", icon: FaGlobe },
-  ];
-
-  const eventos = [
-    { nome: "Webinar: Profissões do Futuro", data: "15/12/2025", icon: FaCalendarAlt },
-    { nome: "Feira de Networking em Tecnologia", data: "20/12/2025", icon: FaCalendarAlt },
-  ];
-
-  const primaryColor = "text-gray-800 dark:text-cyan-400"; 
-
+export default function Home() {
   return (
-    <div className="min-h-screen bg-light dark:bg-dark text-light dark:text-dark transition-colors duration-500">
+    <div className="w-full font-sans">
 
-      {/* 🌟 HEADER INSERIDA AQUI */}
-      <header className="py-20 md:py-32  border-gray-300 dark:border-gray-700  shadow-gray-200/50 dark:shadow-indigo-900/50">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-            <p className="text-md font-semibold mb-3 tracking-widest uppercase text-cyan-600 dark:text-cyan-400 flex justify-center items-center">
-                <FaLightbulb className="mr-2 text-xl" />
-                Onde o Conhecimento Encontra o Futuro
-            </p>
+      {/* ============================= HERO ============================= */}
+<section className="max-w-7xl mx-auto px-6 pt-24 pb-16 text-center flex flex-col items-center gap-6">
+  <h1 className="text-4xl md:text-6xl font-bold leading-tight ">
+    Construa sua jornada nas <br />
+    <span className="bg-clip-text text-cyan-600">
+      Profissões do Futuro
+    </span>
+  </h1>
 
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-5 leading-tight">
-                Prepare-se para as <span className={primaryAccent}>Profissões do Amanhã</span>.
-            </h1>
+  <p className="mt-4 md:mt-6 text-lg max-w-2xl">
+    Na !NomedaEmpresa!, você encontra cursos inovadores e trilhas de aprendizado que conectam
+    tecnologia, negócios e criatividade. Prepare-se para carreiras que transformam
+    o mundo e aceleram sua evolução profissional.
+  </p>
 
-            <p className="text-xl opacity-80 mb-10 max-w-3xl mx-auto text-gray-600"> 
-              Qualifique-se com cursos de ponta e encontre vagas nas áreas mais inovadoras: IA, VR/AR, e Sustentabilidade.
-            </p>
+  {/* CTA Button */}
+  <Link
+    to="/cursos"
+    className="inline-flex items-center gap-2 px-8 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-xl text-lg font-medium text-white transition shadow-md hover:shadow-cyan-400/50 mt-6"
+  >
+    Conhecer Cursos
+    <ArrowRight className="w-5 h-5" />
+  </Link>
+</section>
 
-            <div className="flex justify-center gap-6">
-                <a 
-                  href="/cursos" 
-                  className={`inline-flex items-center ${buttonStyleTransparent} py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out`}
-                >
-                    Explorar Cursos <BsArrowRight className="ml-2 text-xl" />
-                </a>
 
-                <a 
-                  href="/vagas" 
-                  className={`inline-flex items-center ${buttonStyleTransparent} py-3 px-8 rounded-full transition duration-300 ease-in-out`}
-                >
-                    Ver Vagas <FaBriefcase className="ml-2" />
-                </a>
+      {/* DIVISOR */}
+      <div className="w-full flex justify-center py-6">
+        <div className="w-3/4 border-b border-gray-300 dark:border-gray-700"></div>
+      </div>
+
+      {/* ============================= SOBRE ============================= */}
+      <section className="max-w-7xl mx-auto px-6 py-16 flex flex-col justify-center">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
+          <div className="md:w-1/2 flex justify-center">
+            <img
+              src="../src/assets/smart-desk.avif"
+              alt="Crescimento profissional"
+              className="rounded-2xl shadow-lg w-full object-cover"
+            />
+          </div>
+
+          <div className="md:w-1/2 flex flex-col gap-8">
+            <div className="flex items-start gap-4">
+              <Rocket className="w-10 h-10 text-cyan-600 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-semibold mb-1 text-cyan-600">Trilhas de Aprendizado</h3>
+                <p>
+                  Navegue por trilhas inovadoras que desenvolvem suas habilidades digitais e preparam você para o mercado do futuro.
+                </p>
+              </div>
             </div>
+
+            <div className="flex items-start gap-4">
+              <BookOpen className="w-10 h-10 text-cyan-600 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-semibold mb-1 text-cyan-600">Cursos Atualizados</h3>
+                <p>
+                  Conteúdos sempre revisados e alinhados às demandas do mercado, com foco em tecnologia, inovação e negócios.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <Users className="w-10 h-10 text-cyan-600 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-semibold mb-1 text-cyan-600">Comunidade Colaborativa</h3>
+                <p>
+                  Conecte-se com outros profissionais, participe de projetos reais e construa sua rede de contatos estratégicos.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <MessageCircle className="w-10 h-10 text-cyan-600 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-semibold mb-1 text-cyan-600">Vagas e Oportunidades</h3>
+                <p>
+                  Fique por dentro das vagas mais recentes, estágios e programas de desenvolvimento para impulsionar sua carreira.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </header>
-      {/* 🌟 FIM DA HEADER */}
+      </section>
 
-      {/* 🔽 Conteúdo original continua igual */}
-      <main className="max-w-7xl mx-auto px-6 py-20">
+      {/* DIVISOR */}
+      <div className="w-full flex justify-center py-6">
+        <div className="w-3/4 border-b border-gray-300 dark:border-gray-700"></div>
+      </div>
 
-        {/* Profissões em Destaque 🌟 */}
-        <section className="mb-24">
-          <h2 className={`text-4xl font-extrabold mb-12 text-center ${primaryColor}`}>
-             Profissões em Destaque
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {profissoes.map((profissao, index) => (
-              <div
-                key={index}
-                className="p-8 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-xl dark:shadow-inner dark:shadow-cyan-900/40 hover:shadow-2xl hover:border-cyan-500 dark:hover:border-cyan-600 transform hover:-translate-y-1 transition duration-300 cursor-pointer"
-              >
-                <div className={`text-4xl mb-4 ${profissao.color}`}>
-                    <profissao.icon />
-                </div>
+      {/* ============================= TRILHAS ============================= */}
+      <section className="max-w-6xl mx-auto px-6 py-16 flex flex-col justify-center">
+  <h2 className="text-3xl font-bold text-center mb-12 text-cyan-600">
+    Trilhas Conectadas ao Mercado
+  </h2>
 
-                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100">{profissao.nome}</h3>
+  <div className="grid md:grid-cols-3 gap-10">
+    {/* Card 1 */}
+    <div className="p-8 rounded-2xl bg-slate-800 border border-cyan-600/30 backdrop-blur-lg shadow-lg hover:shadow-cyan-600/50 transition">
+      <Rocket className="w-10 h-10 text-cyan-600 mb-4" />
+      <h3 className="text-xl font-bold mb-2 text-white">Tecnologias Emergentes</h3>
+      <p className="text-white">
+        Domine IA, Machine Learning, Cloud, Data Science e prepare-se para
+        liderar a próxima geração de inovação.
+      </p>
+    </div>
 
-                <p className="text-sm font-semibold mb-3 text-gray-600 dark:text-gray-400">
-                  Habilidades Essenciais:
-                </p>
+    {/* Card 2 */}
+    <div className="p-8 rounded-2xl bg-slate-800 border border-cyan-600/30 backdrop-blur-lg shadow-lg hover:shadow-cyan-600/50 transition">
+      <BookOpen className="w-10 h-10 text-cyan-600 mb-4" />
+      <h3 className="text-xl font-bold mb-2 text-white">Desenvolvimento e Engenharia</h3>
+      <p className="text-white">
+        Aprenda programação, frameworks modernos, práticas de DevOps e engenharia
+        de software com foco no mercado.
+      </p>
+    </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {profissao.skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-cyan-100 dark:bg-gray-700 text-cyan-800 dark:text-cyan-300 rounded-full text-xs font-medium border border-cyan-300 dark:border-cyan-600 transition"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+    {/* Card 3 */}
+    <div className="p-8 rounded-2xl bg-slate-800 border border-cyan-600/30 backdrop-blur-lg shadow-lg hover:shadow-cyan-600/50 transition">
+      <Users className="w-10 h-10 text-cyan-600 mb-4" />
+      <h3 className="text-xl font-bold mb-2 text-white">Carreira & Networking</h3>
+      <p className="text-white">
+        Construa seu portfólio, participe de projetos reais e conecte-se com
+        especialistas que já estão transformando o futuro.
+      </p>
+    </div>
+  </div>
+</section>
 
-              </div>
-            ))}
+
+      {/* DIVISOR */}
+      <div className="w-full flex justify-center py-6">
+        <div className="w-3/4 border-b border-gray-300 dark:border-gray-700"></div>
+      </div>
+
+      {/* ============================= DEPOIMENTOS ============================= */}
+      <section className="max-w-6xl mx-auto px-6 py-16 flex flex-col justify-center">
+        <h2 className="text-3xl font-bold text-center mb-12 text-cyan-600">
+          Histórias de Transformação
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-10">
+          <div className="p-8 rounded-2xl bg-white/10  border border-cyan-600/20 hover:border-cyan-600/40 transition backdrop-blur-lg shadow-lg">
+            <p className="leading-relaxed mb-6">
+              “As trilhas de IA me ajudaram a conquistar minha primeira vaga como
+              Analista de Dados. O conteúdo é prático, direto e totalmente alinhado
+              às necessidades do mercado.”
+            </p>
+            <span className="font-bold">— Ana Martins</span>
           </div>
 
-          <div className="text-center mt-12">
-            <a 
-                href="/carreiras" 
-                className="inline-flex items-center bg-cyan-500 text-white dark:bg-cyan-700 dark:text-gray-100 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-cyan-600 dark:hover:bg-cyan-600 transform hover:scale-105 transition duration-300 ease-in-out"
-            >
-                Explore Todas as Profissões <BsArrowRight className="ml-2 text-xl" />
-            </a>
+          <div className="p-8 rounded-2xl bg-white/10   border border-cyan-600/20 hover:border-cyan-600/40 transition backdrop-blur-lg shadow-lg">
+            <p className="leading-relaxed mb-6">
+              “A comunidade colaborativa me permitiu participar de projetos reais
+              que elevaram meu portfólio. Finalmente sinto que estou construindo
+              minha carreira no futuro.”
+            </p>
+            <span className="font-bold">— Gabriel Rocha</span>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Cursos */}
-        <section className={`mb-24 bg-gray-50 dark:bg-gray-900 p-10 rounded-3xl shadow-lg dark:shadow-inner dark:shadow-blue-900/30`}>
-          <h2 className={`text-4xl font-extrabold mb-12 text-center ${primaryColor}`}>
-            <FaGraduationCap className="inline-block mr-3 text-3xl align-top" />
-             Cursos para o Amanhã
-          </h2>
+      {/* DIVISOR */}
+      <div className="w-full flex justify-center py-6">
+        <div className="w-3/4 border-b border-gray-300 dark:border-gray-700"></div>
+      </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {cursos.map((curso, index) => (
-              <div
-                key={index}
-                className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-600 transform hover:scale-[1.02] transition duration-300"
-              >
-                <div className="flex items-center mb-3">
-                    <curso.icon className="text-3xl text-blue-600 dark:text-blue-400 mr-3" />
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">{curso.nome}</h3>
-                </div>
+      {/* ============================= CTA FINAL ============================= */}
+<section className="max-w-4xl mx-auto px-6 py-16 text-center flex flex-col items-center justify-center gap-6">
+  <h2 className="text-3xl font-bold text-cyan-600">
+    Prepare-se para liderar o amanhã
+  </h2>
 
-                <p className="text-gray-600 dark:text-gray-400">
-                    <span className="font-semibold">Duração:</span> {curso.duracao}
-                </p>
+  <p className="text-lg max-w-xl">
+    Comece hoje sua especialização, evolua suas habilidades e conecte-se
+    a oportunidades que só os profissionais do futuro terão acesso.
+  </p>
 
-                <button className="mt-4 w-full py-2 text-sm font-semibold bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
-                    Ver Detalhes
-                </button>
+  <Link
+    to="/cadastro"
+    className="inline-flex text-white items-center gap-2 px-8 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-lg text-lg font-medium transition"
+  >
+    Criar Minha Conta
+    <ArrowRight className="w-5 h-5" />
+  </Link>
+</section>
 
-              </div>
-            ))}
-          </div>
-        </section>
 
-        {/* Eventos */}
-        <section>
-          <h2 className={`text-4xl font-extrabold mb-12 text-center ${primaryColor}`}>
-             <FaCalendarAlt className="inline-block mr-3 text-3xl align-top" />
-             Próximos Eventos e Networking
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {eventos.map((evento, index) => (
-              <div
-                key={index}
-                className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border-l-4 border-cyan-500 dark:border-teal-400 hover:shadow-xl transition duration-300"
-              >
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100">{evento.nome}</h3>
-
-                <p className="text-gray-600 dark:text-gray-400">
-                    <span className="font-semibold">Data:</span> {evento.data}
-                </p>
-
-                <button className="mt-4 py-2 px-4 text-sm font-semibold border border-cyan-500 text-cyan-500 rounded-lg hover:bg-cyan-500 hover:text-white transition">
-                    Inscrever-se
-                </button>
-
-              </div>
-            ))}
-          </div>
-        </section>
-
-      </main>
     </div>
   );
-};
-
-export default Home;
+}

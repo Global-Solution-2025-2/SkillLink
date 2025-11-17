@@ -1,157 +1,154 @@
 import React from "react";
+import {
+  FaLaptopCode,
+  FaLeaf,
+  FaGlobeAmericas,
+  FaNewspaper,
+  FaBolt,
+  FaCode,
+  FaUsers,
+  FaTools,
+  FaRegLightbulb,
+  FaHandsHelping,
+} from "react-icons/fa";
 
 export default function PortalFuturoTrabalho() {
+  const noticiaPrincipal = {
+    titulo: "Smart Desk promete revolucionar o futuro do trabalho híbrido",
+    resumo:
+      "Mesa inteligente monitora postura, luz, ruído e conforto para aumentar produtividade e bem-estar.",
+    conteudo:
+      "A Smart Desk – Estação de Trabalho Inteligente – chega como uma solução inovadora para ambientes híbridos, coworkings e profissionais que buscam mais ergonomia e eficiência. Com sensores de luminosidade, ruído, postura e temperatura, a mesa envia dados ao FIWARE e emite alertas automáticos de ergonomia, cansaço visual e distrações. O sistema também gera um Índice de Produtividade do Ambiente (IPA), que avalia a qualidade do espaço de trabalho em tempo real.",
+  };
+
+  const tecnologiasAtualidades = [
+  {
+    id: 1,
+    titulo: "Inteligência Artificial",
+    resumo: "Modelos de IA estão transformando setores como saúde, finanças e educação.",
+    icone: FaLaptopCode,
+  },
+  {
+    id: 2,
+    titulo: "Computação em Nuvem",
+    resumo: "Serviços em nuvem evoluem para serem mais seguros, rápidos e colaborativos.",
+    icone: FaCode,
+  },
+  {
+    id: 3,
+    titulo: "Sustentabilidade & ESG",
+    resumo: "Empresas adotam práticas verdes, impulsionando inovação e tecnologia limpa.",
+    icone: FaLeaf,
+  },
+  {
+    id: 4,
+    titulo: "Metaverso e XR",
+    resumo: "O crescimento das experiências digitais imersivas vem transformando a forma como interagimos com a tecnologia",
+    icone: FaGlobeAmericas,
+  },
+];
+
 
   const artigos = [
     {
       id: 1,
       titulo: "Habilidades Essenciais até 2030",
-      resumo: "Descubra as competências que o mercado vai demandar nos próximos anos e como se preparar.",
+      resumo:
+        "Descubra as competências que o mercado vai demandar nos próximos anos.",
     },
     {
       id: 2,
       titulo: "IA e Inclusão Digital",
-      resumo: "Como a tecnologia pode gerar oportunidades para todos, promovendo inclusão no mercado.",
+      resumo:
+        "Como a tecnologia pode gerar oportunidades para todos.",
     },
     {
       id: 3,
-      titulo: "Profissões Emergentes",
-      resumo: "Quais carreiras estarão em alta nos próximos anos e como se antecipar às mudanças.",
-    },
-    {
-      id: 4,
-      titulo: "Soft Skills que Valem Ouro na Era da IA",
-      resumo: "Conheça as habilidades humanas — como criatividade e pensamento crítico — que a tecnologia não substitui.",
-    },
-  ];
-
-  const noticias = [
-    { id: 1, titulo: "Mercado de TI cresce 20% em 2025", fonte: "TechNews" },
-    { id: 2, titulo: "Startups verdes atraem investimentos", fonte: "EcoTrends" },
-    { id: 3, titulo: "Trabalho remoto: novas regulamentações", fonte: "GlobalWork" },
-  ];
-
-  const dicas = [
-    { id: 1, titulo: "Aprenda a programar com Python", descricao: "A linguagem mais usada para IA e automação." },
-    { id: 2, titulo: "Participe de hackathons", descricao: "Networking e experiência prática garantida." },
-    { id: 3, titulo: "Atualize seu LinkedIn", descricao: "Mantenha seu perfil alinhado com as tendências." },
-    { id: 4, titulo: "Domine as Ferramentas de Colaboração", descricao: "Aprenda a usar plataformas como Notion, Slack e Miro para trabalhar em equipes híbridas." },
-  ];
-
-  const profissoesDestaque = [
-    {
-      id: 1,
-      titulo: "Engenheiro de Prompt",
-      descricao: "Elabora comandos para IAs, maximizando performance e criatividade.",
-      area: "Inteligência Artificial",
-    },
-    {
-      id: 2,
-      titulo: "Designer de UX de Metaverso",
-      descricao: "Cria ambientes e interações imersivas e intuitivas em realidades virtuais.",
-      area: "Realidade Estendida",
-    },
-    {
-      id: 3,
-      titulo: "Consultor de Sustentabilidade (ESG)",
-      descricao: "Orienta empresas na adoção de práticas ambientais, sociais e de governança.",
-      area: "Economia Verde",
+      titulo: "Soft Skills na Era da IA",
+      resumo:
+        "Habilidades humanas como criatividade e pensamento crítico continuam em alta.",
     },
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 pt-28 pb-20 space-y-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 font-sans">
 
-      {/* ===================== BANNER PRINCIPAL ===================== */}
-      <section className="text-center mt-auto mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
-          Portal do Futuro do Trabalho
-        </h1>
-        <p className="mt-4 text-gray-600 dark:text-gray-300 text-lg">
-          Descubra tendências, novas profissões e habilidades essenciais para o mercado do futuro
-        </p>
-        <button className="mt-6 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition">
-          Explorar Tendências
-        </button>
-      </section>
-
-      {/* ===================== PROFISSÕES EM DESTAQUE - NOVO! ===================== */}
-      <section>
-        <h2 className="text-2xl font-bold mb-6 flex items-center">
-          ✨ Oportunidades em Destaque: Profissões do Amanhã
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {profissoesDestaque.map((p) => (
-            <div key={p.id} className="bg-white/10 dark:bg-gray-900/40 backdrop-blur-xl p-6 rounded-2xl border border-indigo-300/40 dark:border-indigo-700/40 shadow-xl hover:shadow-indigo-500/40 transition">
-              <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider">{p.area}</span>
-              <h3 className="text-xl font-bold mt-2">{p.titulo}</h3>
-              <p className="text-gray-400 dark:text-gray-300 mt-3 text-sm">{p.descricao}</p>
-              <button className="mt-4 text-indigo-400 hover:text-indigo-300 font-semibold text-sm">
-                Saiba mais →
-              </button>
-            </div>
-          ))}
+      {/* ===================== NOTÍCIA PRINCIPAL ===================== */}
+      <section className="group">
+        <div className="relative overflow-hidden bg-white dark:bg-slate-800 p-8 md:p-12 rounded-3xl shadow-2xl shadow-cyan-500/10 dark:shadow-slate-700/30 border-t-4 border-cyan-500 transition duration-300 transform group-hover:scale-[1.01]">
+          <div className="absolute inset-0 opacity-15 dark:opacity-5 bg-[url('../src/assets/smart-desk.avif')] bg-cover bg-center"></div>
+          <div className="relative z-10 text-left">
+            <span className="inline-block px-3 py-1 mb-3 text-sm font-semibold text-white bg-cyan-600 rounded-full">
+              DESTAQUE DA SEMANA
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-gray-900 dark:text-white leading-snug">
+              {noticiaPrincipal.titulo}
+            </h2>
+            <p className="text-gray-700 dark:text-gray-300 text-lg mb-4">
+              {noticiaPrincipal.resumo}
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-4xl">
+              {noticiaPrincipal.conteudo}
+            </p>
+            <button className="mt-6 inline-flex items-center px-8 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold rounded-xl transition shadow-lg hover:shadow-cyan-500/50">
+              Ler matéria completa →
+            </button>
+          </div>
         </div>
       </section>
 
-      {/* --- SEPARADOR --- */}
-      <hr className="border-gray-200 dark:border-gray-700" />
+      {/* ===================== TECNOLOGIAS EM DESTAQUE ===================== */}
+      <section>
+        <h2 className="text-3xl font-bold mb-10 text-cyan-600 text-center flex items-center justify-center gap-3">
+          <FaRegLightbulb className="text-yellow-500" />
+          Tendências Tecnológicas
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {tecnologiasAtualidades.map((t) => {
+            const Icon = t.icone;
+            return (
+              <div
+                key={t.id}
+                className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-gray-200 dark:border-slate-700 shadow-md hover:shadow-cyan-400/20 transition duration-300 transform hover:-translate-y-1 group"
+              >
+                <div className="flex items-center gap-4 mb-3">
+                  <Icon className="w-8 h-8 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition" />
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-cyan-600 transition">
+                    {t.titulo}
+                  </h3>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm leading-relaxed">
+                  {t.resumo}
+                </p>
+                <button className="mt-4 text-sm font-semibold text-cyan-600 hover:text-cyan-500">
+                  Ver detalhe →
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       {/* ===================== ARTIGOS ===================== */}
       <section>
-        <h2 className="text-2xl font-bold mb-6">Artigos Recentes</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"> {/* Mudança para 4 colunas */}
+        <h2 className="text-3xl font-bold mb-10 text-cyan-600 text-center flex items-center justify-center gap-3">
+          <FaHandsHelping className="text-purple-500" />
+          Desenvolvimento & Soft Skills
+        </h2>
+        <div className="grid md:grid-cols-3 gap-6">
           {artigos.map((a) => (
-            <div key={a.id} className="bg-white/10 dark:bg-gray-900/40 backdrop-blur-xl p-6 rounded-2xl border border-gray-300/20 dark:border-gray-700/20 shadow-lg hover:shadow-indigo-500/20 transition flex flex-col justify-between">
-              <h3 className="text-lg font-bold">{a.titulo}</h3>
-              <p className="text-gray-400 dark:text-gray-300 mt-3 text-sm">{a.resumo}</p>
-              <button className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-500 transition text-sm">
-                Ler mais
+            <div
+              key={a.id}
+              className="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-cyan-600 shadow-sm hover:shadow-cyan-400/20 transition duration-300"
+            >
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{a.titulo}</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm mt-3">{a.resumo}</p>
+              <button className="mt-5 text-sm font-semibold text-cyan-600 hover:text-cyan-500 transition">
+                Ler artigo completo →
               </button>
             </div>
           ))}
         </div>
-      </section>
-
-      {/* --- SEPARADOR --- */}
-      <hr className="border-gray-200 dark:border-gray-700" />
-
-      {/* ===================== NOTÍCIAS ===================== */}
-      <section>
-        <h2 className="text-2xl font-bold mb-6">Notícias & Tendências</h2>
-        <div className="grid md:grid-cols-3 gap-4">
-          {noticias.map((n) => (
-            <div key={n.id} className="bg-white/10 dark:bg-gray-900/40 p-4 rounded-xl border border-gray-300/20 dark:border-gray-700/20 hover:shadow-lg transition">
-              <h3 className="font-semibold">{n.titulo}</h3>
-              <p className="text-xs text-gray-400 mt-1">{n.fonte}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* --- SEPARADOR --- */}
-      <hr className="border-gray-200 dark:border-gray-700" />
-
-      {/* ===================== DICAS ===================== */}
-      <section>
-        <h2 className="text-2xl font-bold mb-6">Dicas Rápidas</h2>
-        <div className="grid md:grid-cols-4 gap-4"> {/* Mudança para 4 colunas */}
-          {dicas.map((d) => (
-            <div key={d.id} className="bg-white/10 dark:bg-gray-900/40 p-4 rounded-xl border border-gray-300/20 dark:border-gray-700/20 hover:shadow-lg transition">
-              <h3 className="font-semibold">{d.titulo}</h3>
-              <p className="text-sm text-gray-400 mt-1">{d.descricao}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ===================== RECURSOS ===================== */}
-      <section className="text-center mt-16">
-        <h2 className="text-2xl font-bold mb-4">Recursos Recomendados</h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-6">Explore cursos, bootcamps e materiais para se manter atualizado.</p>
-        <button className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition">
-          Ver Recursos
-        </button>
       </section>
 
     </div>

@@ -7,7 +7,6 @@ import bcrypt from "bcryptjs";
 import { v4 as uuidv4 } from "uuid";
 import multer from "multer";
 
-// 🧭 Corrigir __dirname em ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -17,13 +16,11 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
-// 📂 Criar pasta uploads se não existir
 const uploadsPath = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadsPath)) {
   fs.mkdirSync(uploadsPath, { recursive: true });
 }
 
-// ⚙️ Configurar Multer para salvar fotos dentro de /uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, uploadsPath);
@@ -36,7 +33,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// 📂 Servir fotos estáticas
 app.use("/uploads", express.static(uploadsPath));
 
 // 🗂️ Caminho do arquivo perfil.json
@@ -68,14 +64,14 @@ app.post("/cadastro", async (req, res) => {
   const { nome, email, senha } = req.body;
 
   if (!nome || !email || !senha) {
-    return res.status(400).json({ message: "Todos os campos são obrigatórios!" });
+    return res.status(400).json({ message: "Todos os campos são obrigatórios" });
   }
 
   const perfis = lerPerfis();
   const existe = perfis.find((p) => p.email === email);
 
   if (existe) {
-    return res.status(400).json({ message: "Email já cadastrado!" });
+    return res.status(400).json({ message: "Email já cadastrado" });
   }
 
   const senhaHash = await bcrypt.hash(senha, 10);
@@ -105,7 +101,7 @@ app.post("/cadastro", async (req, res) => {
   perfis.push(novoPerfil);
   salvarPerfis(perfis);
 
-  res.status(201).json({ message: "Usuário cadastrado!", perfil: novoPerfil });
+  res.status(201).json({ message: "Usuário cadastrado", perfil: novoPerfil });
 });
 
 // 🟢 Login
@@ -113,24 +109,24 @@ app.post("/login", async (req, res) => {
   const { email, senha } = req.body;
 
   if (!email || !senha) {
-    return res.status(400).json({ message: "Email e senha obrigatórios!" });
+    return res.status(400).json({ message: "Email e senha obrigatórios" });
   }
 
   const perfis = lerPerfis();
   const usuario = perfis.find((p) => p.email === email);
 
   if (!usuario) {
-    return res.status(401).json({ message: "Email ou senha incorretos!" });
+    return res.status(401).json({ message: "Email ou senha incorretos" });
   }
 
   const senhaOk = await bcrypt.compare(senha, usuario.senha);
   if (!senhaOk) {
-    return res.status(401).json({ message: "Email ou senha incorretos!" });
+    return res.status(401).json({ message: "Email ou senha incorretos" });
   }
 
   const { senha: _, ...userSemSenha } = usuario;
 
-  res.json({ message: "Login realizado!", perfil: userSemSenha });
+  res.json({ message: "Login realizado", perfil: userSemSenha });
 });
 
 // 🟣 Listar profissionais (sem senha)
@@ -149,7 +145,7 @@ app.put("/perfil/:id", (req, res) => {
   const index = perfis.findIndex((p) => p.id === id);
 
   if (index === -1)
-    return res.status(404).json({ message: "Usuário não encontrado!" });
+    return res.status(404).json({ message: "Usuário não encontrado" });
 
   // Mantém senha antiga
   const senhaAntiga = perfis[index].senha;
@@ -160,7 +156,7 @@ app.put("/perfil/:id", (req, res) => {
 
   const { senha, ...perfilAtualizado } = perfis[index];
 
-  res.json({ message: "Perfil atualizado!", perfil: perfilAtualizado });
+  res.json({ message: "Perfil atualizado", perfil: perfilAtualizado });
 });
 
 // 🟣 UPLOAD DE FOTO — Atualiza perfil automaticamente
@@ -168,14 +164,14 @@ app.post("/upload/:id", upload.single("foto"), (req, res) => {
   const { id } = req.params;
 
   if (!req.file) {
-    return res.status(400).json({ message: "Nenhuma foto enviada!" });
+    return res.status(400).json({ message: "Nenhuma foto enviada" });
   }
 
   const perfis = lerPerfis();
   const index = perfis.findIndex((p) => p.id === id);
 
   if (index === -1) {
-    return res.status(404).json({ message: "Usuário não encontrado!" });
+    return res.status(404).json({ message: "Usuário não encontrado" });
   }
 
   // Caminho acessível via frontend
@@ -185,7 +181,7 @@ app.post("/upload/:id", upload.single("foto"), (req, res) => {
   salvarPerfis(perfis);
 
   res.json({
-    message: "Foto enviada com sucesso!",
+    message: "Foto enviada com sucesso",
     foto: caminhoFoto
   });
 });

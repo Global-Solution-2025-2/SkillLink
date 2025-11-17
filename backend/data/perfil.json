@@ -1,25 +1,40 @@
 [
   {
     "id": "a2fcd3e4-0d91-4c3e-a7f6-dcc6f9e5eabb",
-    "nome": "Rayssa Aquino",
+    "nome": "Rayssa",
     "email": "rayssa1@email.com",
     "senha": "$2b$10$0UhMZVRDBYjM/su/z.R/tu6k8p2sBBq0NqljR6uu4ECOEF1JL3Wqq",
-    "foto": "/uploads/foto_a3c593a3-9d3d-4c8b-8c01-8a25ab7a3436.png",
-    "cargo": "Especialista em ia ",
-    "resumo": "",
+    "foto": "blob:http://localhost:5173/f5fba39b-d658-47b5-b3f9-c451a115bf76",
+    "cargo": "Engenheira de Software",
+    "resumo": "Tenho experiência em projetos de desenvolvimento web, explorando tanto a lógica quanto o design funcional das aplicações. Meu foco atual é me aprofundar no back-end, criando sistemas que unam eficiência, propósito e boas experiências para os usuários.",
     "localizacao": "São Paulo",
-    "area": "tech",
-    "habilidadesTecnicas": [],
+    "area": "Tecnologia",
+    "habilidadesTecnicas": [
+      "Desenvolvimento Front-end"
+    ],
     "softSkills": [
-      "python",
-      "java"
+      "Trabalho em grupo"
     ],
     "experiencias": [],
-    "formacao": [],
-    "projetos": [],
-    "certificacoes": [],
-    "idiomas": [],
-    "areaInteresses": [],
+    "formacao": [
+      "FIAP"
+    ],
+    "projetos": [
+      "SafeRain",
+      "Futdelas",
+      "PomoBunny"
+    ],
+    "certificacoes": [
+      "Front end",
+      "Python"
+    ],
+    "idiomas": [
+      "Inglês",
+      "Espanhol"
+    ],
+    "areaInteresses": [
+      "Backend"
+    ],
     "dataNascimento": "2005-09-05",
     "criadoEm": "2025-11-13T02:56:29.386Z"
   },

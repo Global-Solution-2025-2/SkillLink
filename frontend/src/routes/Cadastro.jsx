@@ -25,9 +25,9 @@ export default function Cadastro() {
   };
 
   return (
-    <section className="flex items-center justify-center min-h-screen bg-light dark:bg-dark transition-colors duration-300 pt-20">
-      <div className="bg-white dark:bg-slate-800 shadow-lg rounded-2xl p-8 w-full max-w-md border border-slate-200 dark:border-slate-700">
-        <h2 className="text-3xl font-bold text-center mb-6 text-[#00B894] dark:text-[#00B894]">
+    <section className="flex items-center justify-center min-h-screen  transition-colors duration-300 pt-20">
+      <div className="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-8 w-full max-w-md border border-gray-200 dark:border-gray-700">
+        <h2 className="text-3xl font-bold text-center mb-6 text-cyan-600 dark:text-cyan-400">
           Cadastro
         </h2>
 
@@ -37,7 +37,7 @@ export default function Cadastro() {
             placeholder="Nome completo"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            className="p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#00B894]"
+            className="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition"
             required
           />
 
@@ -46,7 +46,7 @@ export default function Cadastro() {
             placeholder="E-mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#00B894]"
+            className="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition"
             required
           />
 
@@ -57,24 +57,26 @@ export default function Cadastro() {
             onChange={(e) => setSenha(e.target.value)}
             required
             autoComplete="new-password"
-            className="p-3 rounded-lg border border-gray-300 dark:border-slate-600 bg-gray-50 dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#00B894]"
+            className="p-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition"
           />
 
           <button
             type="submit"
-            className="mt-4 bg-[#00B894] text-white font-semibold py-3 rounded-lg hover:bg-[#009874] transition-colors"
+            className="mt-4 bg-cyan-600 dark:bg-cyan-500 text-white font-semibold py-3 rounded-lg hover:bg-cyan-700 dark:hover:bg-cyan-600 transition-colors"
           >
             Cadastrar
           </button>
         </form>
 
-        {mensagem && <p className="mt-4 text-center text-green-600">{mensagem}</p>}
+        {mensagem && (
+          <p className="mt-4 text-center text-cyan-600 dark:text-cyan-400">{mensagem}</p>
+        )}
 
         <p className="text-center text-sm text-gray-700 dark:text-gray-300 mt-6">
           Já tem uma conta?{" "}
           <span
             onClick={() => navigate("/login")}
-            className="text-[#00B894] font-semibold cursor-pointer hover:underline"
+            className="text-cyan-600 dark:text-cyan-400 font-semibold cursor-pointer hover:underline"
           >
             Faça login
           </span>
