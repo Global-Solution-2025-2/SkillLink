@@ -1,11 +1,11 @@
 [
   {
     "id": "a2fcd3e4-0d91-4c3e-a7f6-dcc6f9e5eabb",
-    "nome": "Rayssa",
+    "nome": "Rayssa Aquino",
     "email": "rayssa1@email.com",
     "senha": "$2b$10$0UhMZVRDBYjM/su/z.R/tu6k8p2sBBq0NqljR6uu4ECOEF1JL3Wqq",
-    "foto": "blob:http://localhost:5173/f5fba39b-d658-47b5-b3f9-c451a115bf76",
-    "cargo": "Engenheira de Software",
+    "foto": "http://localhost:5000/uploads/foto_abf97562-f82a-4343-92f6-e438e7816a68.png",
+    "cargo": "Professora",
     "resumo": "Tenho experiência em projetos de desenvolvimento web, explorando tanto a lógica quanto o design funcional das aplicações. Meu foco atual é me aprofundar no back-end, criando sistemas que unam eficiência, propósito e boas experiências para os usuários.",
     "localizacao": "São Paulo",
     "area": "Tecnologia",
@@ -22,7 +22,8 @@
     "projetos": [
       "SafeRain",
       "Futdelas",
-      "PomoBunny"
+      "PomoBunny",
+      "SkillLink"
     ],
     "certificacoes": [
       "Front end",
@@ -36,7 +37,69 @@
       "Backend"
     ],
     "dataNascimento": "2005-09-05",
-    "criadoEm": "2025-11-13T02:56:29.386Z"
+    "criadoEm": "2025-11-13T02:56:29.386Z",
+    "cursos": [
+      {
+        "id": "3-0",
+        "nome": "Introdução a Neurotecnologia",
+        "level": "Iniciante",
+        "horas": "30h",
+        "carreiraId": 3,
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "icon": "🧠",
+        "progresso": 100
+      },
+      {
+        "id": "2-1",
+        "nome": "IA para Chatbots",
+        "level": "Intermediário",
+        "horas": "50h",
+        "carreiraId": 2,
+        "carreira": "Desenhista de Personalidades de IA",
+        "icon": "🎭",
+        "progresso": 100
+      },
+      {
+        "id": "1-0",
+        "nome": "Fundamentos de IA",
+        "level": "Iniciante",
+        "horas": "40h",
+        "carreiraId": 1,
+        "carreira": "Curador de Inteligência Artificial",
+        "icon": "🤖",
+        "progresso": 56.6
+      },
+      {
+        "id": "1-1",
+        "nome": "Machine Learning Aplicado",
+        "level": "Intermediário",
+        "horas": "60h",
+        "carreiraId": 1,
+        "carreira": "Curador de Inteligência Artificial",
+        "icon": "🤖",
+        "progresso": 33.2
+      },
+      {
+        "id": "2-0",
+        "nome": "Design Conversacional",
+        "level": "Iniciante",
+        "horas": "35h",
+        "carreiraId": 2,
+        "carreira": "Desenhista de Personalidades de IA",
+        "icon": "🎭",
+        "progresso": 66.4
+      },
+      {
+        "id": "2-2",
+        "nome": "Estratégias Avançadas de Personalidade",
+        "level": "Avançado",
+        "horas": "45h",
+        "carreiraId": 2,
+        "carreira": "Desenhista de Personalidades de IA",
+        "icon": "🎭",
+        "progresso": 0
+      }
+    ]
   },
   {
     "id": "07630a5b-fb97-4e26-b6b6-f18143ef5b82",
@@ -58,5 +121,26 @@
     "areaInteresses": [],
     "dataNascimento": "",
     "criadoEm": "2025-11-13T03:02:24.372Z"
+  },
+  {
+    "id": "d7cf6556-b5aa-4e27-86f3-24f5b1591eaa",
+    "nome": "Ana julia",
+    "email": "ana@email.com",
+    "senha": "$2b$10$t96dbHkRhhiWRdKUVbbkBORLfTrZmSgN/wjYOD0pXxGCN/HpJtGj6",
+    "foto": "/uploads/default.jpg",
+    "cargo": "",
+    "resumo": "",
+    "localizacao": "",
+    "area": "",
+    "habilidadesTecnicas": [],
+    "softSkills": [],
+    "experiencias": [],
+    "formacao": [],
+    "projetos": [],
+    "certificacoes": [],
+    "idiomas": [],
+    "areaInteresses": [],
+    "dataNascimento": "",
+    "criadoEm": "2025-11-17T20:34:41.546Z"
   }
 ]

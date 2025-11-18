@@ -237,7 +237,7 @@ export default function CarreirasCarousel() {
 
   // Quiz section
   const quizSection = (
-  <div className="rounded-2xl shadow-lg py-6 px-8 text-center bg-cyan-800 border max-w-7xl mx-auto -mt-4 -mb-15">
+  <div className="rounded-2xl shadow-lg py-6 px-8 text-center bg-cyan-600 border max-w-7xl mx-auto -mt-4 -mb-15">
     {/* -mt-6 sobe a seção em relação ao conteúdo anterior */}
     <div className="mb-6 flex justify-center">
       <FaBrain className="text-5xl " />

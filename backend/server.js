@@ -32,7 +32,6 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-
 app.use("/uploads", express.static(uploadsPath));
 
 // 🗂️ Caminho do arquivo perfil.json
@@ -59,7 +58,7 @@ const salvarPerfis = (perfis) => {
   fs.writeFileSync(perfilPath, JSON.stringify(perfis, null, 2), "utf-8");
 };
 
-// 🟢 Cadastro
+// --------------------- CADASTRO ---------------------
 app.post("/cadastro", async (req, res) => {
   const { nome, email, senha } = req.body;
 
@@ -95,7 +94,8 @@ app.post("/cadastro", async (req, res) => {
     idiomas: [],
     areaInteresses: [],
     dataNascimento: "",
-    criadoEm: new Date().toISOString()
+    criadoEm: new Date().toISOString(),
+    cursos: [] // ✅ Array de cursos do usuário
   };
 
   perfis.push(novoPerfil);
@@ -104,7 +104,7 @@ app.post("/cadastro", async (req, res) => {
   res.status(201).json({ message: "Usuário cadastrado", perfil: novoPerfil });
 });
 
-// 🟢 Login
+// --------------------- LOGIN ---------------------
 app.post("/login", async (req, res) => {
   const { email, senha } = req.body;
 
@@ -129,14 +129,14 @@ app.post("/login", async (req, res) => {
   res.json({ message: "Login realizado", perfil: userSemSenha });
 });
 
-// 🟣 Listar profissionais (sem senha)
+// --------------------- LISTAR PROFISSIONAIS ---------------------
 app.get("/profissionais", (req, res) => {
   const perfis = lerPerfis();
   const semSenha = perfis.map(({ senha, ...resto }) => resto);
   res.json(semSenha);
 });
 
-// 🟣 Atualizar perfil
+// --------------------- ATUALIZAR PERFIL ---------------------
 app.put("/perfil/:id", (req, res) => {
   const { id } = req.params;
   const novos = req.body;
@@ -147,7 +147,6 @@ app.put("/perfil/:id", (req, res) => {
   if (index === -1)
     return res.status(404).json({ message: "Usuário não encontrado" });
 
-  // Mantém senha antiga
   const senhaAntiga = perfis[index].senha;
 
   perfis[index] = { ...perfis[index], ...novos, senha: senhaAntiga };
@@ -159,7 +158,7 @@ app.put("/perfil/:id", (req, res) => {
   res.json({ message: "Perfil atualizado", perfil: perfilAtualizado });
 });
 
-// 🟣 UPLOAD DE FOTO — Atualiza perfil automaticamente
+// --------------------- UPLOAD DE FOTO ---------------------
 app.post("/upload/:id", upload.single("foto"), (req, res) => {
   const { id } = req.params;
 
@@ -174,19 +173,66 @@ app.post("/upload/:id", upload.single("foto"), (req, res) => {
     return res.status(404).json({ message: "Usuário não encontrado" });
   }
 
-  // Caminho acessível via frontend
   const caminhoFoto = `/uploads/${req.file.filename}`;
-
   perfis[index].foto = caminhoFoto;
   salvarPerfis(perfis);
 
-  res.json({
-    message: "Foto enviada com sucesso",
-    foto: caminhoFoto
-  });
+  res.json({ message: "Foto enviada com sucesso", foto: caminhoFoto });
 });
 
-// Servir arquivos do /data
+// --------------------- CURSOS ---------------------
+// Retorna todos os cursos do usuário
+app.get("/cursos/usuario/:id", (req, res) => {
+  const usuarioId = req.params.id;
+  const perfis = lerPerfis();
+  const usuario = perfis.find((u) => u.id === usuarioId);
+  res.json(usuario?.cursos || []);
+});
+
+// Matricular usuário em curso
+app.post("/cursos/usuario/:id/matricular", (req, res) => {
+  const usuarioId = req.params.id;
+  const { curso } = req.body;
+
+  if (!curso || !curso.id) return res.status(400).json({ error: "Curso inválido" });
+
+  const perfis = lerPerfis();
+  const usuario = perfis.find((u) => u.id === usuarioId);
+
+  if (!usuario) return res.status(404).json({ error: "Usuário não encontrado" });
+
+  if (!usuario.cursos) usuario.cursos = [];
+
+  if (!usuario.cursos.find(c => c.id === curso.id)) {
+    usuario.cursos.push({ ...curso, progresso: 0 });
+    salvarPerfis(perfis);
+  }
+
+  res.json(usuario.cursos);
+});
+
+// Atualizar progresso de um curso do usuário
+app.put("/cursos/usuario/:id/atualizar", (req, res) => {
+  const usuarioId = req.params.id;
+  const { cursoId, progresso } = req.body;
+
+  if (!cursoId) return res.status(400).json({ error: "Curso inválido" });
+
+  const perfis = lerPerfis();
+  const usuario = perfis.find((u) => u.id === usuarioId);
+
+  if (!usuario) return res.status(404).json({ error: "Usuário não encontrado" });
+
+  const curso = usuario.cursos.find(c => c.id === cursoId);
+  if (!curso) return res.status(404).json({ error: "Curso não encontrado" });
+
+  curso.progresso = progresso;
+  salvarPerfis(perfis);
+
+  res.json(usuario.cursos);
+});
+
+// --------------------- SERVIR DATA ---------------------
 app.use("/data", express.static(path.join(__dirname, "data")));
 
 app.listen(PORT, () =>

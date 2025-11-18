@@ -6,7 +6,8 @@ export default function Header({ darkMode, setDarkMode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
 
-  const paginasSemHeader = ["/feed"];
+  const paginasSemHeader = ["/feed","/perfil","/area-de-estudos","/curso/:cursoId"];
+  
   if (paginasSemHeader.includes(pathname)) return null;
 
   return (

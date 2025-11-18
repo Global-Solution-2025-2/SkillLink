@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-  Edit, Save, PlusCircle, Trash2, Upload,
+  Edit, PlusCircle, Trash2, Upload,
   Briefcase, Calendar, MapPin, User, Mail,
-  Cake, Globe, Zap, Heart,
+  Cake, Globe, Zap, Heart, Save
 } from "lucide-react";
 
 /* ===========================================================
@@ -67,7 +67,14 @@ export default function Perfil() {
 
   /* Carregar usuário */
   useEffect(() => {
-    const logado = JSON.parse(localStorage.getItem("usuarioLogado"));
+    const logado = (() => {
+      try {
+        return JSON.parse(localStorage.getItem("usuarioLogado"));
+      } catch {
+        return null;
+      }
+    })();
+
     if (!logado) return navigate("/login");
     setUsuario(logado);
   }, [navigate]);
@@ -81,6 +88,7 @@ export default function Perfil() {
 
   const buildFotoURL = (f) => {
     if (!f) return "/images/default.jpg";
+    if (typeof f !== "string") return "/images/default.jpg";
     if (f.startsWith("http")) return f;
     if (f.startsWith("/")) return `http://localhost:5000${f}`;
     return `http://localhost:5000/${f}`;
@@ -89,11 +97,13 @@ export default function Perfil() {
   /* Salvar tudo */
   const handleSalvar = async (e) => {
     e.preventDefault();
+    if (!usuario) return;
     setCarregando(true);
 
     try {
-      let fotoUrl = usuario.foto;
+      let fotoUrl = usuario.foto || "";
 
+      // Se o usuário selecionou uma nova foto, faz upload
       if (novaFoto) {
         const fd = new FormData();
         fd.append("foto", novaFoto);
@@ -102,10 +112,19 @@ export default function Perfil() {
           `http://localhost:5000/upload/${usuario.id}`,
           { method: "POST", body: fd }
         );
+
+        if (!up.ok) {
+          const errText = await up.text();
+          throw new Error(`Erro no upload: ${errText}`);
+        }
+
         const upJson = await up.json();
-        fotoUrl = upJson.caminho || fotoUrl;
+
+        // CORREÇÃO: backend retorna { foto: "/uploads/..." }
+        fotoUrl = upJson.foto ? `http://localhost:5000${upJson.foto}` : fotoUrl;
       }
 
+      // Atualiza perfil no backend (PUT)
       const req = await fetch(
         `http://localhost:5000/perfil/${usuario.id}`,
         {
@@ -115,20 +134,30 @@ export default function Perfil() {
         }
       );
 
-      const json = await req.json();
-      const novoPerfil = json.perfil || json.usuario;
+      if (!req.ok) {
+        const errText = await req.text();
+        throw new Error(`Erro ao salvar perfil: ${errText}`);
+      }
 
-      localStorage.setItem(
-        "usuarioLogado",
-        JSON.stringify(novoPerfil)
-      );
+      const json = await req.json();
+
+      // GARANTE QUE A FOTO FICA CORRETA NO LOCALSTORAGE (independente do retorno do backend)
+      const novoPerfil = {
+        ...usuario,
+        ...json.perfil,
+        ...json.usuario,
+        foto: fotoUrl,
+      };
+
+      localStorage.setItem("usuarioLogado", JSON.stringify(novoPerfil));
 
       setUsuario(novoPerfil);
       setNovaFoto(null);
       setEditando(false);
       alert("Perfil atualizado!");
     } catch (err) {
-      alert("Erro ao salvar: " + err.message);
+      console.error(err);
+      alert("Erro ao salvar: " + (err.message || err));
     }
 
     setCarregando(false);
@@ -176,6 +205,7 @@ export default function Perfil() {
               : buildFotoURL(usuario.foto)
           }
           className="w-32 h-32 rounded-full object-cover border-4 border-cyan-600"
+          alt={`Foto de ${usuario.nome}`}
         />
 
         <h2 className="text-2xl font-bold mt-4 text-gray-900 dark:text-gray-100">
@@ -199,8 +229,7 @@ export default function Perfil() {
         </h3>
 
         <p className="text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg leading-relaxed">
-          {usuario.resumo ||
-            "Nenhum resumo adicionado ainda."}
+          {usuario.resumo || "Nenhum resumo adicionado ainda."}
         </p>
       </div>
 
@@ -232,10 +261,7 @@ export default function Perfil() {
   =========================================================== */
   return (
     <div className="min-h-screen py-10 px-4 dark:bg-gray-900 dark:text-gray-100">
-
       <div className="max-w-7xl mx-auto">
-
-        {/* TITULO + BOTÃO */}
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold">Meu Perfil</h1>
 
@@ -250,10 +276,7 @@ export default function Perfil() {
           </button>
         </div>
 
-        {/* CARD PRINCIPAL */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col lg:flex-row">
-
-          {/* SIDEBAR */}
           <Sidebar />
 
           {/* ==================== MODO DE EDIÇÃO ==================== */}
@@ -269,6 +292,7 @@ export default function Perfil() {
                       : buildFotoURL(usuario.foto)
                   }
                   className="w-36 h-36 rounded-full border-4 border-cyan-600 object-cover"
+                  alt={`Foto de ${usuario.nome}`}
                 />
 
                 <label className="mt-3 cursor-pointer bg-cyan-600 text-white px-4 py-2 rounded-lg flex items-center gap-2">
@@ -372,7 +396,6 @@ export default function Perfil() {
 
               {/* LISTAS DINÂMICAS */}
               <div className="space-y-10">
-
                 {[
                   { campo: "habilidadesTecnicas", titulo: "Habilidades Técnicas", icon: Zap },
                   { campo: "softSkills", titulo: "Soft Skills", icon: Heart },
@@ -431,15 +454,29 @@ export default function Perfil() {
               </div>
 
               {/* BOTÃO SALVAR */}
-              <button
-                type="submit"
-                disabled={carregando}
-                className="w-full bg-cyan-600 text-white py-3 rounded-lg text-lg font-semibold"
-              >
-                {carregando ? "Salvando..." : "Salvar Perfil"}
-              </button>
+              <div className="flex gap-3">
+                <button
+                  type="submit"
+                  disabled={carregando}
+                  className="w-full bg-cyan-600 text-white py-3 rounded-lg text-lg font-semibold flex items-center justify-center gap-2"
+                >
+                  {carregando ? "Salvando..." : (
+                    <>
+                      <Save size={16} /> Salvar Perfil
+                    </>
+                  )}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { setEditando(false); setNovaFoto(null); }}
+                  className="w-40 bg-gray-300 text-gray-800 py-3 rounded-lg text-lg font-semibold"
+                >
+                  Cancelar
+                </button>
+              </div>
             </form>
           ) : (
+
             /* ==================== MODO DE VISUALIZAÇÃO ==================== */
             <div className="lg:w-2/3 p-8 space-y-10">
 

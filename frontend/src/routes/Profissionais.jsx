@@ -82,7 +82,7 @@ export default function Profissionais() {
   }, [busca, area, cidade, tecnologia, profissionais]);
 
   return (
-    <section className="min-h-screen pt-10 pb-10 bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <section className="min-h-screen pt-10 pb-10  transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* TÍTULO */}

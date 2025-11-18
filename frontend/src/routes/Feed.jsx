@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   BookOpen,
@@ -7,427 +7,293 @@ import {
   CalendarDays,
   Rocket,
   ArrowRight,
-  Search,
-  Bell,
-  MessageCircle,
-  TrendingUp,
-  Star,
   Clock,
   MapPin,
+  Star,
 } from "lucide-react";
 
-export default function Feed() {
-  // Dados do usuário (simulação)
-  const usuario =
-    JSON.parse(localStorage.getItem("usuarioLogado")) || {
-      nome: "Usuário Futurista",
-      cargo: "Estudante de Eng. Software",
-      cursos: 5,
-      aplicacoes: 3,
-      foto: null,
+function Feed() {
+  // Lê usuario do localStorage de forma segura e atualizável
+  const [usuario, setUsuario] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("usuarioLogado")) || {
+        nome: "Usuário Futurista",
+        cargo: "Estudante de Eng. Software",
+        foto: null,
+      };
+    } catch {
+      return {
+        nome: "Usuário Futurista",
+        cargo: "Estudante de Eng. Software",
+        foto: null,
+      };
+    }
+  });
+
+  // Atualiza quando localStorage for alterado (upload em outro componente/tab)
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.key === "usuarioLogado") {
+        try {
+          const novo = JSON.parse(e.newValue);
+          if (novo) setUsuario(novo);
+        } catch {
+          // ignore
+        }
+      }
     };
+    window.addEventListener("storage", handler);
+    return () => window.removeEventListener("storage", handler);
+  }, []);
 
-  const fotoURL = "https://placehold.co/150x150/0891b2/ffffff?text=U";
+  // Função para montar URL final da foto (mesma abordagem do Perfil.jsx)
+  const buildFotoURL = (f) => {
+    const placeholder = "https://placehold.co/150x150/0891b2/ffffff?text=U";
+    if (!f) return placeholder;
+    if (typeof f !== "string") return placeholder;
+    if (f.startsWith("http")) return f;
+    if (f.startsWith("/")) return `http://localhost:5000${f}`;
+    return `http://localhost:5000/${f}`;
+  };
 
-  // Dados Mockados
   const cursos = [
-    { id: 1, nome: "IA Básica", descricao: "Fundamentos de Inteligência Artificial", carga: "12h", progresso: 75, rating: 4.8 },
-    { id: 2, nome: "React Avançado", descricao: "Componentes, Hooks e APIs", carga: "18h", progresso: 45, rating: 4.9 },
-    { id: 3, nome: "Cloud & DevOps", descricao: "Infraestrutura moderna", carga: "20h", progresso: 20, rating: 4.7 },
+    { id: 1, nome: "IA Básica", descricao: "Fundamentos de IA", carga: "12h", progresso: 75, rating: 4.8 },
+    { id: 2, nome: "React Avançado", descricao: "Hooks e APIs", carga: "18h", progresso: 45, rating: 4.9 },
   ];
 
   const vagas = [
     { id: 1, titulo: "Estágio Frontend", empresa: "TechWave", local: "Remoto", salario: "R$ 2.500", tipo: "Estágio", urgente: true },
-    { id: 2, titulo: "Analista Júnior de Sistemas", empresa: "InovaCorp", local: "São Paulo", salario: "R$ 4.200", tipo: "CLT", urgente: false },
-    { id: 3, titulo: "Desenvolvedor React", empresa: "FutureCode", local: "Híbrido - RJ", salario: "R$ 6.800", tipo: "PJ", urgente: true },
-  ];
-
-  const projetos = [
-    { id: 1, nome: "Startup Verde", autor: "Alice", descricao: "Projeto para energia sustentável.", membros: 12, tags: ["Sustentabilidade", "Energia"] },
-    { id: 2, nome: "Plataforma de Mentoria", autor: "Bruno", descricao: "Mentorias para estudantes de TI.", membros: 8, tags: ["Educação", "TI"] },
+    { id: 2, titulo: "Analista Júnior", empresa: "InovaCorp", local: "São Paulo", salario: "R$ 4.200", tipo: "CLT", urgente: false },
+    { id: 3, titulo: "Dev React", empresa: "FutureCode", local: "Híbrido - RJ", salario: "R$ 6.800", tipo: "PJ", urgente: true },
   ];
 
   const eventos = [
-    { id: 1, titulo: "Webinar: Futuro do Trabalho", data: "20/11/2025", hora: "19:00", descricao: "Tendências e novas profissões.", participantes: 124 },
-    { id: 2, titulo: "Hackathon IoT", data: "05/12/2025", hora: "09:00", descricao: "Desafios em dispositivos conectados.", participantes: 89 },
+    { id: 1, titulo: "Futuro do Trabalho", data: "20/11/2025", hora: "19:00", descricao: "Tendências e profissões.", participantes: 124 },
+    { id: 2, titulo: "Hackathon IoT", data: "05/12/2025", hora: "09:00", descricao: "Desafios IoT.", participantes: 89 },
   ];
 
-  // Card
+  const projetos = [
+    { id: 1, nome: "Startup Verde", autor: "Alice", descricao: "Energia sustentável.", membros: 12, tags: ["Sustentabilidade", "Energia"] },
+    { id: 2, nome: "Plataforma de Mentoria", autor: "Bruno", descricao: "Mentorias para TI.", membros: 8, tags: ["Educação", "TI"] },
+  ];
+
+  // Card componente
   const Card = ({ children, className = "" }) => (
-    <div
-      className={`bg-white/10 dark:bg-gray-900/50 p-6 rounded-2xl border border-cyan-600/20 shadow-lg backdrop-blur-lg transition duration-300 hover:border-cyan-600/40 hover:shadow-cyan-600/10 ${className}`}
-    >
+    <div className={`bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-lg hover:shadow-2xl transition-all ${className}`}>
       {children}
     </div>
   );
 
   return (
     <div className="min-h-screen font-sans text-gray-800 dark:text-gray-100">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 py-8">
 
-      {/* ================================================= HEADER ================================================= */}
-      <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+        {/* SIDEBAR */}
+        <aside className="lg:col-span-3 lg:sticky lg:top-[80px] self-start z-10 px-2 lg:px-0">
+          <Card className="space-y-6 text-center">
 
-            <div className="flex items-center">
-              <Rocket className="w-8 h-8 text-cyan-600 mr-3" />
-              <span className="text-xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-                FutureConnect
-              </span>
+            {/* Usuário */}
+            <div className="flex flex-col items-center py-4">
+              <img
+                src={buildFotoURL(usuario?.foto)}
+                alt={`Foto de ${usuario?.nome || "Usuário"}`}
+                className="w-24 h-24 rounded-full border-4 border-white shadow-xl object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = "https://placehold.co/150x150/0891b2/ffffff?text=U";
+                }}
+              />
+
+              <h2 className="text-xl font-extrabold mt-4 text-gray-900 dark:text-white">
+                {usuario?.nome}
+              </h2>
+
+              <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                {usuario?.cargo}
+              </p>
             </div>
 
-            {/* Search */}
-            <div className="flex-1 max-w-2xl mx-8">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Buscar cursos, vagas, eventos..."
-                  className="w-full pl-10 pr-4 py-2.5 bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
-                />
-              </div>
+            <div className="w-full flex justify-center">
+              <div className="w-3/4 border-b border-gray-300 dark:border-gray-700"></div>
             </div>
 
-            <div className="flex items-center space-x-4">
-              <button className="relative p-2 text-gray-500 hover:text-cyan-600 transition">
-                <Bell className="w-6 h-6" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-              </button>
-
-              <button className="relative p-2 text-gray-500 hover:text-cyan-600 transition">
-                <MessageCircle className="w-6 h-6" />
-              </button>
-
-              <div className="w-8 h-8 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
-                {usuario.nome.charAt(0)}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </header>
-
-      {/* ================================================= LAYOUT ================================================= */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 py-8">
-
-        {/* ================================================= SIDEBAR ================================================= */}
-        <aside className="lg:col-span-3 space-y-6">
-
-          {/* Profile Card */}
-          <Card className="text-center">
-            <div className="flex flex-col items-center">
-              <div className="relative">
-                <img
-                  src={fotoURL}
-                  alt="Foto do usuário"
-                  className="w-20 h-20 rounded-full object-cover border-4 border-cyan-600 shadow-lg"
-                />
-                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 border-2 border-white dark:border-gray-900 rounded-full"></div>
-              </div>
-
-              <h2 className="text-lg font-bold mt-4">{usuario.nome}</h2>
-              <p className="text-cyan-400 text-sm mt-1">{usuario.cargo}</p>
-            </div>
-
-            {/* MENU DO SIDEBAR COM ROTAS */}
-            <nav className="flex flex-col gap-1 text-sm mt-6 pt-4 border-t border-gray-700/40">
+            {/* Navegação */}
+            <nav className="space-y-2 mt-4">
               {[
-                { icon: <Briefcase className="w-5 h-5" />, label: "Perfil", path: "/perfil" },
+                { icon: <Briefcase className="w-5 h-5" />, label: "Meu Perfil", path: "/perfil" },
                 { icon: <BookOpen className="w-5 h-5" />, label: "Meus Cursos", path: "/area-de-estudos" },
+                { icon: <Users className="w-5 h-5" />, label: "Minha Rede", path: "/profissionais" },
                 { icon: <Briefcase className="w-5 h-5" />, label: "Vagas", path: "/vagas" },
-                { icon: <Users className="w-5 h-5" />, label: "Profissionais", path: "/profissionais" },
-                { icon: <Users className="w-5 h-5" />, label: "Comunidade", path: "/projetos" },
+                { icon: <CalendarDays className="w-5 h-5" />, label: "Eventos", path: "/eventos" },
+                { icon: <Rocket className="w-5 h-5" />, label: "Projetos", path: "/projetos" },
               ].map((item, index) => (
                 <Link
                   key={index}
                   to={item.path}
-                  className="flex items-center gap-3 p-3 rounded-lg transition hover:bg-gray-700/40"
+                  className="flex items-center justify-between p-3 rounded-xl transition-colors duration-200 hover:bg-cyan-50 dark:hover:bg-gray-700 group"
                 >
-                  {item.icon}
-                  {item.label}
+                  <div className="flex items-center gap-3 group-hover:text-cyan-600">
+                    {item.icon}
+                    <span className="text-gray-700 dark:text-gray-300 group-hover:text-cyan-600 font-medium transition-colors">
+                      {item.label}
+                    </span>
+                  </div>
                 </Link>
               ))}
             </nav>
 
           </Card>
-
-          {/* Quick Stats */}
-          <Card>
-            <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-cyan-600" />
-              Seu Progresso
-            </h3>
-
-            <div className="space-y-4">
-
-              <div>
-                <div className="flex justify-between text-sm mb-1">
-                  <span>Perfil Completo</span>
-                  <span>80%</span>
-                </div>
-                <div className="w-full bg-gray-700/40 rounded-full h-2">
-                  <div className="bg-cyan-600 h-2 rounded-full" style={{ width: '80%' }}></div>
-                </div>
-              </div>
-
-              <div>
-                <div className="flex justify-between text-sm mb-1">
-                  <span>Habilidades Validadas</span>
-                  <span>3/8</span>
-                </div>
-                <div className="w-full bg-gray-700/40 rounded-full h-2">
-                  <div className="bg-cyan-600 h-2 rounded-full" style={{ width: '37.5%' }}></div>
-                </div>
-              </div>
-
-            </div>
-
-          </Card>
-
         </aside>
 
-        {/* ================================================= MAIN CONTENT ================================================= */}
+        {/* FEED CENTRAL */}
         <main className="lg:col-span-9 space-y-8">
-
-          {/* BEM-VINDO */}
-          <section>
-            <div className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl p-8 text-white">
-              <h1 className="text-2xl font-bold mb-2">Bem-vindo de volta, {usuario.nome.split(" ")[0]}! 👋</h1>
-              <p className="text-cyan-100 mb-4">
-                Continue sua jornada de aprendizado e descubra novas oportunidades
-              </p>
-
-              <Link
-                to="/cursos"
-                className="bg-white text-cyan-600 px-6 py-2.5 rounded-xl font-medium hover:bg-gray-100 transition"
-              >
-                Explorar Cursos
-              </Link>
-            </div>
-          </section>
-
-          {/* DESTAQUES */}
-          <section className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: <Rocket className="text-cyan-600 w-6 h-6" />,
-                titulo: "Oportunidade do Dia",
-                texto: "Curso avançado de Python para elevar sua carreira.",
-                badge: "Novo",
-              },
-              {
-                icon: <Briefcase className="text-cyan-600 w-6 h-6" />,
-                titulo: "Vaga em Alta",
-                texto: "Desenvolvedor React — FutureCode.",
-                badge: "Urgente",
-              },
-              {
-                icon: <CalendarDays className="text-cyan-600 w-6 h-6" />,
-                titulo: "Próximo Evento",
-                texto: "Webinar: Futuro do Trabalho — 20/11",
-                badge: "Em breve",
-              },
-            ].map((item, i) => (
-              <Card key={i} className="cursor-pointer group hover:-translate-y-1 transition-all">
-                <div className="flex flex-col gap-3">
-                  <div className="flex justify-between items-start">
-                    {item.icon}
-                    <span className="text-xs bg-cyan-600/20 text-cyan-300 px-2 py-1 rounded-full">
-                      {item.badge}
-                    </span>
-                  </div>
-
-                  <h3 className="font-bold text-lg">{item.titulo}</h3>
-                  <p className="text-sm text-gray-400">{item.texto}</p>
-
-                  <a
-                    href="#"
-                    className="mt-2 text-cyan-400 flex items-center text-sm font-medium group-hover:text-cyan-300"
-                  >
-                    Ver detalhes
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </a>
-                </div>
-              </Card>
-            ))}
-          </section>
-
-          {/* VAGAS + EVENTOS */}
-          <section className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-
-            {/* VAGAS */}
-            <div className="lg:col-span-8">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold flex items-center gap-3">
-                  <Briefcase className="w-6 h-6 p-1 bg-cyan-600/20 text-cyan-600 rounded-lg" />
-                  Vagas em Destaque
-                </h2>
-
-                <Link
-                  to="/vagas"
-                  className="text-cyan-400 text-sm font-medium hover:text-cyan-300 flex items-center"
-                >
-                  Ver todas <ArrowRight className="w-4 h-4 ml-1" />
-                </Link>
-              </div>
-
-              <div className="space-y-4">
-                {vagas.map((vaga) => (
-                  <Card
-                    key={vaga.id}
-                    className="p-6 border-l-4 border-cyan-600/40 hover:border-cyan-600 transition-all hover:shadow-lg"
-                  >
-                    <div className="flex justify-between items-start">
-
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <h3 className="text-lg font-bold">{vaga.titulo}</h3>
-
-                          {vaga.urgente && (
-                            <span className="text-xs bg-red-500/20 text-red-400 px-2 py-1 rounded-full">
-                              Urgente
-                            </span>
-                          )}
-                        </div>
-
-                        <div className="flex items-center gap-4 text-sm text-gray-400 mb-3">
-                          <span className="flex items-center gap-1">
-                            <Briefcase className="w-4 h-4" />
-                            {vaga.empresa}
-                          </span>
-
-                          <span className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            {vaga.local}
-                          </span>
-
-                          <span className="text-cyan-400">{vaga.salario}</span>
-                        </div>
-
-                        <span className="text-xs bg-gray-600/40 text-gray-300 px-2 py-1 rounded-full">
-                          {vaga.tipo}
-                        </span>
-                      </div>
-
-                      <button className="px-5 py-2.5 rounded-xl bg-cyan-600 text-white text-sm font-medium hover:bg-cyan-500 transition ml-4">
-                        Aplicar
-                      </button>
-
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* EVENTOS */}
-            <div className="lg:col-span-4">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold flex items-center gap-3">
-                  <CalendarDays className="w-6 h-6 p-1 bg-cyan-600/20 text-cyan-600 rounded-lg" />
-                  Próximos Eventos
-                </h2>
-              </div>
-
-              <div className="space-y-4">
-                {eventos.map((e) => (
-                  <Card key={e.id} className="p-5 hover:-translate-y-1 transition-all">
-                    <div className="flex justify-between items-start mb-3">
-                      <p className="text-xs font-semibold text-cyan-400 uppercase tracking-wider">
-                        {e.data}
-                      </p>
-
-                      <span className="text-xs bg-cyan-600/20 text-cyan-300 px-2 py-1 rounded-full">
-                        {e.participantes} participantes
-                      </span>
-                    </div>
-
-                    <h3 className="font-bold text-lg mb-2">{e.titulo}</h3>
-                    <p className="text-sm text-gray-400 mb-3">{e.descricao}</p>
-
-                    <div className="flex justify-between items-center text-sm text-gray-400">
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        {e.hora}
-                      </span>
-
-                      <button className="text-cyan-400 hover:text-cyan-300 text-sm font-medium">
-                        Participar
-                      </button>
-                    </div>
-
-                  </Card>
-                ))}
-
-                <Link
-                  to="/eventos"
-                  className="block text-center text-cyan-400 text-sm font-medium hover:text-cyan-300 py-3 border border-dashed border-cyan-600/30 rounded-xl transition"
-                >
-                  Ver todos os eventos
-                </Link>
-              </div>
-            </div>
-
-          </section>
 
           {/* CURSOS */}
           <section>
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold flex items-center gap-3">
-                <BookOpen className="w-6 h-6 p-1 bg-cyan-600/20 text-cyan-600 rounded-lg" />
-                Aprendizado & Crescimento
+                <BookOpen className="w-7 h-7 text-cyan-600" />
+                Meus Cursos
               </h2>
-
-              <Link
-                to="/cursos"
-                className="text-cyan-400 text-sm font-medium hover:text-cyan-300 flex items-center"
-              >
-                Ver todos <ArrowRight className="w-4 h-4 ml-1" />
+              <Link to="/area-de-estudos" className="text-cyan-600 hover:text-cyan-700 font-medium flex items-center gap-2">
+                Continuar estudando <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {cursos.map((curso) => (
-                <Card key={curso.id} className="group hover:-translate-y-1 transition-all">
-                  <div>
-                    <div className="flex justify-between items-start mb-3">
-                      <h3 className="text-lg font-bold">{curso.nome}</h3>
-
-                      <span className="flex items-center gap-1 text-sm text-yellow-400">
+            {cursos.length === 0 ? (
+              <p className="text-gray-500 dark:text-gray-400">Você ainda não está matriculado em nenhum curso.</p>
+            ) : (
+              <div className="grid md:grid-cols-2 gap-6">
+                {cursos.map((curso) => (
+                  <Card key={curso.id} className="group">
+                    <div className="flex justify-between items-start mb-4">
+                      <h3 className="text-xl font-bold group-hover:text-cyan-600 transition">{curso.nome}</h3>
+                      <span className="flex items-center gap-1 text-yellow-500">
                         <Star className="w-4 h-4 fill-current" />
-                        {curso.rating}
+                        {curso.rating || 0}
                       </span>
                     </div>
-
-                    <p className="text-sm text-gray-400 mb-4">{curso.descricao}</p>
-
-                    {/* Progress */}
+                    <p className="mb-4">{curso.descricao}</p>
                     <div className="mb-4">
-                      <div className="flex justify-between text-sm mb-1">
-                        <span>Progresso</span>
-                        <span>{curso.progresso}%</span>
+                      <div className="flex justify-between text-sm mb-2">
+                        <span className="text-gray-500">Progresso</span>
+                        <span className="font-medium text-gray-700 dark:text-gray-300">{curso.progresso || 0}%</span>
                       </div>
-
-                      <div className="w-full bg-gray-700/40 rounded-full h-2">
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
                         <div
-                          className="bg-cyan-600 h-2 rounded-full"
-                          style={{ width: `${curso.progresso}%` }}
+                          className="bg-cyan-600 h-3 rounded-full transition-all duration-500"
+                          style={{ width: `${curso.progresso || 0}%` }}
                         ></div>
                       </div>
                     </div>
-                  </div>
+                    <div className="flex justify-between items-center pt-4 border-t border-gray-200 dark:border-gray-600">
+                      <span className="flex items-center gap-2 text-sm text-gray-500">
+                        <Clock className="w-4 h-4" />
+                        {curso.carga || "–"}
+                      </span>
+                      <Link to="/curso" state={{ curso, usuario }}>
+                        <button className="bg-cyan-600 text-white px-4 py-2 rounded-lg hover:bg-cyan-700 transition font-medium">
+                          Continuar
+                        </button>
+                      </Link>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </section>
 
-                  <div className="flex justify-between items-center pt-4 border-t border-gray-700/40">
-                    <span className="text-xs p-2 px-3 bg-cyan-600/20 text-cyan-300 font-medium rounded-full flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {curso.carga}
+          {/* VAGAS */}
+          <section>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold flex items-center gap-3">
+                <Briefcase className="w-7 h-7 text-green-600" />
+                Vagas
+              </h2>
+              <Link to="/vagas" className="text-cyan-600 hover:text-cyan-700 font-medium flex items-center gap-2">
+                Ver todas as vagas <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="space-y-4">
+              {vagas.map((vaga) => (
+                <Card key={vaga.id} className="transition-all group">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 transition">
+                          {vaga.titulo}
+                        </h3>
+
+                        {vaga.urgente && (
+                          <span className="bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 px-2 py-1 rounded-full text-xs font-medium">
+                            🔥 Urgente
+                          </span>
+                        )}
+                      </div>
+
+                      <p className="text-lg text-gray-600 dark:text-gray-300">{vaga.empresa}</p>
+                    </div>
+
+                    <span className="bg-cyan-100 dark:bg-cyan-900 text-cyan-600 dark:text-cyan-400 px-3 py-1 rounded-full text-sm font-medium">{vaga.tipo}</span>
+                  </div>
+                  <div className="flex items-center gap-6 text-gray-500 mb-4">
+                    <span className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4" />
+                      {vaga.local}
+                    </span>
+                    <span className="text-green-600 dark:text-green-400 font-semibold">{vaga.salario}</span>
+                    <span className="text-sm">⏱️ Há 2 dias</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div className="flex gap-2">
+                      <span className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-3 py-1 rounded-full text-sm">React</span>
+                      <span className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                    </div>
+                    <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition font-medium">Candidatar-se</button>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* EVENTOS */}
+          <section>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-bold flex items-center gap-3">
+                <CalendarDays className="w-7 h-7 text-purple-600" />
+                Eventos
+              </h2>
+              <Link to="/eventos" className="text-cyan-600 hover:text-cyan-700 font-medium flex items-center gap-2">
+                Ver todos os eventos <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {eventos.map((evento) => (
+                <Card key={evento.id} className="group">
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 px-3 py-1 rounded-full text-sm font-medium">
+                      {evento.data}
                     </span>
 
-                    <Link
-                      to={`/curso/${curso.id}`}
-                      className="text-sm font-medium text-cyan-400 hover:text-cyan-300 flex items-center"
-                    >
-                      Continuar <ArrowRight className="w-4 h-4 ml-1" />
-                    </Link>
+                    <span className="flex items-center gap-1 text-sm text-gray-500">
+                      <Users className="w-4 h-4" />
+                      {evento.participantes} participantes
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 transition">
+                    {evento.titulo}
+                  </h3>
+
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{evento.descricao}</p>
+
+                  <div className="flex justify-between items-center">
+                    <span className="flex items-center gap-2 text-sm text-gray-500">
+                      <Clock className="w-4 h-4" />
+                      {evento.hora}
+                    </span>
+
+                    <button className="bg-purple-600 text-white px-5 py-2 rounded-lg hover:bg-purple-700 transition font-medium">Participar</button>
                   </div>
                 </Card>
               ))}
@@ -438,59 +304,60 @@ export default function Feed() {
           <section>
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold flex items-center gap-3">
-                <Users className="w-6 h-6 p-1 bg-cyan-600/20 text-cyan-600 rounded-lg" />
-                Comunidade & Projetos
+                <Users className="w-7 h-7 text-orange-600" />
+                Projetos
               </h2>
-
-              <Link
-                to="/projetos"
-                className="text-cyan-400 text-sm font-medium hover:text-cyan-300 flex items-center"
-              >
-                Ver todos <ArrowRight className="w-4 h-4 ml-1" />
+              <Link to="/projetos" className="text-cyan-600 hover:text-cyan-700 font-medium flex items-center gap-2">
+                Ver todos os projetos <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {projetos.map((p) => (
-                <Card key={p.id} className="group hover:-translate-y-1 transition-all">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="font-bold text-lg">{p.nome}</h3>
-
-                    <span className="text-xs bg-cyan-600/20 text-cyan-300 px-2 py-1 rounded-full flex items-center gap-1">
-                      <Users className="w-3 h-3" />
-                      {p.membros}
+              {projetos.map((projeto) => (
+                <Card key={projeto.id} className="group">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-orange-600 transition">{projeto.nome}</h3>
+                    <span className="flex items-center gap-1 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-400 px-2 py-1 rounded-full text-sm">
+                      <Users className="w-4 h-4" />
+                      {projeto.membros}
                     </span>
                   </div>
 
-                  <p className="text-sm text-gray-400 mb-2">Por: {p.autor}</p>
-                  <p className="text-sm text-gray-300 mb-4">{p.descricao}</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mb-2">Por: {projeto.autor}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{projeto.descricao}</p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {p.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="text-xs bg-gray-600/40 text-gray-300 px-2 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {projeto.tags.map((tag, index) => (
+                      <span key={index} className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-3 py-1 rounded-full text-sm">#{tag}</span>
                     ))}
                   </div>
 
-                  <a
-                    href="#"
-                    className="text-cyan-400 flex items-center text-sm font-medium hover:text-cyan-300"
-                  >
-                    Ver Projeto <ArrowRight className="w-4 h-4 ml-1" />
-                  </a>
+                  <div className="flex justify-between items-center">
+                    <div className="flex -space-x-2">
+                      {[1,2,3].map((i) => (
+                        <img
+                          key={i}
+                          src={`https://placehold.co/32x32/00${i}84/ffffff?text=${i}`}
+                          alt={`Participante ${i}`}
+                          className="w-8 h-8 rounded-full border-2 border-white dark:border-gray-800"
+                        />
+                      ))}
+                      <div className="w-8 h-8 bg-gray-300 dark:bg-gray-600 rounded-full border-2 border-white dark:border-gray-800 flex items-center justify-center text-xs font-medium">
+                        +{projeto.membros - 3}
+                      </div>
+                    </div>
+
+                    <button className="bg-orange-600 text-white px-5 py-2 rounded-lg hover:bg-orange-700 transition font-medium">Participar</button>
+                  </div>
                 </Card>
               ))}
             </div>
-
           </section>
 
         </main>
-
       </div>
     </div>
   );
 }
+
+export default Feed;
