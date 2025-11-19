@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Briefcase, BookOpen, Users, CalendarDays, Rocket } from "lucide-react";
+import {
+  BookOpen,
+  Briefcase,
+  Users,
+  CalendarDays,
+  Rocket,
+  PlayCircle,
+  CheckCircle,
+  Clock,
+  BarChart3,
+  User,
+  Home,
+  Calendar,
+  FolderKanban,
+} from "lucide-react";
 
 export default function Projetos() {
   const [usuario, setUsuario] = useState(() => {
@@ -80,51 +94,59 @@ export default function Projetos() {
 
         {/* SIDEBAR */}
         <aside className="lg:col-span-3 lg:sticky lg:top-[80px] self-start z-10 px-2 lg:px-0">
-          <Card className="space-y-6 text-center">
-            <div className="flex flex-col items-center py-4">
+          <Card className="space-y-5 text-center p-5">
+            
+            {/* Usuário - Um Tiquinho Maior */}
+            <div className="flex flex-col items-center py-3">
               <img
                 src={buildFotoURL(usuario?.foto)}
                 alt={`Foto de ${usuario?.nome || "Usuário"}`}
-                className="w-24 h-24 rounded-full border-4 border-white shadow-xl object-cover"
+                className="w-20 h-20 rounded-full border-3 border-white shadow-lg object-cover"
                 onError={(e) => {
                   e.currentTarget.src = "https://placehold.co/150x150/0891b2/ffffff?text=U";
                 }}
               />
-              <h2 className="text-xl font-extrabold mt-4 text-gray-900 dark:text-white">
-                {usuario?.nome}
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
-                {usuario?.cargo}
-              </p>
+        
+              <div className="mt-3">
+                <h2 className="text-lg font-bold text-gray-900 dark:text-white line-clamp-1">
+                  {usuario?.nome}
+                </h2>
+                <p className="text-gray-600 dark:text-gray-300 text-sm mt-1 line-clamp-2">
+                  {usuario?.cargo}
+                </p>
+              </div>
             </div>
-
+        
             <div className="w-full flex justify-center">
-              <div className="w-3/4 border-b border-gray-300 dark:border-gray-700"></div>
+              <div className="w-4/5 border-b border-gray-200 dark:border-gray-600"></div>
             </div>
-
-            <nav className="space-y-2 mt-4">
+        
+            {/* Navegação - Um Tiquinho Maior */}
+            <nav className="space-y-2.5 mt-3">
               {[
-                { icon: <Briefcase className="w-5 h-5" />, label: "Meu Perfil", path: "/perfil" },
-                { icon: <BookOpen className="w-5 h-5" />, label: "Meus Cursos", path: "/area-de-estudos" },
-                { icon: <Users className="w-5 h-5" />, label: "Minha Rede", path: "/rede" },
-                { icon: <Briefcase className="w-5 h-5" />, label: "Vagas", path: "/vagas" },
-                { icon: <CalendarDays className="w-5 h-5" />, label: "Eventos", path: "/eventos" },
-                { icon: <Rocket className="w-5 h-5" />, label: "Projetos", path: "/projetos" },
+                { icon: <User className="w-4 h-4" />, label: "Meu Perfil", path: "/perfil" },
+                { icon: <Home className="w-4 h-4" />, label: "Feed", path: "/feed" },
+                { icon: <BookOpen className="w-4 h-4" />, label: "Meus Cursos", path: "/area-de-estudos" },
+                { icon: <Users className="w-4 h-4" />, label: "Minha Rede", path: "/profissionais" },
+                { icon: <Briefcase className="w-4 h-4" />, label: "Vagas", path: "/vagas" },
+                { icon: <Calendar className="w-4 h-4" />, label: "Eventos", path: "/eventos" },
+                { icon: <FolderKanban className="w-4 h-4" />, label: "Projetos", path: "/projetos" },
               ].map((item, index) => (
                 <Link
                   key={index}
                   to={item.path}
-                  className="flex items-center justify-between p-3 rounded-xl transition-colors duration-200 hover:bg-cyan-50 dark:hover:bg-gray-700 group"
+                  className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-200 ${
+                    item.path === "/projetos"
+                      ? "bg-cyan-50 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 font-semibold"
+                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  }`}
                 >
-                  <div className="flex items-center gap-3 group-hover:text-cyan-600">
-                    {item.icon}
-                    <span className="text-gray-700 dark:text-gray-300 group-hover:text-cyan-600 font-medium transition-colors">
-                      {item.label}
-                    </span>
-                  </div>
+                  {item.icon}
+                  <span className="text-sm">{item.label}</span>
                 </Link>
               ))}
             </nav>
+        
           </Card>
         </aside>
 

@@ -1,0 +1,293 @@
+{
+  "cursos": [
+    {
+      "id": 1,
+      "nome": "Fundamentos de Curadoria de IA",
+      "descricao": "Aprenda como organizar, revisar e selecionar dados usados no treinamento de modelos de Inteligência Artificial.",
+      "level": "Iniciante",
+      "duracao": "3 semanas",
+      "horas": 15,
+      "carreira": "Curador de Inteligência Artificial",
+      "profissoesPossiveis": [
+        "Curador de IA",
+        "Analista de Dados Assistidos por IA"
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Treinamento e Avaliação de Modelos",
+      "descricao": "Estude técnicas para treinar modelos de IA, validar resultados e analisar métricas de desempenho.",
+      "level": "Intermediário",
+      "duracao": "4 semanas",
+      "horas": 20,
+      "carreira": "Curador de Inteligência Artificial",
+      "profissoesPossiveis": [
+        "Curador de IA",
+        "Especialista em Qualidade de Modelos"
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Gerenciamento de Bases e Desvios Algorítmicos",
+      "descricao": "Identifique vieses em bases de dados e aprenda a corrigi-los para treinar modelos mais justos e precisos.",
+      "level": "Avançado",
+      "duracao": "5 semanas",
+      "horas": 25,
+      "carreira": "Curador de Inteligência Artificial",
+      "profissoesPossiveis": [
+        "Curador de IA",
+        "Analista de Governança de IA"
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Introdução ao Design Imersivo",
+      "descricao": "Aprenda os princípios básicos de ambientes virtuais, UX imersiva e interação em VR/AR.",
+      "level": "Iniciante",
+      "duracao": "3 semanas",
+      "horas": 15,
+      "carreira": "Designer de Experiências Imersivas (VR/AR)",
+      "profissoesPossiveis": [
+        "Designer de Experiências XR",
+        "Criador de Conteúdo VR/AR"
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Prototipação em Realidade Aumentada",
+      "descricao": "Crie protótipos funcionais em AR usando ferramentas modernas de desenvolvimento interativo.",
+      "level": "Intermediário",
+      "duracao": "4 semanas",
+      "horas": 20,
+      "carreira": "Designer de Experiências Imersivas (VR/AR)",
+      "profissoesPossiveis": [
+        "UX Designer XR",
+        "Desenvolvedor de Aplicações AR"
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Ambientes Virtuais em Realidade Virtual",
+      "descricao": "Desenvolva experiências imersivas completas em VR, com navegação, interação e narrativa visual.",
+      "level": "Avançado",
+      "duracao": "5 semanas",
+      "horas": 25,
+      "carreira": "Designer de Experiências Imersivas (VR/AR)",
+      "profissoesPossiveis": [
+        "Designer VR",
+        "Engenheiro de Experiências Imersivas"
+      ]
+    },
+    {
+      "id": 7,
+      "nome": "Sustentabilidade e Tecnologia Digital",
+      "descricao": "Entenda como tecnologias digitais impactam o meio ambiente e como reduzir pegadas digitais.",
+      "level": "Iniciante",
+      "duracao": "3 semanas",
+      "horas": 15,
+      "carreira": "Engenheiro de Sustentabilidade Digital",
+      "profissoesPossiveis": ["Analista de Sustentabilidade", "Consultor ESG Digital"]
+    },
+    {
+      "id": 8,
+      "nome": "Infraestrutura Verde e Computação Eficiente",
+      "descricao": "Aprenda soluções para reduzir o consumo energético de sistemas e datacenters.",
+      "level": "Intermediário",
+      "duracao": "4 semanas",
+      "horas": 20,
+      "carreira": "Engenheiro de Sustentabilidade Digital",
+      "profissoesPossiveis": [
+        "Engenheiro de Sustentabilidade Digital",
+        "Arquiteto de Infraestrutura Sustentável"
+      ]
+    },
+    {
+      "id": 9,
+      "nome": "Políticas Climáticas e Digitalização",
+      "descricao": "Conheça regulamentações ambientais e suas relações com o desenvolvimento tecnológico.",
+      "level": "Avançado",
+      "duracao": "5 semanas",
+      "horas": 25,
+      "carreira": "Engenheiro de Sustentabilidade Digital",
+      "profissoesPossiveis": ["Especialista ESG", "Pesquisador em Sustentabilidade Tech"]
+    },
+    {
+      "id": 10,
+      "nome": "Introdução a Interfaces Cérebro-Computador",
+      "descricao": "Explore conceitos de leitura neural, dispositivos BCI e seus usos na tecnologia moderna.",
+      "level": "Iniciante",
+      "duracao": "3 semanas",
+      "horas": 15,
+      "carreira": "Especialista em Interfaces Cérebro-Computador",
+      "profissoesPossiveis": ["Técnico BCI", "Assistente de Neurotecnologia"]
+    },
+    {
+      "id": 11,
+      "nome": "Sinais Neurais e Interpretação de Dados",
+      "descricao": "Aprenda a interpretar dados neurais, identificar padrões e integrar com dispositivos digitais.",
+      "level": "Intermediário",
+      "duracao": "4 semanas",
+      "horas": 20,
+      "carreira": "Especialista em Interfaces Cérebro-Computador",
+      "profissoesPossiveis": [
+        "Analista de Neurodados",
+        "Especialista BCI"
+      ]
+    },
+    {
+      "id": 12,
+      "nome": "Desenvolvimento de Aplicações BCI",
+      "descricao": "Construa aplicações controladas com ondas cerebrais e protocolos neurais.",
+      "level": "Avançado",
+      "duracao": "5 semanas",
+      "horas": 25,
+      "carreira": "Especialista em Interfaces Cérebro-Computador",
+      "profissoesPossiveis": [
+        "Engenheiro BCI",
+        "Arquiteto de Neurointerfaces"
+      ]
+    },
+    {
+      "id": 13,
+      "nome": "Robôs no Ecossistema Digital",
+      "descricao": "Introdução à gestão e integração de robôs em ambientes de trabalho e produção.",
+      "level": "Iniciante",
+      "duracao": "3 semanas",
+      "horas": 15,
+      "carreira": "Gestor de Ecossistemas de Robôs",
+      "profissoesPossiveis": ["Operador de Robôs", "Assistente de Automação"]
+    },
+    {
+      "id": 14,
+      "nome": "Sistemas Colaborativos entre Humanos e Robôs",
+      "descricao": "Entenda como coordenar operações onde robôs e humanos trabalham juntos.",
+      "level": "Intermediário",
+      "duracao": "4 semanas",
+      "horas": 20,
+      "carreira": "Gestor de Ecossistemas de Robôs",
+      "profissoesPossiveis": [
+        "Gestor de Robótica",
+        "Supervisor de Automação Inteligente"
+      ]
+    },
+    {
+      "id": 15,
+      "nome": "Automação Avançada e Orquestração de Robôs",
+      "descricao": "Crie rotinas, fluxos e orquestrações complexas entre vários robôs simultâneos.",
+      "level": "Avançado",
+      "duracao": "5 semanas",
+      "horas": 25,
+      "carreira": "Gestor de Ecossistemas de Robôs",
+      "profissoesPossiveis": [
+        "Engenheiro de Automação Avançada",
+        "Arquiteto de Robótica"
+      ]
+    },
+    {
+      "id": 16,
+      "nome": "Princípios de Mundos Virtuais",
+      "descricao": "Aprenda como funcionam economias, física, narrativa e ecossistemas digitais.",
+      "level": "Iniciante",
+      "duracao": "3 semanas",
+      "horas": 15,
+      "carreira": "Arquiteto de Mundos Virtuais",
+      "profissoesPossiveis": ["Designer de Cenários Virtuais", "Level Designer"]
+    },
+    {
+      "id": 17,
+      "nome": "Construção de Ambientes 3D",
+      "descricao": "Desenvolva mapas, cenários, interações e estruturas em engines modernas.",
+      "level": "Intermediário",
+      "duracao": "4 semanas",
+      "horas": 20,
+      "carreira": "Arquiteto de Mundos Virtuais",
+      "profissoesPossiveis": ["Modelador 3D", "Arquiteto de Ambientes Digitais"]
+    },
+    {
+      "id": 18,
+      "nome": "Narrativa e Sistemas Interativos",
+      "descricao": "Aprenda a criar histórias, missões, dinâmicas e mecânicas para mundos digitais.",
+      "level": "Avançado",
+      "duracao": "5 semanas",
+      "horas": 25,
+      "carreira": "Arquiteto de Mundos Virtuais",
+      "profissoesPossiveis": ["Designer Narrativo", "Criador de Experiências Digitais"]
+    },
+    {
+      "id": 19,
+      "nome": "Introdução à Ética de Algoritmos",
+      "descricao": "Compreenda os problemas éticos relacionados a IA e tomada de decisões automatizadas.",
+      "level": "Iniciante",
+      "duracao": "3 semanas",
+      "horas": 15,
+      "carreira": "Analista de Ética de Algoritmos",
+      "profissoesPossiveis": ["Assistente de Compliance Algorítmico", "Analista de Dados Éticos"]
+    },
+    {
+      "id": 20,
+      "nome": "Detecção e Mitigação de Vieses",
+      "descricao": "Aprenda a identificar vieses em algoritmos e implementar correções.",
+      "level": "Intermediário",
+      "duracao": "4 semanas",
+      "horas": 20,
+      "carreira": "Analista de Ética de Algoritmos",
+      "profissoesPossiveis": [
+        "Especialista em Governança de IA",
+        "Analista de Responsabilidade Algorítmica"
+      ]
+    },
+    {
+      "id": 21,
+      "nome": "Governança e Auditoria de Sistemas de IA",
+      "descricao": "Domine os processos de auditoria, monitoramento e certificação ética de IA.",
+      "level": "Avançado",
+      "duracao": "5 semanas",
+      "horas": 25,
+      "carreira": "Analista de Ética de Algoritmos",
+      "profissoesPossiveis": ["Auditor de IA", "Analista de Conformidade Digital"]
+    },
+    {
+      "id": 22,
+      "nome": "Criação de Personalidades de IA",
+      "descricao": "Aprenda como construir identidades, estilos e comportamentos para agentes inteligentes.",
+      "level": "Iniciante",
+      "duracao": "3 semanas",
+      "horas": 15,
+      "carreira": "Desenhista de Personalidades de IA",
+      "profissoesPossiveis": ["Criador de Personalidades Digitais", "Designer de Agentes Virtuais"]
+    },
+    {
+      "id": 23,
+      "nome": "Voz, Emoção e Tom em Assistentes Virtuais",
+      "descricao": "Desenvolva tons, emoções e variações de personalidade para IA conversacional.",
+      "level": "Intermediário",
+      "duracao": "4 semanas",
+      "horas": 20,
+      "carreira": "Desenhista de Personalidades de IA",
+      "profissoesPossiveis": ["Especialista em UX Conversacional", "Designer de Voz IA"]
+    },
+    {
+      "id": 24,
+      "nome": "Comportamento Adaptativo e Identidade Longo Prazo",
+      "descricao": "Crie personalidades de IA capazes de evoluir e manter coerência ao longo do tempo.",
+      "level": "Avançado",
+      "duracao": "5 semanas",
+      "horas": 25,
+      "carreira": "Desenhista de Personalidades de IA",
+      "profissoesPossiveis": ["Arquiteto de Personas IA", "Desenvolvedor de Agentes Inteligentes"]
+    },
+    {
+      "id": 25,
+      "nome": "Gestão de Reputação Digital",
+      "descricao": "Aprenda como marcas e pessoas podem monitorar e proteger sua imagem online.",
+      "level": "Intermediário",
+      "duracao": "4 semanas",
+      "horas": 20,
+      "carreira": "Gestor de Reputação Digital",
+      "profissoesPossiveis": [
+        "Analista de Reputação",
+        "Gestor de Imagem Online"
+      ]
+    }
+  ]
+}

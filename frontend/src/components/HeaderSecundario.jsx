@@ -7,8 +7,29 @@ import {
   LogOut,
 } from "lucide-react";
 
-export default function HeaderSecundario({ usuario, darkMode, setDarkMode }) {
+export default function HeaderSecundario({ darkMode, setDarkMode }) {
   const [avatarOpen, setAvatarOpen] = useState(false);
+
+  // ===== CARREGA USUÁRIO DO LOCALSTORAGE =====
+  const [user, setUser] = useState(() => {
+    try {
+      return (
+        JSON.parse(localStorage.getItem("usuarioLogado")) || {
+          nome: "Usuário Futurista",
+          cargo: "Estudante de Eng. Software",
+          foto: null,
+          id: "",
+        }
+      );
+    } catch {
+      return {
+        nome: "Usuário Futurista",
+        cargo: "Estudante de Eng. Software",
+        foto: null,
+        id: "",
+      };
+    }
+  });
 
   return (
     <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
@@ -31,7 +52,11 @@ export default function HeaderSecundario({ usuario, darkMode, setDarkMode }) {
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 text-gray-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition"
             >
-              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {darkMode ? (
+                <Sun className="w-5 h-5" />
+              ) : (
+                <Moon className="w-5 h-5" />
+              )}
             </button>
 
             {/* Avatar e Menu */}
@@ -41,25 +66,28 @@ export default function HeaderSecundario({ usuario, darkMode, setDarkMode }) {
                 className="flex items-center space-x-2 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition"
               >
                 <User className="w-5 h-5 text-gray-500" />
+
+                {/* ===== MOSTRA O NOME DO USUÁRIO ===== */}
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Olá, {usuario?.nome?.split(' ')[0] || 'Usuário'}
+                  Olá, {user?.nome?.split(" ")[0] || "Usuário"}
                 </span>
               </button>
 
-              {/* Dropdown Menu */}
+              {/* Dropdown */}
               {avatarOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1">
+
                   <button
-                    onClick={() => window.location.href = "/perfil"}
+                    onClick={() => (window.location.href = "/perfil")}
                     className="w-full flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
                   >
                     <User className="w-4 h-4 mr-2" />
                     Meu Perfil
                   </button>
-                  
+
                   <button
                     onClick={() => {
-                      localStorage.removeItem("usuario");
+                      localStorage.removeItem("usuarioLogado");
                       window.location.href = "/";
                     }}
                     className="w-full flex items-center px-4 py-2 text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition"
@@ -67,8 +95,6 @@ export default function HeaderSecundario({ usuario, darkMode, setDarkMode }) {
                     <LogOut className="w-4 h-4 mr-2" />
                     Sair
                   </button>
-
-                  
                 </div>
               )}
             </div>

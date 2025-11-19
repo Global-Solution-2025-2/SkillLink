@@ -10,6 +10,7 @@ import Profissionais from "./routes/Profissionais";
 import News from "./routes/News";
 import Cursos from "./routes/Cursos";
 import Carreiras from "./routes/Carreiras";
+import Quiz from "./routes/Quiz";
 import Login from "./routes/Login";
 import Cadastro from "./routes/Cadastro";
 import Feed from "./routes/Feed";
@@ -50,6 +51,7 @@ function AppContent({ darkMode, setDarkMode }) {
           <Route path="/profissionais" element={<Profissionais />} />
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/carreiras" element={<Carreiras />} />
+          <Route path="/quiz" element={<Quiz />} />
           <Route path="/news" element={<News />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />

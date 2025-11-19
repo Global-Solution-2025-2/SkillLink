@@ -40,64 +40,64 @@
     "criadoEm": "2025-11-13T02:56:29.386Z",
     "cursos": [
       {
-        "id": "3-0",
-        "nome": "Introdução a Neurotecnologia",
+        "id": "1",
+        "nome": "Fundamentos de Curadoria de IA",
         "level": "Iniciante",
-        "horas": "30h",
-        "carreiraId": 3,
-        "carreira": "Especialista em Interfaces Cérebro-Computador",
-        "icon": "🧠",
-        "progresso": 100
-      },
-      {
-        "id": "2-1",
-        "nome": "IA para Chatbots",
-        "level": "Intermediário",
-        "horas": "50h",
-        "carreiraId": 2,
-        "carreira": "Desenhista de Personalidades de IA",
-        "icon": "🎭",
-        "progresso": 100
-      },
-      {
-        "id": "1-0",
-        "nome": "Fundamentos de IA",
-        "level": "Iniciante",
-        "horas": "40h",
-        "carreiraId": 1,
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
         "carreira": "Curador de Inteligência Artificial",
-        "icon": "🤖",
-        "progresso": 56.6
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Analista de Dados Assistidos por IA"
+        ],
+        "ultimoAcesso": 1763575724593
       },
       {
-        "id": "1-1",
-        "nome": "Machine Learning Aplicado",
-        "level": "Intermediário",
-        "horas": "60h",
-        "carreiraId": 1,
-        "carreira": "Curador de Inteligência Artificial",
-        "icon": "🤖",
-        "progresso": 33.2
-      },
-      {
-        "id": "2-0",
-        "nome": "Design Conversacional",
+        "id": "13",
+        "nome": "Robôs no Ecossistema Digital",
         "level": "Iniciante",
-        "horas": "35h",
-        "carreiraId": 2,
-        "carreira": "Desenhista de Personalidades de IA",
-        "icon": "🎭",
-        "progresso": 66.4
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Operador de Robôs",
+          "Assistente de Automação"
+        ],
+        "ultimoAcesso": 1763577019259
       },
       {
-        "id": "2-2",
-        "nome": "Estratégias Avançadas de Personalidade",
-        "level": "Avançado",
-        "horas": "45h",
-        "carreiraId": 2,
-        "carreira": "Desenhista de Personalidades de IA",
-        "icon": "🎭",
-        "progresso": 0
+        "id": "4",
+        "nome": "Introdução ao Design Imersivo",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "Designer de Experiências XR",
+          "Criador de Conteúdo VR/AR"
+        ],
+        "ultimoAcesso": 1763577027546
+      },
+      {
+        "id": "2",
+        "nome": "Treinamento e Avaliação de Modelos",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Especialista em Qualidade de Modelos"
+        ],
+        "ultimoAcesso": 1763578712503
       }
     ]
   },

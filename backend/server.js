@@ -181,55 +181,69 @@ app.post("/upload/:id", upload.single("foto"), (req, res) => {
 });
 
 // --------------------- CURSOS ---------------------
-// Retorna todos os cursos do usuário
-app.get("/cursos/usuario/:id", (req, res) => {
-  const usuarioId = req.params.id;
-  const perfis = lerPerfis();
-  const usuario = perfis.find((u) => u.id === usuarioId);
-  res.json(usuario?.cursos || []);
-});
 
-// Matricular usuário em curso
-app.post("/cursos/usuario/:id/matricular", (req, res) => {
-  const usuarioId = req.params.id;
-  const { curso } = req.body;
 
-  if (!curso || !curso.id) return res.status(400).json({ error: "Curso inválido" });
 
-  const perfis = lerPerfis();
-  const usuario = perfis.find((u) => u.id === usuarioId);
+// --------------------- CURSOS ---------------------
+const cursosPath = path.resolve(__dirname, "data", "cursos.json");
 
-  if (!usuario) return res.status(404).json({ error: "Usuário não encontrado" });
+// Garante que o arquivo exista
+if (!fs.existsSync(cursosPath)) {
+  // Se não existir, cria com dados padrão
+  const cursosPadrao = {
+    cursos: [
+      {
+        id: 1,
+        nome: "Curso Padrão",
+        descricao: "Descrição padrão",
+        level: "Iniciante",
+        duracao: "3 semanas",
+        horas: 15,
+        carreira: "Carreira Padrão",
+        profissoesPossiveis: ["Profissão 1"]
+      }
+    ]
+  };
+  fs.writeFileSync(cursosPath, JSON.stringify(cursosPadrao, null, 2), "utf-8");
+}
 
-  if (!usuario.cursos) usuario.cursos = [];
-
-  if (!usuario.cursos.find(c => c.id === curso.id)) {
-    usuario.cursos.push({ ...curso, progresso: 0 });
-    salvarPerfis(perfis);
+// Rota para retornar todos os cursos disponíveis no sistema
+app.get("/cursos", (req, res) => {
+  try {
+    console.log("📖 Lendo arquivo de cursos...");
+    
+    const data = fs.readFileSync(cursosPath, "utf8");
+    
+    // Verifica se o arquivo está vazio
+    if (!data.trim()) {
+      console.error("❌ Arquivo de cursos está vazio");
+      return res.status(500).json({ error: "Arquivo de cursos vazio" });
+    }
+    
+    const cursosData = JSON.parse(data);
+    console.log("✅ JSON parseado com sucesso");
+    
+    // Seu JSON já tem a estrutura { cursos: [...] }
+    // Então retornamos diretamente
+    res.json(cursosData);
+    
+  } catch (error) {
+    console.error("❌ Erro ao ler cursos:", error);
+    
+    // Retorna erro detalhado
+    res.status(500).json({ 
+      error: "Erro ao carregar cursos",
+      details: error.message 
+    });
   }
-
-  res.json(usuario.cursos);
 });
 
-// Atualizar progresso de um curso do usuário
-app.put("/cursos/usuario/:id/atualizar", (req, res) => {
-  const usuarioId = req.params.id;
-  const { cursoId, progresso } = req.body;
-
-  if (!cursoId) return res.status(400).json({ error: "Curso inválido" });
-
-  const perfis = lerPerfis();
-  const usuario = perfis.find((u) => u.id === usuarioId);
-
-  if (!usuario) return res.status(404).json({ error: "Usuário não encontrado" });
-
-  const curso = usuario.cursos.find(c => c.id === cursoId);
-  if (!curso) return res.status(404).json({ error: "Curso não encontrado" });
-
-  curso.progresso = progresso;
-  salvarPerfis(perfis);
-
-  res.json(usuario.cursos);
+// Rota de teste para verificar se o backend está funcionando
+app.get("/test", (req, res) => {
+  res.json({ 
+    message: "Backend funcionando!",
+    timestamp: new Date().toISOString()
+  });
 });
 
 // --------------------- SERVIR DATA ---------------------
