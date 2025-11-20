@@ -16,7 +16,7 @@ export default function Home() {
   </h1>
 
   <p className="mt-4 md:mt-6 text-lg max-w-2xl">
-    Na !NomedaEmpresa!, você encontra cursos inovadores e trilhas de aprendizado que conectam
+    Na SkillLink, você encontra cursos inovadores e trilhas de aprendizado que conectam
     tecnologia, negócios e criatividade. Prepare-se para carreiras que transformam
     o mundo e aceleram sua evolução profissional.
   </p>

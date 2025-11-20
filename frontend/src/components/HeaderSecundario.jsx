@@ -1,16 +1,9 @@
 import React, { useState } from "react";
-import {
-  Rocket,
-  Sun,
-  Moon,
-  User,
-  LogOut,
-} from "lucide-react";
+import { Rocket, Sun, Moon, User, LogOut, MessageCircle } from "lucide-react";
 
 export default function HeaderSecundario({ darkMode, setDarkMode }) {
   const [avatarOpen, setAvatarOpen] = useState(false);
 
-  // ===== CARREGA USUÁRIO DO LOCALSTORAGE =====
   const [user, setUser] = useState(() => {
     try {
       return (
@@ -37,37 +30,20 @@ export default function HeaderSecundario({ darkMode, setDarkMode }) {
         <div className="flex justify-between items-center h-16">
 
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center cursor-pointer" onClick={() => (window.location.href = "/")}>
             <Rocket className="w-8 h-8 text-cyan-600 mr-2" />
-            <span className="text-xl font-bold text-gray-900 dark:text-white">
-              SkillLink
-            </span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">SkillLink</span>
           </div>
 
-          {/* Ícones e Usuário */}
           <div className="flex items-center space-x-4">
 
-            {/* Tema Dark/Light */}
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="p-2 text-gray-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition"
-            >
-              {darkMode ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
-            </button>
-
-            {/* Avatar e Menu */}
+            {/* Avatar */}
             <div className="relative">
               <button
                 onClick={() => setAvatarOpen(!avatarOpen)}
                 className="flex items-center space-x-2 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition"
               >
                 <User className="w-5 h-5 text-gray-500" />
-
-                {/* ===== MOSTRA O NOME DO USUÁRIO ===== */}
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Olá, {user?.nome?.split(" ")[0] || "Usuário"}
                 </span>
@@ -76,7 +52,6 @@ export default function HeaderSecundario({ darkMode, setDarkMode }) {
               {/* Dropdown */}
               {avatarOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg py-1">
-
                   <button
                     onClick={() => (window.location.href = "/perfil")}
                     className="w-full flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
@@ -97,7 +72,24 @@ export default function HeaderSecundario({ darkMode, setDarkMode }) {
                   </button>
                 </div>
               )}
-            </div>
+              </div>
+
+            {/* Botão SkillTalks */}
+            <button
+              onClick={() => (window.location.href = "/skilltalks")}
+              className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+            >
+              <MessageCircle className="w-5 h-5" />
+            </button>
+
+            {/* Tema Dark/Light */}
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className="p-2 text-gray-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition"
+            >
+              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+
           </div>
         </div>
       </div>

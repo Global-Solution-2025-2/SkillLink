@@ -1,132 +1,9 @@
 [
   {
-    "id": "a2fcd3e4-0d91-4c3e-a7f6-dcc6f9e5eabb",
-    "nome": "Rayssa Aquino",
-    "email": "rayssa1@email.com",
-    "senha": "$2b$10$0UhMZVRDBYjM/su/z.R/tu6k8p2sBBq0NqljR6uu4ECOEF1JL3Wqq",
-    "foto": "http://localhost:5000/uploads/foto_abf97562-f82a-4343-92f6-e438e7816a68.png",
-    "cargo": "Professora",
-    "resumo": "Tenho experiência em projetos de desenvolvimento web, explorando tanto a lógica quanto o design funcional das aplicações. Meu foco atual é me aprofundar no back-end, criando sistemas que unam eficiência, propósito e boas experiências para os usuários.",
-    "localizacao": "São Paulo",
-    "area": "Tecnologia",
-    "habilidadesTecnicas": [
-      "Desenvolvimento Front-end"
-    ],
-    "softSkills": [
-      "Trabalho em grupo"
-    ],
-    "experiencias": [],
-    "formacao": [
-      "FIAP"
-    ],
-    "projetos": [
-      "SafeRain",
-      "Futdelas",
-      "PomoBunny",
-      "SkillLink"
-    ],
-    "certificacoes": [
-      "Front end",
-      "Python"
-    ],
-    "idiomas": [
-      "Inglês",
-      "Espanhol"
-    ],
-    "areaInteresses": [
-      "Backend"
-    ],
-    "dataNascimento": "2005-09-05",
-    "criadoEm": "2025-11-13T02:56:29.386Z",
-    "cursos": [
-      {
-        "id": "1",
-        "nome": "Fundamentos de Curadoria de IA",
-        "level": "Iniciante",
-        "horas": 15,
-        "duracao": "3 semanas",
-        "progresso": 100,
-        "icon": "📚",
-        "carreira": "Curador de Inteligência Artificial",
-        "profissoesPossiveis": [
-          "Curador de IA",
-          "Analista de Dados Assistidos por IA"
-        ],
-        "ultimoAcesso": 1763575724593
-      },
-      {
-        "id": "13",
-        "nome": "Robôs no Ecossistema Digital",
-        "level": "Iniciante",
-        "horas": 15,
-        "duracao": "3 semanas",
-        "progresso": 100,
-        "icon": "📚",
-        "carreira": "Gestor de Ecossistemas de Robôs",
-        "profissoesPossiveis": [
-          "Operador de Robôs",
-          "Assistente de Automação"
-        ],
-        "ultimoAcesso": 1763577019259
-      },
-      {
-        "id": "4",
-        "nome": "Introdução ao Design Imersivo",
-        "level": "Iniciante",
-        "horas": 15,
-        "duracao": "3 semanas",
-        "progresso": 100,
-        "icon": "📚",
-        "carreira": "Designer de Experiências Imersivas (VR/AR)",
-        "profissoesPossiveis": [
-          "Designer de Experiências XR",
-          "Criador de Conteúdo VR/AR"
-        ],
-        "ultimoAcesso": 1763577027546
-      },
-      {
-        "id": "2",
-        "nome": "Treinamento e Avaliação de Modelos",
-        "level": "Intermediário",
-        "horas": 20,
-        "duracao": "4 semanas",
-        "progresso": 100,
-        "icon": "📚",
-        "carreira": "Curador de Inteligência Artificial",
-        "profissoesPossiveis": [
-          "Curador de IA",
-          "Especialista em Qualidade de Modelos"
-        ],
-        "ultimoAcesso": 1763578712503
-      }
-    ]
-  },
-  {
-    "id": "07630a5b-fb97-4e26-b6b6-f18143ef5b82",
-    "nome": "giovanna",
-    "email": "giovanna@email.com",
-    "senha": "$2b$10$VwTYRjlIrs9ANJ2I7sJ9RuwpHSsKiRsNyUEs.xJs8orIx8/zTTN.O",
-    "foto": "./images/default.jpg",
-    "cargo": "",
-    "resumo": "",
-    "localizacao": "",
-    "area": "",
-    "habilidadesTecnicas": [],
-    "softSkills": [],
-    "experiencias": [],
-    "formacao": [],
-    "projetos": [],
-    "certificacoes": [],
-    "idiomas": [],
-    "areaInteresses": [],
-    "dataNascimento": "",
-    "criadoEm": "2025-11-13T03:02:24.372Z"
-  },
-  {
-    "id": "d7cf6556-b5aa-4e27-86f3-24f5b1591eaa",
-    "nome": "Ana julia",
-    "email": "ana@email.com",
-    "senha": "$2b$10$t96dbHkRhhiWRdKUVbbkBORLfTrZmSgN/wjYOD0pXxGCN/HpJtGj6",
+    "id": "df8d4110-e96a-443f-8172-e316226ba891",
+    "nome": "Giovana Gaspar Larocca",
+    "email": "giolarocca@email.com",
+    "senha": "$2b$10$uyYVqfbrdizTlgRo5wW0cutJPjqyN/b6ukAkedARvbDNCNL8LFgbe",
     "foto": "/uploads/default.jpg",
     "cargo": "",
     "resumo": "",
@@ -141,6 +18,83 @@
     "idiomas": [],
     "areaInteresses": [],
     "dataNascimento": "",
-    "criadoEm": "2025-11-17T20:34:41.546Z"
+    "criadoEm": "2025-11-20T02:54:36.342Z",
+    "cursos": [
+      {
+        "id": "3",
+        "nome": "Gerenciamento de Bases e Desvios Algorítmicos",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 16.6,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Analista de Governança de IA"
+        ],
+        "ultimoAcesso": 1763650808372
+      }
+    ]
+  },
+  {
+    "id": "210fb435-5245-4f71-b0ee-4d8d0d62ddfe",
+    "nome": "Gabi",
+    "email": "gabriel@email.com",
+    "senha": "$2b$10$4YBvA.MT.TFhaVckFv9OYuN95Zya/nIo1ADOFEEaKFKyBMG9nCX12",
+    "foto": "/uploads/default.jpg",
+    "cargo": "",
+    "resumo": "",
+    "localizacao": "",
+    "area": "",
+    "habilidadesTecnicas": [],
+    "softSkills": [],
+    "experiencias": [],
+    "formacao": [],
+    "projetos": [],
+    "certificacoes": [],
+    "idiomas": [],
+    "areaInteresses": [],
+    "dataNascimento": "",
+    "criadoEm": "2025-11-20T03:17:05.620Z",
+    "cursos": []
+  },
+  {
+    "id": "ded9c71e-11df-484a-ac32-b836cff7132f",
+    "nome": "ana ",
+    "email": "ana@email.com",
+    "senha": "ana",
+    "foto": "/uploads/default.jpg",
+    "cargo": "diva",
+    "resumo": "",
+    "localizacao": "rio de janeiro",
+    "area": "",
+    "habilidadesTecnicas": [],
+    "softSkills": [],
+    "experiencias": [],
+    "formacao": [],
+    "projetos": [],
+    "certificacoes": [],
+    "idiomas": [],
+    "areaInteresses": [],
+    "dataNascimento": "",
+    "criadoEm": "2025-11-20T03:21:38.391Z",
+    "cursos": [
+      {
+        "id": "1",
+        "nome": "Fundamentos de Curadoria de IA",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 66.4,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Analista de Dados Assistidos por IA"
+        ],
+        "ultimoAcesso": 1763609469762
+      }
+    ]
   }
 ]

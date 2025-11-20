@@ -15,6 +15,7 @@ import Login from "./routes/Login";
 import Cadastro from "./routes/Cadastro";
 import Feed from "./routes/Feed";
 import Perfil from "./routes/Perfil";
+import SkillTalks from "./routes/SkillTalks";
 import AreaDeEstudos from "./routes/AreaDeEstudos";
 import CursoAula from "./routes/CursoAula";
 import Vagas from "./routes/Vagas";
@@ -29,7 +30,7 @@ function AppContent({ darkMode, setDarkMode }) {
   const location = useLocation();
 
   // Páginas com Header Secundário
-  const paginasSecundarias = ["/feed", "/perfil","/area-de-estudos","/curso/:cursoId"];
+  const paginasSecundarias = ["/feed", "/perfil","/area-de-estudos","/curso/:cursoId","/profissionais","/vagas","/eventos","/projetos","/skilltalks"];
   const usarSecundario = paginasSecundarias.includes(location.pathname);
 
   // Definição automática do padding
@@ -57,6 +58,7 @@ function AppContent({ darkMode, setDarkMode }) {
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/feed" element={<Feed />} />
           <Route path="/perfil" element={<Perfil />} />
+          <Route path="/skilltalks" element={<SkillTalks />} />
           <Route path="/area-de-estudos" element={<AreaDeEstudos />} />
           <Route path="/curso/:cursoId" element={<CursoAula />} />
           <Route path="/vagas" element={<Vagas />} />

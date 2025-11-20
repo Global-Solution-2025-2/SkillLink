@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1763655468610",
+    "usuarios": [
+      "giolarocca@email.com",
+      "gabriel@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "1763655468610",
+        "remetente": "giolarocca@email.com",
+        "texto": "oii gabriel",
+        "dataEnvio": "2025-11-20T16:17:48.610Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-20T16:17:48.610Z"
+  }
+]

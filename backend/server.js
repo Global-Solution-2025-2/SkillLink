@@ -3,7 +3,6 @@ import cors from "cors";
 import fs from "fs";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
-import bcrypt from "bcryptjs";
 import { v4 as uuidv4 } from "uuid";
 import multer from "multer";
 
@@ -73,13 +72,12 @@ app.post("/cadastro", async (req, res) => {
     return res.status(400).json({ message: "Email já cadastrado" });
   }
 
-  const senhaHash = await bcrypt.hash(senha, 10);
-
+  // SALVANDO SENHA EM TEXTO PURO (SEM HASH)
   const novoPerfil = {
     id: uuidv4(),
     nome,
     email,
-    senha: senhaHash,
+    senha, // <-- senha em texto claro
     foto: "/uploads/default.jpg",
     cargo: "",
     resumo: "",
@@ -119,14 +117,28 @@ app.post("/login", async (req, res) => {
     return res.status(401).json({ message: "Email ou senha incorretos" });
   }
 
-  const senhaOk = await bcrypt.compare(senha, usuario.senha);
-  if (!senhaOk) {
+  // COMPARAÇÃO DIRETA (TEXTO PURO)
+  if (usuario.senha !== senha) {
     return res.status(401).json({ message: "Email ou senha incorretos" });
   }
 
+  // 🔧 Garantir que retorna TODOS os campos que o Feed precisa
   const { senha: _, ...userSemSenha } = usuario;
+  
+  // Adicionar campos padrão se não existirem
+  const usuarioCompleto = {
+    cursos: [],
+    cargo: "",
+    area: "",
+    localizacao: "",
+    foto: "/uploads/default.jpg",
+    ...userSemSenha
+  };
 
-  res.json({ message: "Login realizado", perfil: userSemSenha });
+  res.json({ 
+    message: "Login realizado", 
+    perfil: usuarioCompleto 
+  });
 });
 
 // --------------------- LISTAR PROFISSIONAIS ---------------------
@@ -180,9 +192,220 @@ app.post("/upload/:id", upload.single("foto"), (req, res) => {
   res.json({ message: "Foto enviada com sucesso", foto: caminhoFoto });
 });
 
-// --------------------- CURSOS ---------------------
+// ----------------------
+//  CONVERSAS 
+// ----------------------
 
+const CONVERSAS_PATH = path.join(__dirname, "data/conversas.json");
 
+// Carregar conversas do arquivo JSON (ou criar vazio)
+let conversas = [];
+if (fs.existsSync(CONVERSAS_PATH)) {
+  try {
+    conversas = JSON.parse(fs.readFileSync(CONVERSAS_PATH, "utf-8") || "[]");
+  } catch (err) {
+    console.error("Erro ao parsear conversas.json — iniciando vazio:", err);
+    conversas = [];
+  }
+} else {
+  fs.writeFileSync(CONVERSAS_PATH, "[]", "utf-8");
+}
+
+// Salvar no arquivo
+function salvarConversas() {
+  try {
+    fs.writeFileSync(CONVERSAS_PATH, JSON.stringify(conversas, null, 2), "utf-8");
+  } catch (err) {
+    console.error("Erro ao salvar conversas:", err);
+  }
+}
+
+// Helper: encontra conversa que contenha exatamente esses dois emails (independente da ordem)
+function encontrarConversaEntre(emailA, emailB) {
+  return conversas.find(
+    (c) =>
+      Array.isArray(c.usuarios) &&
+      c.usuarios.includes(emailA) &&
+      c.usuarios.includes(emailB)
+  );
+}
+
+// Criar nova conversa entre dois usuários (se quiser criar manualmente)
+app.post("/conversas", (req, res) => {
+  const { usuario1, usuario2 } = req.body;
+  if (!usuario1 || !usuario2) return res.status(400).json({ error: "Usuários são obrigatórios." });
+
+  // evita duplicar
+  const existe = encontrarConversaEntre(usuario1, usuario2);
+  if (existe) return res.status(200).json(existe);
+
+  const nova = {
+    id: Date.now().toString(),
+    usuarios: [usuario1, usuario2], // emails
+    mensagens: [],
+    criadoEm: new Date().toISOString(),
+  };
+
+  conversas.push(nova);
+  salvarConversas();
+  res.status(201).json(nova);
+});
+
+// Enviar mensagem (rota principal: cria conversa se não existir)
+app.post("/mensagens", (req, res) => {
+  const { remetente, destinatario, texto } = req.body;
+  if (!remetente || !destinatario || !texto) {
+    return res.status(400).json({ success: false, message: "remetente, destinatario e texto são obrigatórios." });
+  }
+
+  // encontra conversa existente ou cria nova
+  let conversa = encontrarConversaEntre(remetente, destinatario);
+  if (!conversa) {
+    conversa = {
+      id: Date.now().toString(),
+      usuarios: [remetente, destinatario],
+      mensagens: [],
+      criadoEm: new Date().toISOString(),
+    };
+    conversas.push(conversa);
+  }
+
+  const novaMensagem = {
+    id: Date.now().toString(),
+    remetente,        // email do autor
+    texto,
+    dataEnvio: new Date().toISOString(),
+    lida: false
+  };
+
+  conversa.mensagens.push(novaMensagem);
+  salvarConversas();
+
+  return res.json({ success: true, mensagem: novaMensagem, conversaId: conversa.id });
+});
+
+// Alias compatível com o seu código antigo
+app.post("/mensagens/simple", (req, res) => {
+  // apenas chama /mensagens
+  const { remetente, destinatario, texto } = req.body;
+  req.body = { remetente, destinatario, texto };
+  // Reuse the handler above by directly performing same logic (don't attempt redirect)
+  if (!remetente || !destinatario || !texto) {
+    return res.status(400).json({ success: false, message: "remetente, destinatario e texto são obrigatórios." });
+  }
+  let conversa = encontrarConversaEntre(remetente, destinatario);
+  if (!conversa) {
+    conversa = {
+      id: Date.now().toString(),
+      usuarios: [remetente, destinatario],
+      mensagens: [],
+      criadoEm: new Date().toISOString(),
+    };
+    conversas.push(conversa);
+  }
+  const novaMensagem = {
+    id: Date.now().toString(),
+    remetente,
+    texto,
+    dataEnvio: new Date().toISOString(),
+    lida: false
+  };
+  conversa.mensagens.push(novaMensagem);
+  salvarConversas();
+  return res.json({ success: true, message: "Mensagem salva!", mensagem: novaMensagem, conversaId: conversa.id });
+});
+
+// Listar todas as conversas de um usuário (retorna o array de conversas)
+app.get("/conversas/usuario/:usuarioEmail", (req, res) => {
+  const { usuarioEmail } = req.params;
+  if (!usuarioEmail) return res.status(400).json({ error: "usuarioEmail é obrigatório." });
+
+  const lista = conversas
+    .filter((c) => Array.isArray(c.usuarios) && c.usuarios.includes(usuarioEmail))
+    .map((c) => {
+      // determina o contato (o outro email)
+      const contato = c.usuarios.find((u) => u !== usuarioEmail) || null;
+      const ultima = c.mensagens && c.mensagens.length ? c.mensagens[c.mensagens.length - 1] : null;
+      const naoLidas = c.mensagens
+        ? c.mensagens.reduce((acc, m) => acc + (m.lida === false && m.remetente !== usuarioEmail ? 1 : 0), 0)
+        : 0;
+      return {
+        conversaId: c.id,
+        contato,
+        ultimaMensagem: ultima ? ultima.texto : null,
+        horario: ultima ? ultima.dataEnvio : c.criadoEm,
+        naoLidas
+      };
+    })
+    // ordena mais recente primeiro
+    .sort((a, b) => new Date(b.horario) - new Date(a.horario));
+
+  res.json(lista);
+});
+
+// Rota compatível com seu front: retorna a lista de contatos para o inbox
+app.get("/mensagens/inbox/:email", (req, res) => {
+  const { email } = req.params;
+  if (!email) return res.status(400).json([]);
+
+  const lista = conversas
+    .filter((c) => Array.isArray(c.usuarios) && c.usuarios.includes(email))
+    .map((c) => {
+      const contato = c.usuarios.find((u) => u !== email) || null;
+      const ultima = c.mensagens && c.mensagens.length ? c.mensagens[c.mensagens.length - 1] : null;
+      const naoLidas = c.mensagens
+        ? c.mensagens.reduce((acc, m) => acc + (m.lida === false && m.remetente !== email ? 1 : 0), 0)
+        : 0;
+      return {
+        contato,
+        ultimaMensagem: ultima ? ultima.texto : null,
+        horario: ultima ? ultima.dataEnvio : c.criadoEm,
+        naoLidas
+      };
+    })
+    .sort((a, b) => new Date(b.horario) - new Date(a.horario));
+
+  res.json(lista);
+});
+
+// Listar somente mensagens entre 2 usuários (privado) via query params (compatível com Chat.jsx)
+app.get("/mensagens/conversa", (req, res) => {
+  const { user1, user2 } = req.query;
+  if (!user1 || !user2) return res.status(400).json([]);
+
+  const conversa = encontrarConversaEntre(user1, user2);
+  if (!conversa) return res.json([]);
+
+  res.json(conversa.mensagens);
+});
+
+// Também exponho rota antiga por params por compatibilidade
+app.get("/mensagens/:u1/:u2", (req, res) => {
+  const { u1, u2 } = req.params;
+  if (!u1 || !u2) return res.status(400).json([]);
+
+  const conversa = encontrarConversaEntre(u1, u2);
+  if (!conversa) return res.json([]);
+  res.json(conversa.mensagens);
+});
+
+// Marcar mensagens como lidas (mantive sua rota original)
+app.put("/conversas/:id/mensagens/lidas", (req, res) => {
+  const { id } = req.params;
+  const { usuario } = req.body;
+
+  const conversa = conversas.find((c) => c.id == id);
+  if (!conversa) return res.status(404).json({ error: "Conversa não encontrada." });
+
+  conversa.mensagens.forEach((m) => {
+    if (m.remetente !== usuario) {
+      m.lida = true;
+    }
+  });
+
+  salvarConversas();
+  res.json({ ok: true });
+});
 
 // --------------------- CURSOS ---------------------
 const cursosPath = path.resolve(__dirname, "data", "cursos.json");

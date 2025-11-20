@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-
-const API_URL = "http://localhost:5000";
 
 export default function Cadastro() {
-  const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [novoPerfil, setNovoPerfil] = useState({
+    nome: "",
+    email: "",
+    senha: "",
+  });
   const [mensagem, setMensagem] = useState("");
   const navigate = useNavigate();
 
@@ -15,22 +14,33 @@ export default function Cadastro() {
     e.preventDefault();
     setMensagem("");
 
+    if (!novoPerfil.nome || !novoPerfil.email || !novoPerfil.senha) {
+      setMensagem("Por favor, preencha todos os campos!");
+      return;
+    }
+
     try {
-      const response = await axios.post(`${API_URL}/cadastro`, {
-        nome,
-        email,
-        senha,
+      const response = await fetch("http://localhost:5000/cadastro", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: novoPerfil.nome,
+          email: novoPerfil.email,
+          senha: novoPerfil.senha
+        }),
       });
 
-      setMensagem(response.data.message);
+      const data = await response.json();
 
-      if (response.data.sucesso) {
-        setTimeout(() => navigate("/login"), 1000);
+      if (response.ok) {
+        setMensagem("Cadastro realizado com sucesso!");
+        setTimeout(() => navigate("/login"), 1200);
+      } else {
+        setMensagem(data.message || "Erro ao cadastrar. Tente novamente.");
       }
-    } catch (erro) {
-      setMensagem(
-        erro.response?.data?.message || "Erro ao cadastrar usuário."
-      );
+    } catch (error) {
+      console.error("Erro ao cadastrar:", error);
+      setMensagem("Erro de conexão com o servidor.");
     }
   };
 
@@ -39,7 +49,7 @@ export default function Cadastro() {
       <div
         className="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-6 w-full max-w-md border border-gray-200 dark:border-gray-700"
         style={{
-          maxHeight: "calc(100vh - 120px)", // evita scroll externo
+          maxHeight: "calc(100vh - 120px)",
           overflowY: "auto",
         }}
       >
@@ -51,37 +61,46 @@ export default function Cadastro() {
           <input
             type="text"
             placeholder="Nome completo"
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
+            value={novoPerfil.nome}
+            onChange={(e) =>
+              setNovoPerfil({ ...novoPerfil, nome: e.target.value })
+            }
             className="p-2.5 rounded-lg border border-gray-300 dark:border-gray-600
             bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100
             placeholder-gray-400 dark:placeholder-gray-300
             focus:outline-none focus:ring-2 focus:ring-cyan-500 transition"
             required
+            autoComplete="name"
           />
 
           <input
             type="email"
             placeholder="E-mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={novoPerfil.email}
+            onChange={(e) =>
+              setNovoPerfil({ ...novoPerfil, email: e.target.value })
+            }
             className="p-2.5 rounded-lg border border-gray-300 dark:border-gray-600
             bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100
             placeholder-gray-400 dark:placeholder-gray-300
             focus:outline-none focus:ring-2 focus:ring-cyan-500 transition"
             required
+            autoComplete="email"
           />
 
           <input
             type="password"
             placeholder="Senha"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
+            value={novoPerfil.senha}
+            onChange={(e) =>
+              setNovoPerfil({ ...novoPerfil, senha: e.target.value })
+            }
             required
             className="p-2.5 rounded-lg border border-gray-300 dark:border-gray-600
             bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100
             placeholder-gray-400 dark:placeholder-gray-300
             focus:outline-none focus:ring-2 focus:ring-cyan-500 transition"
+            autoComplete="new-password"
           />
 
           <button

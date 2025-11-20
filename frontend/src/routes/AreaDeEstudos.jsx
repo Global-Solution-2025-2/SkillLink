@@ -1,4 +1,3 @@
-// src/pages/AreaEstudos.jsx
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -40,41 +39,33 @@ function extrairHoras(duracao) {
 function calcularHorasEstudadas(curso) {
   const horasTotais = typeof curso.horas === "number" ? curso.horas : extrairHoras(curso.duracao || curso.horas);
   const progresso = curso.progresso || 0;
-  
-  // Calcula horas estudadas baseadas no progresso
   return Math.round((horasTotais * progresso) / 100);
 }
 
 export default function AreaEstudos() {
   const navigate = useNavigate();
 
-  // Carrega usuário do localStorage
+  // Carrega usuário APENAS do usuarioLogado
   const getLocalUser = () => {
     try {
-      return (
-        JSON.parse(localStorage.getItem("usuario")) ||
-        JSON.parse(localStorage.getItem("usuarioLogado")) ||
-        {
-          id: "",
-          nome: "Usuário Futurista",
-          cargo: "Estudante de Tecnologia",
-          foto: "https://i.pravatar.cc/300",
-          cursos: [],
-        }
-      );
-    } catch {
-      return {
-        id: "",
-        nome: "Usuário Futurista",
-        cargo: "Estudante de Tecnologia",
-        foto: "https://i.pravatar.cc/300",
-        cursos: [],
-      };
+      const usuarioLogado = localStorage.getItem("usuarioLogado");
+      if (!usuarioLogado) {
+        navigate("/login");
+        return null;
+      }
+      
+      const usuario = JSON.parse(usuarioLogado);
+      console.log("👤 Usuário carregado do localStorage:", usuario.nome, usuario.id);
+      return usuario;
+    } catch (error) {
+      console.error("Erro ao carregar usuário:", error);
+      navigate("/login");
+      return null;
     }
   };
 
-  const [usuario, setUsuario] = useState(getLocalUser());
-  const [meusCursos, setMeusCursos] = useState(usuario.cursos || []);
+  const [usuario, setUsuario] = useState(() => getLocalUser());
+  const [meusCursos, setMeusCursos] = useState(usuario?.cursos || []);
   const [cursosDisponiveis, setCursosDisponiveis] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterLevel, setFilterLevel] = useState("all");
@@ -82,29 +73,23 @@ export default function AreaEstudos() {
   const [loadingCursosMap, setLoadingCursosMap] = useState({});
   const [erro, setErro] = useState(null);
 
-  // Carrega cursos do backend
+  // Carrega cursos disponíveis
   const carregarCursosDisponiveis = async () => {
     try {
       const res = await axios.get(`${API_BASE}/cursos`);
       
-      // Garante que temos um array
       let cursosArray = [];
       
       if (Array.isArray(res.data)) {
         cursosArray = res.data;
       } else if (res.data && Array.isArray(res.data.cursos)) {
         cursosArray = res.data.cursos;
-      } else if (res.data && Array.isArray(res.data.data)) {
-        cursosArray = res.data.data;
       } else {
-        // Se não for array, tenta converter
         cursosArray = Object.values(res.data || {});
       }
       
-      // Filtra apenas arrays válidos
       cursosArray = cursosArray.filter(item => item && typeof item === 'object');
       
-      // Formata os cursos
       const formatados = cursosArray.map((curso, index) => ({
         id: curso.id?.toString() || curso._id?.toString() || `curso-${index + 1}`,
         nome: curso.nome || curso.titulo || `Curso ${index + 1}`,
@@ -121,7 +106,6 @@ export default function AreaEstudos() {
       
     } catch (err) {
       console.error("Erro ao carregar cursos:", err);
-      // Fallback
       setCursosDisponiveis([
         {
           id: "1",
@@ -139,24 +123,23 @@ export default function AreaEstudos() {
     }
   };
 
-  // Carrega cursos do usuário - VERSÃO OTIMIZADA
+  // Carrega cursos do usuário
   const carregarCursosUsuario = async () => {
-    const local = getLocalUser();
-    
-    if (!local.id) {
-      setUsuario(local);
-      setMeusCursos(local.cursos || []);
+    if (!usuario?.id) {
+      console.log("⚠️ Usuário sem ID, usando cursos locais");
       return;
     }
 
     try {
-      // Busca diretamente na lista de profissionais (evita tentar /perfil/:id)
-      const resProfissionais = await axios.get(`${API_BASE}/profissionais`);
-      const perfil = resProfissionais.data.find(p => p.id === local.id);
+      console.log("🔄 Buscando dados atualizados do usuário:", usuario.id);
       
-      if (perfil) {
-        // Normaliza os cursos do usuário
-        const cursosFormatados = (perfil.cursos || []).map((curso) => ({
+      const resProfissionais = await axios.get(`${API_BASE}/profissionais`);
+      const perfilAtualizado = resProfissionais.data.find(p => p.id === usuario.id);
+      
+      if (perfilAtualizado) {
+        console.log("✅ Usuário encontrado no servidor:", perfilAtualizado.nome);
+        
+        const cursosFormatados = (perfilAtualizado.cursos || []).map((curso) => ({
           id: curso.id?.toString() || curso._id?.toString(),
           nome: curso.nome || curso.titulo || "Curso sem nome",
           level: curso.nivel || curso.level || "Iniciante",
@@ -170,43 +153,42 @@ export default function AreaEstudos() {
         }));
 
         const usuarioAtualizado = { 
-          ...perfil, 
-          cursos: cursosFormatados,
-          id: perfil.id || local.id,
-          nome: perfil.nome || local.nome,
-          cargo: perfil.cargo || local.cargo,
-          foto: perfil.foto || local.foto
+          ...perfilAtualizado,
+          cursos: cursosFormatados
         };
 
         setUsuario(usuarioAtualizado);
         setMeusCursos(cursosFormatados);
-
-        // Atualiza localStorage
         localStorage.setItem("usuarioLogado", JSON.stringify(usuarioAtualizado));
-        localStorage.setItem("usuario", JSON.stringify(usuarioAtualizado));
+        console.log("💾 Usuário atualizado no localStorage");
+        
       } else {
-        // Usuário não encontrado, mantém dados locais
-        setUsuario(local);
-        setMeusCursos(local.cursos || []);
+        console.log("⚠️ Usuário não encontrado no servidor, mantendo dados locais");
       }
 
     } catch (err) {
       console.error("Erro ao carregar perfil do usuário:", err);
-      // Mantém os dados locais em caso de erro
-      setUsuario(local);
-      setMeusCursos(local.cursos || []);
     }
   };
 
-  // Carrega tudo ao montar o componente
+  // Carrega dados
   useEffect(() => {
     let mounted = true;
+    
+    if (!usuario) {
+      setLoading(false);
+      return;
+    }
+
     setLoading(true);
     setErro(null);
 
     const carregarDados = async () => {
       try {
-        await Promise.all([carregarCursosDisponiveis(), carregarCursosUsuario()]);
+        await Promise.all([
+          carregarCursosDisponiveis(), 
+          carregarCursosUsuario()
+        ]);
       } catch (error) {
         console.error("Erro ao carregar dados:", error);
         setErro("Erro ao carregar dados. Tente recarregar a página.");
@@ -222,12 +204,13 @@ export default function AreaEstudos() {
     return () => {
       mounted = false;
     };
-  }, []);
+  }, [usuario?.id]);
 
   // Matricular usuário em curso
   const matricularCurso = async (curso) => {
-    if (!usuario.id) {
+    if (!usuario?.id) {
       alert("Você precisa estar logado para se matricular.");
+      navigate("/login");
       return;
     }
 
@@ -238,34 +221,31 @@ export default function AreaEstudos() {
     setLoadingCursosMap((prev) => ({ ...prev, [curso.id]: true }));
 
     try {
-      // Prepara o curso para matrícula
       const cursoParaMatricular = {
         id: curso.id,
         nome: curso.nome,
         level: curso.level,
         horas: curso.horas,
         duracao: curso.duracao,
-        progresso: 0, // Começa com 0% de progresso
+        progresso: 0,
         icon: curso.icon,
         carreira: curso.carreira,
         profissoesPossiveis: curso.profissoesPossiveis,
         ultimoAcesso: Date.now()
       };
 
-      // Atualiza no backend
-      const res = await axios.put(`${API_BASE}/perfil/${usuario.id}`, {
+      await axios.put(`${API_BASE}/perfil/${usuario.id}`, {
         cursos: [...meusCursos, cursoParaMatricular]
       });
 
-      // Atualiza estado local
       const atualizado = [...meusCursos, cursoParaMatricular];
       setMeusCursos(atualizado);
 
-      // Atualiza localStorage
       const userToStore = { ...usuario, cursos: atualizado };
       setUsuario(userToStore);
       localStorage.setItem("usuarioLogado", JSON.stringify(userToStore));
-      localStorage.setItem("usuario", JSON.stringify(userToStore));
+
+      console.log("✅ Curso matriculado:", curso.nome);
 
     } catch (err) {
       console.error("Erro ao matricular:", err);
@@ -277,8 +257,9 @@ export default function AreaEstudos() {
 
   // Atualizar progresso do curso
   const avancarCurso = async (cursoId) => {
-    if (!usuario.id) {
+    if (!usuario?.id) {
       alert("Usuário não logado.");
+      navigate("/login");
       return;
     }
 
@@ -295,17 +276,13 @@ export default function AreaEstudos() {
           : curso
       );
 
-      // Atualiza no backend
       await axios.put(`${API_BASE}/perfil/${usuario.id}`, {
         cursos: atualizadoLocal
       });
 
       setMeusCursos(atualizadoLocal);
-
-      // Atualiza localStorage
       const userToStore = { ...usuario, cursos: atualizadoLocal };
       localStorage.setItem("usuarioLogado", JSON.stringify(userToStore));
-      localStorage.setItem("usuario", JSON.stringify(userToStore));
 
     } catch (err) {
       console.error("Erro ao atualizar progresso:", err);
@@ -320,6 +297,8 @@ export default function AreaEstudos() {
     navigate(`/curso/${curso.id}`, { state: { curso, usuario } });
   };
 
+  // 🔧 **VARIÁVEIS DEFINIDAS ANTES DO RETURN:**
+  
   // Filtrar cursos disponíveis
   const disponiveis = cursosDisponiveis
     .filter((c) => !meusCursos.find((m) => m.id === c.id))
@@ -334,14 +313,13 @@ export default function AreaEstudos() {
       return matchesText && matchesLevel;
     });
 
-  // Estatísticas - CÁLCULO CORRETO
+  // Estatísticas
   const emAndamento = meusCursos.filter((c) => (c.progresso || 0) < 100);
   const concluidos = meusCursos.filter((c) => (c.progresso || 0) >= 100);
 
   const totalCursos = meusCursos.length;
   const horasTotaisCursos = meusCursos.reduce((acc, curso) => acc + (curso.horas || 0), 0);
   const horasEstudadas = meusCursos.reduce((acc, curso) => {
-    // CORREÇÃO: Calcula apenas as horas estudadas, não as horas totais
     return acc + calcularHorasEstudadas(curso);
   }, 0);
 
@@ -349,7 +327,18 @@ export default function AreaEstudos() {
     ? Math.round(meusCursos.reduce((acc, curso) => acc + (curso.progresso || 0), 0) / totalCursos)
     : 0;
 
-  // Loading
+  // Loading states
+  if (!usuario) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-600 mx-auto"></div>
+          <p className="text-gray-600 dark:text-gray-300 mt-4">Redirecionando para login...</p>
+        </div>
+      </div>
+    );
+  }
+
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
@@ -361,8 +350,16 @@ export default function AreaEstudos() {
     );
   }
 
+  // Card componente
+  const Card = ({ children, className = "" }) => (
+    <div className={`bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-lg hover:shadow-2xl transition-all ${className}`}>
+      {children}
+    </div>
+  );
+
+  // 🔧 **RETURN PRINCIPAL:**
   return (
-    <div className="min-h-screen  from-gray-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen from-gray-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         {/* ASIDE */}
@@ -423,52 +420,52 @@ export default function AreaEstudos() {
         <main className="lg:col-span-9 flex flex-col gap-8">
           
           {/* RESUMO DE PROGRESSO */}
-<section className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
-  <div className="flex items-center gap-3 mb-6">
-    <div className="bg-cyan-50 dark:bg-cyan-900/20 p-2 rounded-lg">
-      <BarChart3 className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
-    </div>
-    <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Seu Progresso</h2>
-  </div>
+          <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="bg-cyan-50 dark:bg-cyan-900/20 p-2 rounded-lg">
+                <BarChart3 className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+              </div>
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Seu Progresso</h2>
+            </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-    <div className="bg-cyan-50 dark:bg-cyan-900/20 rounded-xl p-4 border border-cyan-100 dark:border-cyan-800">
-      <div className="flex items-center gap-3">
-        <div className="bg-white dark:bg-cyan-800 p-2 rounded-lg">
-          <Clock className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
-        </div>
-        <div>
-          <p className="text-sm text-cyan-600 dark:text-cyan-400 font-medium">Horas Estudadas</p>
-          <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{horasEstudadas}h</p>
-        </div>
-      </div>
-    </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-cyan-50 dark:bg-cyan-900/20 rounded-xl p-4 border border-cyan-100 dark:border-cyan-800">
+                <div className="flex items-center gap-3">
+                  <div className="bg-white dark:bg-cyan-800 p-2 rounded-lg">
+                    <Clock className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-cyan-600 dark:text-cyan-400 font-medium">Horas Estudadas</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{horasEstudadas}h</p>
+                  </div>
+                </div>
+              </div>
 
-    <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-4 border border-green-100 dark:border-green-800">
-      <div className="flex items-center gap-3">
-        <div className="bg-white dark:bg-green-800 p-2 rounded-lg">
-          <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
-        </div>
-        <div>
-          <p className="text-sm text-green-600 dark:text-green-400 font-medium">Cursos Concluídos</p>
-          <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{concluidos.length}</p>
-        </div>
-      </div>
-    </div>
+              <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-4 border border-green-100 dark:border-green-800">
+                <div className="flex items-center gap-3">
+                  <div className="bg-white dark:bg-green-800 p-2 rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-green-600 dark:text-green-400 font-medium">Cursos Concluídos</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{concluidos.length}</p>
+                  </div>
+                </div>
+              </div>
 
-    <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4 border border-purple-100 dark:border-purple-800">
-      <div className="flex items-center gap-3">
-        <div className="bg-white dark:bg-purple-800 p-2 rounded-lg">
-          <BookOpen className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-        </div>
-        <div>
-          <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">Progresso Geral</p>
-          <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{progressoGeral}%</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+              <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4 border border-purple-100 dark:border-purple-800">
+                <div className="flex items-center gap-3">
+                  <div className="bg-white dark:bg-purple-800 p-2 rounded-lg">
+                    <BookOpen className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-purple-600 dark:text-purple-400 font-medium">Progresso Geral</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{progressoGeral}%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
 {/* EM ANDAMENTO */}
 <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
