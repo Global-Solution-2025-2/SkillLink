@@ -169,10 +169,10 @@
   },
   {
     "id": "c3d4e5f6-g7h8-9012-cdef-345678901234",
-    "nome": "Ana Beatriz",
-    "email": "ana.beatriz@email.com",
-    "senha": "ana123",
-    "foto": "https://images.pexels.com/photos/1674752/pexels-photo-1674752.jpeg",
+    "nome": "Giovana Larocca",
+    "email": "giovana@email.com",
+    "senha": "gio123",
+    "foto": "http://localhost:5000/uploads/foto_50b70e53-f193-43a6-bb0c-761f8f614912.jpg",
     "cargo": "Especialista em Interfaces Cérebro-Computador",
     "resumo": "Pesquiso e desenvolvo interfaces neurais para aplicações em saúde, acessibilidade e interação humano-máquina.",
     "localizacao": "Campinas",
@@ -233,7 +233,7 @@
         "level": "Intermediário",
         "horas": 20,
         "duracao": "4 semanas",
-        "progresso": 78.2,
+        "progresso": 94.80000000000001,
         "icon": "📚",
         "carreira": "Especialista em Interfaces Cérebro-Computador",
         "profissoesPossiveis": [
@@ -256,6 +256,21 @@
           "Especialista em Qualidade de Modelos"
         ],
         "ultimoAcesso": 1763704344354
+      },
+      {
+        "id": "1",
+        "nome": "Fundamentos de Curadoria de IA",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 16.6,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Analista de Dados Assistidos por IA"
+        ],
+        "ultimoAcesso": 1763746105267
       }
     ],
     "recomendacoes": {
@@ -437,7 +452,7 @@
   {
     "id": "f6g7h8i9-j0k1-2345-fghi-678901234567",
     "nome": "Rafael Costa",
-    "email": "rafael.costa@email.com",
+    "email": "rafael.costa1@email.com",
     "senha": "rafael123",
     "foto": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
     "cargo": "Analista de Ética de Algoritmos",
@@ -2683,7 +2698,7 @@
     "nome": "Lucas Torres",
     "email": "lucas.torres@email.com",
     "senha": "lucas1313",
-    "foto": "http://localhost:5000/uploads/foto_z8a9b0c1-d2e3-45f6-g7h8-i9j0k1l2m3n4.png",
+    "foto": "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg",
     "cargo": "Especialista em Interfaces Cérebro-Computador",
     "resumo": "Técnico BCI focado em Sinais Neurais e Interpretação de Dados, atuando na coleta e análise primária de dados de eletroencefalografia (EEG) para aplicações em neurotecnologia.",
     "localizacao": "Curitiba",
@@ -2951,7 +2966,7 @@
     "nome": "Ricardo Barros",
     "email": "ricardo.barros@email.com",
     "senha": "ricardo1717",
-    "foto": "http://localhost:5000/uploads/foto_d2e3f4g5-h6i7-89j0-k1l2-m3n4o5p6q7r8.png",
+    "foto": "https://images.pexels.com/photos/5082976/pexels-photo-5082976.jpeg",
     "cargo": "Especialista em Interfaces Cérebro-Computador",
     "resumo": "Técnico BCI focado em Introdução a Interfaces Cérebro-Computador, atuando como o primeiro ponto de contato na configuração e operação de dispositivos BCI.",
     "localizacao": "Recife",
