@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Rocket, Sun, Moon, User, LogOut, MessageCircle } from "lucide-react";
+import { Rocket, Sun, Moon, User, LogOut} from "lucide-react";
 
 export default function HeaderSecundario({ darkMode, setDarkMode }) {
   const [avatarOpen, setAvatarOpen] = useState(false);
@@ -73,14 +73,6 @@ export default function HeaderSecundario({ darkMode, setDarkMode }) {
                 </div>
               )}
               </div>
-
-            {/* Botão SkillTalks */}
-            <button
-              onClick={() => (window.location.href = "/skilltalks")}
-              className="flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-            >
-              <MessageCircle className="w-5 h-5" />
-            </button>
 
             {/* Tema Dark/Light */}
             <button

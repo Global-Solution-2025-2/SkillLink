@@ -1,84 +1,707 @@
 [
   {
-    "id": "df8d4110-e96a-443f-8172-e316226ba891",
-    "nome": "Giovana Gaspar Larocca",
-    "email": "giolarocca@email.com",
-    "senha": "$2b$10$uyYVqfbrdizTlgRo5wW0cutJPjqyN/b6ukAkedARvbDNCNL8LFgbe",
-    "foto": "/uploads/default.jpg",
-    "cargo": "",
-    "resumo": "",
-    "localizacao": "",
-    "area": "",
-    "habilidadesTecnicas": [],
-    "softSkills": [],
-    "experiencias": [],
-    "formacao": [],
-    "projetos": [],
-    "certificacoes": [],
-    "idiomas": [],
-    "areaInteresses": [],
-    "dataNascimento": "",
-    "criadoEm": "2025-11-20T02:54:36.342Z",
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "nome": "Marina Santos",
+    "email": "marina.santos@email.com",
+    "senha": "marina123",
+    "foto": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+    "cargo": "Designer de Experiências Imersivas (VR/AR)",
+    "resumo": "Crio experiências digitais imersivas que conectam o mundo físico e virtual através de realidade aumentada e virtual.",
+    "localizacao": "São Paulo",
+    "area": "Tecnologia",
+    "habilidadesTecnicas": [
+      "Unity",
+      "Blender",
+      "UI/UX Design"
+    ],
+    "softSkills": [
+      "Criatividade",
+      "Empatia"
+    ],
+    "experiencias": [
+      "Designer JR na ImmerseTech"
+    ],
+    "formacao": [
+      "Universidade de São Paulo"
+    ],
+    "projetos": [
+      "AR Museum Guide",
+      "Virtual Showroom"
+    ],
+    "certificacoes": [
+      "UX Design Avançado",
+      "Realidade Aumentada"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "VR/AR",
+      "Design Interativo"
+    ],
+    "dataNascimento": "1998-07-15",
+    "criadoEm": "2025-11-19T21:15:30.000Z",
     "cursos": [
       {
-        "id": "3",
-        "nome": "Gerenciamento de Bases e Desvios Algorítmicos",
-        "level": "Avançado",
-        "horas": 25,
-        "duracao": "5 semanas",
-        "progresso": 16.6,
+        "id": "4",
+        "nome": "Introdução ao Design Imersivo",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
         "icon": "📚",
-        "carreira": "Curador de Inteligência Artificial",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
         "profissoesPossiveis": [
-          "Curador de IA",
-          "Analista de Governança de IA"
+          "Designer de Experiências XR",
+          "Criador de Conteúdo VR/AR"
         ],
-        "ultimoAcesso": 1763650808372
+        "ultimoAcesso": 1763597000000
+      },
+      {
+        "id": "5",
+        "nome": "Prototipação em Realidade Aumentada",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 75,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "UX Designer XR",
+          "Desenvolvedor de Aplicações AR"
+        ],
+        "ultimoAcesso": 1763598000000
       }
-    ]
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "c3d4e5f6-g7h8-9012-cdef-345678901234"
+      ]
+    }
   },
   {
-    "id": "210fb435-5245-4f71-b0ee-4d8d0d62ddfe",
-    "nome": "Gabi",
-    "email": "gabriel@email.com",
-    "senha": "$2b$10$4YBvA.MT.TFhaVckFv9OYuN95Zya/nIo1ADOFEEaKFKyBMG9nCX12",
-    "foto": "/uploads/default.jpg",
-    "cargo": "",
-    "resumo": "",
-    "localizacao": "",
-    "area": "",
-    "habilidadesTecnicas": [],
-    "softSkills": [],
-    "experiencias": [],
-    "formacao": [],
-    "projetos": [],
-    "certificacoes": [],
-    "idiomas": [],
-    "areaInteresses": [],
-    "dataNascimento": "",
-    "criadoEm": "2025-11-20T03:17:05.620Z",
-    "cursos": []
+    "id": "b2c3d4e5-f6g7-8901-bcde-f23456789012",
+    "nome": "Carlos Eduardo",
+    "email": "carlos.eduardo@email.com",
+    "senha": "carlos123",
+    "foto": "http://localhost:5000/uploads/foto_carlos_eduardo.png",
+    "cargo": "Engenheiro de Sustentabilidade Digital",
+    "resumo": "Desenvolvo soluções tecnológicas sustentáveis para reduzir o impacto ambiental da infraestrutura digital.",
+    "localizacao": "Curitiba",
+    "area": "Tecnologia",
+    "habilidadesTecnicas": [
+      "Análise ESG",
+      "Gestão Energética",
+      "Python"
+    ],
+    "softSkills": [
+      "Pensamento sistêmico",
+      "Responsabilidade ambiental"
+    ],
+    "experiencias": [
+      "Analista de Sustentabilidade na GreenTech Solutions"
+    ],
+    "formacao": [
+      "UFPR"
+    ],
+    "projetos": [
+      "EcoData Center",
+      "Carbon Footprint Calculator"
+    ],
+    "certificacoes": [
+      "ESG Professional",
+      "Gestão Energética"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Espanhol"
+    ],
+    "areaInteresses": [
+      "Sustentabilidade",
+      "Tecnologia Verde"
+    ],
+    "dataNascimento": "1995-11-03",
+    "criadoEm": "2025-11-19T22:20:45.000Z",
+    "cursos": [
+      {
+        "id": "7",
+        "nome": "Sustentabilidade e Tecnologia Digital",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Analista de Sustentabilidade",
+          "Consultor ESG Digital"
+        ],
+        "ultimoAcesso": 1763599000000
+      },
+      {
+        "id": "8",
+        "nome": "Infraestrutura Verde e Computação Eficiente",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 60,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Engenheiro de Sustentabilidade Digital",
+          "Arquiteto de Infraestrutura Sustentável"
+        ],
+        "ultimoAcesso": 1763600000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "b2c3d4e5-f6g7-8901-bcde-f23456789012",
+        "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "c3d4e5f6-g7h8-9012-cdef-345678901234"
+      ]
+    }
   },
   {
-    "id": "ded9c71e-11df-484a-ac32-b836cff7132f",
-    "nome": "ana ",
-    "email": "ana@email.com",
-    "senha": "ana",
-    "foto": "/uploads/default.jpg",
-    "cargo": "diva",
-    "resumo": "",
-    "localizacao": "rio de janeiro",
-    "area": "",
-    "habilidadesTecnicas": [],
-    "softSkills": [],
-    "experiencias": [],
-    "formacao": [],
-    "projetos": [],
-    "certificacoes": [],
-    "idiomas": [],
-    "areaInteresses": [],
-    "dataNascimento": "",
-    "criadoEm": "2025-11-20T03:21:38.391Z",
+    "id": "c3d4e5f6-g7h8-9012-cdef-345678901234",
+    "nome": "Ana Beatriz",
+    "email": "ana.beatriz@email.com",
+    "senha": "ana123",
+    "foto": "http://localhost:5000/uploads/foto_ana_beatriz.png",
+    "cargo": "Especialista em Interfaces Cérebro-Computador",
+    "resumo": "Pesquiso e desenvolvo interfaces neurais para aplicações em saúde, acessibilidade e interação humano-máquina.",
+    "localizacao": "Campinas",
+    "area": "Saúde e Tecnologia",
+    "habilidadesTecnicas": [
+      "Processamento de Sinais",
+      "Python",
+      "Neurociência Computacional"
+    ],
+    "softSkills": [
+      "Paciência",
+      "Atenção aos detalhes"
+    ],
+    "experiencias": [
+      "Pesquisadora no Instituto de Neurotecnologia"
+    ],
+    "formacao": [
+      "UNICAMP",
+      "MIT"
+    ],
+    "projetos": [
+      "BCI para Reabilitação",
+      "NeuroControl Interface"
+    ],
+    "certificacoes": [
+      "Neurotecnologia Aplicada",
+      "Processamento de Sinais Biológicos"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Neurotecnologia",
+      "Acessibilidade"
+    ],
+    "dataNascimento": "1993-04-22",
+    "criadoEm": "2025-11-19T23:45:10.000Z",
+    "cursos": [
+      {
+        "id": "10",
+        "nome": "Introdução a Interfaces Cérebro-Computador",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "profissoesPossiveis": [
+          "Técnico BCI",
+          "Assistente de Neurotecnologia"
+        ],
+        "ultimoAcesso": 1763601000000
+      },
+      {
+        "id": "11",
+        "nome": "Sinais Neurais e Interpretação de Dados",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 78.2,
+        "icon": "📚",
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "profissoesPossiveis": [
+          "Analista de Neurodados",
+          "Especialista BCI"
+        ],
+        "ultimoAcesso": 1763602000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "c3d4e5f6-g7h8-9012-cdef-345678901234",
+        "b2c3d4e5-f6g7-8901-bcde-f23456789012",
+        "df8d4110-e96a-443f-8172-e316226ba891"
+      ]
+    }
+  },
+  {
+    "id": "d4e5f6g7-h8i9-0123-defg-456789012345",
+    "nome": "Ricardo Almeida",
+    "email": "ricardo.almeida@email.com",
+    "senha": "ricardo123",
+    "foto": "http://localhost:5000/uploads/foto_ricardo_almeida.png",
+    "cargo": "Gestor de Ecossistemas de Robôs",
+    "resumo": "Coordeno sistemas robóticos integrados para otimização de processos industriais e logísticos.",
+    "localizacao": "Porto Alegre",
+    "area": "Automação",
+    "habilidadesTecnicas": [
+      "ROS",
+      "Python",
+      "Gestão de Frota"
+    ],
+    "softSkills": [
+      "Liderança",
+      "Visão estratégica"
+    ],
+    "experiencias": [
+      "Coordenador de Automação na AutoLog Tech"
+    ],
+    "formacao": [
+      "UFRGS"
+    ],
+    "projetos": [
+      "Sistema de Robôs Colaborativos",
+      "Otimização Logística com AGVs"
+    ],
+    "certificacoes": [
+      "Gestão de Robótica",
+      "Sistemas Autônomos"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Robótica",
+      "Automação Industrial"
+    ],
+    "dataNascimento": "1990-12-08",
+    "criadoEm": "2025-11-20T08:30:15.000Z",
+    "cursos": [
+      {
+        "id": "13",
+        "nome": "Robôs no Ecossistema Digital",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Operador de Robôs",
+          "Assistente de Automação"
+        ],
+        "ultimoAcesso": 1763603000000
+      },
+      {
+        "id": "14",
+        "nome": "Sistemas Colaborativos entre Humanos e Robôs",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 30,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Gestor de Robótica",
+          "Supervisor de Automação Inteligente"
+        ],
+        "ultimoAcesso": 1763604000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "d4e5f6g7-h8i9-0123-defg-456789012345",
+        "df8d4110-e96a-443f-8172-e316226ba891"
+      ]
+    }
+  },
+  {
+    "id": "e5f6g7h8-i9j0-1234-efgh-567890123456",
+    "nome": "Fernanda Lima",
+    "email": "fernanda.lima@email.com",
+    "senha": "fernanda123",
+    "foto": "http://localhost:5000/uploads/foto_fernanda_lima.png",
+    "cargo": "Arquiteta de Mundos Virtuais",
+    "resumo": "Desenvolvo ambientes digitais imersivos com foco em experiência do usuário e narrativas interativas.",
+    "localizacao": "Rio de Janeiro",
+    "area": "Design e Tecnologia",
+    "habilidadesTecnicas": [
+      "Unreal Engine",
+      "Blender",
+      "Design 3D"
+    ],
+    "softSkills": [
+      "Criatividade",
+      "Comunicação"
+    ],
+    "experiencias": [
+      "Designer 3D na VirtualSpace Studios"
+    ],
+    "formacao": [
+      "PUC-Rio"
+    ],
+    "projetos": [
+      "Mundo Virtual Educacional",
+      "Galeria de Arte Digital"
+    ],
+    "certificacoes": [
+      "Design 3D Avançado",
+      "Narrativa Interativa"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Francês"
+    ],
+    "areaInteresses": [
+      "Metaverso",
+      "Jogos Educativos"
+    ],
+    "dataNascimento": "1996-09-17",
+    "criadoEm": "2025-11-20T10:15:20.000Z",
+    "cursos": [
+      {
+        "id": "16",
+        "nome": "Princípios de Mundos Virtuais",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Designer de Cenários Virtuais",
+          "Level Designer"
+        ],
+        "ultimoAcesso": 1763605000000
+      },
+      {
+        "id": "17",
+        "nome": "Construção de Ambientes 3D",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 85,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Modelador 3D",
+          "Arquiteto de Ambientes Digitais"
+        ],
+        "ultimoAcesso": 1763606000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "e5f6g7h8-i9j0-1234-efgh-567890123456",
+        "d4e5f6g7-h8i9-0123-defg-456789012345"
+      ]
+    }
+  },
+  {
+    "id": "f6g7h8i9-j0k1-2345-fghi-678901234567",
+    "nome": "Rafael Costa",
+    "email": "rafael.costa@email.com",
+    "senha": "rafael123",
+    "foto": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    "cargo": "Analista de Ética de Algoritmos",
+    "resumo": "Analiso e audito sistemas de IA para garantir conformidade ética, transparência e justiça algorítmica.",
+    "localizacao": "Brasília",
+    "area": "Tecnologia e Ética",
+    "habilidadesTecnicas": [
+      "Auditoria de IA",
+      "Análise Estatística",
+      "Governança de Dados"
+    ],
+    "softSkills": [
+      "Pensamento crítico",
+      "Ética profissional"
+    ],
+    "experiencias": [
+      "Consultor em Ética Tecnológica na GovTech"
+    ],
+    "formacao": [
+      "UnB",
+      "Harvard Extension"
+    ],
+    "projetos": [
+      "Framework de Auditoria de IA",
+      "Guia de Ética Algorítmica"
+    ],
+    "certificacoes": [
+      "Ética em IA",
+      "Compliance Digital"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Ética em IA",
+      "Regulamentação"
+    ],
+    "dataNascimento": "1992-01-30",
+    "criadoEm": "2025-11-20T12:45:35.000Z",
+    "cursos": [
+      {
+        "id": "19",
+        "nome": "Introdução à Ética de Algoritmos",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Assistente de Compliance Algorítmico",
+          "Analista de Dados Éticos"
+        ],
+        "ultimoAcesso": 1763607000000
+      },
+      {
+        "id": "20",
+        "nome": "Detecção e Mitigação de Vieses",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 70,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Especialista em Governança de IA",
+          "Analista de Responsabilidade Algorítmica"
+        ],
+        "ultimoAcesso": 1763608000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 4,
+      "recomendadores": [
+        "f6g7h8i9-j0k1-2345-fghi-678901234567",
+        "e5f6g7h8-i9j0-1234-efgh-567890123456",
+        "d4e5f6g7-h8i9-0123-defg-456789012345",
+        "c3d4e5f6-g7h8-9012-cdef-345678901234"
+      ]
+    }
+  },
+  {
+    "id": "g7h8i9j0-k1l2-3456-ghij-789012345678",
+    "nome": "Juliana Martins",
+    "email": "juliana.martins@email.com",
+    "senha": "juliana123",
+    "foto": "http://localhost:5000/uploads/foto_juliana_martins.png",
+    "cargo": "Desenhista de Personalidades de IA",
+    "resumo": "Crio personalidades coerentes e engajadoras para assistentes virtuais e agentes de IA conversacional.",
+    "localizacao": "Florianópolis",
+    "area": "Design e IA",
+    "habilidadesTecnicas": [
+      "Design de Personas",
+      "UX Writing",
+      "Psicologia Cognitiva"
+    ],
+    "softSkills": [
+      "Empatia",
+      "Criatividade"
+    ],
+    "experiencias": [
+      "Designer de Conversação na ChatTech"
+    ],
+    "formacao": [
+      "UDESC"
+    ],
+    "projetos": [
+      "Personalidade IA para Saúde Mental",
+      "Assistente Virtual Empresarial"
+    ],
+    "certificacoes": [
+      "Design de Conversação",
+      "Psicologia Aplicada a IA"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "IA Conversacional",
+      "Design Emocional"
+    ],
+    "dataNascimento": "1994-06-14",
+    "criadoEm": "2025-11-20T14:20:50.000Z",
+    "cursos": [
+      {
+        "id": "22",
+        "nome": "Criação de Personalidades de IA",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Desenhista de Personalidades de IA",
+        "profissoesPossiveis": [
+          "Criador de Personalidades Digitais",
+          "Designer de Agentes Virtuais"
+        ],
+        "ultimoAcesso": 1763609000000
+      },
+      {
+        "id": "23",
+        "nome": "Voz, Emoção e Tom em Assistentes Virtuais",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 55,
+        "icon": "📚",
+        "carreira": "Desenhista de Personalidades de IA",
+        "profissoesPossiveis": [
+          "Especialista em UX Conversacional",
+          "Designer de Voz IA"
+        ],
+        "ultimoAcesso": 1763610000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "g7h8i9j0-k1l2-3456-ghij-789012345678",
+        "f6g7h8i9-j0k1-2345-fghi-678901234567",
+        "df8d4110-e96a-443f-8172-e316226ba891"
+      ]
+    }
+  },
+  {
+    "id": "h8i9j0k1-l2m3-4567-hijk-890123456789",
+    "nome": "Pedro Henrique",
+    "email": "pedro.henrique@email.com",
+    "senha": "pedro123",
+    "foto": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+    "cargo": "Gestor de Reputação Digital",
+    "resumo": "Gerencio e protego a imagem digital de marcas e personalidades em ambientes online.",
+    "localizacao": "Salvador",
+    "area": "Marketing Digital",
+    "habilidadesTecnicas": [
+      "Análise de Mídias Sociais",
+      "SEO",
+      "Crisis Management"
+    ],
+    "softSkills": [
+      "Comunicação",
+      "Resiliência"
+    ],
+    "experiencias": [
+      "Analista de Reputação na BrandShield"
+    ],
+    "formacao": [
+      "UFBA"
+    ],
+    "projetos": [
+      "Sistema de Monitoramento de Marca",
+      "Plano de Resposta a Crises"
+    ],
+    "certificacoes": [
+      "Gestão de Crises Online",
+      "Marketing Digital"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Espanhol"
+    ],
+    "areaInteresses": [
+      "Reputação Digital",
+      "Comunicação"
+    ],
+    "dataNascimento": "1991-08-25",
+    "criadoEm": "2025-11-20T16:10:05.000Z",
+    "cursos": [
+      {
+        "id": "25",
+        "nome": "Gestão de Reputação Digital",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 90,
+        "icon": "📚",
+        "carreira": "Gestor de Reputação Digital",
+        "profissoesPossiveis": [
+          "Analista de Reputação",
+          "Gestor de Imagem Online"
+        ],
+        "ultimoAcesso": 1763611000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "h8i9j0k1-l2m3-4567-hijk-890123456789",
+        "g7h8i9j0-k1l2-3456-ghij-789012345678",
+        "f6g7h8i9-j0k1-2345-fghi-678901234567"
+      ]
+    }
+  },
+  {
+    "id": "i9j0k1l2-m3n4-5678-ijkl-901234567890",
+    "nome": "Camila Oliveira",
+    "email": "camila.oliveira@email.com",
+    "senha": "camila123",
+    "foto": "http://localhost:5000/uploads/foto_camila_oliveira.png",
+    "cargo": "Curadora de Inteligência Artificial",
+    "resumo": "Especialista em preparação e validação de datasets para treinamento de modelos de machine learning.",
+    "localizacao": "Recife",
+    "area": "Tecnologia",
+    "habilidadesTecnicas": [
+      "Python",
+      "SQL",
+      "Análise Estatística"
+    ],
+    "softSkills": [
+      "Atenção aos detalhes",
+      "Pensamento analítico"
+    ],
+    "experiencias": [
+      "Analista de Dados na AI Brasil"
+    ],
+    "formacao": [
+      "UFPE"
+    ],
+    "projetos": [
+      "Dataset para Reconhecimento de Imagens",
+      "Sistema de Validação de Modelos"
+    ],
+    "certificacoes": [
+      "Data Science",
+      "Machine Learning Fundamentals"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "IA",
+      "Qualidade de Dados"
+    ],
+    "dataNascimento": "1997-02-18",
+    "criadoEm": "2025-11-20T18:35:40.000Z",
     "cursos": [
       {
         "id": "1",
@@ -86,15 +709,120 @@
         "level": "Iniciante",
         "horas": 15,
         "duracao": "3 semanas",
-        "progresso": 66.4,
+        "progresso": 100,
         "icon": "📚",
         "carreira": "Curador de Inteligência Artificial",
         "profissoesPossiveis": [
           "Curador de IA",
           "Analista de Dados Assistidos por IA"
         ],
-        "ultimoAcesso": 1763609469762
+        "ultimoAcesso": 1763612000000
+      },
+      {
+        "id": "2",
+        "nome": "Treinamento e Avaliação de Modelos",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 65,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Especialista em Qualidade de Modelos"
+        ],
+        "ultimoAcesso": 1763613000000
       }
-    ]
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "i9j0k1l2-m3n4-5678-ijkl-901234567890",
+        "h8i9j0k1-l2m3-4567-hijk-890123456789",
+        "df8d4110-e96a-443f-8172-e316226ba891"
+      ]
+    }
+  },
+  {
+    "id": "j0k1l2m3-n4o5-6789-jklm-012345678901",
+    "nome": "Diego Silva",
+    "email": "diego.silva@email.com",
+    "senha": "diego123",
+    "foto": "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?w=150&h=150&fit=crop&crop=face",
+    "cargo": "Engenheiro de Sustentabilidade Digital",
+    "resumo": "Implemento soluções de TI sustentáveis com foco em eficiência energética e redução de impacto ambiental.",
+    "localizacao": "Manaus",
+    "area": "Tecnologia",
+    "habilidadesTecnicas": [
+      "Cloud Computing",
+      "Gestão de Infraestrutura",
+      "Análise de Eficiência"
+    ],
+    "softSkills": [
+      "Inovação",
+      "Trabalho em equipe"
+    ],
+    "experiencias": [
+      "Engenheiro de Infraestrutura na Amazon Tech"
+    ],
+    "formacao": [
+      "UFAM"
+    ],
+    "projetos": [
+      "Data Center Sustentável",
+      "Sistema de Monitoramento Energético"
+    ],
+    "certificacoes": [
+      "Cloud Sustainability",
+      "Green IT"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Computação em Nuvem",
+      "Sustentabilidade"
+    ],
+    "dataNascimento": "1989-05-12",
+    "criadoEm": "2025-11-20T20:50:25.000Z",
+    "cursos": [
+      {
+        "id": "8",
+        "nome": "Infraestrutura Verde e Computação Eficiente",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Engenheiro de Sustentabilidade Digital",
+          "Arquiteto de Infraestrutura Sustentável"
+        ],
+        "ultimoAcesso": 1763614000000
+      },
+      {
+        "id": "9",
+        "nome": "Políticas Climáticas e Digitalização",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 40,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Especialista ESG",
+          "Pesquisador em Sustentabilidade Tech"
+        ],
+        "ultimoAcesso": 1763615000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "j0k1l2m3-n4o5-6789-jklm-012345678901"
+      ]
+    }
   }
 ]

@@ -1,19 +1,240 @@
 [
   {
-    "id": "1763655468610",
+    "id": "1763675570731",
     "usuarios": [
       "giolarocca@email.com",
-      "gabriel@email.com"
+      "carlos.eduardo@email.com"
     ],
     "mensagens": [
       {
-        "id": "1763655468610",
+        "id": "1763675570731",
         "remetente": "giolarocca@email.com",
-        "texto": "oii gabriel",
-        "dataEnvio": "2025-11-20T16:17:48.610Z",
+        "texto": "mmm",
+        "dataEnvio": "2025-11-20T21:52:50.731Z",
+        "lida": false
+      },
+      {
+        "id": "1763675573120",
+        "remetente": "giolarocca@email.com",
+        "texto": "mmmmmmmmmmm",
+        "dataEnvio": "2025-11-20T21:52:53.120Z",
+        "lida": false
+      },
+      {
+        "id": "1763675575068",
+        "remetente": "giolarocca@email.com",
+        "texto": "mmmmmmmmmmmmmmmmmmmmmmmm",
+        "dataEnvio": "2025-11-20T21:52:55.068Z",
+        "lida": false
+      },
+      {
+        "id": "1763675664858",
+        "remetente": "giolarocca@email.com",
+        "texto": "jnjnj",
+        "dataEnvio": "2025-11-20T21:54:24.858Z",
+        "lida": false
+      },
+      {
+        "id": "1763675688622",
+        "remetente": "giolarocca@email.com",
+        "texto": "aaaaaaaaaaaaa",
+        "dataEnvio": "2025-11-20T21:54:48.622Z",
+        "lida": false
+      },
+      {
+        "id": "1763675690453",
+        "remetente": "giolarocca@email.com",
+        "texto": "aaaaaaaaaaaaaaa",
+        "dataEnvio": "2025-11-20T21:54:50.453Z",
+        "lida": false
+      },
+      {
+        "id": "1763675692344",
+        "remetente": "giolarocca@email.com",
+        "texto": "aaaaaaaaaaaa",
+        "dataEnvio": "2025-11-20T21:54:52.344Z",
+        "lida": false
+      },
+      {
+        "id": "1763675697884",
+        "remetente": "giolarocca@email.com",
+        "texto": "aaaaaaaaaa",
+        "dataEnvio": "2025-11-20T21:54:57.884Z",
+        "lida": false
+      },
+      {
+        "id": "1763676132548",
+        "remetente": "giolarocca@email.com",
+        "texto": "aaaaaaaaaa",
+        "dataEnvio": "2025-11-20T22:02:12.548Z",
+        "lida": false
+      },
+      {
+        "id": "1763689321992",
+        "remetente": "giolarocca@email.com",
+        "texto": "cccccccc",
+        "dataEnvio": "2025-11-21T01:42:01.992Z",
         "lida": false
       }
     ],
-    "criadoEm": "2025-11-20T16:17:48.610Z"
+    "criadoEm": "2025-11-20T21:52:50.731Z"
+  },
+  {
+    "id": "1763675671135",
+    "usuarios": [
+      "giolarocca@email.com",
+      "marina.santos@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "1763675671135",
+        "remetente": "giolarocca@email.com",
+        "texto": "bhb",
+        "dataEnvio": "2025-11-20T21:54:31.135Z",
+        "lida": false
+      },
+      {
+        "id": "1763689154638",
+        "remetente": "giolarocca@email.com",
+        "texto": "oii",
+        "dataEnvio": "2025-11-21T01:39:14.638Z",
+        "lida": false
+      },
+      {
+        "id": "1763690053035",
+        "remetente": "giolarocca@email.com",
+        "texto": "oo",
+        "dataEnvio": "2025-11-21T01:54:13.035Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-20T21:54:31.135Z"
+  },
+  {
+    "id": "1763689683130",
+    "usuarios": [
+      "giolarocca@email.com",
+      "fernanda.lima@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "1763689683130",
+        "remetente": "giolarocca@email.com",
+        "texto": "ooi",
+        "dataEnvio": "2025-11-21T01:48:03.130Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-21T01:48:03.130Z"
+  },
+  {
+    "id": "1763689924325",
+    "usuarios": [
+      "giolarocca@email.com",
+      "rafael.costa@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "1763689924325",
+        "remetente": "giolarocca@email.com",
+        "texto": "444",
+        "dataEnvio": "2025-11-21T01:52:04.325Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-21T01:52:04.325Z"
+  },
+  {
+    "id": "1763690091314",
+    "usuarios": [
+      "giolarocca@email.com",
+      "ricardo.almeida@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "1763690091314",
+        "remetente": "giolarocca@email.com",
+        "texto": "ddddddd",
+        "dataEnvio": "2025-11-21T01:54:51.314Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-21T01:54:51.314Z"
+  },
+  {
+    "id": "1763690442314",
+    "usuarios": [
+      "ana.beatriz@email.com",
+      "carlos.eduardo@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "1763690442314",
+        "remetente": "ana.beatriz@email.com",
+        "texto": "a",
+        "dataEnvio": "2025-11-21T02:00:42.314Z",
+        "lida": false
+      },
+      {
+        "id": "1763690962470",
+        "remetente": "ana.beatriz@email.com",
+        "texto": "aaaa",
+        "dataEnvio": "2025-11-21T02:09:22.470Z",
+        "lida": false
+      },
+      {
+        "id": "1763691022097",
+        "remetente": "ana.beatriz@email.com",
+        "texto": "aaaaaaaaaaa",
+        "dataEnvio": "2025-11-21T02:10:22.097Z",
+        "lida": false
+      },
+      {
+        "id": "1763695449406",
+        "remetente": "ana.beatriz@email.com",
+        "texto": "aaa",
+        "dataEnvio": "2025-11-21T03:24:09.406Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-21T02:00:42.314Z"
+  },
+  {
+    "id": "1763690968647",
+    "usuarios": [
+      "ana.beatriz@email.com",
+      "ricardo.almeida@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "1763690968647",
+        "remetente": "ana.beatriz@email.com",
+        "texto": "aaaa",
+        "dataEnvio": "2025-11-21T02:09:28.647Z",
+        "lida": false
+      },
+      {
+        "id": "1763690981967",
+        "remetente": "ana.beatriz@email.com",
+        "texto": "zaaa",
+        "dataEnvio": "2025-11-21T02:09:41.967Z",
+        "lida": false
+      },
+      {
+        "id": "1763691460773",
+        "remetente": "ana.beatriz@email.com",
+        "texto": "aaa",
+        "dataEnvio": "2025-11-21T02:17:40.773Z",
+        "lida": false
+      },
+      {
+        "id": "1763692653136",
+        "remetente": "ana.beatriz@email.com",
+        "texto": "ll7",
+        "dataEnvio": "2025-11-21T02:37:33.136Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-21T02:09:28.647Z"
   }
 ]

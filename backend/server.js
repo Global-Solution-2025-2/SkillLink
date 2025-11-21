@@ -148,6 +148,84 @@ app.get("/profissionais", (req, res) => {
   res.json(semSenha);
 });
 
+// --------------------- RECOMENDAR PROFISSIONAL ---------------------
+app.post("/recomendar/:profId/:userId", (req, res) => {
+  const { profId, userId } = req.params;
+
+  let perfis = lerPerfis();
+  const index = perfis.findIndex((p) => p.id == profId);
+
+  if (index === -1) {
+    return res.status(404).json({ error: "Profissional não encontrado" });
+  }
+
+  const prof = perfis[index];
+
+  // cria campo caso não exista
+  if (!prof.recomendacoes) {
+    prof.recomendacoes = {
+      count: 0,
+      recomendadores: []
+    };
+  }
+
+  // já recomendou?
+  if (prof.recomendacoes.recomendadores.includes(userId)) {
+    return res.status(400).json({ error: "Você já recomendou este profissional" });
+  }
+
+  prof.recomendacoes.count += 1;
+  prof.recomendacoes.recomendadores.push(userId);
+
+  perfis[index] = prof;
+  salvarPerfis(perfis);
+
+  res.json({
+    success: true,
+    profissional: { ...prof, senha: undefined }
+  });
+});
+
+// --------------------- REMOVER RECOMENDAÇÃO ---------------------
+app.delete("/recomendar/:profId/:userId", (req, res) => {
+  const { profId, userId } = req.params;
+
+  let perfis = lerPerfis();
+  const index = perfis.findIndex((p) => p.id == profId);
+
+  if (index === -1) {
+    return res.status(404).json({ error: "Profissional não encontrado" });
+  }
+
+  const prof = perfis[index];
+
+  if (!prof.recomendacoes) {
+    return res.status(400).json({ error: "Nenhuma recomendação para remover" });
+  }
+
+  if (!prof.recomendacoes.recomendadores.includes(userId)) {
+    return res.status(400).json({ error: "Você não recomendou este profissional" });
+  }
+
+  // remover recomendação
+  prof.recomendacoes.count = Math.max(0, prof.recomendacoes.count - 1);
+  prof.recomendacoes.recomendadores =
+    prof.recomendacoes.recomendadores.filter((id) => id !== userId);
+
+  if (prof.recomendacoes.count === 0) {
+    delete prof.recomendacoes;
+  }
+
+  perfis[index] = prof;
+  salvarPerfis(perfis);
+
+  res.json({
+    success: true,
+    profissional: { ...prof, senha: undefined }
+  });
+});
+
+
 // --------------------- ATUALIZAR PERFIL ---------------------
 app.put("/perfil/:id", (req, res) => {
   const { id } = req.params;

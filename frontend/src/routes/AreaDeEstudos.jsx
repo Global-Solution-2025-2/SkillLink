@@ -14,6 +14,7 @@ import {
   Home,
   Calendar,
   FolderKanban,
+  MessageCircle,
 } from "lucide-react";
 import axios from "axios";
 
@@ -364,7 +365,7 @@ export default function AreaEstudos() {
         
         {/* ASIDE */}
         <aside className="lg:col-span-3 lg:sticky lg:top-[80px] self-start z-10 px-2 lg:px-0">
-          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-2xl p-5 border border-gray-200 dark:border-gray-700 space-y-5 text-center">
+          <div className=" dark:bg-slate-800  rounded-2xl p-5 border border-gray-200 dark:border-gray-700 space-y-5 text-center">
             <div className="flex flex-col items-center py-3">
               <img
                 src={buildFotoURL(usuario?.foto)}
@@ -391,13 +392,12 @@ export default function AreaEstudos() {
 
             <nav className="space-y-2.5 mt-3">
               {[
-                { icon: <User className="w-4 h-4" />, label: "Meu Perfil", path: "/perfil" },
                 { icon: <Home className="w-4 h-4" />, label: "Feed", path: "/feed" },
                 { icon: <BookOpen className="w-4 h-4" />, label: "Meus Cursos", path: "/area-de-estudos" },
-                { icon: <Users className="w-4 h-4" />, label: "Minha Rede", path: "/profissionais" },
-                { icon: <Briefcase className="w-4 h-4" />, label: "Vagas", path: "/vagas" },
-                { icon: <Calendar className="w-4 h-4" />, label: "Eventos", path: "/eventos" },
-                { icon: <FolderKanban className="w-4 h-4" />, label: "Projetos", path: "/projetos" },
+                { icon: <FolderKanban className="w-4 h-4" />, label: "Future Lab", path: "/projetos" },
+                { icon: <Users className="w-4 h-4" />, label: "Connect Hub", path: "/profissionais" },
+                { icon: <MessageCircle className="w-4 h-4" />, label: "SkillTalks", path: "/skilltalks" },
+                { icon: <User className="w-4 h-4" />, label: "Meu Perfil", path: "/perfil" },
               ].map((item, index) => (
                 <Link
                   key={index}
