@@ -1,33 +1,153 @@
-## SkillLink
+# 🚀 SkillLink
 
-SkillLink é uma plataforma que conecta profissionais e estudantes para troca de conhecimentos e desenvolvimento de habilidades. Usuários podem criar perfis, mostrar suas competências, participar de projetos colaborativos e interagir com outros membros.
+O SkillLink é uma plataforma que conecta pessoas, competências e propósito em um único ecossistema. Permite que profissionais e estudantes explorem cursos, participem de projetos colaborativos, construam suas carreiras e façam conexões estratégicas no mundo digital.
 
-## Funcionalidades
+---
 
-Cadastro e login de usuários
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/b8c8e666-b05a-4f83-8145-15a544954421" />
 
-Perfis com habilidades, experiências e soft skills
+---
 
-Envio de mensagens entre usuários
+#  ⚙️ Funcionalidades
 
-Visualização de projetos colaborativos
+- Trilhas de Desenvolvimento — Aprenda no seu ritmo com trilhas que combinam competências técnicas e comportamentais.
 
-Quiz interativo para aprendizado
+- Cursos Dinâmicos — Conteúdos atualizados e práticos, alinhados às tecnologias usadas pelo mercado.
 
-Dashboard com estatísticas e progresso
+- Profissionais da Área — Conheça especialistas, trajetórias reais e oportunidades de networking.
 
-## Tecnologias
+- Conexões & Projetos Colaborativos — Participe de projetos em equipe e compartilhe conhecimento em tempo real.
 
-Frontend: React, Tailwind CSS, React Router
+- SkillTalks - Chat entre os usuarios, para trocarem experiências
 
-Backend: Node.js, Express (ou outro, se aplicável)
+- Navegação Intuitiva — Interface amigável, responsiva e com rotas bem estruturadas.
 
-Banco de Dados: JSON local (ou outro se usado)
+---
+  
+# 💻 Tecnologias
+
+| Frontend | Backend | Banco de Dados |
+| :--- | :--- | :--- |
+| React | Node.js |  JSON local |
+| Tailwind CSS | Express |  |
+| React Router | Cors |   |
+
+---
+
+# 🗂️ Estrutura do Projeto
+
+```
+SKILLLINK/
+├── backend/
+│   ├── data/
+│   │   ├── conversas.json
+│   │   ├── cursos.json
+│   │   ├── perfil.json
+│   │   ├── projetos.json
+│   ├── uploads/
+│   ├── .gitignore
+│   ├── package-lock.json
+│   ├── package.json
+│   └── server.js
+│
+└── frontend/
+    ├── src/
+    │   ├── assets/
+    │   ├── components/
+    │   ├── routes/
+    │   │   ├── AreaDeEstudos.jsx
+    │   │   ├── Cadastro.jsx
+    │   │   ├── Carreiras.jsx
+    │   │   ├── CursoAula.jsx
+    │   │   ├── Cursos.jsx
+    │   │   ├── Error.jsx
+    │   │   ├── Feed.jsx
+    │   │   ├── Home.jsx
+    │   │   ├── Login.jsx
+    │   │   ├── News.jsx
+    │   │   ├── Perfil.jsx
+    │   │   ├── Profissionais.jsx
+    │   │   ├── Projetos.jsx
+    │   │   ├── Quiz.jsx
+    │   │   └── SkillTalks.jsx
+    │   ├── App.jsx
+    │   ├── index.css
+    │   └── main.jsx
+    ├── .gitignore
+    ├── eslint.config.js
+    ├── index.html
+    ├── package-lock.json
+    ├── package.json
+    └── postcss.config.js
+│──ReadMe.md
+```
+---
+
+# ⭐ Como Rodar o Projeto
+
+Para baixar o projeto na sua máquina, use o comando:
+
+```bash
+git clone https://github.com/SEU-USUARIO/SkillLink.git
+```
+
+###  Backend
+
+1. Abra o terminal e vá até a pasta:
+```bash
+cd Site-SkillLink/backend
+ ```
+2. Instale as dependências:
+```bash
+npm install
+```
+3. Inicie o servidor:
+```bash
+npm run dev
+```
+4. O backend rodará em: http://localhost:3001
+
+###  FrontEnd
+
+1. Abra o terminal e vá até a pasta:
+```bash
+cd Site-SkillLink/frontend
+ ```
+2. Instale as dependências:
+```bash
+npm install
+```
+3. Inicie o servidor:
+```bash
+npm run dev
+```
+4. O site abrirá em: http://localhost:5173
+
+---
+# 🔐 Usuários e Senhas de Teste
+
+Para facilitar a navegação durante a avaliação, aqui estão os alguns usuários disponíveis no sistema:
+
+| 👤 Nome             | 📧 Email                   | 🔑 Senha    |
+| ------------------- | -------------------------- | ----------- |
+| **Marina Santos**   | `marina.santos@email.com`  | `marina123` |
+| **Carlos Eduardo**  | `carlos.eduardo@email.com` | `carlos123` |
+| **Giovana Larocca** | `giovana@email.com`        | `gio123`    |
 
 
-Gabriel Viana de Souza - RM:564382
-Giovana Gaspar Larocca - RM: 564965
-Rayssa Luzia Portela Aquino - RM:562024
 
-https://github.com/Global-Solution-2025-2/SkillLink
+# 👥 Autores do Projeto
+
+| Nome | RM | Localização |
+| :--- | :--- | :--- |
+| Gabriel Viana de Souza | `564382` |  São Paulo, Brasil |
+| Giovana Gaspar Larocca | `564965` |  São Paulo, Brasil |
+| Rayssa Luzia Portela Aquino | `562024` |  São Paulo, Brasil |
+
+Projeto desenvolvido para a Global Solution 2025.2 – FIAP
+
+# 🔗 Links do Projeto
+
+- 🌍 **Site Online (Vercel):** [SkillLink](https://skill-link-weld.vercel.app/)
+- 💻 **Repositório no GitHub:** [GlobalSolution-2025.2](https://github.com/Global-Solution-2025-2/SkillLink)
 
