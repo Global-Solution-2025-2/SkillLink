@@ -134,7 +134,7 @@ Para facilitar a navegação durante a avaliação, aqui estão os alguns usuár
 | **Carlos Eduardo**  | `carlos.eduardo@email.com` | `carlos123` |
 | **Giovana Larocca** | `giovana@email.com`        | `gio123`    |
 
-
+---
 
 # 👥 Autores do Projeto
 
@@ -145,6 +145,8 @@ Para facilitar a navegação durante a avaliação, aqui estão os alguns usuár
 | Rayssa Luzia Portela Aquino | `562024` |  São Paulo, Brasil |
 
 Projeto desenvolvido para a Global Solution 2025.2 – FIAP
+
+---
 
 # 🔗 Links do Projeto
 
