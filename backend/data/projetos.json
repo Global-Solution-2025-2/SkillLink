@@ -38,6 +38,97 @@
       "detalhes": "Aplicativo mobile para telemedicina com agendamento inteligente, videochamadas e prontuário eletrônico. Desenvolvido em Flutter.",
       "tecnologias": ["Flutter", "Firebase", "Dart", "API REST"],
       "datalancamento": "2024-01-20"
+    },
+    {
+      "id": 4,
+      "nome": "SmartGarden - Automação Residencial",
+      "autor": "Pedro Lima",
+      "descricao": "Sistema inteligente para irrigação e monitoramento de plantas.",
+      "membros": 5,
+      "vagas": 2,
+      "categoria": "IoT",
+      "status": "Recrutando",
+      "detalhes": "Projeto de automação residencial focado em hortas urbanas, usando sensores de umidade e controle remoto via app.",
+      "tecnologias": ["Arduino", "Python", "MQTT", "React Native"],
+      "datalancamento": "2024-03-05"
+    },
+    {
+      "id": 5,
+      "nome": "FitLife - App Fitness Colaborativo",
+      "autor": "Luciana Mendes",
+      "descricao": "Aplicativo para treinos, desafios e acompanhamento de saúde.",
+      "membros": 10,
+      "vagas": 4,
+      "categoria": "Mobile",
+      "status": "Ativo",
+      "detalhes": "App mobile que permite criar desafios entre amigos, acompanhar métricas de treino e integrar com wearables.",
+      "tecnologias": ["React Native", "Firebase", "GraphQL", "JavaScript"],
+      "datalancamento": "2024-04-10"
+    },
+    {
+      "id": 6,
+      "nome": "SafeCity - Segurança Urbana",
+      "autor": "Rafael Torres",
+      "descricao": "Plataforma para monitoramento e alertas de segurança em cidades.",
+      "membros": 7,
+      "vagas": 3,
+      "categoria": "Desenvolvimento Web",
+      "status": "Recrutando",
+      "detalhes": "Sistema web que integra dados de câmeras, sensores e reportes de cidadãos para alertas em tempo real.",
+      "tecnologias": ["React", "Node.js", "MongoDB", "Socket.io"],
+      "datalancamento": "2024-02-18"
+    },
+    {
+      "id": 7,
+      "nome": "GreenFinance - Plataforma de Investimento Sustentável",
+      "autor": "Beatriz Souza",
+      "descricao": "App para investimentos com foco em empresas sustentáveis.",
+      "membros": 4,
+      "vagas": 2,
+      "categoria": "Fintech",
+      "status": "Ativo",
+      "detalhes": "Aplicativo que conecta investidores a startups e empresas com práticas ambientais responsáveis, com dashboard de impacto.",
+      "tecnologias": ["React", "Node.js", "Python", "PostgreSQL"],
+      "datalancamento": "2024-03-22"
+    },
+    {
+      "id": 8,
+      "nome": "EventConnect - Organização de Eventos",
+      "autor": "Gabriel Lima",
+      "descricao": "Plataforma colaborativa para criação e gestão de eventos.",
+      "membros": 9,
+      "vagas": 3,
+      "categoria": "Web",
+      "status": "Recrutando",
+      "detalhes": "Sistema para planejamento de eventos, inscrições, pagamentos e interação entre participantes.",
+      "tecnologias": ["Next.js", "Node.js", "MongoDB", "TypeScript"],
+      "datalancamento": "2024-05-01"
+    },
+    {
+      "id": 9,
+      "nome": "ArtCollab - Plataforma para Artistas",
+      "autor": "Isabela Costa",
+      "descricao": "Rede colaborativa para artistas criarem e venderem obras online.",
+      "membros": 6,
+      "vagas": 2,
+      "categoria": "Desenvolvimento Web",
+      "status": "Ativo",
+      "detalhes": "Permite criação de portfólio, colaboração em projetos e venda de obras digitais com suporte a NFTs.",
+      "tecnologias": ["React", "Node.js", "MongoDB", "Web3"],
+      "datalancamento": "2024-04-15"
+    },
+    {
+      "id": 10,
+      "nome": "TravelBuddy - App de Viagens Colaborativo",
+      "autor": "Fernando Alves",
+      "descricao": "Aplicativo para planejar viagens e compartilhar roteiros com amigos.",
+      "membros": 8,
+      "vagas": 4,
+      "categoria": "Mobile",
+      "status": "Recrutando",
+      "detalhes": "App permite criar roteiros, dividir custos, interagir com amigos e encontrar experiências locais.",
+      "tecnologias": ["Flutter", "Firebase", "Dart", "Google Maps API"],
+      "datalancamento": "2024-06-01"
     }
   ]
 }

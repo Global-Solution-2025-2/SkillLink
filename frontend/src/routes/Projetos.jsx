@@ -31,13 +31,13 @@ export default function Projetos() {
 
   // Função para identificar o usuário atual
   const identificarUsuarioAtual = (usuariosArray) => {
-    console.log("📋 Usuários disponíveis:", usuariosArray);
+    console.log(" Usuários disponíveis:", usuariosArray);
 
     const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
     const usuarioLogadoId = localStorage.getItem("usuarioLogadoId");
 
     console.log("🔐 Usuário logado:", usuarioLogado);
-    console.log("🆔 ID salvo no localStorage:", usuarioLogadoId);
+    console.log(" ID salvo no localStorage:", usuarioLogadoId);
 
     // 1. PRIORIDADE MÁXIMA → usuarioLogado do localStorage
     if (usuarioLogado && usuarioLogado.id) {
@@ -46,7 +46,7 @@ export default function Projetos() {
       );
 
       if (encontrado) {
-        console.log("✅ Encontrado pelo usuarioLogado:", encontrado);
+        console.log(" Encontrado pelo usuarioLogado:", encontrado);
         return encontrado;
       }
     }
@@ -58,13 +58,13 @@ export default function Projetos() {
       );
 
       if (encontradoPorId) {
-        console.log("✅ Encontrado pelo usuarioLogadoId:", encontradoPorId);
+        console.log(" Encontrado pelo usuarioLogadoId:", encontradoPorId);
         return encontradoPorId;
       }
     }
 
     // 3. Fallback → primeiro usuário (garante que nunca fica vazio)
-    console.log("🔄 Fallback: retornando primeiro usuário");
+    console.log(" Fallback: retornando primeiro usuário");
     return usuariosArray[0] || {};
   };
 
@@ -83,15 +83,15 @@ export default function Projetos() {
         const respostaUsuario = await fetch('http://localhost:5000/api/usuario');
         const dadosUsuario = await respostaUsuario.json();
         
-        console.log('📋 Todos os usuários disponíveis:', dadosUsuario);
+        console.log(' Todos os usuários disponíveis:', dadosUsuario);
         
         // Identifica o usuário atual
         if (Array.isArray(dadosUsuario)) {
           const usuarioAtual = identificarUsuarioAtual(dadosUsuario);
-          console.log('👤 Usuário atual selecionado:', usuarioAtual);
+          console.log(' Usuário atual selecionado:', usuarioAtual);
           setUsuario(usuarioAtual || {});
         } else {
-          console.log('👤 Dados do usuário (não array):', dadosUsuario);
+          console.log(' Dados do usuário (não array):', dadosUsuario);
           setUsuario(dadosUsuario.usuario || dadosUsuario || {});
         }
         

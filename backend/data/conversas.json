@@ -1,271 +1,242 @@
 [
   {
-    "id": "1763675570731",
+    "id": "chat1",
     "usuarios": [
-      "giolarocca@email.com",
+      "marina.santos@email.com",
       "carlos.eduardo@email.com"
     ],
     "mensagens": [
       {
-        "id": "1763675570731",
-        "remetente": "giolarocca@email.com",
-        "texto": "mmm",
-        "dataEnvio": "2025-11-20T21:52:50.731Z",
-        "lida": false
-      },
-      {
-        "id": "1763675573120",
-        "remetente": "giolarocca@email.com",
-        "texto": "mmmmmmmmmmm",
-        "dataEnvio": "2025-11-20T21:52:53.120Z",
-        "lida": false
-      },
-      {
-        "id": "1763675575068",
-        "remetente": "giolarocca@email.com",
-        "texto": "mmmmmmmmmmmmmmmmmmmmmmmm",
-        "dataEnvio": "2025-11-20T21:52:55.068Z",
-        "lida": false
-      },
-      {
-        "id": "1763675664858",
-        "remetente": "giolarocca@email.com",
-        "texto": "jnjnj",
-        "dataEnvio": "2025-11-20T21:54:24.858Z",
-        "lida": false
-      },
-      {
-        "id": "1763675688622",
-        "remetente": "giolarocca@email.com",
-        "texto": "aaaaaaaaaaaaa",
-        "dataEnvio": "2025-11-20T21:54:48.622Z",
-        "lida": false
-      },
-      {
-        "id": "1763675690453",
-        "remetente": "giolarocca@email.com",
-        "texto": "aaaaaaaaaaaaaaa",
-        "dataEnvio": "2025-11-20T21:54:50.453Z",
-        "lida": false
-      },
-      {
-        "id": "1763675692344",
-        "remetente": "giolarocca@email.com",
-        "texto": "aaaaaaaaaaaa",
-        "dataEnvio": "2025-11-20T21:54:52.344Z",
-        "lida": false
-      },
-      {
-        "id": "1763675697884",
-        "remetente": "giolarocca@email.com",
-        "texto": "aaaaaaaaaa",
-        "dataEnvio": "2025-11-20T21:54:57.884Z",
-        "lida": false
-      },
-      {
-        "id": "1763676132548",
-        "remetente": "giolarocca@email.com",
-        "texto": "aaaaaaaaaa",
-        "dataEnvio": "2025-11-20T22:02:12.548Z",
-        "lida": false
-      },
-      {
-        "id": "1763689321992",
-        "remetente": "giolarocca@email.com",
-        "texto": "cccccccc",
-        "dataEnvio": "2025-11-21T01:42:01.992Z",
-        "lida": false
-      }
-    ],
-    "criadoEm": "2025-11-20T21:52:50.731Z"
-  },
-  {
-    "id": "1763675671135",
-    "usuarios": [
-      "giolarocca@email.com",
-      "marina.santos@email.com"
-    ],
-    "mensagens": [
-      {
-        "id": "1763675671135",
-        "remetente": "giolarocca@email.com",
-        "texto": "bhb",
-        "dataEnvio": "2025-11-20T21:54:31.135Z",
-        "lida": false
-      },
-      {
-        "id": "1763689154638",
-        "remetente": "giolarocca@email.com",
-        "texto": "oii",
-        "dataEnvio": "2025-11-21T01:39:14.638Z",
-        "lida": false
-      },
-      {
-        "id": "1763690053035",
-        "remetente": "giolarocca@email.com",
-        "texto": "oo",
-        "dataEnvio": "2025-11-21T01:54:13.035Z",
-        "lida": false
-      },
-      {
-        "id": "1763696360957",
+        "id": "msg1",
         "remetente": "marina.santos@email.com",
-        "texto": "aaaaaa",
-        "dataEnvio": "2025-11-21T03:39:20.957Z",
+        "texto": "Oi Carlos! Vi que você está trabalhando no EcoData Center. Como está indo o projeto?",
+        "dataEnvio": "2025-11-21T08:15:00.000Z",
+        "lida": false
+      },
+      {
+        "id": "msg2",
+        "remetente": "carlos.eduardo@email.com",
+        "texto": "Oi Marina! Está indo bem, estamos finalizando a análise energética.",
+        "dataEnvio": "2025-11-21T08:17:20.000Z",
         "lida": false
       }
     ],
-    "criadoEm": "2025-11-20T21:54:31.135Z"
+    "criadoEm": "2025-11-21T08:15:00.000Z"
   },
   {
-    "id": "1763689683130",
+    "id": "chat2",
     "usuarios": [
-      "giolarocca@email.com",
-      "fernanda.lima@email.com"
+      "ana.beatriz@email.com",
+      "ricardo.almeida@email.com"
     ],
     "mensagens": [
       {
-        "id": "1763689683130",
-        "remetente": "giolarocca@email.com",
-        "texto": "ooi",
-        "dataEnvio": "2025-11-21T01:48:03.130Z",
+        "id": "msg3",
+        "remetente": "ana.beatriz@email.com",
+        "texto": "Ricardo, você já testou a integração dos robôs com o BCI?",
+        "dataEnvio": "2025-11-21T09:10:00.000Z",
+        "lida": false
+      },
+      {
+        "id": "msg4",
+        "remetente": "ricardo.almeida@email.com",
+        "texto": "Ainda não, Ana. Podemos marcar um teste amanhã?",
+        "dataEnvio": "2025-11-21T09:12:30.000Z",
         "lida": false
       }
     ],
-    "criadoEm": "2025-11-21T01:48:03.130Z"
+    "criadoEm": "2025-11-21T09:10:00.000Z"
   },
   {
-    "id": "1763689924325",
+    "id": "chat3",
     "usuarios": [
-      "giolarocca@email.com",
+      "fernanda.lima@email.com",
       "rafael.costa@email.com"
     ],
     "mensagens": [
       {
-        "id": "1763689924325",
-        "remetente": "giolarocca@email.com",
-        "texto": "444",
-        "dataEnvio": "2025-11-21T01:52:04.325Z",
+        "id": "msg5",
+        "remetente": "fernanda.lima@email.com",
+        "texto": "Rafael, tem alguma atualização sobre o guia de ética algorítmica?",
+        "dataEnvio": "2025-11-21T10:05:00.000Z",
+        "lida": false
+      },
+      {
+        "id": "msg6",
+        "remetente": "rafael.costa@email.com",
+        "texto": "Sim, Fernanda! Já enviei a versão preliminar por email.",
+        "dataEnvio": "2025-11-21T10:07:45.000Z",
         "lida": false
       }
     ],
-    "criadoEm": "2025-11-21T01:52:04.325Z"
+    "criadoEm": "2025-11-21T10:05:00.000Z"
   },
   {
-    "id": "1763690091314",
+    "id": "chat4",
     "usuarios": [
-      "giolarocca@email.com",
-      "ricardo.almeida@email.com"
+      "juliana.martins@email.com",
+      "pedro.henrique@email.com"
     ],
     "mensagens": [
       {
-        "id": "1763690091314",
-        "remetente": "giolarocca@email.com",
-        "texto": "ddddddd",
-        "dataEnvio": "2025-11-21T01:54:51.314Z",
+        "id": "msg7",
+        "remetente": "juliana.martins@email.com",
+        "texto": "Pedro, precisamos revisar a reputação digital do nosso assistente virtual.",
+        "dataEnvio": "2025-11-21T11:00:00.000Z",
+        "lida": false
+      },
+      {
+        "id": "msg8",
+        "remetente": "pedro.henrique@email.com",
+        "texto": "Claro, Juliana. Podemos analisar os feedbacks da última semana.",
+        "dataEnvio": "2025-11-21T11:02:30.000Z",
         "lida": false
       }
     ],
-    "criadoEm": "2025-11-21T01:54:51.314Z"
+    "criadoEm": "2025-11-21T11:00:00.000Z"
   },
   {
-    "id": "1763690442314",
-    "usuarios": [
-      "ana.beatriz@email.com",
-      "carlos.eduardo@email.com"
-    ],
-    "mensagens": [
-      {
-        "id": "1763690442314",
-        "remetente": "ana.beatriz@email.com",
-        "texto": "a",
-        "dataEnvio": "2025-11-21T02:00:42.314Z",
-        "lida": false
-      },
-      {
-        "id": "1763690962470",
-        "remetente": "ana.beatriz@email.com",
-        "texto": "aaaa",
-        "dataEnvio": "2025-11-21T02:09:22.470Z",
-        "lida": false
-      },
-      {
-        "id": "1763691022097",
-        "remetente": "ana.beatriz@email.com",
-        "texto": "aaaaaaaaaaa",
-        "dataEnvio": "2025-11-21T02:10:22.097Z",
-        "lida": false
-      },
-      {
-        "id": "1763695449406",
-        "remetente": "ana.beatriz@email.com",
-        "texto": "aaa",
-        "dataEnvio": "2025-11-21T03:24:09.406Z",
-        "lida": false
-      }
-    ],
-    "criadoEm": "2025-11-21T02:00:42.314Z"
-  },
-  {
-    "id": "1763690968647",
-    "usuarios": [
-      "ana.beatriz@email.com",
-      "ricardo.almeida@email.com"
-    ],
-    "mensagens": [
-      {
-        "id": "1763690968647",
-        "remetente": "ana.beatriz@email.com",
-        "texto": "aaaa",
-        "dataEnvio": "2025-11-21T02:09:28.647Z",
-        "lida": false
-      },
-      {
-        "id": "1763690981967",
-        "remetente": "ana.beatriz@email.com",
-        "texto": "zaaa",
-        "dataEnvio": "2025-11-21T02:09:41.967Z",
-        "lida": false
-      },
-      {
-        "id": "1763691460773",
-        "remetente": "ana.beatriz@email.com",
-        "texto": "aaa",
-        "dataEnvio": "2025-11-21T02:17:40.773Z",
-        "lida": false
-      },
-      {
-        "id": "1763692653136",
-        "remetente": "ana.beatriz@email.com",
-        "texto": "ll7",
-        "dataEnvio": "2025-11-21T02:37:33.136Z",
-        "lida": false
-      }
-    ],
-    "criadoEm": "2025-11-21T02:09:28.647Z"
-  },
-  {
-    "id": "1763701323441",
+    "id": "chat5",
     "usuarios": [
       "marina.santos@email.com",
-      "diego.silva@email.com"
+      "fernanda.lima@email.com"
     ],
     "mensagens": [
       {
-        "id": "1763701323441",
+        "id": "msg9",
         "remetente": "marina.santos@email.com",
-        "texto": "aaaa",
-        "dataEnvio": "2025-11-21T05:02:03.441Z",
+        "texto": "Fernanda, quer colaborar no projeto do Mundo Virtual Educacional?",
+        "dataEnvio": "2025-11-21T12:15:00.000Z",
         "lida": false
       },
       {
-        "id": "1763701353584",
-        "remetente": "diego.silva@email.com",
-        "texto": "fnrrnrnr",
-        "dataEnvio": "2025-11-21T05:02:33.584Z",
+        "id": "msg10",
+        "remetente": "fernanda.lima@email.com",
+        "texto": "Sim, Marina! Podemos marcar uma call ainda hoje.",
+        "dataEnvio": "2025-11-21T12:17:30.000Z",
         "lida": false
       }
     ],
-    "criadoEm": "2025-11-21T05:02:03.441Z"
+    "criadoEm": "2025-11-21T12:15:00.000Z"
+  },
+  {
+    "id": "chat6",
+    "usuarios": [
+      "carlos.eduardo@email.com",
+      "rafael.costa@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "msg11",
+        "remetente": "carlos.eduardo@email.com",
+        "texto": "Rafael, você já viu os dados do Carbon Footprint Calculator?",
+        "dataEnvio": "2025-11-21T12:45:00.000Z",
+        "lida": false
+      },
+      {
+        "id": "msg12",
+        "remetente": "rafael.costa@email.com",
+        "texto": "Sim, Carlos. Alguns ajustes nos cálculos de emissões ainda são necessários.",
+        "dataEnvio": "2025-11-21T12:47:10.000Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-21T12:45:00.000Z"
+  },
+  {
+    "id": "chat7",
+    "usuarios": [
+      "ana.beatriz@email.com",
+      "fernanda.lima@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "msg13",
+        "remetente": "ana.beatriz@email.com",
+        "texto": "Fernanda, queria te mostrar a NeuroControl Interface funcionando em VR.",
+        "dataEnvio": "2025-11-21T13:00:00.000Z",
+        "lida": false
+      },
+      {
+        "id": "msg14",
+        "remetente": "fernanda.lima@email.com",
+        "texto": "Uau, Ana! Parece incrível. Podemos testar juntos no metaverso?",
+        "dataEnvio": "2025-11-21T13:02:50.000Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-21T13:00:00.000Z"
+  },
+  {
+    "id": "chat8",
+    "usuarios": [
+      "juliana.martins@email.com",
+      "rafael.costa@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "msg15",
+        "remetente": "juliana.martins@email.com",
+        "texto": "Rafael, podemos alinhar os critérios éticos para o assistente virtual?",
+        "dataEnvio": "2025-11-21T13:30:00.000Z",
+        "lida": false
+      },
+      {
+        "id": "msg16",
+        "remetente": "rafael.costa@email.com",
+        "texto": "Claro, Juliana. Sugiro começarmos pelo framework de auditoria que preparei.",
+        "dataEnvio": "2025-11-21T13:32:40.000Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-21T13:30:00.000Z"
+  },
+  {
+    "id": "chat9",
+    "usuarios": [
+      "ricardo.almeida@email.com",
+      "pedro.henrique@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "msg17",
+        "remetente": "ricardo.almeida@email.com",
+        "texto": "Pedro, precisamos otimizar a gestão da frota de robôs.",
+        "dataEnvio": "2025-11-21T14:00:00.000Z",
+        "lida": false
+      },
+      {
+        "id": "msg18",
+        "remetente": "pedro.henrique@email.com",
+        "texto": "Sim, Ricardo. Podemos criar alertas automáticos de manutenção preventiva.",
+        "dataEnvio": "2025-11-21T14:02:30.000Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-21T14:00:00.000Z"
+  },
+  {
+    "id": "chat10",
+    "usuarios": [
+      "marina.santos@email.com",
+      "juliana.martins@email.com"
+    ],
+    "mensagens": [
+      {
+        "id": "msg19",
+        "remetente": "marina.santos@email.com",
+        "texto": "Juliana, quer dar uma olhada no design do AR Museum Guide?",
+        "dataEnvio": "2025-11-21T14:30:00.000Z",
+        "lida": false
+      },
+      {
+        "id": "msg20",
+        "remetente": "juliana.martins@email.com",
+        "texto": "Sim, Marina! Posso sugerir melhorias na UX e nas interações da IA.",
+        "dataEnvio": "2025-11-21T14:32:00.000Z",
+        "lida": false
+      }
+    ],
+    "criadoEm": "2025-11-21T14:30:00.000Z"
   }
 ]

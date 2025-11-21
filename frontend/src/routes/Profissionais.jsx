@@ -702,97 +702,95 @@ export default function Profissionais() {
                   </div>
 
                   {/* SEÇÃO 2: EXPERIÊNCIAS E HABILIDADES TÉCNICAS */}
-                  <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                      <Briefcase className="w-5 h-5 text-cyan-600" />
-                      Experiências e Habilidades Técnicas
-                    </h3>
-                    
-                    {/* EXPERIÊNCIA PROFISSIONAL */}
-                    <div className="mb-6">
-                      <h4 className="font-medium text-gray-900 dark:text-white mb-3">Experiência Profissional</h4>
-                      <div className="space-y-3">
-                        {dadosModal.experiencia ? (
-                          <div className="flex items-start gap-2">
-                            <Calendar className="w-4 h-4 text-cyan-600 mt-0.5 flex-shrink-0" />
-                            <div>
-                              <p className="text-gray-700 dark:text-gray-300">{dadosModal.experiencia}</p>
-                              {dadosModal.anosExperiencia && (
-                                <p className="text-sm text-cyan-600 dark:text-cyan-400 mt-1">
-                                  {dadosModal.anosExperiencia} anos de experiência
-                                </p>
-                              )}
-                            </div>
-                          </div>
-                        ) : (
-                          <p className="text-gray-500 dark:text-gray-400">Experiência não informada</p>
-                        )}
-                      </div>
-                    </div>
+                  {/* SEÇÃO 2 + SEÇÃO 3 LADO A LADO */}
+<div className="mb-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                    {/* HABILIDADES TÉCNICAS */}
-                    <div>
-                      <h4 className="font-medium text-gray-900 dark:text-white mb-3">Habilidades Técnicas</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {dadosModal.habilidadesTecnicas?.map((skill, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-2 text-sm rounded-lg font-medium bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-200 border border-cyan-200 dark:border-cyan-800"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                        {(!dadosModal.habilidadesTecnicas || dadosModal.habilidadesTecnicas.length === 0) && (
-                          <p className="text-gray-500 dark:text-gray-400">Nenhuma habilidade técnica informada</p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+    {/* === COLUNA 1 — EXPERIÊNCIAS E HABILIDADES TÉCNICAS === */}
+    <div>
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+        <Briefcase className="w-5 h-5 text-cyan-600" />
+        Experiências e Habilidades
+      </h3>
 
-                  {/* SEÇÃO 3: SOFT SKILLS E HOBBIES */}
-                  <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                      <Heart className="w-5 h-5 text-cyan-600" />
-                      Soft Skills e Hobbies
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {/* SOFT SKILLS */}
-                      <div>
-                        <h4 className="font-medium text-gray-900 dark:text-white mb-3">Soft Skills</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {dadosModal.softSkills?.map((skill, index) => (
-                            <span
-                              key={index}
-                              className="px-3 py-2 text-sm rounded-lg font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 border border-purple-200 dark:border-purple-800"
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                          {(!dadosModal.softSkills || dadosModal.softSkills.length === 0) && (
-                            <p className="text-gray-500 dark:text-gray-400">Soft skills não informadas</p>
-                          )}
-                        </div>
-                      </div>
+      {/* EXPERIÊNCIA PROFISSIONAL */}
+<div className="mb-6">
+  <h4 className="font-medium text-gray-900 dark:text-white mb-3">
+    Experiência Profissional
+  </h4>
 
-                      {/* HOBBIES */}
-                      <div>
-                        <h4 className="font-medium text-gray-900 dark:text-white mb-3">Hobbies e Interesses</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {dadosModal.hobbies?.map((hobby, index) => (
-                            <span
-                              key={index}
-                              className="px-3 py-2 text-sm rounded-lg font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 border border-green-200 dark:border-green-800"
-                            >
-                              {hobby}
-                            </span>
-                          ))}
-                          {(!dadosModal.hobbies || dadosModal.hobbies.length === 0) && (
-                            <p className="text-gray-500 dark:text-gray-400">Hobbies não informados</p>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+  {dadosModal.experiencias ? (
+    <div className="flex items-start gap-2">
+      <Calendar className="w-4 h-4 text-cyan-600 mt-0.5 flex-shrink-0" />
+
+      <div>
+        <p className="text-gray-700 dark:text-gray-300">
+          {dadosModal.experiencias}
+        </p>
+
+        {dadosModal.anosExperiencia && (
+          <p className="text-sm text-cyan-600 dark:text-cyan-400 mt-1">
+            {dadosModal.anosExperiencia} anos de experiência
+          </p>
+        )}
+      </div>
+    </div>
+  ) : (
+    <p className="text-gray-500 dark:text-gray-400">
+      Experiência não informada
+    </p>
+  )}
+</div>
+
+
+      {/* HABILIDADES TÉCNICAS */}
+      <div>
+        <h4 className="font-medium text-gray-900 dark:text-white mb-3">Habilidades Técnicas</h4>
+        <div className="flex flex-wrap gap-2">
+          {dadosModal.habilidadesTecnicas?.map((skill, index) => (
+            <span
+              key={index}
+              className="px-3 py-2 text-sm rounded-lg font-medium bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-200 border border-cyan-200 dark:border-cyan-800"
+            >
+              {skill}
+            </span>
+          ))}
+          {(!dadosModal.habilidadesTecnicas || dadosModal.habilidadesTecnicas.length === 0) && (
+            <p className="text-gray-500 dark:text-gray-400">Nenhuma habilidade técnica informada</p>
+          )}
+        </div>
+      </div>
+    </div>
+
+    {/* === COLUNA 2 — SOFT SKILLS === */}
+    <div>
+      <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+        <Heart className="w-5 h-5 text-cyan-600" />
+        Soft Skills
+      </h3>
+
+      <div>
+        <h4 className="font-medium text-gray-900 dark:text-white mb-3">Soft Skills</h4>
+        <div className="flex flex-wrap gap-2">
+          {dadosModal.softSkills?.map((skill, index) => (
+            <span
+              key={index}
+              className="px-3 py-2 text-sm rounded-lg font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 border border-purple-200 dark:border-purple-800"
+            >
+              {skill}
+            </span>
+          ))}
+
+          {(!dadosModal.softSkills || dadosModal.softSkills.length === 0) && (
+            <p className="text-gray-500 dark:text-gray-400">Soft skills não informadas</p>
+          )}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
                   {/* SEÇÃO 4: RECOMENDAÇÕES */}
                   {dadosModal.recomendacoes?.recomendadores?.length > 0 && (

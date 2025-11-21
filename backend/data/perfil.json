@@ -4,7 +4,7 @@
     "nome": "Marina Santos",
     "email": "marina.santos@email.com",
     "senha": "marina123",
-    "foto": "http://localhost:5000/uploads/foto_c9bc9537-fe89-42a9-b489-6e476af11d4b.png",
+    "foto": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
     "cargo": "Designer de Experiências Imersivas (VR/AR)",
     "resumo": "Crio experiências digitais imersivas que conectam o mundo físico e virtual através de realidade aumentada e virtual.",
     "localizacao": "São Paulo",
@@ -87,7 +87,7 @@
     "nome": "Carlos Eduardo",
     "email": "carlos.eduardo@email.com",
     "senha": "carlos123",
-    "foto": "http://localhost:5000/uploads/foto_carlos_eduardo.png",
+    "foto": "https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg",
     "cargo": "Engenheiro de Sustentabilidade Digital",
     "resumo": "Desenvolvo soluções tecnológicas sustentáveis para reduzir o impacto ambiental da infraestrutura digital.",
     "localizacao": "Curitiba",
@@ -172,7 +172,7 @@
     "nome": "Ana Beatriz",
     "email": "ana.beatriz@email.com",
     "senha": "ana123",
-    "foto": "http://localhost:5000/uploads/foto_29821db3-28d6-4c9b-8be0-b58a0c881eef.png",
+    "foto": "https://images.pexels.com/photos/1674752/pexels-photo-1674752.jpeg",
     "cargo": "Especialista em Interfaces Cérebro-Computador",
     "resumo": "Pesquiso e desenvolvo interfaces neurais para aplicações em saúde, acessibilidade e interação humano-máquina.",
     "localizacao": "Campinas",
@@ -259,11 +259,10 @@
       }
     ],
     "recomendacoes": {
-      "count": 3,
+      "count": 2,
       "recomendadores": [
         "b2c3d4e5-f6g7-8901-bcde-f23456789012",
-        "df8d4110-e96a-443f-8172-e316226ba891",
-        "c3d4e5f6-g7h8-9012-cdef-345678901234"
+        "df8d4110-e96a-443f-8172-e316226ba891"
       ]
     }
   },
@@ -272,7 +271,7 @@
     "nome": "Ricardo Almeida",
     "email": "ricardo.almeida@email.com",
     "senha": "ricardo123",
-    "foto": "http://localhost:5000/uploads/foto_ricardo_almeida.png",
+    "foto": "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg",
     "cargo": "Gestor de Ecossistemas de Robôs",
     "resumo": "Coordeno sistemas robóticos integrados para otimização de processos industriais e logísticos.",
     "localizacao": "Porto Alegre",
@@ -355,7 +354,7 @@
     "nome": "Fernanda Lima",
     "email": "fernanda.lima@email.com",
     "senha": "fernanda123",
-    "foto": "http://localhost:5000/uploads/foto_fernanda_lima.png",
+    "foto": "https://images.pexels.com/photos/1239288/pexels-photo-1239288.jpeg",
     "cargo": "Arquiteta de Mundos Virtuais",
     "resumo": "Desenvolvo ambientes digitais imersivos com foco em experiência do usuário e narrativas interativas.",
     "localizacao": "Rio de Janeiro",
@@ -427,10 +426,11 @@
       }
     ],
     "recomendacoes": {
-      "count": 2,
+      "count": 3,
       "recomendadores": [
         "e5f6g7h8-i9j0-1234-efgh-567890123456",
-        "d4e5f6g7-h8i9-0123-defg-456789012345"
+        "d4e5f6g7-h8i9-0123-defg-456789012345",
+        "c3d4e5f6-g7h8-9012-cdef-345678901234"
       ]
     }
   },
@@ -525,7 +525,7 @@
     "nome": "Juliana Martins",
     "email": "juliana.martins@email.com",
     "senha": "juliana123",
-    "foto": "http://localhost:5000/uploads/foto_juliana_martins.png",
+    "foto": "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg",
     "cargo": "Desenhista de Personalidades de IA",
     "resumo": "Crio personalidades coerentes e engajadoras para assistentes virtuais e agentes de IA conversacional.",
     "localizacao": "Florianópolis",
@@ -609,7 +609,7 @@
     "nome": "Pedro Henrique",
     "email": "pedro.henrique@email.com",
     "senha": "pedro123",
-    "foto": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+    "foto": "https://images.pexels.com/photos/6801642/pexels-photo-6801642.jpeg",
     "cargo": "Gestor de Reputação Digital",
     "resumo": "Gerencio e protego a imagem digital de marcas e personalidades em ambientes online.",
     "localizacao": "Salvador",
@@ -679,7 +679,7 @@
     "nome": "Camila Oliveira",
     "email": "camila.oliveira@email.com",
     "senha": "camila123",
-    "foto": "http://localhost:5000/uploads/foto_camila_oliveira.png",
+    "foto": "https://images.pexels.com/photos/1987301/pexels-photo-1987301.jpeg",
     "cargo": "Curadora de Inteligência Artificial",
     "resumo": "Especialista em preparação e validação de datasets para treinamento de modelos de machine learning.",
     "localizacao": "Recife",
@@ -838,6 +838,4098 @@
       "recomendadores": [
         "j0k1l2m3-n4o5-6789-jklm-012345678901"
       ]
+    }
+  },
+  {
+    "id": "2a3b4c5d-e6f7-8901-bcde-f23456789012",
+    "nome": "Pedro Almeida",
+    "email": "pedro.almeida@email.com",
+    "senha": "pedro456",
+    "foto": "https://images.pexels.com/photos/5486199/pexels-photo-5486199.jpeg",
+    "cargo": "Curador de Inteligência Artificial",
+    "resumo": "Especialista em qualidade de dados e mitigação de vieses, garantindo a ética e precisão no treinamento de modelos de IA.",
+    "localizacao": "Rio de Janeiro",
+    "area": "Inteligência Artificial",
+    "habilidadesTecnicas": [
+      "Python",
+      "Data Cleaning",
+      "Model Evaluation"
+    ],
+    "softSkills": [
+      "Pensamento Crítico",
+      "Atenção a Detalhes"
+    ],
+    "experiencias": [
+      "Analista de Dados JR na DataMind"
+    ],
+    "formacao": [
+      "Pontifícia Universidade Católica do Rio de Janeiro (PUC-Rio)"
+    ],
+    "projetos": [
+      "Bias Detector System",
+      "Automated Data Labeling"
+    ],
+    "certificacoes": [
+      "Fundamentos em Ciência de Dados",
+      "AI Governance"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Espanhol"
+    ],
+    "areaInteresses": [
+      "Machine Learning",
+      "Ética em IA"
+    ],
+    "dataNascimento": "1995-03-20",
+    "criadoEm": "2025-11-20T10:00:00.000Z",
+    "cursos": [
+      {
+        "id": "1",
+        "nome": "Fundamentos de Curadoria de IA",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Analista de Dados Assistidos por IA"
+        ],
+        "ultimoAcesso": 1763600000000
+      },
+      {
+        "id": "2",
+        "nome": "Treinamento e Avaliação de Modelos",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Especialista em Qualidade de Modelos"
+        ],
+        "ultimoAcesso": 1763601000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "x1y2z3a4-b5c6-d7e8-f9g0-h1i2j3k4l5m6"
+      ]
+    }
+  },
+  {
+    "id": "3c4d5e6f-g7h8-9012-cdef-345678901234",
+    "nome": "Luciana Ferraz",
+    "email": "luciana.ferraz@email.com",
+    "senha": "luciana789",
+    "foto": "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
+    "cargo": "Engenheira de Sustentabilidade Digital",
+    "resumo": "Desenvolvo e implemento soluções de TI para otimizar o consumo de energia e reduzir a pegada de carbono digital em grandes corporações.",
+    "localizacao": "Belo Horizonte",
+    "area": "Sustentabilidade/TI",
+    "habilidadesTecnicas": [
+      "Cloud Computing",
+      "Green IT",
+      "Análise de Ciclo de Vida"
+    ],
+    "softSkills": [
+      "Visão Sistêmica",
+      "Liderança"
+    ],
+    "experiencias": [
+      "Consultora JR ESG na TechGreen"
+    ],
+    "formacao": [
+      "Universidade Federal de Minas Gerais (UFMG)"
+    ],
+    "projetos": [
+      "Infraestrutura de Data Center Sustentável",
+      "Digital Carbon Footprint Tool"
+    ],
+    "certificacoes": [
+      "Certificação LEED",
+      "Fundamentos em Computação em Nuvem"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Energia Renovável",
+      "Inovação Sustentável"
+    ],
+    "dataNascimento": "1992-11-28",
+    "criadoEm": "2025-11-20T11:30:00.000Z",
+    "cursos": [
+      {
+        "id": "7",
+        "nome": "Sustentabilidade e Tecnologia Digital",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Analista de Sustentabilidade",
+          "Consultor ESG Digital"
+        ],
+        "ultimoAcesso": 1763602000000
+      },
+      {
+        "id": "8",
+        "nome": "Infraestrutura Verde e Computação Eficiente",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 80,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Engenheiro de Sustentabilidade Digital",
+          "Arquiteto de Infraestrutura Sustentável"
+        ],
+        "ultimoAcesso": 1763603000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "4d5e6f7g-h8i9-0123-defg-456789012345",
+    "nome": "Rafael Costa",
+    "email": "rafael.costa@email.com",
+    "senha": "rafaelpassword",
+    "foto": "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg",
+    "cargo": "Especialista em Interfaces Cérebro-Computador",
+    "resumo": "Desenvolvedor de soluções BCI para acessibilidade e interação humana-máquina inovadora, focando na interpretação de sinais neurais.",
+    "localizacao": "Curitiba",
+    "area": "Neurotecnologia",
+    "habilidadesTecnicas": [
+      "EEG Processing",
+      "Matlab",
+      "Signal Analysis"
+    ],
+    "softSkills": [
+      "Foco em Solução",
+      "Raciocínio Lógico"
+    ],
+    "experiencias": [
+      "Pesquisador JR em Neurociência Aplicada"
+    ],
+    "formacao": [
+      "Universidade Federal do Paraná (UFPR)"
+    ],
+    "projetos": [
+      "Sistema de Controle BCI para Cadeira de Rodas",
+      "Neurofeedback Gaming"
+    ],
+    "certificacoes": [
+      "Processamento de Sinais Biológicos",
+      "Desenvolvimento de Aplicações IoT"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Acessibilidade",
+      "Biofeedback"
+    ],
+    "dataNascimento": "1994-01-05",
+    "criadoEm": "2025-11-20T13:45:00.000Z",
+    "cursos": [
+      {
+        "id": "10",
+        "nome": "Introdução a Interfaces Cérebro-Computador",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "profissoesPossiveis": [
+          "Técnico BCI",
+          "Assistente de Neurotecnologia"
+        ],
+        "ultimoAcesso": 1763604000000
+      },
+      {
+        "id": "11",
+        "nome": "Sinais Neurais e Interpretação de Dados",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 90,
+        "icon": "📚",
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "profissoesPossiveis": [
+          "Analista de Neurodados",
+          "Especialista BCI"
+        ],
+        "ultimoAcesso": 1763605000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "y1z2a3b4-c5d6-e7f8-g9h0-i1j2k3l4m5n6",
+        "z1a2b3c4-d5e6-f7g8-h9i0-j1k2l3m4n5o6",
+        "w1x2y3z4-a5b6-c7d8-e9f0-g1h2i3j4k5l6"
+      ]
+    }
+  },
+  {
+    "id": "5e6f7g8h-i9j0-1234-efgh-567890123456",
+    "nome": "Sofia Oliveira",
+    "email": "sofia.oliveira@email.com",
+    "senha": "sofia111",
+    "foto": "https://images.pexels.com/photos/1855582/pexels-photo-1855582.jpeg",
+    "cargo": "Gestora de Ecossistemas de Robôs",
+    "resumo": "Responsável pela integração e orquestração de sistemas robóticos em linhas de produção avançadas, otimizando a colaboração Humano-Robô (HRC).",
+    "localizacao": "Campinas",
+    "area": "Robótica Industrial",
+    "habilidadesTecnicas": [
+      "ROS (Robot Operating System)",
+      "Automação",
+      "Controle de Qualidade"
+    ],
+    "softSkills": [
+      "Comunicação Interpessoal",
+      "Organização"
+    ],
+    "experiencias": [
+      "Técnica de Automação na RoboFlow"
+    ],
+    "formacao": [
+      "Universidade Estadual de Campinas (UNICAMP)"
+    ],
+    "projetos": [
+      "Sistema de Logística Automatizada",
+      "Treinamento para Co-Bots"
+    ],
+    "certificacoes": [
+      "Segurança em Robótica Colaborativa",
+      "Lean Manufacturing"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Indústria 4.0",
+      "Manufatura Avançada"
+    ],
+    "dataNascimento": "1997-09-10",
+    "criadoEm": "2025-11-20T15:10:00.000Z",
+    "cursos": [
+      {
+        "id": "13",
+        "nome": "Robôs no Ecossistema Digital",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Operador de Robôs",
+          "Assistente de Automação"
+        ],
+        "ultimoAcesso": 1763606000000
+      },
+      {
+        "id": "14",
+        "nome": "Sistemas Colaborativos entre Humanos e Robôs",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 70,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Gestor de Robótica",
+          "Supervisor de Automação Inteligente"
+        ],
+        "ultimoAcesso": 1763607000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "m1n2o3p4-q5r6-s7t8-u9v0-w1x2y3z4a5b6",
+        "n1o2p3q4-r5s6-t7u8-v9w0-x1y2z3a4b5c6"
+      ]
+    }
+  },
+  {
+    "id": "6f7g8h9i-j0k1-2345-fghi-678901234567",
+    "nome": "Gustavo Ferreira",
+    "email": "gustavo.ferreira@email.com",
+    "senha": "gustavo222",
+    "foto": "https://images.pexels.com/photos/7745573/pexels-photo-7745573.jpeg",
+    "cargo": "Arquiteto de Mundos Virtuais",
+    "resumo": "Construo ecossistemas digitais imersivos para entretenimento e aplicações corporativas, com foco em design de interação e narrativa.",
+    "localizacao": "Florianópolis",
+    "area": "Desenvolvimento de Jogos",
+    "habilidadesTecnicas": [
+      "Unreal Engine",
+      "Level Design",
+      "3D Modeling"
+    ],
+    "softSkills": [
+      "Criatividade",
+      "Resolução de Problemas"
+    ],
+    "experiencias": [
+      "Level Designer JR na MegaVerse Studios"
+    ],
+    "formacao": [
+      "Universidade Federal de Santa Catarina (UFSC)"
+    ],
+    "projetos": [
+      "Virtual City Project",
+      "Simulation Training Environment"
+    ],
+    "certificacoes": [
+      "Desenvolvimento em Unreal Engine",
+      "Design Narrativo"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Metaverso",
+      "Realidade Estendida (XR)"
+    ],
+    "dataNascimento": "1991-05-25",
+    "criadoEm": "2025-11-20T16:40:00.000Z",
+    "cursos": [
+      {
+        "id": "16",
+        "nome": "Princípios de Mundos Virtuais",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Designer de Cenários Virtuais",
+          "Level Designer"
+        ],
+        "ultimoAcesso": 1763608000000
+      },
+      {
+        "id": "17",
+        "nome": "Construção de Ambientes 3D",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 95,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Modelador 3D",
+          "Arquiteto de Ambientes Digitais"
+        ],
+        "ultimoAcesso": 1763609000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "o1p2q3r4-s5t6-u7v8-w9x0-y1z2a3b4c5d6"
+      ]
+    }
+  },
+  {
+    "id": "7g8h9i0j-k1l2-3456-ghij-789012345678",
+    "nome": "Camila Nogueira",
+    "email": "camila.nogueira@email.com",
+    "senha": "camila333",
+    "foto": "https://images.pexels.com/photos/654696/pexels-photo-654696.jpeg",
+    "cargo": "Analista de Ética de Algoritmos",
+    "resumo": "Audito sistemas de IA para garantir conformidade ética, detectando e mitigando vieses algorítmicos em aplicações de tomada de decisão.",
+    "localizacao": "Brasília",
+    "area": "Governança de IA",
+    "habilidadesTecnicas": [
+      "Compliance",
+      "Auditoria de Sistemas",
+      "Regulamentação de Dados"
+    ],
+    "softSkills": [
+      "Integridade",
+      "Negociação"
+    ],
+    "experiencias": [
+      "Consultora JR em Ética Digital"
+    ],
+    "formacao": [
+      "Universidade de Brasília (UnB)"
+    ],
+    "projetos": [
+      "Framework de Avaliação de Risco Algorítmico",
+      "Treinamento em Fair AI"
+    ],
+    "certificacoes": [
+      "LGPD Compliance",
+      "Ethical Hacking (Conceitual)"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Francês"
+    ],
+    "areaInteresses": [
+      "Direito Digital",
+      "Inclusão Algorítmica"
+    ],
+    "dataNascimento": "1988-12-01",
+    "criadoEm": "2025-11-20T17:55:00.000Z",
+    "cursos": [
+      {
+        "id": "19",
+        "nome": "Introdução à Ética de Algoritmos",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Assistente de Compliance Algorítmico",
+          "Analista de Dados Éticos"
+        ],
+        "ultimoAcesso": 1763610000000
+      },
+      {
+        "id": "20",
+        "nome": "Detecção e Mitigação de Vieses",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 85,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Especialista em Governança de IA",
+          "Analista de Responsabilidade Algorítmica"
+        ],
+        "ultimoAcesso": 1763611000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 4,
+      "recomendadores": [
+        "p1q2r3s4-t5u6-v7w8-x9y0-z1a2b3c4d5e6",
+        "q1r2s3t4-u5v6-w7x8-y9z0-a1b2c3d4e5f6",
+        "r1s2t3u4-v5w6-x7y8-z9a0-b1c2d3e4f5g6",
+        "s1t2u3v4-w5x6-y7z8-a9b0-c1d2e3f4g5h6"
+      ]
+    }
+  },
+  {
+    "id": "8h9i0j1k-l2m3-4567-hijk-890123456789",
+    "nome": "Thiago Souza",
+    "email": "thiago.souza@email.com",
+    "senha": "thiagopass",
+    "foto": "https://images.pexels.com/photos/997489/pexels-photo-997489.jpeg",
+    "cargo": "Desenhista de Personalidades de IA",
+    "resumo": "Crio e refino a identidade, tom de voz e comportamento de agentes conversacionais e assistentes virtuais para garantir uma experiência humana e coerente.",
+    "localizacao": "Recife",
+    "area": "UX Conversacional",
+    "habilidadesTecnicas": [
+      "Natural Language Generation (NLG)",
+      "Design de Voz (VUI)",
+      "UX Writing"
+    ],
+    "softSkills": [
+      "Storytelling",
+      "Empatia",
+      "Coerência"
+    ],
+    "experiencias": [
+      "Redator de Conteúdo IA na ChatBot Solutions"
+    ],
+    "formacao": [
+      "Universidade Federal de Pernambuco (UFPE)"
+    ],
+    "projetos": [
+      "Persona Guide para Atendente Virtual",
+      "Variações de Humor em IA"
+    ],
+    "certificacoes": [
+      "Design Conversacional",
+      "Psicologia Cognitiva Aplicada"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Psicologia de IA",
+      "Comunicação Humano-Máquina"
+    ],
+    "dataNascimento": "1996-04-18",
+    "criadoEm": "2025-11-20T19:00:00.000Z",
+    "cursos": [
+      {
+        "id": "22",
+        "nome": "Criação de Personalidades de IA",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Desenhista de Personalidades de IA",
+        "profissoesPossiveis": [
+          "Criador de Personalidades Digitais",
+          "Designer de Agentes Virtuais"
+        ],
+        "ultimoAcesso": 1763612000000
+      },
+      {
+        "id": "23",
+        "nome": "Voz, Emoção e Tom em Assistentes Virtuais",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 75,
+        "icon": "📚",
+        "carreira": "Desenhista de Personalidades de IA",
+        "profissoesPossiveis": [
+          "Especialista em UX Conversacional",
+          "Designer de Voz IA"
+        ],
+        "ultimoAcesso": 1763613000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "9i0j1k2l-m3n4-5678-ijkl-901234567890",
+    "nome": "Mariana Lima",
+    "email": "mariana.lima@email.com",
+    "senha": "mariana444",
+    "foto": "https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg",
+    "cargo": "Gestora de Reputação Digital",
+    "resumo": "Gerencio a imagem de marcas e indivíduos online, utilizando análise de dados para monitorar menções, mitigar crises e construir uma presença digital positiva.",
+    "localizacao": "Porto Alegre",
+    "area": "Comunicação/Marketing",
+    "habilidadesTecnicas": [
+      "Monitoramento de Mídia",
+      "SEO",
+      "Análise de Sentimento"
+    ],
+    "softSkills": [
+      "Gerenciamento de Crises",
+      "Visão Estratégica"
+    ],
+    "experiencias": [
+      "Analista de Mídias Sociais Sênior"
+    ],
+    "formacao": [
+      "Universidade Federal do Rio Grande do Sul (UFRGS)"
+    ],
+    "projetos": [
+      "Plano de Crise Digital",
+      "Relatório de Sentimento da Marca X"
+    ],
+    "certificacoes": [
+      "Estratégias de Branding",
+      "Marketing Digital Avançado"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Influência Digital",
+      "Jornalismo de Dados"
+    ],
+    "dataNascimento": "1985-02-14",
+    "criadoEm": "2025-11-20T20:25:00.000Z",
+    "cursos": [
+      {
+        "id": "25",
+        "nome": "Gestão de Reputação Digital",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Gestor de Reputação Digital",
+        "profissoesPossiveis": [
+          "Analista de Reputação",
+          "Gestor de Imagem Online"
+        ],
+        "ultimoAcesso": 1763614000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 5,
+      "recomendadores": [
+        "t1u2v3w4-x5y6-z7a8-b9c0-d1e2f3g4h5i6",
+        "u1v2w3x4-y5z6-a7b8-c9d0-e1f2g3h4i5j6",
+        "v1w2x3y4-z5a6-b7c8-d9e0-f1g2h3i4j5k6",
+        "w1x2y3z4-a5b6-c7d8-e9f0-g1h2i3j4k5l6",
+        "x1y2z3a4-b5c6-d7e8-f9g0-h1i2j3k4l5m6"
+      ]
+    }
+  },
+  {
+    "id": "a0b1c2d3-e4f5-6789-abcd-012345678901",
+    "nome": "Felipe Gomes",
+    "email": "felipe.gomes@email.com",
+    "senha": "felipe555",
+    "foto": "https://images.pexels.com/photos/17910228/pexels-photo-17910228.jpeg",
+    "cargo": "Designer de Experiências Imersivas (VR/AR)",
+    "resumo": "Crio interfaces de usuário e protótipos em Realidade Aumentada focados em usabilidade e interação natural para fins educacionais e comerciais.",
+    "localizacao": "São Paulo",
+    "area": "Tecnologia",
+    "habilidadesTecnicas": [
+      "Unity",
+      "C#",
+      "Prototipação AR"
+    ],
+    "softSkills": [
+      "Colaboração",
+      "Orientação a Resultados"
+    ],
+    "experiencias": [
+      "Estagiário em UX/UI XR na FutureCorp"
+    ],
+    "formacao": [
+      "Universidade de São Paulo (USP)"
+    ],
+    "projetos": [
+      "App de Medição AR",
+      "Filtro de Redes Sociais com RA"
+    ],
+    "certificacoes": [
+      "Introdução ao ARKit/ARCore",
+      "Design Thinking"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Mobile AR",
+      "WebXR"
+    ],
+    "dataNascimento": "2000-08-03",
+    "criadoEm": "2025-11-20T21:40:00.000Z",
+    "cursos": [
+      {
+        "id": "4",
+        "nome": "Introdução ao Design Imersivo",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "Designer de Experiências XR",
+          "Criador de Conteúdo VR/AR"
+        ],
+        "ultimoAcesso": 1763615000000
+      },
+      {
+        "id": "5",
+        "nome": "Prototipação em Realidade Aumentada",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "UX Designer XR",
+          "Desenvolvedor de Aplicações AR"
+        ],
+        "ultimoAcesso": 1763616000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "b1c2d3e4-f5g6-7890-bcde-123456789012",
+    "nome": "Renata Martins",
+    "email": "renata.martins@email.com",
+    "senha": "renata666",
+    "foto": "https://images.pexels.com/photos/7243094/pexels-photo-7243094.jpeg",
+    "cargo": "Curadora de Inteligência Artificial",
+    "resumo": "Focada em Gerenciamento de Bases e correção de desvios algorítmicos para garantir a equidade e transparência em sistemas de IA de alta complexidade.",
+    "localizacao": "Rio de Janeiro",
+    "area": "Inteligência Artificial",
+    "habilidadesTecnicas": [
+      "Statistical Analysis",
+      "Bias Detection",
+      "SQL"
+    ],
+    "softSkills": [
+      "Ética Profissional",
+      "Análise Crítica"
+    ],
+    "experiencias": [
+      "Analista de Governança de Dados JR na DataSafe"
+    ],
+    "formacao": [
+      "Universidade Federal do Rio de Janeiro (UFRJ)"
+    ],
+    "projetos": [
+      "Relatório de Vieses em Modelo de Crédito",
+      "Pipeline de Pré-processamento Equitativo"
+    ],
+    "certificacoes": [
+      "Machine Learning Ético",
+      "Gestão de Dados"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Justiça Algorítmica",
+      "Data Science"
+    ],
+    "dataNascimento": "1993-10-12",
+    "criadoEm": "2025-11-20T23:00:00.000Z",
+    "cursos": [
+      {
+        "id": "3",
+        "nome": "Gerenciamento de Bases e Desvios Algorítmicos",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 90,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Analista de Governança de IA"
+        ],
+        "ultimoAcesso": 1763617000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "y1z2a3b4-c5d6-e7f8-g9h0-i1j2k3l4m5n6"
+      ]
+    }
+  },
+  {
+    "id": "c2d3e4f5-g6h7-8901-cdef-234567890123",
+    "nome": "Carlos Henrique",
+    "email": "carlos.henrique@email.com",
+    "senha": "carlos777",
+    "foto": "https://images.pexels.com/photos/634021/pexels-photo-634021.jpeg",
+    "cargo": "Engenheiro de Sustentabilidade Digital",
+    "resumo": "Atuo na implementação de políticas climáticas e na digitalização de processos para alinhamento com regulamentações ambientais globais, focando em eficiência energética.",
+    "localizacao": "Curitiba",
+    "area": "Sustentabilidade/TI",
+    "habilidadesTecnicas": [
+      "ISO 14001",
+      "Análise de Dados ESG",
+      "Gerenciamento de Projetos"
+    ],
+    "softSkills": [
+      "Negociação",
+      "Comunicação Eficaz"
+    ],
+    "experiencias": [
+      "Analista de Sustentabilidade JR na EcoTech"
+    ],
+    "formacao": [
+      "Universidade Federal do Paraná (UFPR)"
+    ],
+    "projetos": [
+      "Auditoria de Carbono em Nuvem",
+      "Guia de Boas Práticas Digitais ESG"
+    ],
+    "certificacoes": [
+      "Especialista ESG",
+      "Gerenciamento de Riscos Ambientais"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Alemão"
+    ],
+    "areaInteresses": [
+      "Economia Circular",
+      "Finanças Verdes"
+    ],
+    "dataNascimento": "1987-06-08",
+    "criadoEm": "2025-11-21T00:15:00.000Z",
+    "cursos": [
+      {
+        "id": "9",
+        "nome": "Políticas Climáticas e Digitalização",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Especialista ESG",
+          "Pesquisador em Sustentabilidade Tech"
+        ],
+        "ultimoAcesso": 1763618000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "z1a2b3c4-d5e6-f7g8-h9i0-j1k2l3m4n5o6",
+        "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "d1e2f3g4-h5i6-7890-jklm-n1o2p3q4r5s6"
+      ]
+    }
+  },
+  {
+    "id": "d3e4f5g6-h7i8-9012-defg-345678901234",
+    "nome": "Beatriz Silva",
+    "email": "beatriz.silva@email.com",
+    "senha": "beatriz888",
+    "foto": "https://images.pexels.com/photos/33657183/pexels-photo-33657183.jpeg",
+    "cargo": "Especialista em Interfaces Cérebro-Computador",
+    "resumo": "Desenvolvedora de aplicações avançadas BCI, focando na integração de protocolos neurais para controle e interação direta com sistemas digitais.",
+    "localizacao": "São José dos Campos",
+    "area": "Neurotecnologia",
+    "habilidadesTecnicas": [
+      "Python",
+      "Deep Learning",
+      "Desenvolvimento de Hardware"
+    ],
+    "softSkills": [
+      "Inovação",
+      "Resiliência"
+    ],
+    "experiencias": [
+      "Desenvolvedora JR de Neurointerfaces na NeuroStart"
+    ],
+    "formacao": [
+      "Instituto Tecnológico de Aeronáutica (ITA)"
+    ],
+    "projetos": [
+      "Protótipo de Prótese Controlada por BCI",
+      "Interface Neural para Realidade Virtual"
+    ],
+    "certificacoes": [
+      "Desenvolvimento de IoT",
+      "Machine Learning para Séries Temporais"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Medicina",
+      "Robótica"
+    ],
+    "dataNascimento": "1998-07-22",
+    "criadoEm": "2025-11-21T01:30:00.000Z",
+    "cursos": [
+      {
+        "id": "12",
+        "nome": "Desenvolvimento de Aplicações BCI",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 70,
+        "icon": "📚",
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "profissoesPossiveis": [
+          "Engenheiro BCI",
+          "Arquiteto de Neurointerfaces"
+        ],
+        "ultimoAcesso": 1763619000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "e1f2g3h4-i5j6-7890-klmn-o1p2q3r4s5t6",
+        "f1g2h3i4-j5k6-7890-lmno-p1q2r3s4t5u6"
+      ]
+    }
+  },
+  {
+    "id": "e4f5g6h7-i8j9-0123-efgh-456789012345",
+    "nome": "Daniel Mello",
+    "email": "daniel.mello@email.com",
+    "senha": "daniel999",
+    "foto": "https://images.pexels.com/photos/23628328/pexels-photo-23628328.jpeg",
+    "cargo": "Gestor de Ecossistemas de Robôs",
+    "resumo": "Arquiteto de automação responsável pela orquestração de robôs e fluxos de trabalho complexos, visando a máxima eficiência em ambientes de produção.",
+    "localizacao": "São Paulo",
+    "area": "Automação Industrial",
+    "habilidadesTecnicas": [
+      "PLC Programming",
+      "RPA",
+      "System Integration"
+    ],
+    "softSkills": [
+      "Planejamento",
+      "Execução"
+    ],
+    "experiencias": [
+      "Engenheiro de Automação Pleno na AutoFlow"
+    ],
+    "formacao": [
+      "Instituto Mauá de Tecnologia"
+    ],
+    "projetos": [
+      "Otimização de Linha de Montagem por Robôs",
+      "Sistema de Manutenção Preditiva"
+    ],
+    "certificacoes": [
+      "Automação Avançada",
+      "Certificação em Siemens PLC"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Cibersegurança Industrial",
+      "Digital Twins"
+    ],
+    "dataNascimento": "1983-04-01",
+    "criadoEm": "2025-11-21T02:45:00.000Z",
+    "cursos": [
+      {
+        "id": "15",
+        "nome": "Automação Avançada e Orquestração de Robôs",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Engenheiro de Automação Avançada",
+          "Arquiteto de Robótica"
+        ],
+        "ultimoAcesso": 1763620000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 4,
+      "recomendadores": [
+        "g1h2i3j4-k5l6-7890-mnop-q1r2s3t4u5v6",
+        "h1i2j3k4-l5m6-7890-nopq-r1s2t3u4v5w6",
+        "i1j2k3l4-m5n6-7890-opqr-s1t2u3v4w5x6",
+        "j1k2l3m4-n5o6-7890-pqrs-t1u2v3w4x5y6"
+      ]
+    }
+  },
+  {
+    "id": "f5g6h7i8-j9k0-1234-fghi-567890123456",
+    "nome": "Aline Ramos",
+    "email": "aline.ramos@email.com",
+    "senha": "aline101",
+    "foto": "https://images.pexels.com/photos/19588525/pexels-photo-19588525.jpeg",
+    "cargo": "Arquiteta de Mundos Virtuais",
+    "resumo": "Focada na criação de narrativas e sistemas interativos complexos para mundos virtuais, garantindo engajamento e experiência profunda dos usuários.",
+    "localizacao": "Rio de Janeiro",
+    "area": "Desenvolvimento de Jogos",
+    "habilidadesTecnicas": [
+      "Game Design",
+      "C++",
+      "Storytelling Digital"
+    ],
+    "softSkills": [
+      "Visão Artística",
+      "Comunicação Clara"
+    ],
+    "experiencias": [
+      "Designer Narrativa JR na Immersive Stories"
+    ],
+    "formacao": [
+      "Universidade Federal Fluminense (UFF)"
+    ],
+    "projetos": [
+      "Sistema de Missões Dinâmicas em MMORPG",
+      "World-Building Document"
+    ],
+    "certificacoes": [
+      "Design de Interação",
+      "Roteiro para Jogos"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Economia Virtual",
+      "Cultura Pop"
+    ],
+    "dataNascimento": "1995-11-06",
+    "criadoEm": "2025-11-21T04:00:00.000Z",
+    "cursos": [
+      {
+        "id": "18",
+        "nome": "Narrativa e Sistemas Interativos",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 80,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Designer Narrativo",
+          "Criador de Experiências Digitais"
+        ],
+        "ultimoAcesso": 1763621000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "k1l2m3n4-o5p6-7890-qrst-u1v2w3x4y5z6"
+      ]
+    }
+  },
+  {
+    "id": "g6h7i8j9-k0l1-2345-ghij-678901234567",
+    "nome": "Bruno Ribeiro",
+    "email": "bruno.ribeiro@email.com",
+    "senha": "bruno202",
+    "foto": "https://images.pexels.com/photos/13085048/pexels-photo-13085048.jpeg",
+    "cargo": "Analista de Ética de Algoritmos",
+    "resumo": "Focado na governança e auditoria de sistemas de IA, garantindo que as decisões automatizadas sejam transparentes, justas e em conformidade legal.",
+    "localizacao": "Belo Horizonte",
+    "area": "Governança de IA",
+    "habilidadesTecnicas": [
+      "Auditoria de TI",
+      "Risk Management",
+      "Conformidade Regulatória"
+    ],
+    "softSkills": [
+      "Curiosidade",
+      "Pensamento Analítico"
+    ],
+    "experiencias": [
+      "Estagiário em Auditoria de Sistemas na EthicAI"
+    ],
+    "formacao": [
+      "Universidade Federal de Minas Gerais (UFMG)"
+    ],
+    "projetos": [
+      "Checklist de Auditoria de IA para Startups",
+      "Monitoramento de Performance de Modelos"
+    ],
+    "certificacoes": [
+      "COBIT",
+      "Princípios de Ética de IA"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Regulação de Tecnologia",
+      "Transparência de Algoritmos"
+    ],
+    "dataNascimento": "1999-03-17",
+    "criadoEm": "2025-11-21T05:15:00.000Z",
+    "cursos": [
+      {
+        "id": "21",
+        "nome": "Governança e Auditoria de Sistemas de IA",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 70,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Auditor de IA",
+          "Analista de Conformidade Digital"
+        ],
+        "ultimoAcesso": 1763622000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "h7i8j9k0-l1m2-3456-hijk-789012345678",
+    "nome": "Vitor Hugo",
+    "email": "vitor.hugo@email.com",
+    "senha": "vitor303",
+    "foto": "https://images.pexels.com/photos/9425183/pexels-photo-9425183.jpeg",
+    "cargo": "Desenhista de Personalidades de IA",
+    "resumo": "Desenvolvo personalidades de IA com comportamento adaptativo e identidade de longo prazo, garantindo uma relação consistente e evolutiva com o usuário.",
+    "localizacao": "Manaus",
+    "area": "UX Conversacional",
+    "habilidadesTecnicas": [
+      "Machine Learning (Reinforcement)",
+      "Cognitive Psychology",
+      "Dialogue Design"
+    ],
+    "softSkills": [
+      "Paciência",
+      "Aprendizado Contínuo"
+    ],
+    "experiencias": [
+      "Arquiteto de Personas JR na EvolveAI"
+    ],
+    "formacao": [
+      "Universidade Federal do Amazonas (UFAM)"
+    ],
+    "projetos": [
+      "Modelo de Evolução de Personalidade IA",
+      "Simulador de Interação Emocional"
+    ],
+    "certificacoes": [
+      "Neurociência Comportamental",
+      "Desenvolvimento em LLMs"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Aplicações Médicas de IA",
+      "Sistemas Multiagentes"
+    ],
+    "dataNascimento": "1990-09-29",
+    "criadoEm": "2025-11-21T06:30:00.000Z",
+    "cursos": [
+      {
+        "id": "24",
+        "nome": "Comportamento Adaptativo e Identidade Longo Prazo",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 85,
+        "icon": "📚",
+        "carreira": "Desenhista de Personalidades de IA",
+        "profissoesPossiveis": [
+          "Arquiteto de Personas IA",
+          "Desenvolvedor de Agentes Inteligentes"
+        ],
+        "ultimoAcesso": 1763623000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "l1m2n3o4-p5q6-7890-rstuv-w1x2y3z4a5b6",
+        "m1n2o3p4-q5r6-s7t8-u9v0-w1x2y3z4a5b6",
+        "n1o2p3q4-r5s6-t7u8-v9w0-x1y2z3a4b5c6"
+      ]
+    }
+  },
+  {
+    "id": "i8j9k0l1-m2n3-4567-ijkl-890123456789",
+    "nome": "Isabela Santos",
+    "email": "isabela.santos@email.com",
+    "senha": "isabela404",
+    "foto": "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg",
+    "cargo": "Designer de Experiências Imersivas (VR/AR)",
+    "resumo": "Especialista em criar ambientes virtuais completos em VR, com foco em otimização de performance e design de interação para simulações e jogos.",
+    "localizacao": "Campinas",
+    "area": "Realidade Virtual",
+    "habilidadesTecnicas": [
+      "Unity",
+      "Oculus/Meta Development",
+      "3D Environment Art"
+    ],
+    "softSkills": [
+      "Organização",
+      "Detalhista"
+    ],
+    "experiencias": [
+      "Designer VR JR na ImmersiveStudios"
+    ],
+    "formacao": [
+      "Universidade Estadual de Campinas (UNICAMP)"
+    ],
+    "projetos": [
+      "Simulador de Treinamento em VR para Indústria",
+      "Galeria de Arte Virtual"
+    ],
+    "certificacoes": [
+      "Otimização de Performance VR",
+      "Design para Experiências Imersivas"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "VR no setor de saúde",
+      "Computação Espacial"
+    ],
+    "dataNascimento": "1997-01-20",
+    "criadoEm": "2025-11-21T07:45:00.000Z",
+    "cursos": [
+      {
+        "id": "6",
+        "nome": "Ambientes Virtuais em Realidade Virtual",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 95,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "Designer VR",
+          "Engenheiro de Experiências Imersivas"
+        ],
+        "ultimoAcesso": 1763624000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "o1p2q3r4-s5t6-u7v8-w9x0-y1z2a3b4c5d6"
+      ]
+    }
+  },
+  {
+    "id": "j9k0l1m2-n3o4-5678-jklm-901234567890",
+    "nome": "Diego Pereira",
+    "email": "diego.pereira@email.com",
+    "senha": "diego505",
+    "foto": "https://images.pexels.com/photos/6626903/pexels-photo-6626903.jpeg",
+    "cargo": "Curador de Inteligência Artificial",
+    "resumo": "Analista de dados com foco no treinamento e avaliação de modelos de IA, utilizando métricas de desempenho avançadas para otimizar a performance e evitar overfitting.",
+    "localizacao": "Porto Alegre",
+    "area": "Inteligência Artificial",
+    "habilidadesTecnicas": [
+      "Machine Learning",
+      "Scikit-learn",
+      "A/B Testing"
+    ],
+    "softSkills": [
+      "Precisão",
+      "Aprendizagem Rápida"
+    ],
+    "experiencias": [
+      "Trainee em Modelagem Preditiva na PredictNow"
+    ],
+    "formacao": [
+      "Universidade Federal do Rio Grande do Sul (UFRGS)"
+    ],
+    "projetos": [
+      "Comparativo de Algoritmos de Classificação",
+      "Otimização de Hiperparâmetros"
+    ],
+    "certificacoes": [
+      "Deep Learning Foundations",
+      "Estatística para Data Science"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Visão Computacional",
+      "Processamento de Linguagem Natural"
+    ],
+    "dataNascimento": "1994-02-14",
+    "criadoEm": "2025-11-21T09:00:00.000Z",
+    "cursos": [
+      {
+        "id": "2",
+        "nome": "Treinamento e Avaliação de Modelos",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Especialista em Qualidade de Modelos"
+        ],
+        "ultimoAcesso": 1763625000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "p1q2r3s4-t5u6-v7w8-x9y0-z1a2b3c4d5e6",
+        "q1r2s3t4-u5v6-w7x8-y9z0-a1b2c3d4e5f6"
+      ]
+    }
+  },
+  {
+    "id": "k0l1m2n3-o4p5-6789-klmn-012345678901",
+    "nome": "Juliana Barbosa",
+    "email": "juliana.barbosa@email.com",
+    "senha": "juliana606",
+    "foto": "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg",
+    "cargo": "Engenheira de Sustentabilidade Digital",
+    "resumo": "Analista focada em Sustentabilidade e Tecnologia Digital, buscando soluções para reduzir o impacto ambiental de sistemas de TI, incluindo consumo de hardware e e-waste.",
+    "localizacao": "Salvador",
+    "area": "Sustentabilidade/TI",
+    "habilidadesTecnicas": [
+      "Auditoria Energética",
+      "Gestão de E-Waste",
+      "Análise de Dados"
+    ],
+    "softSkills": [
+      "Consciência Ambiental",
+      "Foco em Detalhes"
+    ],
+    "experiencias": [
+      "Consultora JR em Impacto Ambiental Digital"
+    ],
+    "formacao": [
+      "Universidade Federal da Bahia (UFBA)"
+    ],
+    "projetos": [
+      "Programa de Descarte Sustentável de Equipamentos",
+      "Relatório de Consumo de Energia de Servidores"
+    ],
+    "certificacoes": [
+      "ISO 50001 (Gestão de Energia)",
+      "Economia Circular"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Smart Cities",
+      "Energia Limpa"
+    ],
+    "dataNascimento": "1996-06-21",
+    "criadoEm": "2025-11-21T10:15:00.000Z",
+    "cursos": [
+      {
+        "id": "7",
+        "nome": "Sustentabilidade e Tecnologia Digital",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Analista de Sustentabilidade",
+          "Consultor ESG Digital"
+        ],
+        "ultimoAcesso": 1763626000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "l1m2n3o4-p5q6-7890-lmno-123456789012",
+    "nome": "Marcelo Neves",
+    "email": "marcelo.neves@email.com",
+    "senha": "marcelo707",
+    "foto": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg",
+    "cargo": "Gestor de Reputação Digital",
+    "resumo": "Focado em monitoramento e análise de sentimento nas redes, criando estratégias de comunicação proativas para manter a reputação da marca e engajamento do público.",
+    "localizacao": "Brasília",
+    "area": "Comunicação/Marketing",
+    "habilidadesTecnicas": [
+      "Social Media Management",
+      "Google Analytics",
+      "Crisis Communication"
+    ],
+    "softSkills": [
+      "Resposta Rápida",
+      "Escuta Ativa"
+    ],
+    "experiencias": [
+      "Analista de Reputação JR na Monitoria Digital"
+    ],
+    "formacao": [
+      "Universidade de Brasília (UnB)"
+    ],
+    "projetos": [
+      "Dashboard de Monitoramento de Sentimento",
+      "Campanha de Reversão de Imagem"
+    ],
+    "certificacoes": [
+      "Inbound Marketing",
+      "Análise de Dados em Mídias Sociais"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Espanhol"
+    ],
+    "areaInteresses": [
+      "Marketing de Conteúdo",
+      "Relações Públicas"
+    ],
+    "dataNascimento": "1989-05-18",
+    "criadoEm": "2025-11-21T11:30:00.000Z",
+    "cursos": [
+      {
+        "id": "25",
+        "nome": "Gestão de Reputação Digital",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 85,
+        "icon": "📚",
+        "carreira": "Gestor de Reputação Digital",
+        "profissoesPossiveis": [
+          "Analista de Reputação",
+          "Gestor de Imagem Online"
+        ],
+        "ultimoAcesso": 1763627000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "u1v2w3x4-y5z6-a7b8-c9d0-e1f2g3h4i5j6",
+        "v1w2x3y4-z5a6-b7c8-d9e0-f1g2h3i4j5k6",
+        "w1x2y3z4-a5b6-c7d8-e9f0-g1h2i3j4k5l6"
+      ]
+    }
+  },
+  {
+    "id": "m2n3o4p5-q6r7-8901-mnop-234567890123",
+    "nome": "Fernanda Rosa",
+    "email": "fernanda.rosa@email.com",
+    "senha": "fernanda808",
+    "foto": "http://localhost:5000/uploads/foto_u3v4w5x6-y7z8-90a1-b2c3-d4e5f6g7h8i9.png",
+    "cargo": "Analista de Ética de Algoritmos",
+    "resumo": "Analista com foco em introdução e detecção de vieses, atuando na conscientização e implementação de políticas de IA justa e transparente em equipes de desenvolvimento.",
+    "localizacao": "São Paulo",
+    "area": "Governança de IA",
+    "habilidadesTecnicas": [
+      "Data Ethics",
+      "Stakeholder Management",
+      "Regulamentação"
+    ],
+    "softSkills": [
+      "Liderança Ética",
+      "Comunicação Interdisciplinar"
+    ],
+    "experiencias": [
+      "Assistente de Compliance Algorítmico na TechTrust"
+    ],
+    "formacao": [
+      "Universidade de São Paulo (USP)"
+    ],
+    "projetos": [
+      "Código de Conduta para Desenvolvedores de IA",
+      "Workshop sobre Viés Algorítmico"
+    ],
+    "certificacoes": [
+      "Introdução ao Direito Digital",
+      "Liderança e Ética"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Francês"
+    ],
+    "areaInteresses": [
+      "Filosofia da Tecnologia",
+      "Impacto Social da IA"
+    ],
+    "dataNascimento": "1993-03-28",
+    "criadoEm": "2025-11-21T12:45:00.000Z",
+    "cursos": [
+      {
+        "id": "19",
+        "nome": "Introdução à Ética de Algoritmos",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Assistente de Compliance Algorítmico",
+          "Analista de Dados Éticos"
+        ],
+        "ultimoAcesso": 1763628000000
+      },
+      {
+        "id": "20",
+        "nome": "Detecção e Mitigação de Vieses",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 60,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Especialista em Governança de IA",
+          "Analista de Responsabilidade Algorítmica"
+        ],
+        "ultimoAcesso": 1763629000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "d1e2f3g4-h5i6-7890-jklm-n1o2p3q4r5s6"
+      ]
+    }
+  },
+  {
+    "id": "n3o4p5q6-r7s8-9012-nopq-345678901234",
+    "nome": "André Luiz",
+    "email": "andre.luiz@email.com",
+    "senha": "andre909",
+    "foto": "http://localhost:5000/uploads/foto_v4w5x6y7-z8a9-01b2-c3d4-e5f6g7h8i9j0.png",
+    "cargo": "Designer de Experiências Imersivas (VR/AR)",
+    "resumo": "Designer focado em ambientes virtuais completos em VR, com ênfase em usabilidade, performance e otimização de ativos 3D.",
+    "localizacao": "Rio de Janeiro",
+    "area": "Realidade Virtual",
+    "habilidadesTecnicas": [
+      "Unreal Engine",
+      "Otimização 3D",
+      "VR Design Principles"
+    ],
+    "softSkills": [
+      "Foco no Usuário",
+      "Trabalho em Equipe"
+    ],
+    "experiencias": [
+      "Estagiário em Design VR na VRCorp"
+    ],
+    "formacao": [
+      "Pontifícia Universidade Católica do Rio de Janeiro (PUC-Rio)"
+    ],
+    "projetos": [
+      "App de Meditação em VR",
+      "Sistema de Inventário Virtual"
+    ],
+    "certificacoes": [
+      "Otimização de Conteúdo para VR",
+      "Design de Interface 3D"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Games",
+      "Educação em VR"
+    ],
+    "dataNascimento": "1999-12-10",
+    "criadoEm": "2025-11-21T14:00:00.000Z",
+    "cursos": [
+      {
+        "id": "6",
+        "nome": "Ambientes Virtuais em Realidade Virtual",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 75,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "Designer VR",
+          "Engenheiro de Experiências Imersivas"
+        ],
+        "ultimoAcesso": 1763630000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "c3d4e5f6-g7h8-9012-cdef-345678901234"
+      ]
+    }
+  },
+  {
+    "id": "o4p5q6r7-s8t9-0123-opqr-456789012345",
+    "nome": "Laura Mendes",
+    "email": "laura.mendes@email.com",
+    "senha": "laura1010",
+    "foto": "http://localhost:5000/uploads/foto_w5x6y7z8-a9b0-12c3-d4e5-f6g7h8i9j0k1.png",
+    "cargo": "Arquiteta de Mundos Virtuais",
+    "resumo": "Especialista em Princípios de Mundos Virtuais, incluindo a construção de regras de ecossistemas, economias virtuais e design de experiência de usuário em larga escala.",
+    "localizacao": "Florianópolis",
+    "area": "Design Digital",
+    "habilidadesTecnicas": [
+      "World-Building",
+      "Virtual Economy Design",
+      "Unity"
+    ],
+    "softSkills": [
+      "Criatividade",
+      "Visão de Longo Prazo"
+    ],
+    "experiencias": [
+      "Designer de Sistemas Virtuais JR na DreamWorld"
+    ],
+    "formacao": [
+      "Universidade Federal de Santa Catarina (UFSC)"
+    ],
+    "projetos": [
+      "Regras e Física para Metaverso Educacional",
+      "Design de Interação para Avatares"
+    ],
+    "certificacoes": [
+      "Economia Comportamental",
+      "Design de Jogos Digitais"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Design Social",
+      "Ciberpsicologia"
+    ],
+    "dataNascimento": "1998-04-05",
+    "criadoEm": "2025-11-21T15:15:00.000Z",
+    "cursos": [
+      {
+        "id": "16",
+        "nome": "Princípios de Mundos Virtuais",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Designer de Cenários Virtuais",
+          "Level Designer"
+        ],
+        "ultimoAcesso": 1763631000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "k1l2m3n4-o5p6-7890-qrst-u1v2w3x4y5z6"
+      ]
+    }
+  },
+  {
+    "id": "p5q6r7s8-t9u0-1234-pqrs-567890123456",
+    "nome": "Roberto Castro",
+    "email": "roberto.castro@email.com",
+    "senha": "roberto1111",
+    "foto": "http://localhost:5000/uploads/foto_x6y7z8a9-b0c1-23d4-e5f6-g7h8i9j0k1l2.png",
+    "cargo": "Curador de Inteligência Artificial",
+    "resumo": "Curador focado em Fundamentos de Curadoria de IA, atuando na organização e pré-processamento de grandes volumes de dados para o treinamento inicial de modelos de Machine Learning.",
+    "localizacao": "Belo Horizonte",
+    "area": "Inteligência Artificial",
+    "habilidadesTecnicas": [
+      "Data Annotation",
+      "Database Management",
+      "Cloud Storage"
+    ],
+    "softSkills": [
+      "Consistência",
+      "Orientação a Processos"
+    ],
+    "experiencias": [
+      "Técnico em Processamento de Dados na DataStream"
+    ],
+    "formacao": [
+      "Universidade Federal de Minas Gerais (UFMG)"
+    ],
+    "projetos": [
+      "Criação de Dicionário de Termos para NLP",
+      "Implementação de Política de Privacidade de Dados"
+    ],
+    "certificacoes": [
+      "Gestão de Dados",
+      "SQL Avançado"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Big Data",
+      "Infraestrutura de Dados"
+    ],
+    "dataNascimento": "1997-08-11",
+    "criadoEm": "2025-11-21T16:30:00.000Z",
+    "cursos": [
+      {
+        "id": "1",
+        "nome": "Fundamentos de Curadoria de IA",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Analista de Dados Assistidos por IA"
+        ],
+        "ultimoAcesso": 1763632000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "q6r7s8t9-u0v1-2345-qrst-678901234567",
+    "nome": "Patrícia Lima",
+    "email": "patricia.lima@email.com",
+    "senha": "patricia1212",
+    "foto": "http://localhost:5000/uploads/foto_y7z8a9b0-c1d2-34e5-f6g7-h8i9j0k1l2m3.png",
+    "cargo": "Designer de Experiências Imersivas (VR/AR)",
+    "resumo": "Focada em Introdução ao Design Imersivo e Prototipação em AR, criando as primeiras etapas de design de interação e interfaces para novas aplicações em Realidade Aumentada.",
+    "localizacao": "São Paulo",
+    "area": "Design Digital",
+    "habilidadesTecnicas": [
+      "Figma",
+      "Wireframing",
+      "3D Interaction Design"
+    ],
+    "softSkills": [
+      "Pensamento Abstrato",
+      "Detalhista"
+    ],
+    "experiencias": [
+      "Estagiária em UX Design na DesignImersivo"
+    ],
+    "formacao": [
+      "Faculdade de Arquitetura e Urbanismo (FAU) - USP"
+    ],
+    "projetos": [
+      "Estudo de Usabilidade em AR",
+      "Protótipo de Aplicativo de Decoração AR"
+    ],
+    "certificacoes": [
+      "Design de Interação",
+      "Introdução ao 3D Modeling"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Arquitetura Digital",
+      "Design de Produto"
+    ],
+    "dataNascimento": "2001-09-02",
+    "criadoEm": "2025-11-21T17:45:00.000Z",
+    "cursos": [
+      {
+        "id": "4",
+        "nome": "Introdução ao Design Imersivo",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "Designer de Experiências XR",
+          "Criador de Conteúdo VR/AR"
+        ],
+        "ultimoAcesso": 1763633000000
+      },
+      {
+        "id": "5",
+        "nome": "Prototipação em Realidade Aumentada",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 65,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "UX Designer XR",
+          "Desenvolvedor de Aplicações AR"
+        ],
+        "ultimoAcesso": 1763634000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "r7s8t9u0-v1w2-3456-rstuv-789012345678",
+    "nome": "Lucas Torres",
+    "email": "lucas.torres@email.com",
+    "senha": "lucas1313",
+    "foto": "http://localhost:5000/uploads/foto_z8a9b0c1-d2e3-45f6-g7h8-i9j0k1l2m3n4.png",
+    "cargo": "Especialista em Interfaces Cérebro-Computador",
+    "resumo": "Técnico BCI focado em Sinais Neurais e Interpretação de Dados, atuando na coleta e análise primária de dados de eletroencefalografia (EEG) para aplicações em neurotecnologia.",
+    "localizacao": "Curitiba",
+    "area": "Neurotecnologia",
+    "habilidadesTecnicas": [
+      "EEG Acquisition",
+      "Python (Data Analysis)",
+      "Neuroscience Basics"
+    ],
+    "softSkills": [
+      "Metodologia",
+      "Concentração"
+    ],
+    "experiencias": [
+      "Assistente de Laboratório em Neurociências"
+    ],
+    "formacao": [
+      "Universidade Federal do Paraná (UFPR)"
+    ],
+    "projetos": [
+      "Protocolo de Calibração BCI",
+      "Visualização de Dados de Ondas Cerebrais"
+    ],
+    "certificacoes": [
+      "Análise de Sinais",
+      "Fundamentos de Eletrofisiologia"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Mapeamento Cerebral",
+      "Biomedicina"
+    ],
+    "dataNascimento": "1996-03-01",
+    "criadoEm": "2025-11-21T19:00:00.000Z",
+    "cursos": [
+      {
+        "id": "11",
+        "nome": "Sinais Neurais e Interpretação de Dados",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 90,
+        "icon": "📚",
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "profissoesPossiveis": [
+          "Analista de Neurodados",
+          "Especialista BCI"
+        ],
+        "ultimoAcesso": 1763635000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "r1s2t3u4-v5w6-x7y8-z9a0-b1c2d3e4f5g6",
+        "s1t2u3v4-w5x6-y7z8-a9b0-c1d2e3f4g5h6"
+      ]
+    }
+  },
+  {
+    "id": "s8t9u0v1-w2x3-4567-stuv-890123456789",
+    "nome": "Gabriela Costa",
+    "email": "gabriela.costa@email.com",
+    "senha": "gabriela1414",
+    "foto": "http://localhost:5000/uploads/foto_a9b0c1d2-e3f4-56g7-h8i9-j0k1l2m3n4o5.png",
+    "cargo": "Gestora de Ecossistemas de Robôs",
+    "resumo": "Supervisora focada em Sistemas Colaborativos entre Humanos e Robôs (Co-Bots), desenhando fluxos de trabalho que integram efetivamente a força de trabalho humana e robótica.",
+    "localizacao": "Campinas",
+    "area": "Robótica Industrial",
+    "habilidadesTecnicas": [
+      "Gestão de Equipes Híbridas",
+      "Segurança Industrial (Normas)",
+      "Process Mapping"
+    ],
+    "softSkills": [
+      "Mediação de Conflitos",
+      "Liderança Servidora"
+    ],
+    "experiencias": [
+      "Supervisora de Linha de Produção Automatizada"
+    ],
+    "formacao": [
+      "Universidade Estadual de Campinas (UNICAMP)"
+    ],
+    "projetos": [
+      "Protocolo de Interação Segura com Co-Bots",
+      "Treinamento de Colaboradores para HRC"
+    ],
+    "certificacoes": [
+      "Gestão de Projetos Industriais",
+      "Segurança do Trabalho"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Ergonomia em Robótica",
+      "Aprendizagem de Máquina Aplicada"
+    ],
+    "dataNascimento": "1988-01-25",
+    "criadoEm": "2025-11-21T21:30:00.000Z",
+    "cursos": [
+      {
+        "id": "14",
+        "nome": "Sistemas Colaborativos entre Humanos e Robôs",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 80,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Gestor de Robótica",
+          "Supervisor de Automação Inteligente"
+        ],
+        "ultimoAcesso": 1763636000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "e1f2g3h4-i5j6-7890-klmn-o1p2q3r4s5t6"
+      ]
+    }
+  },
+  {
+    "id": "t9u0v1w2-x3y4-5678-tuvw-901234567890",
+    "nome": "Alexandre Pires",
+    "email": "alexandre.pires@email.com",
+    "senha": "alexandre1515",
+    "foto": "http://localhost:5000/uploads/foto_b0c1d2e3-f4g5-67h8-i9j0-k1l2m3n4o5p6.png",
+    "cargo": "Arquiteto de Mundos Virtuais",
+    "resumo": "Modelador e Arquiteto de Ambientes 3D, focado em Construção de Ambientes 3D para mundos virtuais de alta fidelidade e performance em plataformas diversas.",
+    "localizacao": "Porto Alegre",
+    "area": "Design 3D",
+    "habilidadesTecnicas": [
+      "Blender",
+      "Texture Painting",
+      "Asset Creation"
+    ],
+    "softSkills": [
+      "Perseverança",
+      "Visão Espacial"
+    ],
+    "experiencias": [
+      "Modelador 3D JR na DigitalSpace"
+    ],
+    "formacao": [
+      "Universidade Federal do Rio Grande do Sul (UFRGS)"
+    ],
+    "projetos": [
+      "Criação de Biblioteca de Assets 3D",
+      "Otimização de Geometria para VR"
+    ],
+    "certificacoes": [
+      "Modelagem 3D Avançada",
+      "Iluminação e Renderização"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Arte Digital",
+      "Design de Interiores Virtual"
+    ],
+    "dataNascimento": "2000-02-09",
+    "criadoEm": "2025-11-21T21:30:00.000Z",
+    "cursos": [
+      {
+        "id": "17",
+        "nome": "Construção de Ambientes 3D",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Modelador 3D",
+          "Arquiteto de Ambientes Digitais"
+        ],
+        "ultimoAcesso": 1763637000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "u0v1w2x3-y4z5-6789-uvwx-012345678901",
+    "nome": "Elisa Nunes",
+    "email": "elisa.nunes@email.com",
+    "senha": "elisa1616",
+    "foto": "http://localhost:5000/uploads/foto_c1d2e3f4-g5h6-78i9-j0k1-l2m3n4o5p6q7.png",
+    "cargo": "Engenheira de Sustentabilidade Digital",
+    "resumo": "Engenheira focada em Infraestrutura Verde e Computação Eficiente, projetando sistemas para o menor consumo energético possível em datacenters e cloud computing.",
+    "localizacao": "São Paulo",
+    "area": "Sustentabilidade/TI",
+    "habilidadesTecnicas": [
+      "Virtualization",
+      "Eficiência Energética",
+      "Monitoring Tools"
+    ],
+    "softSkills": [
+      "Raciocínio Lógico",
+      "Orientação a Metas"
+    ],
+    "experiencias": [
+      "Analista de Infraestrutura JR na CloudGreen"
+    ],
+    "formacao": [
+      "Universidade Federal de São Paulo (UNIFESP)"
+    ],
+    "projetos": [
+      "Migração de Servidores para Cloud Sustentável",
+      "Relatório de Otimização de Clusters"
+    ],
+    "certificacoes": [
+      "Data Center Energy Practitioner",
+      "Cloud Sustentável"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Blockchain Verde",
+      "Computação Quântica"
+    ],
+    "dataNascimento": "1994-10-30",
+    "criadoEm": "2025-11-21T22:45:00.000Z",
+    "cursos": [
+      {
+        "id": "8",
+        "nome": "Infraestrutura Verde e Computação Eficiente",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 95,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Engenheiro de Sustentabilidade Digital",
+          "Arquiteto de Infraestrutura Sustentável"
+        ],
+        "ultimoAcesso": 1763638000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "g1h2i3j4-k5l6-7890-mnop-q1r2s3t4u5v6",
+        "h1i2j3k4-l5m6-7890-nopq-r1s2t3u4v5w6"
+      ]
+    }
+  },
+  {
+    "id": "v1w2x3y4-z5a6-7890-vwxy-123456789012",
+    "nome": "Ricardo Barros",
+    "email": "ricardo.barros@email.com",
+    "senha": "ricardo1717",
+    "foto": "http://localhost:5000/uploads/foto_d2e3f4g5-h6i7-89j0-k1l2-m3n4o5p6q7r8.png",
+    "cargo": "Especialista em Interfaces Cérebro-Computador",
+    "resumo": "Técnico BCI focado em Introdução a Interfaces Cérebro-Computador, atuando como o primeiro ponto de contato na configuração e operação de dispositivos BCI.",
+    "localizacao": "Recife",
+    "area": "Neurotecnologia",
+    "habilidadesTecnicas": [
+      "BCI Setup",
+      "Hardware Troubleshooting",
+      "Data Logging"
+    ],
+    "softSkills": [
+      "Comunicação Técnica",
+      "Praticidade"
+    ],
+    "experiencias": [
+      "Estagiário em Laboratório de Neurociência"
+    ],
+    "formacao": [
+      "Universidade Federal de Pernambuco (UFPE)"
+    ],
+    "projetos": [
+      "Inventário de Dispositivos BCI",
+      "Protocolo de Higiene de Eletrodos"
+    ],
+    "certificacoes": [
+      "Manutenção de Equipamentos Eletrônicos",
+      "Primeiros Socorros em Laboratório"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Robótica",
+      "Biônica"
+    ],
+    "dataNascimento": "2000-05-15",
+    "criadoEm": "2025-11-22T00:00:00.000Z",
+    "cursos": [
+      {
+        "id": "10",
+        "nome": "Introdução a Interfaces Cérebro-Computador",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "profissoesPossiveis": [
+          "Técnico BCI",
+          "Assistente de Neurotecnologia"
+        ],
+        "ultimoAcesso": 1763639000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "w2x3y4z5-a6b7-8901-wxyz-234567890123",
+    "nome": "Sandra Dias",
+    "email": "sandra.dias@email.com",
+    "senha": "sandra1818",
+    "foto": "http://localhost:5000/uploads/foto_e3f4g5h6-i7j8-90k1-l2m3-n4o5p6q7r8s9.png",
+    "cargo": "Gestora de Ecossistemas de Robôs",
+    "resumo": "Supervisora focada em Robôs no Ecossistema Digital, atuando na gestão e integração inicial de novas unidades robóticas em ambientes de trabalho.",
+    "localizacao": "Manaus",
+    "area": "Robótica Industrial",
+    "habilidadesTecnicas": [
+      "RPA Basics",
+      "Inventory Management",
+      "Hardware Integration"
+    ],
+    "softSkills": [
+      "Supervisão",
+      "Coordenação"
+    ],
+    "experiencias": [
+      "Operadora de Robôs na AutoFactory"
+    ],
+    "formacao": [
+      "Universidade Federal do Amazonas (UFAM)"
+    ],
+    "projetos": [
+      "Guia de Boas Práticas para Operadores",
+      "Rotina de Check-up de Robôs"
+    ],
+    "certificacoes": [
+      "Introdução à Automação",
+      "Gestão de Estoque"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Logística Automatizada",
+      "Manutenção de Robôs"
+    ],
+    "dataNascimento": "1993-07-28",
+    "criadoEm": "2025-11-22T01:15:00.000Z",
+    "cursos": [
+      {
+        "id": "13",
+        "nome": "Robôs no Ecossistema Digital",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Operador de Robôs",
+          "Assistente de Automação"
+        ],
+        "ultimoAcesso": 1763640000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "u1v2w3x4-y5z6-a7b8-c9d0-e1f2g3h4i5j6"
+      ]
+    }
+  },
+  {
+    "id": "x3y4z5a6-b7c8-9012-xyza-345678901234",
+    "nome": "Paula Oliveira",
+    "email": "paula.oliveira@email.com",
+    "senha": "paula1919",
+    "foto": "http://localhost:5000/uploads/foto_f4g5h6i7-j8k9-01l2-m3n4-o5p6q7r8s9t0.png",
+    "cargo": "Desenhista de Personalidades de IA",
+    "resumo": "Criadora de Personalidades de IA com foco em Introdução e Variações de Voz, Emoção e Tom para assistentes virtuais em múltiplos canais de comunicação.",
+    "localizacao": "Belo Horizonte",
+    "area": "UX Conversacional",
+    "habilidadesTecnicas": [
+      "Tone of Voice",
+      "Persona Development",
+      "Copywriting"
+    ],
+    "softSkills": [
+      "Empatia",
+      "Versatilidade"
+    ],
+    "experiencias": [
+      "Redatora Publicitária JR na AgentCreator"
+    ],
+    "formacao": [
+      "Universidade Federal de Minas Gerais (UFMG)"
+    ],
+    "projetos": [
+      "Manual de Tom de Voz para Chatbot de Suporte",
+      "Estudo de Impacto Emocional da IA"
+    ],
+    "certificacoes": [
+      "Storytelling",
+      "Design de Interação Conversacional"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Marketing Conversacional",
+      "Psicolinguística"
+    ],
+    "dataNascimento": "1995-04-04",
+    "criadoEm": "2025-11-22T02:30:00.000Z",
+    "cursos": [
+      {
+        "id": "22",
+        "nome": "Criação de Personalidades de IA",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Desenhista de Personalidades de IA",
+        "profissoesPossiveis": [
+          "Criador de Personalidades Digitais",
+          "Designer de Agentes Virtuais"
+        ],
+        "ultimoAcesso": 1763641000000
+      },
+      {
+        "id": "23",
+        "nome": "Voz, Emoção e Tom em Assistentes Virtuais",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 85,
+        "icon": "📚",
+        "carreira": "Desenhista de Personalidades de IA",
+        "profissoesPossiveis": [
+          "Especialista em UX Conversacional",
+          "Designer de Voz IA"
+        ],
+        "ultimoAcesso": 1763642000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "y4z5a6b7-c8d9-0123-yzab-456789012345",
+    "nome": "Fernando Alves",
+    "email": "fernando.alves@email.com",
+    "senha": "fernando2020",
+    "foto": "http://localhost:5000/uploads/foto_g5h6i7j8-k9l0-12m3-n4o5-p6q7r8s9t0u1.png",
+    "cargo": "Arquiteto de Mundos Virtuais",
+    "resumo": "Arquiteto focado em Narrativa e Sistemas Interativos, criando as mecânicas de jogo e a progressão de história dentro de grandes ambientes virtuais (Metaversos).",
+    "localizacao": "Rio de Janeiro",
+    "area": "Desenvolvimento de Jogos",
+    "habilidadesTecnicas": [
+      "Narrative Design",
+      "Gameplay Programming",
+      "Scripting"
+    ],
+    "softSkills": [
+      "Storytelling",
+      "Coerência"
+    ],
+    "experiencias": [
+      "Designer de Gameplay JR na GameLabs"
+    ],
+    "formacao": [
+      "Universidade Federal Fluminense (UFF)"
+    ],
+    "projetos": [
+      "Sistema de Diálogos Não-Lineares",
+      "Design de Economia para Mundo Virtual"
+    ],
+    "certificacoes": [
+      "Engenharia de Jogos",
+      "Escrita Criativa"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Jogos Educacionais",
+      "Simulações Interativas"
+    ],
+    "dataNascimento": "1997-06-19",
+    "criadoEm": "2025-11-22T03:45:00.000Z",
+    "cursos": [
+      {
+        "id": "18",
+        "nome": "Narrativa e Sistemas Interativos",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 90,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Designer Narrativo",
+          "Criador de Experiências Digitais"
+        ],
+        "ultimoAcesso": 1763643000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "t1u2v3w4-x5y6-z7a8-b9c0-d1e2f3g4h5i6"
+      ]
+    }
+  },
+  {
+    "id": "z5a6b7c8-d9e0-1234-zabc-567890123456",
+    "nome": "Helena Viana",
+    "email": "helena.viana@email.com",
+    "senha": "helena2121",
+    "foto": "http://localhost:5000/uploads/foto_h6i7j8k9-l0m1-23n4-o5p6-q7r8s9t0u1v2.png",
+    "cargo": "Analista de Ética de Algoritmos",
+    "resumo": "Analista de Ética de Algoritmos focada em Governança e Auditoria de Sistemas de IA, atuando na certificação de modelos e em conformidade com padrões de responsabilidade algorítmica.",
+    "localizacao": "Brasília",
+    "area": "Governança de IA",
+    "habilidadesTecnicas": [
+      "Regulatory Compliance",
+      "Internal Audit",
+      "Process Optimization"
+    ],
+    "softSkills": [
+      "Integridade",
+      "Atitude Investigativa"
+    ],
+    "experiencias": [
+      "Auditora de Sistemas JR na ComplianceAI"
+    ],
+    "formacao": [
+      "Universidade de Brasília (UnB)"
+    ],
+    "projetos": [
+      "Mapeamento de Riscos de IA",
+      "Framework de Certificação de Algoritmos"
+    ],
+    "certificacoes": [
+      "Certified Information Systems Auditor (CISA)",
+      "Regulação de IA na UE"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Alemão"
+    ],
+    "areaInteresses": [
+      "Privacidade de Dados",
+      "Transparência de Modelos"
+    ],
+    "dataNascimento": "1985-08-16",
+    "criadoEm": "2025-11-22T05:00:00.000Z",
+    "cursos": [
+      {
+        "id": "21",
+        "nome": "Governança e Auditoria de Sistemas de IA",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Auditor de IA",
+          "Analista de Conformidade Digital"
+        ],
+        "ultimoAcesso": 1763644000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "v1w2x3y4-z5a6-b7c8-d9e0-f1g2h3i4j5k6",
+        "w1x2y3z4-a5b6-c7d8-e9f0-g1h2i3j4k5l6",
+        "x1y2z3a4-b5c6-d7e8-f9g0-h1i2j3k4l5m6"
+      ]
+    }
+  },
+  {
+    "id": "a6b7c8d9-e0f1-2345-bcde-678901234567",
+    "nome": "Mário Jorge",
+    "email": "mario.jorge@email.com",
+    "senha": "mario2222",
+    "foto": "http://localhost:5000/uploads/foto_i7j8k9l0-m1n2-34o5-p6q7-r8s9t0u1v2w3.png",
+    "cargo": "Designer de Experiências Imersivas (VR/AR)",
+    "resumo": "Designer de Experiências Imersivas focado em ambientes virtuais completos em VR, com ênfase na criação de interações realistas e otimização para dispositivos portáteis.",
+    "localizacao": "Porto Alegre",
+    "area": "Realidade Virtual",
+    "habilidadesTecnicas": [
+      "Unity",
+      "C#",
+      "Interação VR"
+    ],
+    "softSkills": [
+      "Orientação a Detalhes",
+      "Inovação"
+    ],
+    "experiencias": [
+      "Engenheiro de Experiências JR na VRTech"
+    ],
+    "formacao": [
+      "Universidade Federal do Rio Grande do Sul (UFRGS)"
+    ],
+    "projetos": [
+      "Protótipo de Sala de Reuniões em VR",
+      "Otimização de Carregamento de Cenários"
+    ],
+    "certificacoes": [
+      "Desenvolvimento de Jogos VR",
+      "Otimização de Ativos"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Treinamento Corporativo em VR",
+      "Aplicações Médicas"
+    ],
+    "dataNascimento": "1994-04-14",
+    "criadoEm": "2025-11-22T06:15:00.000Z",
+    "cursos": [
+      {
+        "id": "6",
+        "nome": "Ambientes Virtuais em Realidade Virtual",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 85,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "Designer VR",
+          "Engenheiro de Experiências Imersivas"
+        ],
+        "ultimoAcesso": 1763645000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "e0a7b4f3-1c9d-4e5a-8b2c-6d1f0e8a7b4f",
+    "nome": "Ricardo Almeida",
+    "email": "ricardo.almeida@email.com",
+    "senha": "ricardo456",
+    "foto": "http://localhost:5000/uploads/foto_e0a7b4f3-1c9d-4e5a-8b2c-6d1f0e8a7b4f.png",
+    "cargo": "Curador de Inteligência Artificial",
+    "resumo": "Especialista em qualidade de dados e mitigação de vieses para o treinamento de modelos de IA.",
+    "localizacao": "Rio de Janeiro",
+    "area": "Inteligência Artificial",
+    "habilidadesTecnicas": [
+      "Python",
+      "Pandas",
+      "Limpeza de Dados",
+      "TensorFlow"
+    ],
+    "softSkills": [
+      "Atenção a Detalhes",
+      "Análise Crítica"
+    ],
+    "experiencias": [
+      "Analista de Dados na AI Corp"
+    ],
+    "formacao": [
+      "Universidade Federal do Rio de Janeiro"
+    ],
+    "projetos": [
+      "Dataset para IA Ética",
+      "Sistema de Curadoria Automatizada"
+    ],
+    "certificacoes": [
+      "Data Science Professional",
+      "Machine Learning Ético"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "MLOps",
+      "Modelos de Linguagem"
+    ],
+    "dataNascimento": "1995-03-20",
+    "criadoEm": "2025-11-20T10:05:00.000Z",
+    "cursos": [
+      {
+        "id": "1",
+        "nome": "Fundamentos de Curadoria de IA",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Analista de Dados Assistidos por IA"
+        ],
+        "ultimoAcesso": 1763610000000
+      },
+      {
+        "id": "2",
+        "nome": "Treinamento e Avaliação de Modelos",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 50,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Especialista em Qualidade de Modelos"
+        ],
+        "ultimoAcesso": 1763611000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "f8b3c9d1-e7a2-4c6b-9d0f-5a1e7d3c9b4a"
+      ]
+    }
+  },
+  {
+    "id": "c9d1e8a7-b4f3-4c6b-9d0f-5a1e7d3c9b4a",
+    "nome": "Sofia Oliveira",
+    "email": "sofia.oliveira@email.com",
+    "senha": "sofia789",
+    "foto": "http://localhost:5000/uploads/foto_c9d1e8a7-b4f3-4c6b-9d0f-5a1e7d3c9b4a.png",
+    "cargo": "Engenheira de Sustentabilidade Digital",
+    "resumo": "Focada em otimizar infraestruturas de TI para reduzir o consumo energético e a pegada de carbono.",
+    "localizacao": "Curitiba",
+    "area": "Sustentabilidade/TI",
+    "habilidadesTecnicas": [
+      "Cloud Computing",
+      "Eficiência Energética",
+      "Docker",
+      "Monitoramento"
+    ],
+    "softSkills": [
+      "Organização",
+      "Pensamento Sistêmico"
+    ],
+    "experiencias": [
+      "Consultora Júnior ESG na GreenTech"
+    ],
+    "formacao": [
+      "Universidade Federal do Paraná"
+    ],
+    "projetos": [
+      "Datacenter Eficiente em Nuvem",
+      "Auditoria de Consumo de Servidores"
+    ],
+    "certificacoes": [
+      "Certificação AWS Green",
+      "Infraestrutura Sustentável"
+    ],
+    "idiomas": [
+      "Português",
+      "Espanhol"
+    ],
+    "areaInteresses": [
+      "IoT Verde",
+      "Economia Circular"
+    ],
+    "dataNascimento": "1992-11-05",
+    "criadoEm": "2025-11-20T11:15:20.000Z",
+    "cursos": [
+      {
+        "id": "7",
+        "nome": "Sustentabilidade e Tecnologia Digital",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Analista de Sustentabilidade",
+          "Consultor ESG Digital"
+        ],
+        "ultimoAcesso": 1763612000000
+      },
+      {
+        "id": "8",
+        "nome": "Infraestrutura Verde e Computação Eficiente",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Engenheiro de Sustentabilidade Digital",
+          "Arquiteto de Infraestrutura Sustentável"
+        ],
+        "ultimoAcesso": 1763613000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-cdef-0987654321ab",
+    "nome": "Lucas Pereira",
+    "email": "lucas.pereira@email.com",
+    "senha": "lucasxyz",
+    "foto": "http://localhost:5000/uploads/foto_a1b2c3d4-e5f6-7890-cdef-0987654321ab.png",
+    "cargo": "Especialista em Interfaces Cérebro-Computador",
+    "resumo": "Desenvolvedor de aplicações BCI para reabilitação e controle de dispositivos robóticos.",
+    "localizacao": "Belo Horizonte",
+    "area": "Neurotecnologia",
+    "habilidadesTecnicas": [
+      "Processamento de Sinais Neurais",
+      "Matlab",
+      "Arduino",
+      "BCI"
+    ],
+    "softSkills": [
+      "Inovação",
+      "Resolução de Problemas"
+    ],
+    "experiencias": [
+      "Estágio em Neuroengenharia no Hospital Tech"
+    ],
+    "formacao": [
+      "Universidade Federal de Minas Gerais"
+    ],
+    "projetos": [
+      "Prótese Controlada por BCI",
+      "Sistema de Feedback Neural"
+    ],
+    "certificacoes": [
+      "Engenharia Biomédica",
+      "Neurociência Computacional"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Realidade Mista",
+      "Saúde Digital"
+    ],
+    "dataNascimento": "1997-01-25",
+    "criadoEm": "2025-11-20T13:40:55.000Z",
+    "cursos": [
+      {
+        "id": "10",
+        "nome": "Introdução a Interfaces Cérebro-Computador",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "profissoesPossiveis": [
+          "Técnico BCI",
+          "Assistente de Neurotecnologia"
+        ],
+        "ultimoAcesso": 1763614000000
+      },
+      {
+        "id": "11",
+        "nome": "Sinais Neurais e Interpretação de Dados",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 70,
+        "icon": "📚",
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "profissoesPossiveis": [
+          "Analista de Neurodados",
+          "Especialista BCI"
+        ],
+        "ultimoAcesso": 1763615000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "e0a7b4f3-1c9d-4e5a-8b2c-6d1f0e8a7b4f",
+        "b2c3d4e5-f6a7-8b9c-d0e1-f2a3b4c5d6e7"
+      ]
+    }
+  },
+  {
+    "id": "b2c3d4e5-f6a7-8b9c-d0e1-f2a3b4c5d6e7",
+    "nome": "Gabriel Rocha",
+    "email": "gabriel.rocha@email.com",
+    "senha": "gabrielpass",
+    "foto": "http://localhost:5000/uploads/foto_b2c3d4e5-f6a7-8b9c-d0e1-f2a3b4c5d6e7.png",
+    "cargo": "Gestor de Ecossistemas de Robôs",
+    "resumo": "Planejamento e coordenação de operações de robótica industrial e sistemas colaborativos (cobots).",
+    "localizacao": "Manaus",
+    "area": "Automação/Robótica",
+    "habilidadesTecnicas": [
+      "ROS",
+      "PLC",
+      "Automação Industrial",
+      "Controle de Sistemas"
+    ],
+    "softSkills": [
+      "Liderança",
+      "Gestão de Projetos"
+    ],
+    "experiencias": [
+      "Engenheiro de Automação na RoboFab"
+    ],
+    "formacao": [
+      "Instituto Tecnológico de Aeronáutica"
+    ],
+    "projetos": [
+      "Célula de Montagem Colaborativa",
+      "Otimização de Linha de Produção"
+    ],
+    "certificacoes": [
+      "Robótica Avançada",
+      "Gestão Ágil"
+    ],
+    "idiomas": [
+      "Português",
+      "Japonês"
+    ],
+    "areaInteresses": [
+      "Manufatura Inteligente",
+      "Indústria 4.0"
+    ],
+    "dataNascimento": "1988-09-10",
+    "criadoEm": "2025-11-20T14:22:10.000Z",
+    "cursos": [
+      {
+        "id": "14",
+        "nome": "Sistemas Colaborativos entre Humanos e Robôs",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Gestor de Robótica",
+          "Supervisor de Automação Inteligente"
+        ],
+        "ultimoAcesso": 1763616000000
+      },
+      {
+        "id": "15",
+        "nome": "Automação Avançada e Orquestração de Robôs",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 60,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Engenheiro de Automação Avançada",
+          "Arquiteto de Robótica"
+        ],
+        "ultimoAcesso": 1763617000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "a1b2c3d4-e5f6-7890-cdef-0987654321ab"
+      ]
+    }
+  },
+  {
+    "id": "f8b3c9d1-e7a2-4c6b-9d0f-5a1e7d3c9b4a",
+    "nome": "Camila Ferreira",
+    "email": "camila.ferreira@email.com",
+    "senha": "camilaf",
+    "foto": "http://localhost:5000/uploads/foto_f8b3c9d1-e7a2-4c6b-9d0f-5a1e7d3c9b4a.png",
+    "cargo": "Arquiteta de Mundos Virtuais",
+    "resumo": "Criação de ecossistemas digitais imersivos e cenários 3D com foco em experiências sociais e corporativas.",
+    "localizacao": "Porto Alegre",
+    "area": "Mundos Virtuais",
+    "habilidadesTecnicas": [
+      "Unreal Engine",
+      "Modelagem 3D",
+      "Design de Nível",
+      "Narrativa"
+    ],
+    "softSkills": [
+      "Comunicação",
+      "Visão Espacial"
+    ],
+    "experiencias": [
+      "Modeladora 3D na MetaVerse Studios"
+    ],
+    "formacao": [
+      "Pontifícia Universidade Católica do Rio Grande do Sul"
+    ],
+    "projetos": [
+      "Metaverso para Treinamento Corporativo",
+      "Simulador de Cidades"
+    ],
+    "certificacoes": [
+      "Unreal Certified Developer",
+      "Design Narrativo"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Francês"
+    ],
+    "areaInteresses": [
+      "Geração Procedural",
+      "Economia Virtual"
+    ],
+    "dataNascimento": "1994-05-18",
+    "criadoEm": "2025-11-20T15:00:30.000Z",
+    "cursos": [
+      {
+        "id": "16",
+        "nome": "Princípios de Mundos Virtuais",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Designer de Cenários Virtuais",
+          "Level Designer"
+        ],
+        "ultimoAcesso": 1763618000000
+      },
+      {
+        "id": "17",
+        "nome": "Construção de Ambientes 3D",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 85,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Modelador 3D",
+          "Arquiteto de Ambientes Digitais"
+        ],
+        "ultimoAcesso": 1763619000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "d0e1f2a3-b4c5-d6e7-f8a9-0b1c2d3e4f5a",
+    "nome": "Tiago Costa",
+    "email": "tiago.costa@email.com",
+    "senha": "tiagocst",
+    "foto": "http://localhost:5000/uploads/foto_d0e1f2a3-b4c5-d6e7-f8a9-0b1c2d3e4f5a.png",
+    "cargo": "Analista de Ética de Algoritmos",
+    "resumo": "Auditoria de sistemas de IA para conformidade ética e mitigação de vieses em algoritmos de tomada de decisão.",
+    "localizacao": "São Paulo",
+    "area": "Governança/IA",
+    "habilidadesTecnicas": [
+      "Legislação de Dados",
+      "Auditoria de Software",
+      "Análise de Vieses",
+      "R"
+    ],
+    "softSkills": [
+      "Integridade",
+      "Raciocínio Lógico"
+    ],
+    "experiencias": [
+      "Consultor de Regulamentação na Data Legal"
+    ],
+    "formacao": [
+      "Faculdade de Direito da USP"
+    ],
+    "projetos": [
+      "Framework de Auditoria Ética",
+      "Guia de Compliance LGPD para IA"
+    ],
+    "certificacoes": [
+      "Introdução à Ética de Algoritmos",
+      "Líder em Conformidade Digital"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Direito Digital",
+      "Regulamentação de IA"
+    ],
+    "dataNascimento": "1985-12-01",
+    "criadoEm": "2025-11-20T16:10:45.000Z",
+    "cursos": [
+      {
+        "id": "19",
+        "nome": "Introdução à Ética de Algoritmos",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Assistente de Compliance Algorítmico",
+          "Analista de Dados Éticos"
+        ],
+        "ultimoAcesso": 1763620000000
+      },
+      {
+        "id": "20",
+        "nome": "Detecção e Mitigação de Vieses",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 90,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Especialista em Governança de IA",
+          "Analista de Responsabilidade Algorítmica"
+        ],
+        "ultimoAcesso": 1763621000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 3,
+      "recomendadores": [
+        "f8b3c9d1-e7a2-4c6b-9d0f-5a1e7d3c9b4a",
+        "c9d1e8a7-b4f3-4c6b-9d0f-5a1e7d3c9b4a",
+        "e0a7b4f3-1c9d-4e5a-8b2c-6d1f0e8a7b4f"
+      ]
+    }
+  },
+  {
+    "id": "1e2f3g4h-5i6j-7k8l-9m0n-1p2q3r4s5t6u",
+    "nome": "Helena Vargas",
+    "email": "helena.vargas@email.com",
+    "senha": "helenav",
+    "foto": "http://localhost:5000/uploads/foto_1e2f3g4h-5i6j-7k8l-9m0n-1p2q3r4s5t6u.png",
+    "cargo": "Desenhista de Personalidades de IA",
+    "resumo": "Crio a voz, tom e comportamento adaptativo de assistentes virtuais e agentes de conversação para garantir uma experiência humana.",
+    "localizacao": "Campinas",
+    "area": "UX Conversacional",
+    "habilidadesTecnicas": [
+      "Design de Voz",
+      "NLP",
+      "Roteiro Conversacional",
+      "Figma"
+    ],
+    "softSkills": [
+      "Storytelling",
+      "Empatia",
+      "Coerência"
+    ],
+    "experiencias": [
+      "UX Writer na ChatBot Solutions"
+    ],
+    "formacao": [
+      "Universidade Estadual de Campinas"
+    ],
+    "projetos": [
+      "Persona para Assistente de Saúde",
+      "Desenho de Diálogo Multicanal"
+    ],
+    "certificacoes": [
+      "Design de Conversação Avançado",
+      "Psicologia da Interação Humano-IA"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Emoção em IA",
+      "Robôs Sociais"
+    ],
+    "dataNascimento": "1996-08-08",
+    "criadoEm": "2025-11-20T17:30:22.000Z",
+    "cursos": [
+      {
+        "id": "22",
+        "nome": "Criação de Personalidades de IA",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Desenhista de Personalidades de IA",
+        "profissoesPossiveis": [
+          "Criador de Personalidades Digitais",
+          "Designer de Agentes Virtuais"
+        ],
+        "ultimoAcesso": 1763622000000
+      },
+      {
+        "id": "23",
+        "nome": "Voz, Emoção e Tom em Assistentes Virtuais",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 75,
+        "icon": "📚",
+        "carreira": "Desenhista de Personalidades de IA",
+        "profissoesPossiveis": [
+          "Especialista em UX Conversacional",
+          "Designer de Voz IA"
+        ],
+        "ultimoAcesso": 1763623000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "b2c3d4e5-f6a7-8b9c-d0e1-f2a3b4c5d6e7"
+      ]
+    }
+  },
+  {
+    "id": "2g3h4i5j-6k7l-8m9n-0p1q-2r3s4t5u6v7w",
+    "nome": "Daniel Silva",
+    "email": "daniel.silva@email.com",
+    "senha": "danielpw",
+    "foto": "http://localhost:5000/uploads/foto_2g3h4i5j-6k7l-8m9n-0p1q-2r3s4t5u6v7w.png",
+    "cargo": "Gestor de Reputação Digital",
+    "resumo": "Monitoramento proativo e estratégias de resposta a crises para proteger a imagem de marcas e executivos online.",
+    "localizacao": "Florianópolis",
+    "area": "Comunicação/Marketing",
+    "habilidadesTecnicas": [
+      "SEO",
+      "Análise de Sentimento",
+      "Monitoramento de Mídias",
+      "Gestão de Crises"
+    ],
+    "softSkills": [
+      "Diplomacia",
+      "Agilidade"
+    ],
+    "experiencias": [
+      "Analista de Marketing Digital na BrandShield"
+    ],
+    "formacao": [
+      "Universidade Federal de Santa Catarina"
+    ],
+    "projetos": [
+      "Mapa de Risco de Reputação",
+      "Manual de Crises Digitais"
+    ],
+    "certificacoes": [
+      "Monitoramento de Marcas",
+      "Comunicação de Alto Risco"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Alemão"
+    ],
+    "areaInteresses": [
+      "Deepfakes",
+      "Desinformação"
+    ],
+    "dataNascimento": "1990-04-12",
+    "criadoEm": "2025-11-20T18:45:00.000Z",
+    "cursos": [
+      {
+        "id": "25",
+        "nome": "Gestão de Reputação Digital",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Gestor de Reputação Digital",
+        "profissoesPossiveis": [
+          "Analista de Reputação",
+          "Gestor de Imagem Online"
+        ],
+        "ultimoAcesso": 1763624000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "3h4i5j6k-7l8m-9n0p-1q2r-3s4t5u6v7w8x",
+    "nome": "Laura Mendes",
+    "email": "laura.mendes@email.com",
+    "senha": "lauram",
+    "foto": "http://localhost:5000/uploads/foto_3h4i5j6k-7l8m-9n0p-1q2r-3s4t5u6v7w8x.png",
+    "cargo": "Designer de Impacto Social",
+    "resumo": "Utilizo princípios de design thinking e tecnologia para criar soluções digitais que abordam problemas sociais e ambientais urgentes.",
+    "localizacao": "Recife",
+    "area": "Design/Social",
+    "habilidadesTecnicas": [
+      "Design Thinking",
+      "Prototipagem",
+      "Pesquisa Qualitativa",
+      "Foco no Usuário"
+    ],
+    "softSkills": [
+      "Empatia",
+      "Colaboração",
+      "Pensamento Estratégico"
+    ],
+    "experiencias": [
+      "Designer de Produto na ONG Digitaliza"
+    ],
+    "formacao": [
+      "Universidade Federal de Pernambuco"
+    ],
+    "projetos": [
+      "App para Monitoramento de Resíduos",
+      "Plataforma de Saúde Mental Comunitária"
+    ],
+    "certificacoes": [
+      "Design para Sustentabilidade",
+      "UX Research"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "ODS",
+      "Cidades Inteligentes"
+    ],
+    "dataNascimento": "1993-02-28",
+    "criadoEm": "2025-11-20T19:50:15.000Z",
+    "cursos": [
+      {
+        "id": "7",
+        "nome": "Sustentabilidade e Tecnologia Digital",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 80,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Analista de Sustentabilidade",
+          "Consultor ESG Digital"
+        ],
+        "ultimoAcesso": 1763625000000
+      },
+      {
+        "id": "19",
+        "nome": "Introdução à Ética de Algoritmos",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Assistente de Compliance Algorítmico",
+          "Analista de Dados Éticos"
+        ],
+        "ultimoAcesso": 1763626000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "d0e1f2a3-b4c5-d6e7-f8a9-0b1c2d3e4f5a",
+        "1e2f3g4h-5i6j-7k8l-9m0n-1p2q3r4s5t6u"
+      ]
+    }
+  },
+  {
+    "id": "4i5j6k7l-8m9n-0p1q-2r3s-4t5u6v7w8x9y",
+    "nome": "Pedro Dantas",
+    "email": "pedro.dantas@email.com",
+    "senha": "pedroia",
+    "foto": "http://localhost:5000/uploads/foto_4i5j6k7l-8m9n-0p1q-2r3s-4t5u6v7w8x9y.png",
+    "cargo": "Curador de Inteligência Artificial",
+    "resumo": "Focado em Gerenciamento de Bases e correção de desvios algorítmicos em grandes volumes de dados não estruturados.",
+    "localizacao": "São Paulo",
+    "area": "Data Science",
+    "habilidadesTecnicas": [
+      "SQL",
+      "NoSQL",
+      "Big Data",
+      "Governança de Dados"
+    ],
+    "softSkills": [
+      "Orientação a Resultados",
+      "Metodologia"
+    ],
+    "experiencias": [
+      "Especialista em Bases de Dados na DataHub"
+    ],
+    "formacao": [
+      "Universidade de São Paulo"
+    ],
+    "projetos": [
+      "Sistema de Detecção de Outliers",
+      "Pipeline de Dados para Treinamento"
+    ],
+    "certificacoes": [
+      "Governança de Dados",
+      "Data Engineering"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Aprendizado por Reforço",
+      "Processamento de Linguagem Natural"
+    ],
+    "dataNascimento": "1991-10-10",
+    "criadoEm": "2025-11-21T08:00:10.000Z",
+    "cursos": [
+      {
+        "id": "3",
+        "nome": "Gerenciamento de Bases e Desvios Algorítmicos",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 40,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Analista de Governança de IA"
+        ],
+        "ultimoAcesso": 1763627000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "5j6k7l8m-9n0p-1q2r-3s4t-5u6v7w8x9y0z",
+    "nome": "Mariana Lima",
+    "email": "mariana.lima@email.com",
+    "senha": "marianavr",
+    "foto": "http://localhost:5000/uploads/foto_5j6k7l8m-9n0p-1q2r-3s4t-5u6v7w8x9y0z.png",
+    "cargo": "Designer de Experiências Imersivas (VR/AR)",
+    "resumo": "Desenvolvimento de experiências imersivas completas em VR, focando em navegação e interação de alta fidelidade.",
+    "localizacao": "Campinas",
+    "area": "Realidade Virtual",
+    "habilidadesTecnicas": [
+      "Unity",
+      "C#",
+      "Oculus SDK",
+      "Design VR"
+    ],
+    "softSkills": [
+      "Criatividade",
+      "Visão de Produto"
+    ],
+    "experiencias": [
+      "Desenvolvedora JR VR na VR Labs"
+    ],
+    "formacao": [
+      "Universidade Estadual de Campinas"
+    ],
+    "projetos": [
+      "Simulador de Voo em VR",
+      "Jogo Educacional Imersivo"
+    ],
+    "certificacoes": [
+      "Desenvolvimento VR",
+      "Design de Interação"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Haptics",
+      "Design de Som Espacial"
+    ],
+    "dataNascimento": "1998-06-03",
+    "criadoEm": "2025-11-21T09:15:20.000Z",
+    "cursos": [
+      {
+        "id": "6",
+        "nome": "Ambientes Virtuais em Realidade Virtual",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 55,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "Designer VR",
+          "Engenheiro de Experiências Imersivas"
+        ],
+        "ultimoAcesso": 1763628000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "f8b3c9d1-e7a2-4c6b-9d0f-5a1e7d3c9b4a"
+      ]
+    }
+  },
+  {
+    "id": "6k7l8m9n-0p1q-2r3s-4t5u-6v7w8x9y0z1a",
+    "nome": "Bruno Souza",
+    "email": "bruno.souza@email.com",
+    "senha": "brunoesg",
+    "foto": "http://localhost:5000/uploads/foto_6k7l8m9n-0p1q-2r3s-4t5u-6v7w8x9y0z1a.png",
+    "cargo": "Engenheiro de Sustentabilidade Digital",
+    "resumo": "Especialista em políticas climáticas e implementação de regulamentações ambientais no setor de tecnologia digital.",
+    "localizacao": "Brasília",
+    "area": "Política/Tecnologia",
+    "habilidadesTecnicas": [
+      "Compliance Ambiental",
+      "Análise de Políticas Públicas",
+      "Sistemas de Gestão Ambiental"
+    ],
+    "softSkills": [
+      "Negociação",
+      "Visão Estratégica"
+    ],
+    "experiencias": [
+      "Analista de Regulamentação na Green Policies"
+    ],
+    "formacao": [
+      "Universidade de Brasília"
+    ],
+    "projetos": [
+      "Relatório de Impacto Ambiental de TI",
+      "Estratégia ESG para Empresas de Software"
+    ],
+    "certificacoes": [
+      "Auditoria ESG",
+      "Regulamentação Ambiental"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Francês"
+    ],
+    "areaInteresses": [
+      "Créditos de Carbono",
+      "Tecnologias Limpas"
+    ],
+    "dataNascimento": "1983-01-22",
+    "criadoEm": "2025-11-21T10:30:10.000Z",
+    "cursos": [
+      {
+        "id": "9",
+        "nome": "Políticas Climáticas e Digitalização",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 80,
+        "icon": "📚",
+        "carreira": "Engenheiro de Sustentabilidade Digital",
+        "profissoesPossiveis": [
+          "Especialista ESG",
+          "Pesquisador em Sustentabilidade Tech"
+        ],
+        "ultimoAcesso": 1763629000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "d0e1f2a3-b4c5-d6e7-f8a9-0b1c2d3e4f5a",
+        "c9d1e8a7-b4f3-4c6b-9d0f-5a1e7d3c9b4a"
+      ]
+    }
+  },
+  {
+    "id": "7l8m9n0p-1q2r-3s4t-5u6v-7w8x9y0z1a2b",
+    "nome": "Fernanda Queiroz",
+    "email": "fernanda.queiroz@email.com",
+    "senha": "fernandabci",
+    "foto": "http://localhost:5000/uploads/foto_7l8m9n0p-1q2r-3s4t-5u6v-7w8x9y0z1a2b.png",
+    "cargo": "Especialista em Interfaces Cérebro-Computador",
+    "resumo": "Engenheira focada no desenvolvimento e arquitetura de aplicações controladas por ondas cerebrais para o mercado de jogos e acessibilidade.",
+    "localizacao": "São Paulo",
+    "area": "Neuroengenharia",
+    "habilidadesTecnicas": [
+      "BCI Development",
+      "Machine Learning",
+      "OpenBCI",
+      "Python"
+    ],
+    "softSkills": [
+      "Foco",
+      "Resiliência"
+    ],
+    "experiencias": [
+      "Desenvolvedora na NeuroGames"
+    ],
+    "formacao": [
+      "Universidade de São Paulo"
+    ],
+    "projetos": [
+      "Jogo Controlado por Concentração",
+      "Assistente de Comunicação BCI"
+    ],
+    "certificacoes": [
+      "Desenvolvimento de Aplicações BCI",
+      "Neurotecnologia Avançada"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Realidade Aumentada",
+      "Medicina Digital"
+    ],
+    "dataNascimento": "1994-12-19",
+    "criadoEm": "2025-11-21T11:45:30.000Z",
+    "cursos": [
+      {
+        "id": "12",
+        "nome": "Desenvolvimento de Aplicações BCI",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 70,
+        "icon": "📚",
+        "carreira": "Especialista em Interfaces Cérebro-Computador",
+        "profissoesPossiveis": [
+          "Engenheiro BCI",
+          "Arquiteto de Neurointerfaces"
+        ],
+        "ultimoAcesso": 1763630000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "a1b2c3d4-e5f6-7890-cdef-0987654321ab"
+      ]
+    }
+  },
+  {
+    "id": "8m9n0p1q-2r3s-4t5u-6v7w-8x9y0z1a2b3c",
+    "nome": "Roberto Castro",
+    "email": "roberto.castro@email.com",
+    "senha": "robertrob",
+    "foto": "http://localhost:5000/uploads/foto_8m9n0p1q-2r3s-4t5u-6v7w-8x9y0z1a2b3c.png",
+    "cargo": "Gestor de Ecossistemas de Robôs",
+    "resumo": "Gestor com foco na integração e coordenação de múltiplos robôs em ambientes de logística e e-commerce.",
+    "localizacao": "São José dos Campos",
+    "area": "Logística/Automação",
+    "habilidadesTecnicas": [
+      "Gestão de Estoques",
+      "RPA",
+      "Orquestração de Robôs",
+      "Processos"
+    ],
+    "softSkills": [
+      "Planejamento",
+      "Otimização"
+    ],
+    "experiencias": [
+      "Supervisor de Automação na LogiTech"
+    ],
+    "formacao": [
+      "Instituto Tecnológico de Aeronáutica"
+    ],
+    "projetos": [
+      "Sistema de Picking Automatizado",
+      "Integração de Frota de Drones"
+    ],
+    "certificacoes": [
+      "Robôs no Ecossistema Digital",
+      "Gestão de Cadeia de Suprimentos"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "IoT",
+      "IA na Logística"
+    ],
+    "dataNascimento": "1980-03-29",
+    "criadoEm": "2025-11-21T13:00:10.000Z",
+    "cursos": [
+      {
+        "id": "13",
+        "nome": "Robôs no Ecossistema Digital",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Operador de Robôs",
+          "Assistente de Automação"
+        ],
+        "ultimoAcesso": 1763631000000
+      },
+      {
+        "id": "14",
+        "nome": "Sistemas Colaborativos entre Humanos e Robôs",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 85,
+        "icon": "📚",
+        "carreira": "Gestor de Ecossistemas de Robôs",
+        "profissoesPossiveis": [
+          "Gestor de Robótica",
+          "Supervisor de Automação Inteligente"
+        ],
+        "ultimoAcesso": 1763632000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "9n0p1q2r-3s4t-5u6v-7w8x-9y0z1a2b3c4d",
+    "nome": "Juliana Santos",
+    "email": "juliana.s@email.com",
+    "senha": "julianavw",
+    "foto": "http://localhost:5000/uploads/foto_9n0p1q2r-3s4t-5u6v-7w8x-9y0z1a2b3c4d.png",
+    "cargo": "Arquiteta de Mundos Virtuais",
+    "resumo": "Especialista em narrativa e sistemas interativos para metaversos de entretenimento e jogos.",
+    "localizacao": "Rio de Janeiro",
+    "area": "Game Design",
+    "habilidadesTecnicas": [
+      "Godot Engine",
+      "Design de Missões",
+      "Escrita Criativa",
+      "Economia Virtual"
+    ],
+    "softSkills": [
+      "Storytelling",
+      "Pensamento Criativo"
+    ],
+    "experiencias": [
+      "Designer Narrativa JR na GameVerse"
+    ],
+    "formacao": [
+      "Universidade Federal do Rio de Janeiro"
+    ],
+    "projetos": [
+      "Sistema de Reputação no Metaverso",
+      "Missão de Aventura em VR"
+    ],
+    "certificacoes": [
+      "Narrativa e Sistemas Interativos",
+      "Economia em Mundos Virtuais"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Coreano"
+    ],
+    "areaInteresses": [
+      "Jogos AAA",
+      "Cultura Pop"
+    ],
+    "dataNascimento": "1999-07-25",
+    "criadoEm": "2025-11-21T14:15:45.000Z",
+    "cursos": [
+      {
+        "id": "18",
+        "nome": "Narrativa e Sistemas Interativos",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 65,
+        "icon": "📚",
+        "carreira": "Arquiteto de Mundos Virtuais",
+        "profissoesPossiveis": [
+          "Designer Narrativo",
+          "Criador de Experiências Digitais"
+        ],
+        "ultimoAcesso": 1763633000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "f8b3c9d1-e7a2-4c6b-9d0f-5a1e7d3c9b4a"
+      ]
+    }
+  },
+  {
+    "id": "a0p1q2r3-s4t5-u6v7-w8x9-y0z1a2b3c4d5",
+    "nome": "Fernando Neves",
+    "email": "fernando.n@email.com",
+    "senha": "fernandoet",
+    "foto": "http://localhost:5000/uploads/foto_a0p1q2r3-s4t5-u6v7-w8x9-y0z1a2b3c4d5.png",
+    "cargo": "Analista de Ética de Algoritmos",
+    "resumo": "Especialista em Governança e Auditoria de Sistemas de IA para garantir transparência e responsabilidade algorítmica.",
+    "localizacao": "Salvador",
+    "area": "Regulação/Compliance",
+    "habilidadesTecnicas": [
+      "Auditoria de Sistemas",
+      "LGPD",
+      "Transparência de IA",
+      "Risk Assessment"
+    ],
+    "softSkills": [
+      "Persuasão",
+      "Organização"
+    ],
+    "experiencias": [
+      "Consultor de Risco na Risco Tech"
+    ],
+    "formacao": [
+      "Universidade Federal da Bahia"
+    ],
+    "projetos": [
+      "Auditoria de Algoritmo de Crédito",
+      "Relatório de Explicabilidade de Modelo"
+    ],
+    "certificacoes": [
+      "Governança e Auditoria de Sistemas de IA",
+      "CIPP/E"
+    ],
+    "idiomas": [
+      "Português",
+      "Espanhol"
+    ],
+    "areaInteresses": [
+      "Explicações de IA",
+      "Regulação Europeia de IA"
+    ],
+    "dataNascimento": "1978-05-14",
+    "criadoEm": "2025-11-21T15:30:10.000Z",
+    "cursos": [
+      {
+        "id": "21",
+        "nome": "Governança e Auditoria de Sistemas de IA",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 95,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Auditor de IA",
+          "Analista de Conformidade Digital"
+        ],
+        "ultimoAcesso": 1763634000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 2,
+      "recomendadores": [
+        "d0e1f2a3-b4c5-d6e7-f8a9-0b1c2d3e4f5a",
+        "c3d4e5f6-g7h8-9012-cdef-345678901234"
+      ]
+    }
+  },
+  {
+    "id": "b1q2r3s4-t5u6-v7w8-x9y0-z1a2b3c4d5e6",
+    "nome": "Patrícia Gomes",
+    "email": "patricia.g@email.com",
+    "senha": "patriciai",
+    "foto": "http://localhost:5000/uploads/foto_b1q2r3s4-t5u6-v7w8-x9y0-z1a2b3c4d5e6.png",
+    "cargo": "Desenhista de Personalidades de IA",
+    "resumo": "Arquiteta de Personas IA, focada em construir identidades que evoluem e mantêm coerência a longo prazo em interações complexas.",
+    "localizacao": "Belo Horizonte",
+    "area": "Design de IA",
+    "habilidadesTecnicas": [
+      "Arquitetura de Conversação",
+      "Machine Learning",
+      "Psicologia Cognitiva"
+    ],
+    "softSkills": [
+      "Visão de Longo Prazo",
+      "Coerência"
+    ],
+    "experiencias": [
+      "Consultora de IA Conversacional na Persona Tech"
+    ],
+    "formacao": [
+      "Universidade Federal de Minas Gerais"
+    ],
+    "projetos": [
+      "Modelo de Evolução de Personalidade",
+      "Sistema de Memória para Agente"
+    ],
+    "certificacoes": [
+      "Comportamento Adaptativo e Identidade Longo Prazo",
+      "Design Emocional"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Inteligência Artificial Geral (AGI)",
+      "Filosofia da Mente"
+    ],
+    "dataNascimento": "1987-11-02",
+    "criadoEm": "2025-11-21T16:45:20.000Z",
+    "cursos": [
+      {
+        "id": "24",
+        "nome": "Comportamento Adaptativo e Identidade Longo Prazo",
+        "level": "Avançado",
+        "horas": 25,
+        "duracao": "5 semanas",
+        "progresso": 70,
+        "icon": "📚",
+        "carreira": "Desenhista de Personalidades de IA",
+        "profissoesPossiveis": [
+          "Arquiteto de Personas IA",
+          "Desenvolvedor de Agentes Inteligentes"
+        ],
+        "ultimoAcesso": 1763635000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "c2r3s4t5-u6v7-w8x9-y0z1-a2b3c4d5e6f7",
+    "nome": "Mauro Alves",
+    "email": "mauro.alves@email.com",
+    "senha": "maurorep",
+    "foto": "http://localhost:5000/uploads/foto_c2r3s4t5-u6v7-w8x9-y0z1-a2b3c4d5e6f7.png",
+    "cargo": "Gestor de Reputação Digital",
+    "resumo": "Analista de reputação, especializado em detecção de tendências negativas e implementação de estratégias de SEO para blindagem de marca.",
+    "localizacao": "Porto Alegre",
+    "area": "Relações Públicas",
+    "habilidadesTecnicas": [
+      "Web Analytics",
+      "SEO",
+      "Monitoramento de Redes Sociais",
+      "Relacionamento com a Mídia"
+    ],
+    "softSkills": [
+      "Pró-atividade",
+      "Análise de Dados"
+    ],
+    "experiencias": [
+      "Analista de Mídia na Agência RP"
+    ],
+    "formacao": [
+      "Universidade Federal do Rio Grande do Sul"
+    ],
+    "projetos": [
+      "Dashboards de Sentimento",
+      "Campanha de Posicionamento Digital"
+    ],
+    "certificacoes": [
+      "Gestão de Reputação Digital",
+      "Relações Públicas na Era Digital"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês",
+      "Espanhol"
+    ],
+    "areaInteresses": [
+      "Métricas Digitais",
+      "Jornalismo de Dados"
+    ],
+    "dataNascimento": "1993-09-20",
+    "criadoEm": "2025-11-21T18:00:15.000Z",
+    "cursos": [
+      {
+        "id": "25",
+        "nome": "Gestão de Reputação Digital",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 85,
+        "icon": "📚",
+        "carreira": "Gestor de Reputação Digital",
+        "profissoesPossiveis": [
+          "Analista de Reputação",
+          "Gestor de Imagem Online"
+        ],
+        "ultimoAcesso": 1763636000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "2g3h4i5j-6k7l-8m9n-0p1q-2r3s4t5u6v7w"
+      ]
+    }
+  },
+  {
+    "id": "d3s4t5u6-v7w8-x9y0-z1a2-b3c4d5e6f7g8",
+    "nome": "Alice Lima",
+    "email": "alice.lima@email.com",
+    "senha": "aliceds",
+    "foto": "http://localhost:5000/uploads/foto_d3s4t5u6-v7w8-x9y0-z1a2-b3c4d5e6f7g8.png",
+    "cargo": "Designer de Impacto Social",
+    "resumo": "Designer focada em co-criação de soluções tecnológicas com comunidades para promover a inclusão digital e social.",
+    "localizacao": "Recife",
+    "area": "Inovação Social",
+    "habilidadesTecnicas": [
+      "Design Centrado no Usuário",
+      "Pesquisa Etnográfica",
+      "Facilitação"
+    ],
+    "softSkills": [
+      "Colaboração",
+      "Comunicação Intercultural"
+    ],
+    "experiencias": [
+      "Estágio em Design de Serviço na Impact Hub"
+    ],
+    "formacao": [
+      "Universidade Federal de Pernambuco"
+    ],
+    "projetos": [
+      "Plataforma de Microcrédito Comunitário",
+      "Kit de Ferramentas de Cidadania Digital"
+    ],
+    "certificacoes": [
+      "Design de Serviço",
+      "Inovação Social e ODS"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Tecnologias de Baixo Custo",
+      "Acessibilidade"
+    ],
+    "dataNascimento": "2000-01-05",
+    "criadoEm": "2025-11-21T19:20:05.000Z",
+    "cursos": [
+      {
+        "id": "19",
+        "nome": "Introdução à Ética de Algoritmos",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Analista de Ética de Algoritmos",
+        "profissoesPossiveis": [
+          "Assistente de Compliance Algorítmico",
+          "Analista de Dados Éticos"
+        ],
+        "ultimoAcesso": 1763637000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
+    }
+  },
+  {
+    "id": "e4t5u6v7-w8x9-y0z1-a2b3-c4d5e6f7g8h9",
+    "nome": "Paulo Ferreira",
+    "email": "paulo.ferreira@email.com",
+    "senha": "pauloai",
+    "foto": "http://localhost:5000/uploads/foto_e4t5u6v7-w8x9-y0z1-a2b3-c4d5e6f7g8h9.png",
+    "cargo": "Curador de Inteligência Artificial",
+    "resumo": "Analista de Dados Assistidos por IA, com experiência em treinamento e avaliação de desempenho de modelos de Machine Learning.",
+    "localizacao": "Curitiba",
+    "area": "Machine Learning",
+    "habilidadesTecnicas": [
+      "Scikit-learn",
+      "Keras",
+      "Validação Cruzada",
+      "Métricas de Avaliação"
+    ],
+    "softSkills": [
+      "Pensamento Crítico",
+      "Orientação a Dados"
+    ],
+    "experiencias": [
+      "Analista de Qualidade de Modelos na Tech Predict"
+    ],
+    "formacao": [
+      "Universidade Federal do Paraná"
+    ],
+    "projetos": [
+      "Otimização de Hiperparâmetros",
+      "Relatório de Desempenho de Modelos"
+    ],
+    "certificacoes": [
+      "Treinamento e Avaliação de Modelos",
+      "Estatística para Data Science"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Visão Computacional",
+      "Big Data"
+    ],
+    "dataNascimento": "1994-04-01",
+    "criadoEm": "2025-11-21T20:30:10.000Z",
+    "cursos": [
+      {
+        "id": "2",
+        "nome": "Treinamento e Avaliação de Modelos",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Curador de Inteligência Artificial",
+        "profissoesPossiveis": [
+          "Curador de IA",
+          "Especialista em Qualidade de Modelos"
+        ],
+        "ultimoAcesso": 1763638000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 1,
+      "recomendadores": [
+        "e0a7b4f3-1c9d-4e5a-8b2c-6d1f0e8a7b4f"
+      ]
+    }
+  },
+  {
+    "id": "f5u6v7w8-x9y0-z1a2-b3c4-d5e6f7g8h9i0",
+    "nome": "Renata Mendes",
+    "email": "renata.mendes@email.com",
+    "senha": "renataxr",
+    "foto": "http://localhost:5000/uploads/foto_f5u6v7w8-x9y0-z1a2-b3c4-d5e6f7g8h9i0.png",
+    "cargo": "Designer de Experiências Imersivas (VR/AR)",
+    "resumo": "Designer UX/UI focada em criar interfaces intuitivas e imersivas para aplicativos de Realidade Aumentada.",
+    "localizacao": "Rio de Janeiro",
+    "area": "UX/AR",
+    "habilidadesTecnicas": [
+      "Figma",
+      "Design UX/UI",
+      "ARKit/ARCore",
+      "Design Interativo"
+    ],
+    "softSkills": [
+      "Detalhista",
+      "Orientação a Usuário"
+    ],
+    "experiencias": [
+      "Designer de Produto na Digital Labs"
+    ],
+    "formacao": [
+      "Escola Superior de Propaganda e Marketing (ESPM)"
+    ],
+    "projetos": [
+      "Interface de App de AR",
+      "Wireframes para Óculos Inteligentes"
+    ],
+    "certificacoes": [
+      "UX Design",
+      "Prototipação em Realidade Aumentada"
+    ],
+    "idiomas": [
+      "Português",
+      "Inglês"
+    ],
+    "areaInteresses": [
+      "Design Especulativo",
+      "Interfaces Sem Tela"
+    ],
+    "dataNascimento": "1997-03-17",
+    "criadoEm": "2025-11-21T21:40:00.000Z",
+    "cursos": [
+      {
+        "id": "4",
+        "nome": "Introdução ao Design Imersivo",
+        "level": "Iniciante",
+        "horas": 15,
+        "duracao": "3 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "Designer de Experiências XR",
+          "Criador de Conteúdo VR/AR"
+        ],
+        "ultimoAcesso": 1763639000000
+      },
+      {
+        "id": "5",
+        "nome": "Prototipação em Realidade Aumentada",
+        "level": "Intermediário",
+        "horas": 20,
+        "duracao": "4 semanas",
+        "progresso": 100,
+        "icon": "📚",
+        "carreira": "Designer de Experiências Imersivas (VR/AR)",
+        "profissoesPossiveis": [
+          "UX Designer XR",
+          "Desenvolvedor de Aplicações AR"
+        ],
+        "ultimoAcesso": 1763640000000
+      }
+    ],
+    "recomendacoes": {
+      "count": 0,
+      "recomendadores": []
     }
   }
 ]

@@ -18,8 +18,6 @@ import Perfil from "./routes/Perfil";
 import SkillTalks from "./routes/SkillTalks";
 import AreaDeEstudos from "./routes/AreaDeEstudos";
 import CursoAula from "./routes/CursoAula";
-import Vagas from "./routes/Vagas";
-import Eventos from "./routes/Eventos";
 import Projetos from "./routes/Projetos";
 import Error from "./routes/Error";
 
@@ -61,8 +59,6 @@ function AppContent({ darkMode, setDarkMode }) {
           <Route path="/skilltalks" element={<SkillTalks />} />
           <Route path="/area-de-estudos" element={<AreaDeEstudos />} />
           <Route path="/curso/:cursoId" element={<CursoAula />} />
-          <Route path="/vagas" element={<Vagas />} />
-          <Route path="/eventos" element={<Eventos />} />
           <Route path="/projetos" element={<Projetos />} />
           <Route path="*" element={<Error />} />
         </Routes>
