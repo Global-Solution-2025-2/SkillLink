@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon,Rocket } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Header({ darkMode, setDarkMode }) {
@@ -15,7 +15,7 @@ export default function Header({ darkMode, setDarkMode }) {
       <div className="w-full max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-cyan-600 rounded-full"></div>
+          <Rocket className="w-8 h-8 text-cyan-600 mr-2" />
           <h1 className="text-2xl font-bold tracking-wide text-gray-900 dark:text-gray-100">
             SkillLink
           </h1>

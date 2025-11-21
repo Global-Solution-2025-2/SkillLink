@@ -397,7 +397,7 @@ export default function Profissionais() {
           {/* FILTROS */}
           <div className="bg-slate-800 rounded-2xl p-6 mb-8 border border-[#162235]">
             <h2 className="text-2xl font-bold text-white mb-4">
-              <span className="text-cyan-600">Connect</span> Hub
+              <span className="text-cyan-600">Connect</span>Hub
             </h2>
 
             <div className="flex flex-col md:flex-row gap-4">
@@ -543,8 +543,8 @@ export default function Profissionais() {
                           transition-all duration-200 text-xs
                           ${
                             jaRecomendou
-                              ? "bg-gray-600 text-white hover:bg-gray-500"
-                              : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+                              ? "bg-slate-500 text-white hover:bg-gray-500"
+                              : "bg-slate-600 text-gray-700 dark:text-gray-300 dark:hover:bg-slate-700 "
                           }
                         `}
                         disabled={!usuarioLogado}

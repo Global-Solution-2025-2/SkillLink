@@ -1,7 +1,7 @@
 // src/pages/SkillTalks.jsx
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
-import { MessageCircle, Send, Plus, ArrowLeft } from "lucide-react";
+import { MessageCircle, Send, Plus, ArrowLeft, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const API_URL = "http://localhost:5000";
@@ -156,11 +156,45 @@ export default function SkillTalks() {
     }
   }
 
-  function getNome(email) {
-    const p = profissionais.find(
+  function getProfissional(email) {
+    return profissionais.find(
       (x) => x.email.toLowerCase() === email.toLowerCase()
     );
+  }
+
+  function getNome(email) {
+    const p = getProfissional(email);
     return p?.nome ?? email;
+  }
+
+  function getFoto(email) {
+    const p = getProfissional(email);
+    return p?.foto ?? null;
+  }
+
+  function getIniciais(nome) {
+    return nome.charAt(0).toUpperCase();
+  }
+
+  function renderAvatar(email, className = "w-12 h-12") {
+    const foto = getFoto(email);
+    const nome = getNome(email);
+    
+    if (foto) {
+      return (
+        <img 
+          src={foto} 
+          alt={nome}
+          className={`${className} rounded-full object-cover border-2 border-cyan-600`}
+        />
+      );
+    }
+    
+    return (
+      <div className={`${className} bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center text-cyan-700 dark:text-cyan-300 font-bold border-2 border-cyan-600`}>
+        {getIniciais(nome)}
+      </div>
+    );
   }
 
   function formatTime(h) {
@@ -192,21 +226,21 @@ export default function SkillTalks() {
   }, [contatoAtivo]);
 
   return (
-    <div className="w-full h-screen pt-6 pb-5">
+    <div className="w-full h-screen pt-4 pb-4">
       <div className="max-w-7xl mx-auto px-4 h-full">
         
-        {/* BOTÃO VOLTAR */}
-        <div className="mb-6">
+        {/* HEADER COM BOTÃO VOLTAR ALINHADO À ESQUERDA */}
+        <div className="flex items-center justify-between mb-4">
           <button
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-cyan-600 hover:text-cyan-700 transition-colors mb-4"
+            className="flex items-center gap-2 text-cyan-600 hover:text-cyan-700 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
             <span>Voltar</span>
           </button>
         </div>
 
-        <div className="grid grid-cols-12 gap-6 h-[calc(100vh-140px)]">
+        <div className="grid grid-cols-12 gap-6 h-[calc(100vh-120px)]">
 
           {/* SIDEBAR */}
           <aside className="col-span-4 h-full">
@@ -233,9 +267,7 @@ export default function SkillTalks() {
                       hover:bg-gray-100 dark:hover:bg-gray-700 transition
                       ${contatoAtivo === c.contato ? "bg-gray-200 dark:bg-gray-700" : ""}`}
                   >
-                    <div className="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center text-cyan-700 font-bold">
-                      {getNome(c.contato).charAt(0)}
-                    </div>
+                    {renderAvatar(c.contato)}
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-white truncate">{getNome(c.contato)}</p>
                       <p className="text-xs text-white truncate">{c.ultimaMensagem}</p>
@@ -249,13 +281,11 @@ export default function SkillTalks() {
 
           {/* CHAT */}
           <main className="col-span-8 h-full flex flex-col">
-            <div className=" dark:bg-slate-800 backdrop-blur-lg rounded-2xl border border-gray-200 dark:border-gray-700 shadow-xl flex flex-col h-full">
+            <div className="dark:bg-slate-800 backdrop-blur-lg rounded-2xl border border-gray-200 dark:border-gray-700 shadow-xl flex flex-col h-full">
               {contatoAtivo ? (
                 <>
                   <header className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-cyan-200 dark:bg-cyan-900 flex items-center justify-center text-cyan-900 font-bold">
-                      {getNome(contatoAtivo).charAt(0)}
-                    </div>
+                    {renderAvatar(contatoAtivo)}
                     <div>
                       <p className="font-semibold text-gray-800 dark:text-white">{getNome(contatoAtivo)}</p>
                       <p className="text-xs text-gray-400">{contatoAtivo}</p>
@@ -266,7 +296,10 @@ export default function SkillTalks() {
                     {mensagens.map((m) => {
                       const isMe = String(m.autor).toLowerCase() === String(meuEmail).toLowerCase();
                       return (
-                        <div key={m.id} className={`flex ${isMe ? "justify-end" : "justify-start"}`}>
+                        <div key={m.id} className={`flex items-end gap-2 ${isMe ? "justify-end" : "justify-start"}`}>
+                          {/* Avatar do remetente (apenas para mensagens de outros) */}
+                          {!isMe && renderAvatar(m.autor, "w-8 h-8")}
+                          
                           <div className={`max-w-[70%] px-4 py-3 rounded-2xl shadow-sm ${
                             isMe
                               ? "bg-cyan-600 text-white rounded-br-none"
@@ -275,20 +308,26 @@ export default function SkillTalks() {
                             <p className="text-sm break-words">{m.texto}</p>
                             <p className="text-[10px] opacity-70 text-right mt-1">{formatTime(m.horario)}</p>
                           </div>
+
+                          {/* Avatar do usuário (apenas para próprias mensagens) */}
+                          {isMe && renderAvatar(meuEmail, "w-8 h-8")}
                         </div>
                       );
                     })}
                     <div ref={messagesEndRef} />
                   </div>
 
-                  <form onSubmit={enviarMensagem} className="p-4 border-t  dark:border-gray-700 flex gap-2">
+                  <form onSubmit={enviarMensagem} className="p-4 border-t dark:border-gray-700 flex gap-2">
                     <input
                       value={texto}
                       onChange={(e) => setTexto(e.target.value)}
                       placeholder="Digite uma mensagem..."
-                      className="flex-1 p-3 rounded-xl text-white  dark:bg-gray-700"
+                      className="flex-1 p-3 rounded-xl text-white dark:bg-gray-700 border border-gray-600 focus:border-cyan-600 focus:outline-none transition-colors"
                     />
-                    <button className="bg-cyan-600 hover:bg-cyan-700 text-white rounded-xl px-4 flex items-center gap-2">
+                    <button 
+                      type="submit"
+                      className="bg-cyan-600 hover:bg-cyan-700 text-white rounded-xl px-4 flex items-center gap-2 transition-colors"
+                    >
                       <Send className="w-4 h-4" /> Enviar
                     </button>
                   </form>
@@ -317,11 +356,19 @@ export default function SkillTalks() {
                     setModalOpen(false);
                     abrirChat(p.email);
                   }}
-                  className="w-full p-3 rounded-xl flex gap-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                  className="w-full p-3 rounded-xl flex gap-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition items-center"
                 >
-                  <div className="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center text-cyan-700 font-bold">
-                    {p.nome.charAt(0)}
-                  </div>
+                  {p.foto ? (
+                    <img 
+                      src={p.foto} 
+                      alt={p.nome}
+                      className="w-12 h-12 rounded-full object-cover border-2 border-cyan-600"
+                    />
+                  ) : (
+                    <div className="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 rounded-full flex items-center justify-center text-cyan-700 font-bold border-2 border-cyan-600">
+                      {getIniciais(p.nome)}
+                    </div>
+                  )}
                   <div className="text-left">
                     <p className="font-semibold text-gray-900 dark:text-white">{p.nome}</p>
                     <p className="text-xs text-gray-500">{p.cargo}</p>
@@ -332,7 +379,7 @@ export default function SkillTalks() {
             <div className="mt-4 flex justify-end">
               <button
                 onClick={() => setModalOpen(false)}
-                className="px-4 py-2 rounded-xl bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600"
+                className="px-4 py-2 rounded-xl bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors"
               >
                 Fechar
               </button>

@@ -251,7 +251,7 @@ export default function CarreirasCarousel() {
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <Link
         to="/quiz"
-        className="px-8 py-3 bg-slate-800 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 flex items-center gap-2"
+        className="px-8 py-3 bg-slate-800 text-white rounded-xl font-semibold hover:bg-cyan-900 transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 flex items-center gap-2"
       >
         <FaGraduationCap />
         Fazer Quiz Agora

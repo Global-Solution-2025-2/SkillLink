@@ -14,11 +14,11 @@ import {
 
 export default function PortalFuturoTrabalho() {
   const noticiaPrincipal = {
-    titulo: "Smart Desk promete revolucionar o futuro do trabalho híbrido",
+    titulo: "HomeSync promete revolucionar o futuro do trabalho híbrido",
     resumo:
       "Mesa inteligente monitora postura, luz, ruído e conforto para aumentar produtividade e bem-estar.",
     conteudo:
-      "A Smart Desk – Estação de Trabalho Inteligente – chega como uma solução inovadora para ambientes híbridos, coworkings e profissionais que buscam mais ergonomia e eficiência. Com sensores de luminosidade, ruído, postura e temperatura, a mesa envia dados ao FIWARE e emite alertas automáticos de ergonomia, cansaço visual e distrações. O sistema também gera um Índice de Produtividade do Ambiente (IPA), que avalia a qualidade do espaço de trabalho em tempo real.",
+      "A HomeSync – Estação de Trabalho Inteligente – chega como uma solução inovadora para ambientes híbridos, coworkings e profissionais que buscam mais ergonomia e eficiência. Com sensores de luminosidade, ruído, postura e temperatura, a mesa envia dados ao FIWARE e emite alertas automáticos de ergonomia, cansaço visual e distrações. O sistema também gera um Índice de Produtividade do Ambiente (IPA), que avalia a qualidade do espaço de trabalho em tempo real.",
   };
 
   const tecnologiasAtualidades = [

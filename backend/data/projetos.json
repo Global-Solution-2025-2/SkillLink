@@ -1,0 +1,43 @@
+{
+  "projetos": [
+    {
+      "id": 1,
+      "nome": "EcoTrack - Monitoramento Ambiental",
+      "autor": "Ana Silva",
+      "descricao": "Sistema para monitorar qualidade do ar e água usando IoT.",
+      "membros": 8,
+      "vagas": 3,
+      "categoria": "IoT",
+      "status": "Recrutando",
+      "detalhes": "Projeto focado em sustentabilidade usando sensores IoT e análise de dados em tempo real. Ideal para estudantes de Engenharia, Ciência da Computação e Ambiental.",
+      "tecnologias": ["Python", "IoT", "Data Science", "Arduino"],
+      "datalancamento": "2024-01-15"
+    },
+    {
+      "id": 2,
+      "nome": "LearnTogether - Plataforma Educacional",
+      "autor": "Carlos Santos",
+      "descricao": "Plataforma colaborativa de ensino com gamificação.",
+      "membros": 12,
+      "vagas": 5,
+      "categoria": "Desenvolvimento Web",
+      "status": "Ativo",
+      "detalhes": "Plataforma educacional que conecta estudantes e mentores. Desenvolvido em React e Node.js, com foco em experiências de aprendizado colaborativas.",
+      "tecnologias": ["React", "Node.js", "MongoDB", "JavaScript"],
+      "datalancamento": "2024-02-01"
+    },
+    {
+      "id": 3,
+      "nome": "HealthConnect - Telemedicina",
+      "autor": "Marina Oliveira",
+      "descricao": "App para consultas médicas online.",
+      "membros": 6,
+      "vagas": 2,
+      "categoria": "Mobile",
+      "status": "Recrutando",
+      "detalhes": "Aplicativo mobile para telemedicina com agendamento inteligente, videochamadas e prontuário eletrônico. Desenvolvido em Flutter.",
+      "tecnologias": ["Flutter", "Firebase", "Dart", "API REST"],
+      "datalancamento": "2024-01-20"
+    }
+  ]
+}

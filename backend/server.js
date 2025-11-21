@@ -539,6 +539,39 @@ app.get("/cursos", (req, res) => {
   }
 });
 
+//------------projetos------------- 
+
+// Middleware para CORS
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:5173'); // URL do frontend
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
+
+// ROTA SIMPLES para pegar os projetos
+app.get('/api/projetos', (req, res) => {
+  try {
+    const projetosPath = path.join(__dirname, 'data', 'projetos.json');
+    const projetosData = JSON.parse(fs.readFileSync(projetosPath, 'utf8'));
+    res.json(projetosData);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao carregar projetos' });
+  }
+});
+
+// ROTA SIMPLES para pegar dados do usuário
+app.get('/api/usuario', (req, res) => {
+  try {
+    const usuarioPath = path.join(__dirname, 'data', 'perfil.json');
+    const usuarioData = JSON.parse(fs.readFileSync(usuarioPath, 'utf8'));
+    res.json(usuarioData);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao carregar usuário' });
+  }
+});
+
+
+
 // Rota de teste para verificar se o backend está funcionando
 app.get("/test", (req, res) => {
   res.json({ 

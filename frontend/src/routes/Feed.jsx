@@ -498,11 +498,11 @@ function Feed() {
 
             {loadingProfissionais ? (
               <div className="text-center py-8">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-500 mx-auto mb-3"></div>
+                <div className="animate-spin dark:bg-slate-800 rounded-full h-8 w-8 border-b-2 border-indigo-500 mx-auto mb-3"></div>
                 <p className="text-gray-500 dark:text-gray-400">Carregando profissionais...</p>
               </div>
             ) : profissionais.length === 0 ? (
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-8 border border-gray-100 dark:border-gray-700 text-center">
+              <div className=" dark:bg-slate-800 rounded-2xl shadow-sm p-8 border border-gray-100 dark:border-gray-700 text-center">
                 <div className="bg-gray-50 dark:bg-gray-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-gray-400" />
                 </div>
@@ -520,7 +520,7 @@ function Feed() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {profissionais.map((profissional) => (
-                  <Card key={profissional.id} className="group hover:border-indigo-500 dark:hover:border-indigo-600 transition-all duration-300 text-center">
+                  <Card key={profissional.id} className="group hover:border-indigo-500 dark:hover:border-indigo-600 dark:bg-slate-800 transition-all duration-300 text-center">
                     <div className="flex flex-col items-center">
                       <img
                         src={buildFotoURL(profissional.foto)}
@@ -592,7 +592,7 @@ function Feed() {
 
             <div className="grid md:grid-cols-2 gap-6">
               {projetos.map((projeto) => (
-                <Card key={projeto.id} className="group">
+                <Card key={projeto.id} className="group dark:bg-slate-800">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 transition">{projeto.nome}</h3>
                     <span className="flex items-center gap-1 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 px-2 py-1 rounded-full text-sm">

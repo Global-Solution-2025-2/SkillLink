@@ -365,56 +365,62 @@ export default function AreaEstudos() {
         
         {/* ASIDE */}
         <aside className="lg:col-span-3 lg:sticky lg:top-[80px] self-start z-10 px-2 lg:px-0">
-          <div className=" dark:bg-slate-800  rounded-2xl p-5 border border-gray-200 dark:border-gray-700 space-y-5 text-center">
-            <div className="flex flex-col items-center py-3">
-              <img
-                src={buildFotoURL(usuario?.foto)}
-                alt={`Foto de ${usuario?.nome || "Usuário"}`}
-                className="w-20 h-20 rounded-full border-3 border-white shadow-lg object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = "https://placehold.co/150x150/0891b2/ffffff?text=U";
-                }}
-              />
+  <div className="dark:bg-slate-800 bg-white rounded-2xl p-5 border border-gray-200 dark:border-gray-700 space-y-5 text-center">
 
-              <div className="mt-3">
-                <h2 className="text-lg font-bold text-gray-900 dark:text-white line-clamp-1">
-                  {usuario?.nome}
-                </h2>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mt-1 line-clamp-2">
-                  {usuario?.cargo}
-                </p>
-              </div>
-            </div>
+    {/* FOTO + NOME DO USUÁRIO */}
+    <div className="flex flex-col items-center py-3">
+      <img
+        src={buildFotoURL(usuario?.foto)}
+        alt={`Foto de ${usuario?.nome || "Usuário"}`}
+        className="w-20 h-20 rounded-full border-3 border-white shadow-lg object-cover"
+        onError={(e) => {
+          e.currentTarget.src =
+            "https://placehold.co/150x150/0891b2/ffffff?text=U";
+        }}
+      />
 
-            <div className="w-full flex justify-center">
-              <div className="w-4/5 border-b border-gray-200 dark:border-gray-600"></div>
-            </div>
+      <div className="mt-3">
+        <h2 className="text-lg font-bold text-gray-900 dark:text-white line-clamp-1">
+          {usuario?.nome}
+        </h2>
+        <p className="text-gray-600 dark:text-gray-300 text-sm mt-1 line-clamp-2">
+          {usuario?.cargo}
+        </p>
+      </div>
+    </div>
 
-            <nav className="space-y-2.5 mt-3">
-              {[
-                { icon: <Home className="w-4 h-4" />, label: "Feed", path: "/feed" },
-                { icon: <BookOpen className="w-4 h-4" />, label: "Meus Cursos", path: "/area-de-estudos" },
-                { icon: <FolderKanban className="w-4 h-4" />, label: "Future Lab", path: "/projetos" },
-                { icon: <Users className="w-4 h-4" />, label: "Connect Hub", path: "/profissionais" },
-                { icon: <MessageCircle className="w-4 h-4" />, label: "SkillTalks", path: "/skilltalks" },
-                { icon: <User className="w-4 h-4" />, label: "Meu Perfil", path: "/perfil" },
-              ].map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-200 ${
-                    item.path === "/area-de-estudos"
-                      ? "bg-cyan-50 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 font-semibold"
-                      : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                  }`}
-                >
-                  {item.icon}
-                  <span className="text-sm">{item.label}</span>
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </aside>
+    {/* LINHA SEPARADORA */}
+    <div className="w-full flex justify-center">
+      <div className="w-4/5 border-b border-gray-200 dark:border-gray-600"></div>
+    </div>
+
+    {/* MENU DE NAVEGAÇÃO */}
+    <nav className="space-y-2.5 mt-3">
+      {[
+        { icon: <Home className="w-4 h-4" />, label: "Feed", path: "/feed" },
+        { icon: <BookOpen className="w-4 h-4" />, label: "Meus Cursos", path: "/area-de-estudos" },
+        { icon: <FolderKanban className="w-4 h-4" />, label: "Future Lab", path: "/projetos" },
+        { icon: <Users className="w-4 h-4" />, label: "Connect Hub", path: "/profissionais" },
+        { icon: <MessageCircle className="w-4 h-4" />, label: "SkillTalks", path: "/skilltalks" },
+        { icon: <User className="w-4 h-4" />, label: "Meu Perfil", path: "/perfil" },
+      ].map((item, index) => (
+        <Link
+          key={index}
+          to={item.path}
+          className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-200 ${
+            item.path === "/area-de-estudos"
+              ? "bg-cyan-50 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 font-semibold"
+              : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+          }`}
+        >
+          {item.icon}
+          <span className="text-sm">{item.label}</span>
+        </Link>
+      ))}
+    </nav>
+  </div>
+</aside>
+
 
         {/* ÁREA PRINCIPAL */}
         <main className="lg:col-span-9 flex flex-col gap-8">
@@ -543,7 +549,7 @@ export default function AreaEstudos() {
               <PlayCircle className="w-4 h-4" />
               Continuar estudando
             </span>
-            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
+
           </div>
         </div>
       ))}
@@ -554,12 +560,12 @@ export default function AreaEstudos() {
           {/* CONCLUÍDOS */}
 <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
   <div className="flex items-center gap-3 mb-6">
-    <div className="bg-green-50 dark:bg-green-900/20 p-2 rounded-lg">
+    <div className="bg-cyan-50 dark:bg-cyan-900/20 p-2 rounded-lg">
       <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
     </div>
     <div className="flex items-center justify-between flex-1">
       <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Cursos Concluídos</h2>
-      <span className="bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 text-sm font-medium px-3 py-1 rounded-full border border-green-200 dark:border-green-800">
+      <span className="bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400 text-sm font-medium px-3 py-1 rounded-full border border-cyan-200 dark:border-cyan-800">
         {concluidos.length} cursos
       </span>
     </div>
@@ -573,7 +579,7 @@ export default function AreaEstudos() {
       <p className="text-gray-500 dark:text-gray-400">Você ainda não concluiu nenhum curso.</p>
       <Link 
         to="/area-de-estudos" 
-        className="inline-block mt-3 text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 font-medium"
+        className="inline-block mt-3 text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 font-medium"
       >
         Explorar cursos disponíveis
       </Link>
@@ -583,21 +589,21 @@ export default function AreaEstudos() {
       {concluidos.map((curso) => (
         <div
           key={curso.id}
-          className="group cursor-pointer bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-xl p-4 border border-green-100 dark:border-green-800 hover:border-green-300 dark:hover:border-green-600 transition-all duration-300 hover:shadow-md"
+          className="group cursor-pointer  dark:from-green-900/10 dark:to-emerald-900/10 rounded-xl p-4 border border-cyan-100 dark:border-cyan-800 hover:border-cyan-300 dark:hover:border-cyan-600 transition-all duration-300 hover:shadow-md"
         >
           <div className="flex justify-between items-start mb-4">
             <div className="flex items-center gap-3">
-              <div className="bg-white dark:bg-green-800 p-2 rounded-lg group-hover:scale-105 transition-transform">
+              <div className=" dark:bg-cyan-800 p-2 rounded-lg group-hover:scale-105 transition-transform">
                 <span className="text-lg">{curso.icon}</span>
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-white">{curso.nome}</h3>
-                <p className="text-xs text-green-600 dark:text-green-400 font-medium mt-1">
+                <p className="text-xs text-cyan-600 dark:text-cyan-400 font-medium mt-1">
                   {curso.carreira}
                 </p>
               </div>
             </div>
-            <span className="text-xs font-medium bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-300 px-2 py-1 rounded-full">
+            <span className="text-xs font-medium bg-cyan-100 dark:bg-cyan-800 text-cyan-700 dark:text-cyan-300 px-2 py-1 rounded-full">
               {curso.level}
             </span>
           </div>
@@ -623,11 +629,7 @@ export default function AreaEstudos() {
           </div>
 
           <div className="flex items-center justify-between text-sm">
-            <span className="text-green-600 dark:text-green-400 font-medium flex items-center gap-1">
-              <CheckCircle className="w-4 h-4" />
-              Curso concluído
-            </span>
-            <div className="w-2 h-2 bg-green-400 rounded-full" />
+          
           </div>
         </div>
       ))}
@@ -638,8 +640,8 @@ export default function AreaEstudos() {
 {/* CURSOS DISPONÍVEIS */}
 <section className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-6 border border-gray-100 dark:border-gray-700">
   <div className="flex items-center gap-3 mb-6">
-    <div className="bg-blue-50 dark:bg-blue-900/20 p-2 rounded-lg">
-      <Rocket className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+    <div className="bg-cyan-50 dark:bg-cyan-900/20 p-2 rounded-lg">
+      <Rocket className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
     </div>
     <div className="flex items-center justify-between flex-1">
       <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Cursos Disponíveis</h2>
@@ -648,12 +650,12 @@ export default function AreaEstudos() {
         <input
           type="text"
           placeholder="Pesquisar cursos..."
-          className="px-3 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-sm dark:bg-gray-700 dark:text-white w-64 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="px-3 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-sm dark:bg-gray-700 dark:text-white w-64 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <select
-          className="px-3 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-sm dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="px-3 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-sm dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
           value={filterLevel}
           onChange={(e) => setFilterLevel(e.target.value)}
         >
@@ -689,7 +691,7 @@ export default function AreaEstudos() {
             setSearchTerm("");
             setFilterLevel("all");
           }}
-          className="inline-block mt-3 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+          className="inline-block mt-3 text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 font-medium"
         >
           Limpar filtros
         </button>
@@ -700,21 +702,21 @@ export default function AreaEstudos() {
       {disponiveis.map((curso) => (
         <div 
           key={curso.id} 
-          className="group bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 rounded-xl p-4 border border-blue-100 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-md"
+          className="group bg-gradient-to-br from-cyan-50 to-indigo-50 dark:from-cyan-900/10 dark:to-indigo-900/10 rounded-xl p-4 border border-cyan-100 dark:border-cyan-800 hover:border-cyan-300 dark:hover:border-cyan-600 transition-all duration-300 hover:shadow-md"
         >
           <div className="flex justify-between items-start mb-4">
             <div className="flex items-center gap-3">
-              <div className="bg-white dark:bg-blue-800 p-2 rounded-lg group-hover:scale-105 transition-transform">
+              <div className="bg-white dark:bg-cyan-800 p-2 rounded-lg group-hover:scale-105 transition-transform">
                 <span className="text-lg">{curso.icon}</span>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 dark:text-white">{curso.nome}</h3>
-                <p className="text-xs text-blue-600 dark:text-blue-400 font-medium mt-1">
+                <h3 className="font-semibold text-cyan-900 dark:text-white">{curso.nome}</h3>
+                <p className="text-xs text-cyan-600 dark:text-cyan-400 font-medium mt-1">
                   {curso.carreira}
                 </p>
               </div>
             </div>
-            <span className="text-xs font-medium bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full">
+            <span className="text-xs font-medium bg-cyan-100 dark:bg-cyan-800 text-cyan-700 dark:text-cyan-300 px-2 py-1 rounded-full">
               {curso.level}
             </span>
           </div>
@@ -724,7 +726,7 @@ export default function AreaEstudos() {
               <Clock className="w-4 h-4" />
               {curso.duracao || curso.horas + 'h'}
             </span>
-            <span className="font-medium text-blue-600 dark:text-blue-400">
+            <span className="font-medium text-cyan-600 dark:text-cyan-400">
               Disponível
             </span>
           </div>
@@ -743,7 +745,7 @@ export default function AreaEstudos() {
                 {curso.profissoesPossiveis.slice(0, 3).map((profissao, index) => (
                   <span 
                     key={index}
-                    className="bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-400 px-2 py-1 rounded-full text-xs"
+                    className="bg-cyan-100 dark:bg-cyan-800 text-cyan-600 dark:text-cyan-400 px-2 py-1 rounded-full text-xs"
                   >
                     {profissao}
                   </span>
@@ -758,7 +760,7 @@ export default function AreaEstudos() {
           <button
             onClick={() => matricularCurso(curso)}
             disabled={!!loadingCursosMap[curso.id]}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group-hover:shadow-lg"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-cyan-600  hover:cyan-500  text-white font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group-hover:shadow-lg"
           >
             {loadingCursosMap[curso.id] ? (
               <>

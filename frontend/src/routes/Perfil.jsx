@@ -2,25 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Edit, PlusCircle, Trash2, Upload,
-  Briefcase, Calendar, MapPin, User, Mail,
-  Cake, Globe, Zap, Heart, Save
+  Briefcase, Calendar, MapPin, User, Mail, Lock,
+  Cake, Globe, Zap, Heart, Save, X
 } from "lucide-react";
 
-/* ===========================================================
-   COMPONENTE GENÉRICO DE INPUT
-=========================================================== */
-const InputField = ({
-  label,
-  type = "text",
-  value,
-  onChange,
-  placeholder,
-  disabled,
-  Icon,
-  isTextArea,
-  maxLength,
-}) => (
-  <div className="space-y-1">
+// Componente de Input simplificado
+const InputField = ({ label, type = "text", value, onChange, placeholder, Icon, isTextArea, maxLength }) => (
+  <div className="space-y-2">
     <label className="text-sm font-semibold flex items-center text-gray-700 dark:text-gray-300">
       {Icon && <Icon size={16} className="mr-2 text-cyan-600" />}
       {label}
@@ -34,8 +22,9 @@ const InputField = ({
           className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-cyan-600"
           placeholder={placeholder}
           maxLength={maxLength}
+          rows={4}
         />
-        <p className="text-right text-xs text-gray-500 dark:text-gray-400">
+        <p className="text-right text-xs text-gray-500">
           {value?.length || 0}/{maxLength}
         </p>
       </>
@@ -44,19 +33,58 @@ const InputField = ({
         type={type}
         value={value || ""}
         onChange={onChange}
-        disabled={disabled}
         placeholder={placeholder}
-        className={`w-full px-3 py-2 border rounded-lg text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-cyan-600 ${
-          disabled ? "opacity-60 cursor-not-allowed" : ""
-        }`}
+        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-cyan-600"
       />
     )}
   </div>
 );
 
-/* ===========================================================
-   PÁGINA DE PERFIL COMPLETA
-=========================================================== */
+// Componente de Lista Dinâmica
+const ListaDinamica = ({ titulo, campo, items, onAdd, onRemove, onUpdate, Icon }) => (
+  <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg border dark:border-gray-700">
+    <div className="flex justify-between items-center mb-3">
+      <h4 className="font-semibold flex items-center gap-2 text-white">
+        <Icon size={18} className="text-cyan-600" />
+        {titulo}
+      </h4>
+      <button
+        type="button"
+        onClick={onAdd}
+        className="bg-cyan-600 text-white px-3 py-1 rounded-lg flex items-center gap-2 text-sm"
+      >
+        <PlusCircle size={16} /> Add
+      </button>
+    </div>
+
+    <div className="space-y-2">
+      {items?.map((item, index) => (
+        <div key={index} className="flex gap-2">
+          <input
+            value={item}
+            onChange={(e) => onUpdate(index, e.target.value)}
+            className="flex-1 px-3 py-2 rounded-lg bg-white dark:bg-gray-800 border dark:border-gray-700"
+            placeholder={`Adicionar ${titulo.toLowerCase()}...`}
+          />
+          <button
+            type="button"
+            onClick={() => onRemove(index)}
+            className="px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg"
+          >
+            <Trash2 size={16} />
+          </button>
+        </div>
+      ))}
+
+      {!items?.length && (
+        <p className="text-gray-500 dark:text-gray-400 text-sm italic text-center py-2">
+          Nenhum item adicionado
+        </p>
+      )}
+    </div>
+  </div>
+);
+
 export default function Perfil() {
   const [usuario, setUsuario] = useState(null);
   const [editando, setEditando] = useState(false);
@@ -65,21 +93,17 @@ export default function Perfil() {
 
   const navigate = useNavigate();
 
-  /* Carregar usuário */
+  // Carregar usuário do localStorage
   useEffect(() => {
-    const logado = (() => {
-      try {
-        return JSON.parse(localStorage.getItem("usuarioLogado"));
-      } catch {
-        return null;
-      }
-    })();
-
-    if (!logado) return navigate("/login");
-    setUsuario(logado);
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+    if (!usuarioLogado) return navigate("/login");
+    setUsuario(usuarioLogado);
   }, [navigate]);
 
-  const handleEditar = () => setEditando((prev) => !prev);
+  const toggleEdicao = () => {
+    setEditando(!editando);
+    setNovaFoto(null);
+  };
 
   const handleFotoChange = (e) => {
     const file = e.target.files?.[0];
@@ -87,446 +111,347 @@ export default function Perfil() {
   };
 
   const buildFotoURL = (f) => {
-    if (!f) return "/images/default.jpg";
-    if (typeof f !== "string") return "/images/default.jpg";
+    if (!f) return "https://placehold.co/150x150/0891b2/ffffff?text=U";
     if (f.startsWith("http")) return f;
     if (f.startsWith("/")) return `http://localhost:5000${f}`;
     return `http://localhost:5000/${f}`;
   };
 
-  /* Salvar tudo */
+  // Funções para gerenciar listas
+  const adicionarItem = (campo) => {
+    setUsuario(prev => ({
+      ...prev,
+      [campo]: [...(prev[campo] || []), ""]
+    }));
+  };
+
+  const removerItem = (campo, index) => {
+    setUsuario(prev => {
+      const novaLista = [...(prev[campo] || [])];
+      novaLista.splice(index, 1);
+      return { ...prev, [campo]: novaLista };
+    });
+  };
+
+  const atualizarItem = (campo, index, valor) => {
+    setUsuario(prev => {
+      const novaLista = [...(prev[campo] || [])];
+      novaLista[index] = valor;
+      return { ...prev, [campo]: novaLista };
+    });
+  };
+
+  // Salvar perfil
   const handleSalvar = async (e) => {
     e.preventDefault();
     if (!usuario) return;
+    
     setCarregando(true);
-
+    
     try {
-      let fotoUrl = usuario.foto || "";
+      let fotoUrl = usuario.foto;
 
-      // Se o usuário selecionou uma nova foto, faz upload
+      // Upload da foto se houver nova
       if (novaFoto) {
-        const fd = new FormData();
-        fd.append("foto", novaFoto);
+        const formData = new FormData();
+        formData.append("foto", novaFoto);
 
-        const up = await fetch(
-          `http://localhost:5000/upload/${usuario.id}`,
-          { method: "POST", body: fd }
-        );
+        const uploadRes = await fetch(`http://localhost:5000/upload/${usuario.id}`, {
+          method: "POST",
+          body: formData
+        });
 
-        if (!up.ok) {
-          const errText = await up.text();
-          throw new Error(`Erro no upload: ${errText}`);
+        if (uploadRes.ok) {
+          const uploadData = await uploadRes.json();
+          fotoUrl = uploadData.foto ? `http://localhost:5000${uploadData.foto}` : fotoUrl;
         }
-
-        const upJson = await up.json();
-
-        // CORREÇÃO: backend retorna { foto: "/uploads/..." }
-        fotoUrl = upJson.foto ? `http://localhost:5000${upJson.foto}` : fotoUrl;
       }
 
-      // Atualiza perfil no backend (PUT)
-      const req = await fetch(
-        `http://localhost:5000/perfil/${usuario.id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...usuario, foto: fotoUrl }),
-        }
-      );
+      // Atualizar perfil
+      const updateRes = await fetch(`http://localhost:5000/perfil/${usuario.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...usuario, foto: fotoUrl })
+      });
 
-      if (!req.ok) {
-        const errText = await req.text();
-        throw new Error(`Erro ao salvar perfil: ${errText}`);
+      if (updateRes.ok) {
+        const data = await updateRes.json();
+        const usuarioAtualizado = {
+          ...usuario,
+          ...data.perfil,
+          ...data.usuario,
+          foto: fotoUrl
+        };
+
+        localStorage.setItem("usuarioLogado", JSON.stringify(usuarioAtualizado));
+        setUsuario(usuarioAtualizado);
+        setNovaFoto(null);
+        setEditando(false);
+        alert("Perfil atualizado com sucesso!");
       }
-
-      const json = await req.json();
-
-      // GARANTE QUE A FOTO FICA CORRETA NO LOCALSTORAGE (independente do retorno do backend)
-      const novoPerfil = {
-        ...usuario,
-        ...json.perfil,
-        ...json.usuario,
-        foto: fotoUrl,
-      };
-
-      localStorage.setItem("usuarioLogado", JSON.stringify(novoPerfil));
-
-      setUsuario(novoPerfil);
-      setNovaFoto(null);
-      setEditando(false);
-      alert("Perfil atualizado!");
-    } catch (err) {
-      console.error(err);
-      alert("Erro ao salvar: " + (err.message || err));
+    } catch (error) {
+      console.error("Erro ao salvar:", error);
+      alert("Erro ao salvar perfil");
     }
-
+    
     setCarregando(false);
   };
 
-  /* Adicionar, remover, editar itens de listas */
-  const adicionarItem = (campo) =>
-    setUsuario((u) => ({
-      ...u,
-      [campo]: [...(u[campo] || []), ""],
-    }));
-
-  const removerItem = (campo, index) =>
-    setUsuario((u) => {
-      const nova = [...(u[campo] || [])];
-      nova.splice(index, 1);
-      return { ...u, [campo]: nova };
-    });
-
-  const atualizarItem = (campo, index, valor) =>
-    setUsuario((u) => {
-      const nova = [...(u[campo] || [])];
-      nova[index] = valor;
-      return { ...u, [campo]: nova };
-    });
-
-  if (!usuario)
+  if (!usuario) {
     return (
-      <div className="min-h-screen flex items-center justify-center dark:bg-gray-900">
-        <p className="text-gray-600 dark:text-gray-300">Carregando perfil...</p>
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-600">Carregando perfil...</p>
       </div>
     );
+  }
 
-  /* ===========================================================
-     SIDEBAR DE VISUALIZAÇÃO
-  =========================================================== */
-  const Sidebar = () => (
-    <div className="lg:w-1/3 p-6 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">
+  // Dados para as seções
+  const secoes = [
+  { campo: "habilidadesTecnicas", titulo: "Habilidades Técnicas", icon: Zap },
+  { campo: "softSkills", titulo: "Soft Skills", icon: Heart },
+  { campo: "idiomas", titulo: "Idiomas", icon: Globe },
+  { campo: "formacao", titulo: "Formação", icon: Calendar },
+  { campo: "experiencias", titulo: "Experiências", icon: Briefcase },
+  { campo: "projetos", titulo: "Projetos", icon: PlusCircle },
+  { campo: "certificacoes", titulo: "Certificações", icon: Save },
+  { campo: "areaInteresses", titulo: "Áreas de Interesse", icon: Zap },
+];
 
-      <div className="flex flex-col items-center text-center">
-        <img
-          src={
-            novaFoto
-              ? URL.createObjectURL(novaFoto)
-              : buildFotoURL(usuario.foto)
-          }
-          className="w-32 h-32 rounded-full object-cover border-4 border-cyan-600"
-          alt={`Foto de ${usuario.nome}`}
-        />
 
-        <h2 className="text-2xl font-bold mt-4 text-gray-900 dark:text-gray-100">
-          {usuario.nome}
-        </h2>
-
-        <p className="text-cyan-600 dark:text-cyan-400 font-medium">
-          {usuario.cargo || "Sem cargo definido"}
-        </p>
-
-        <div className="flex items-center text-gray-600 dark:text-gray-300 mt-3 text-sm">
-          <Mail size={16} className="mr-2 text-cyan-600" />
-          {usuario.email}
-        </div>
-      </div>
-
-      <div className="mt-8">
-        <h3 className="text-lg font-semibold mb-3 flex items-center text-gray-900 dark:text-gray-100">
-          <Briefcase size={18} className="mr-2 text-cyan-600" />
-          Resumo
-        </h3>
-
-        <p className="text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg leading-relaxed">
-          {usuario.resumo || "Nenhum resumo adicionado ainda."}
-        </p>
-      </div>
-
-      <div className="mt-8 space-y-4">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-          Dados pessoais
-        </h3>
-
-        <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg flex items-center">
-          <MapPin size={16} className="mr-2 text-cyan-600" />
-          {usuario.localizacao || "Não informado"}
-        </div>
-
-        <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg flex items-center">
-          <Cake size={16} className="mr-2 text-cyan-600" />
-          {usuario.dataNascimento || "Sem data"}
-        </div>
-
-        <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg flex items-center">
-          <Briefcase size={16} className="mr-2 text-cyan-600" />
-          {usuario.area || "Sem área definida"}
-        </div>
-      </div>
-    </div>
-  );
-
-  /* ===========================================================
-     RENDERIZAÇÃO PRINCIPAL
-  =========================================================== */
   return (
-    <div className="min-h-screen py-10 px-4 dark:bg-gray-900 dark:text-gray-100">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen py-8">
+      <div className="max-w-6xl mx-auto px-4">
+        
+        {/* Header com Botões de Ação NO TOPO */}
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold">Meu Perfil</h1>
-
-          <button
-            onClick={handleEditar}
-            className={`px-6 py-2 rounded-lg flex items-center gap-2 font-semibold text-white ${
-              editando ? "bg-red-600" : "bg-cyan-600"
-            }`}
-          >
-            <Edit size={18} />
-            {editando ? "Cancelar" : "Editar"}
-          </button>
+          <h1 className="text-3xl font-bold ">Meu Perfil</h1>
+          
+          {editando ? (
+            <div className="flex gap-3">
+              <button
+                type="button"
+                onClick={handleSalvar}
+                disabled={carregando}
+                className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-2 rounded-lg font-semibold flex items-center gap-2"
+              >
+                {carregando ? (
+                  "Salvando..."
+                ) : (
+                  <>
+                    <Save size={18} />
+                    Salvar
+                  </>
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={toggleEdicao}
+                className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-6 py-2 rounded-lg font-semibold flex items-center gap-2"
+              >
+                <X size={18} />
+                Cancelar
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={toggleEdicao}
+              className="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-2 rounded-lg font-semibold flex items-center gap-2"
+            >
+              <Edit size={18} />
+              Editar Perfil
+            </button>
+          )}
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col lg:flex-row">
-          <Sidebar />
-
-          {/* ==================== MODO DE EDIÇÃO ==================== */}
-          {editando ? (
-            <form onSubmit={handleSalvar} className="lg:w-2/3 p-8 space-y-10">
-
-              {/* FOTO */}
-              <div className="flex flex-col items-center">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+          <div className="flex flex-col lg:flex-row">
+            
+            {/* Sidebar */}
+            <div className="lg:w-1/3 p-6 border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-gray-700">
+              <div className="text-center">
                 <img
-                  src={
-                    novaFoto
-                      ? URL.createObjectURL(novaFoto)
-                      : buildFotoURL(usuario.foto)
-                  }
-                  className="w-36 h-36 rounded-full border-4 border-cyan-600 object-cover"
-                  alt={`Foto de ${usuario.nome}`}
+                  src={novaFoto ? URL.createObjectURL(novaFoto) : buildFotoURL(usuario.foto)}
+                  className="w-32 h-32 rounded-full object-cover border-4 border-cyan-600 mx-auto"
+                  alt="Foto do perfil"
                 />
-
-                <label className="mt-3 cursor-pointer bg-cyan-600 text-white px-4 py-2 rounded-lg flex items-center gap-2">
-                  <Upload size={18} />
-                  Trocar Foto
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFotoChange}
-                    className="hidden"
-                  />
-                </label>
+                
+                {editando && (
+                  <label className="mt-3 cursor-pointer inline-flex items-center gap-2 bg-cyan-600 text-white px-4 py-2 rounded-lg text-sm">
+                    <Upload size={16} />
+                    Trocar Foto
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleFotoChange}
+                      className="hidden"
+                    />
+                  </label>
+                )}
+                
+                <h2 className="text-2xl font-bold mt-4 text-white">
+                  {usuario.nome}
+                </h2>
+                <p className="text-cyan-600 font-medium mt-1">
+                  {usuario.cargo || "Sem cargo definido"}
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 mt-2 flex items-center justify-center">
+                  <Mail size={16} className="mr-2" />
+                  {usuario.email}
+                </p>
               </div>
 
-              {/* DADOS PESSOAIS */}
-              <div className="space-y-6">
-                <h3 className="text-xl font-bold mb-2">Dados Pessoais</h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <InputField
-                    label="Nome Completo"
-                    value={usuario.nome}
-                    onChange={(e) =>
-                      setUsuario({ ...usuario, nome: e.target.value })
-                    }
-                    Icon={User}
-                  />
-
-                  <InputField
-                    label="Email"
-                    value={usuario.email}
-                    disabled
-                    Icon={Mail}
-                  />
-
-                  <InputField
-                    label="Data de Nascimento"
-                    type="date"
-                    value={usuario.dataNascimento}
-                    onChange={(e) =>
-                      setUsuario({
-                        ...usuario,
-                        dataNascimento: e.target.value,
-                      })
-                    }
-                    Icon={Cake}
-                  />
-
-                  <InputField
-                    label="Localização"
-                    value={usuario.localizacao}
-                    onChange={(e) =>
-                      setUsuario({
-                        ...usuario,
-                        localizacao: e.target.value,
-                      })
-                    }
-                    Icon={MapPin}
-                  />
-
-                  <InputField
-                    label="Cargo Atual"
-                    value={usuario.cargo}
-                    onChange={(e) =>
-                      setUsuario({
-                        ...usuario,
-                        cargo: e.target.value,
-                      })
-                    }
-                    Icon={Briefcase}
-                  />
-
-                  <InputField
-                    label="Área de atuação"
-                    value={usuario.area}
-                    onChange={(e) =>
-                      setUsuario({
-                        ...usuario,
-                        area: e.target.value,
-                      })
-                    }
-                    Icon={Zap}
-                  />
+              <div className="mt-6 space-y-3">
+                <div className="flex items-center text-gray-600 dark:text-gray-300">
+                  <MapPin size={16} className="mr-2 text-cyan-600" />
+                  {usuario.localizacao || "Localização não informada"}
                 </div>
-
-                <InputField
-                  label="Resumo Profissional"
-                  isTextArea
-                  maxLength={300}
-                  value={usuario.resumo}
-                  placeholder="Fale sobre você..."
-                  onChange={(e) =>
-                    setUsuario({
-                      ...usuario,
-                      resumo: e.target.value,
-                    })
-                  }
-                  Icon={Briefcase}
-                />
+                <div className="flex items-center text-gray-600 dark:text-gray-300">
+                  <Cake size={16} className="mr-2 text-cyan-600" />
+                  {usuario.dataNascimento || "Data não informada"}
+                </div>
+                <div className="flex items-center text-gray-600 dark:text-gray-300">
+                  <Briefcase size={16} className="mr-2 text-cyan-600" />
+                  {usuario.area || "Área não definida"}
+                </div>
               </div>
 
-              {/* LISTAS DINÂMICAS */}
-              <div className="space-y-10">
-                {[
-                  { campo: "habilidadesTecnicas", titulo: "Habilidades Técnicas", icon: Zap },
-                  { campo: "softSkills", titulo: "Soft Skills", icon: Heart },
-                  { campo: "idiomas", titulo: "Idiomas", icon: Globe },
-                  { campo: "formacao", titulo: "Formação", icon: Calendar },
-                  { campo: "experiencias", titulo: "Experiências", icon: Briefcase },
-                  { campo: "projetos", titulo: "Projetos", icon: PlusCircle },
-                  { campo: "certificacoes", titulo: "Certificações", icon: Edit },
-                  { campo: "areaInteresses", titulo: "Áreas de Interesse", icon: Heart },
-                ].map((item) => (
-                  <div key={item.campo} className="bg-gray-100 dark:bg-gray-900 p-5 rounded-lg border dark:border-gray-700">
-                    <div className="flex justify-between mb-4">
-                      <h4 className="font-bold flex items-center gap-2">
-                        <item.icon size={18} className="text-cyan-600" />
-                        {item.titulo}
-                      </h4>
-
-                      <button
-                        type="button"
-                        onClick={() => adicionarItem(item.campo)}
-                        className="bg-cyan-600 text-white px-3 py-1 rounded-lg flex items-center gap-2"
-                      >
-                        <PlusCircle size={16} /> Add
-                      </button>
-                    </div>
-
-                    <div className="space-y-3">
-                      {(usuario[item.campo] || []).map((itemValor, index) => (
-                        <div key={index} className="relative">
-                          <input
-                            value={itemValor}
-                            onChange={(e) =>
-                              atualizarItem(item.campo, index, e.target.value)
-                            }
-                            className="w-full px-3 py-2 rounded-lg bg-white dark:bg-gray-800 border dark:border-gray-700"
-                          />
-
-                          <button
-                            type="button"
-                            onClick={() => removerItem(item.campo, index)}
-                            className="absolute right-2 top-2 text-red-600"
-                          >
-                            <Trash2 size={16} />
-                          </button>
-                        </div>
-                      ))}
-
-                      {!usuario[item.campo]?.length && (
-                        <p className="text-gray-500 dark:text-gray-400 text-sm italic">
-                          Nenhum item adicionado.
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* BOTÃO SALVAR */}
-              <div className="flex gap-3">
-                <button
-                  type="submit"
-                  disabled={carregando}
-                  className="w-full bg-cyan-600 text-white py-3 rounded-lg text-lg font-semibold flex items-center justify-center gap-2"
-                >
-                  {carregando ? "Salvando..." : (
-                    <>
-                      <Save size={16} /> Salvar Perfil
-                    </>
-                  )}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => { setEditando(false); setNovaFoto(null); }}
-                  className="w-40 bg-gray-300 text-gray-800 py-3 rounded-lg text-lg font-semibold"
-                >
-                  Cancelar
-                </button>
-              </div>
-            </form>
-          ) : (
-
-            /* ==================== MODO DE VISUALIZAÇÃO ==================== */
-            <div className="lg:w-2/3 p-8 space-y-10">
-
-              <h3 className="text-2xl font-bold border-b pb-2">
-                Visão Geral do Currículo
-              </h3>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  { campo: "habilidadesTecnicas", titulo: "Habilidades Técnicas", icon: Zap, cor: "bg-blue-100 dark:bg-blue-900" },
-                  { campo: "softSkills", titulo: "Soft Skills", icon: Heart, cor: "bg-green-100 dark:bg-green-900" },
-                  { campo: "idiomas", titulo: "Idiomas", icon: Globe, cor: "bg-purple-100 dark:bg-purple-900" },
-                  { campo: "formacao", titulo: "Formação", icon: Calendar },
-                  { campo: "experiencias", titulo: "Experiências", icon: Briefcase },
-                  { campo: "projetos", titulo: "Projetos", icon: PlusCircle },
-                  { campo: "certificacoes", titulo: "Certificações", icon: Edit },
-                  { campo: "areaInteresses", titulo: "Áreas de Interesse", icon: Heart },
-                ].map((sec) => (
-                  <div
-                    key={sec.campo}
-                    className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-5"
-                  >
-                    <h4 className="font-bold mb-3 flex items-center gap-2">
-                      <sec.icon size={18} className="text-cyan-600" />
-                      {sec.titulo}
-                    </h4>
-
-                    {usuario[sec.campo]?.length ? (
-                      <ul className="space-y-2">
-                        {usuario[sec.campo].map((item, i) => (
-                          <li
-                            key={i}
-                            className={`p-2 rounded-lg ${
-                              sec.cor || "bg-gray-100 dark:bg-gray-800"
-                            }`}
-                          >
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="text-gray-500 dark:text-gray-400 italic">
-                        Nenhum item adicionado.
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
+              {usuario.resumo && (
+                <div className="mt-6">
+                  <h3 className="font-semibold mb-2 text-cyan-600 ">Resumo</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                    {usuario.resumo}
+                  </p>
+                </div>
+              )}
             </div>
-          )}
+
+            {/* Conteúdo Principal */}
+            <div className="lg:w-2/3 p-6">
+              {editando ? (
+                <form onSubmit={handleSalvar} className="space-y-6">
+                  
+                  <div>
+  <h3 className="text-xl font-bold mb-4 text-white">Dados Pessoais</h3>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    
+    <InputField
+      label="Nome Completo"
+      value={usuario.nome}
+      onChange={(e) => setUsuario({ ...usuario, nome: e.target.value })}
+      Icon={User}
+    />
+
+    <InputField
+      label="Email"
+      value={usuario.email}
+      disabled
+      Icon={Mail}
+    />
+
+    <InputField
+      label="Senha"
+      type="password"
+      value={usuario.senha}
+      onChange={(e) => setUsuario({ ...usuario, senha: e.target.value })}
+      Icon={Lock}
+    />
+
+    <InputField
+      label="Data de Nascimento"
+      type="date"
+      value={usuario.dataNascimento}
+      onChange={(e) => setUsuario({ ...usuario, dataNascimento: e.target.value })}
+      Icon={Cake}
+    />
+
+    <InputField
+      label="Localização"
+      value={usuario.localizacao}
+      onChange={(e) => setUsuario({ ...usuario, localizacao: e.target.value })}
+      Icon={MapPin}
+    />
+
+    <InputField
+      label="Cargo"
+      value={usuario.cargo}
+      onChange={(e) => setUsuario({ ...usuario, cargo: e.target.value })}
+      Icon={Briefcase}
+    />
+
+    <InputField
+      label="Área"
+      value={usuario.area}
+      onChange={(e) => setUsuario({ ...usuario, area: e.target.value })}
+      Icon={Zap}
+    />
+  </div>
+
+  <div className="mt-4">
+    <InputField
+      label="Resumo Profissional"
+      isTextArea
+      maxLength={300}
+      value={usuario.resumo}
+      onChange={(e) => setUsuario({ ...usuario, resumo: e.target.value })}
+      placeholder="Fale um pouco sobre você..."
+      Icon={Briefcase}
+    />
+  </div>
+</div>
+
+
+                  {/* Listas Dinâmicas */}
+                  <div>
+                    <h3 className="text-xl font-bold mb-4 text-white">Informações Adicionais</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {secoes.map(sec => (
+                        <ListaDinamica
+                          key={sec.campo}
+                          titulo={sec.titulo}
+                          campo={sec.campo}
+                          items={usuario[sec.campo]}
+                          onAdd={() => adicionarItem(sec.campo)}
+                          onRemove={(index) => removerItem(sec.campo, index)}
+                          onUpdate={(index, valor) => atualizarItem(sec.campo, index, valor)}
+                          Icon={sec.icon}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </form>
+              ) : (
+                /* Modo Visualização */
+                <div className="space-y-6">
+                  <h2 className="text-2xl font-bold text-white">Meu Currículo</h2>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {secoes.map(sec => (
+                      <div key={sec.campo} className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg text-white border dark:border-gray-700">
+                        <h3 className="font-semibold mb-3 flex items-center gap-2 text-white">
+                          <sec.icon size={18} className="text-cyan-600" />
+                          {sec.titulo}
+                        </h3>
+                        
+                        {usuario[sec.campo]?.length ? (
+                          <ul className="space-y-2">
+                            {usuario[sec.campo].map((item, index) => (
+                              <li key={index} className="bg-white dark:bg-gray-800 p-2 text-white rounded border dark:border-gray-700">
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="text-gray-500 dark:text-gray-400 italic text-sm">
+                            Nenhum item adicionado
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>
